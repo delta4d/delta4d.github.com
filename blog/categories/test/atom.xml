@@ -4,7 +4,7 @@
   <title><![CDATA[Category: test | LOST]]></title>
   <link href="http://delta4d.github.com/blog/categories/test/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2012-11-11T20:32:54+08:00</updated>
+  <updated>2012-11-11T23:40:56+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[latex test]]></title>
+    <link href="http://delta4d.github.com/blog/2012/11/11/latex-test/"/>
+    <updated>2012-11-11T23:33:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2012/11/11/latex-test</id>
+    <content type="html"><![CDATA[<p>$latex$ using kramdown</p>
+
+<p>$$
+[
+ A<em>{m,n} =
+ \begin{pmatrix}
+  a</em>{1,1} &amp; a<em>{1,2} &amp; \cdots &amp; a</em>{1,n} \
+  a<em>{2,1} &amp; a</em>{2,2} &amp; \cdots &amp; a<em>{2,n} \
+  \vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  \
+  a</em>{m,1} &amp; a<em>{m,2} &amp; \cdots &amp; a</em>{m,n}
+ \end{pmatrix}
+]
+$$</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[hello, world!]]></title>
