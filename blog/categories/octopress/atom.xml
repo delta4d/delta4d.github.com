@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | LOST]]></title>
   <link href="http://delta4d.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2012-11-12T00:08:58+08:00</updated>
+  <updated>2012-11-12T00:11:14+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -18,10 +18,13 @@
     <link href="http://delta4d.github.com/blog/2012/11/10/use-octopress-on-a-new-computer/"/>
     <updated>2012-11-10T19:37:00+08:00</updated>
     <id>http://delta4d.github.com/blog/2012/11/10/use-octopress-on-a-new-computer</id>
-    <content type="html"><![CDATA[<p>when you are bloging with octopress, don’t forget the following commands
+    <content type="html"><![CDATA[<p>when you are bloging with octopress, don’t forget the following commands</p>
+
+<p><code>
 	git add .
-	git commit -m ‘ur commit’
-	git push origin source</p>
+	git commit -m 'ur commit'
+	git push origin source
+</code></p>
 
 <p>then when you are on another computer, trying to setup a bloging enviroment with octopress, because ‘rake deploy’ upload the generated files, so it needs a little work, you can go like this:</p>
 
