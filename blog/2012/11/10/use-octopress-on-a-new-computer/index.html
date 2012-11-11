@@ -7,12 +7,9 @@
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="when you are bloging with octopress, don&#8217;t forget the following commands 1
-2
-3
-git add .
-git commit -m &#39;ur commit&#39;
-git push origin &hellip;">
+	<meta name="description" content="when you are bloging with octopress, don&#8217;t forget the following commands git add .
+git commit -m 'ur commit'
+git push origin source then when &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -80,39 +77,23 @@ git push origin &hellip;">
 	<h1 class="title">Use Octopress on a New Computer</h1>
 	<div class="entry-content"><p>when you are bloging with octopress, don&#8217;t forget the following commands</p>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>git add .
-</span><span class='line'>git commit -m <span class="s1">&#39;ur commit&#39;</span>
-</span><span class='line'>git push origin <span class="nb">source</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<pre><code>git add .
+git commit -m 'ur commit'
+git push origin source
+</code></pre>
 
 <p>then when you are on another computer, trying to setup a bloging enviroment with octopress, because &#8216;rake deploy&#8217; upload the generated files, so it needs a little work, you can go like this:</p>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git clone git@github.com:username/username.github.com.git
-</span><span class='line'><span class="nv">$ </span><span class="nb">cd </span>username.github.com
-</span><span class='line'>username.github.com<span class="nv">$ </span>git checkout <span class="nb">source</span>
-</span><span class='line'>username.github.com<span class="nv">$ </span>mkdir _deploy
-</span><span class='line'>username.github.com<span class="nv">$ </span><span class="nb">cd </span>_deploy
-</span><span class='line'>username.github.com/_deploy<span class="nv">$ </span>git init
-</span><span class='line'>username.github.com/_deploy<span class="nv">$ </span>git remote add origin git@github.com:username/username.github.com.git
-</span><span class='line'>usename.github.com/_deploy<span class="nv">$ </span>git pull origin master
-</span><span class='line'>usename.github.com/_deploy<span class="nv">$ </span><span class="nb">cd</span> ..
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Why am I using English ??</p>
+<pre><code>$ git clone git@github.com:username/username.github.com.git
+$ cd username.github.com
+username.github.com$ git checkout source
+username.github.com$ mkdir _deploy
+username.github.com$ cd _deploy
+username.github.com/_deploy$ git init
+username.github.com/_deploy$ git remote add origin git@github.com:username/username.github.com.git
+usename.github.com/_deploy$ git pull origin master
+usename.github.com/_deploy$ cd ..
+</code></pre>
 
 <p>reference:
 <a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one">dblock.org</a></p>
