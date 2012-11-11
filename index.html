@@ -7,8 +7,7 @@
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="$latex$ using kramdown $$
-[ A{m,n} = \begin{pmatrix} a{1,1} &amp; a{1,2} &amp; \cdots &amp; a{1,n} \ a{2,1} &amp; a{2,2} &amp; \cdots &amp; a{2,n &hellip;">
+	<meta name="description" content="$\LaTeX$ using kramdown % <![CDATA[ \begin{align*} & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right) = \sum_{i=1}^n \sum_{j= &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -109,19 +108,27 @@
     <article class="post">
 	<h1 class="title"><a href="/blog/2012/11/11/latex-test/">Latex Test</a></h1>
 	<div class="entry-content">
-		<p>$latex$ using kramdown</p>
+		<p>$\LaTeX$ using kramdown</p>
 
-<p>$$
-[
- A<em>{m,n} =
- \begin{pmatrix}
-  a</em>{1,1} &amp; a<em>{1,2} &amp; \cdots &amp; a</em>{1,n} \
-  a<em>{2,1} &amp; a</em>{2,2} &amp; \cdots &amp; a<em>{2,n} \
-  \vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  \
-  a</em>{m,1} &amp; a<em>{m,2} &amp; \cdots &amp; a</em>{m,n}
- \end{pmatrix}
-]
-$$</p>
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align*}
+  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
+      \vdots & \ddots & \vdots \\
+      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 \\
+      \vdots \\
+      y_n
+    \end{array} \right)
+\end{align*}
+ %]]></script>
+
+<p>see <a href="http://chuchao333.github.com/blog/2012/08/18/supporting-latex-in-octopress/">this</a> for more details</p>
 
 		
 		
@@ -158,26 +165,31 @@ $$</p>
     <article class="post">
 	<h1 class="title"><a href="/blog/2012/11/10/use-octopress-on-a-new-computer/">Use Octopress on a New Computer</a></h1>
 	<div class="entry-content">
-		<p>when you are bloging with octopress, don&#8217;t forget the following commands</p>
+		<p>when you are bloging with octopress, don’t forget the following commands
+	git add .
+	git commit -m ‘ur commit’
+	git push origin source</p>
 
-<pre><code>git add .
-git commit -m 'ur commit'
-git push origin source
-</code></pre>
+<p>then when you are on another computer, trying to setup a bloging enviroment with octopress, because ‘rake deploy’ upload the generated files, so it needs a little work, you can go like this:</p>
 
-<p>then when you are on another computer, trying to setup a bloging enviroment with octopress, because &#8216;rake deploy&#8217; upload the generated files, so it needs a little work, you can go like this:</p>
-
-<pre><code>$ git clone git@github.com:username/username.github.com.git
-$ cd username.github.com
-username.github.com$ git checkout source
-username.github.com$ mkdir _deploy
-username.github.com$ cd _deploy
-username.github.com/_deploy$ git init
-username.github.com/_deploy$ git remote add origin git@github.com:username/username.github.com.git
-usename.github.com/_deploy$ git pull origin master
-usename.github.com/_deploy$ cd ..
-</code></pre>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">$ git clone git@github.com:username/username.github.com.git
+</span><span class="line">$ cd username.github.com
+</span><span class="line">username.github.com$ git checkout source
+</span><span class="line">username.github.com$ mkdir _deploy
+</span><span class="line">username.github.com$ cd _deploy
+</span><span class="line">username.github.com/_deploy$ git init
+</span><span class="line">username.github.com/_deploy$ git remote add origin git@github.com:username/username.github.com.git
+</span><span class="line">usename.github.com/_deploy$ git pull origin master
+</span><span class="line">usename.github.com/_deploy$ cd ..</span></code></pre></td></tr></table></div></figure></notextile></div>
 <p>reference:
 <a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one">dblock.org</a></p>
 
@@ -217,22 +229,19 @@ usename.github.com/_deploy$ cd ..
 	<h1 class="title"><a href="/blog/2012/11/10/hello-world/">Hello, World!</a></h1>
 	<div class="entry-content">
 		
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">#include &lt;iostream&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;hello,world!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="cpp"><span class="line"><span class="cp">#include &lt;iostream&gt;</span>
+</span><span class="line">
+</span><span class="line"><span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="line">	<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;hello,world!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span><span class="line">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 		

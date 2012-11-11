@@ -7,8 +7,7 @@
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="$latex$ using kramdown $$
-[ A{m,n} = \begin{pmatrix} a{1,1} &amp; a{1,2} &amp; \cdots &amp; a{1,n} \ a{2,1} &amp; a{2,2} &amp; \cdots &amp; a{2,n &hellip;">
+	<meta name="description" content="$\LaTeX$ using kramdown % <![CDATA[ \begin{align*} & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right) = \sum_{i=1}^n \sum_{j=1 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -105,19 +104,27 @@
 	
 	<div id="content" class="inner"><article class="post">
 	<h1 class="title">Latex Test</h1>
-	<div class="entry-content"><p>$latex$ using kramdown</p>
+	<div class="entry-content"><p>$\LaTeX$ using kramdown</p>
 
-<p>$$
-[
- A<em>{m,n} =
- \begin{pmatrix}
-  a</em>{1,1} &amp; a<em>{1,2} &amp; \cdots &amp; a</em>{1,n} \
-  a<em>{2,1} &amp; a</em>{2,2} &amp; \cdots &amp; a<em>{2,n} \
-  \vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  \
-  a</em>{m,1} &amp; a<em>{m,2} &amp; \cdots &amp; a</em>{m,n}
- \end{pmatrix}
-]
-$$</p>
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align*}
+  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
+      \vdots & \ddots & \vdots \\
+      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 \\
+      \vdots \\
+      y_n
+    \end{array} \right)
+\end{align*}
+ %]]></script>
+
+<p>see <a href="http://chuchao333.github.com/blog/2012/08/18/supporting-latex-in-octopress/">this</a> for more details</p>
 </div>
 
 
