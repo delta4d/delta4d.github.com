@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: theory | LOST]]></title>
-  <link href="http://delta4d.github.com/blog/categories/theory/atom.xml" rel="self"/>
+  <title><![CDATA[Category: number theory | LOST]]></title>
+  <link href="http://delta4d.github.com/blog/categories/number-theory/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2012-11-16T22:47:55+08:00</updated>
+  <updated>2012-11-17T00:12:03+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
