@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Evince | LOST]]></title>
+  <link href="http://delta4d.github.com/blog/categories/evince/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.com/"/>
+  <updated>2012-11-23T20:11:13+08:00</updated>
+  <id>http://delta4d.github.com/</id>
+  <author>
+    <name><![CDATA[delta]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Evince中文显示错误]]></title>
+    <link href="http://delta4d.github.com/blog/2012/11/23/evince-display-chinese-wrong/"/>
+    <updated>2012-11-23T19:06:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2012/11/23/evince-display-chinese-wrong</id>
+    <content type="html"><![CDATA[<p>今天用Evince打开一个pdf，本来应该显示中文的地方都是空白，google后发现是<a href="http://poppler.freedesktop.org">poppler</a>的问题，缺少了编码集poppler-data，那么安装好这个包就可一了</p>
+
+<p>on debian</p>
+
+<p><code>
+sudo apt-get install poppler-data
+</code></p>
+
+<p>on archlinux</p>
+
+<p><code>
+sudo pacman -S poppler-data
+</code></p>
+
+<p>于是基于poppler的pdf阅读器就都有可能出现这个问题，详见<a href="http://en.wikipedia.org/wiki/Poppler_(software)#PDF_readers_using_Poppler">PDF Readers Using Poppler</a></p>
+]]></content>
+  </entry>
+  
+</feed>

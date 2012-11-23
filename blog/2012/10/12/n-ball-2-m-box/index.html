@@ -1,0 +1,241 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>n个小球放进m个盒子 - LOST</title>
+	<meta name="author" content="delta">
+
+	
+	<meta name="description" content="基本的排列组合问题，因为老碰到，所以稍微做下总结。 一般可以按照球是否可区别，盒子是否可区别，盒子是否可空，分为2^3=8种情况，但是实际上总可以通过调整使得盒子可空转化为盒子不可空的情况，比如有n个小球，m个盒子，设每个盒子内小球数量为x[i]，那么x[1]+x[2]+…+x[m]=n， &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="LOST" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">LOST</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+	<li><a href="/aboutme">AboutMe</a></li>
+	<li><a href="/x">X</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+	<li><a href="/aboutme">AboutMe</a></li>
+	<li><a href="/x">X</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:delta4d.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:delta4d.github.com">
+	</form>
+</nav>
+
+</header>
+	
+		
+	
+	<div id="content" class="inner"><article class="post">
+	<h1 class="title">N个小球放进m个盒子</h1>
+	<div class="entry-content"><p>基本的排列组合问题，因为老碰到，所以稍微做下总结。  </p>
+
+<p>一般可以按照球是否可区别，盒子是否可区别，盒子是否可空，分为2^3=8种情况，但是实际上总可以通过调整使得盒子可空转化为盒子不可空的情况，比如有n个小球，m个盒子，设每个盒子内小球数量为x[i]，那么x[1]+x[2]+…+x[m]=n，那么通过变换x’[i] = x[i] + 1，变为x’[1]+x’[2]+…+x’[m]=n+m，于是转化为将n+m个小球放入m个盒子，盒子不能为空的问题。有些情况下要    求某些盒子不为空，有些可空，那么对相应的x[i]做以上变换即可。于是接下来的讨论都是针对盒子非空的情况，共有2^2=4种情形：  </p>
+
+<h3 id="section">1. 小球无区别，盒子有区别</h3>
+<p>这是四种情况里最简单的一种，也是最常见的一种，共有C(n-1,m-1)种放法，可以由隔板法得到结果。  </p>
+
+<h3 id="section-1">2. 小球无区别，盒子无区别</h3>
+<p>用f(x,y)表示x个无区别小球放入y个无区别盒子的方法数，考虑<br />
+x[1]+x[2]+…+x[y]=x……(1)<br />
+(x[1]-1)+(x[2]-1)+…+(x[y]-1)=x-y……(2)<br />
+考虑满足x[i]=1的i的个数，如果有k个i满足x[i]=1，那么(2)中将会少k项，即为将x-y个小球放入y-k个盒子的方法数，即f(x-y,y-k)<br />
+让k跑遍0到y，于是f(x,y)=f(x-y,0)+f(x-y,1)+f(x-y,2)+…+f(x-y,y)<br />
+那么f(x-1,y-1)=f(x-y,0)+f(x-y,1)+…+f(x-y,y-1)<br />
+将两式相减，得到f(x,y)-f(x-1,y-1)=f(x-y,y)，于是f(x,y)=f(x-1,y-1)+f(x-y,y)<br />
+初始条件为f(x,1)=f(x,x)=1<br />
+再回头看看这个递推式，其实对于f(x,y)，考虑以下两种情况：<br />
+若有一个盒子内的小球数等于1，不妨设为x[1]，那么拿掉x[1]后就是x-1个小球放入y-1个盒子的情况<br />
+若每个盒子内的小球数都大于1，那么从每个盒子中都拿走一个小球，就变为了x-y个小球放入y个盒子的情况<br />
+于是也可以得到f(x,y)=f(x-1,y-1)+f(x-y,y)<br />
+由于数学能力有限，暂不清楚是否有收敛的形式。  </p>
+
+<h3 id="section-2">3. 小球有区别，盒子无区别</h3>
+<p>这实际上就是<a href="http://en.wikipedia.org/wiki/Stirling_number">第二类Stirling数</a><br />
+设S(x,y)表示x个有区别小球放入y个无区别盒子的方法数。那么考虑某个特定小球：<br />
+如果它单独放到了某个盒子里，去掉这个盒子的话，就转化为x-1个小球放入y-1个盒子的情况，即S(x-1,y-1)。<br />
+如果它和其他的小球共同在一个盒子里，那么去掉这个小球，就转化为x-1个小球放入y个盒子的情况，这个小球可以在y个盒子里任意一个，共y种情况，共y<em>S(x-1,y)种情况<br />
+所以：S(x,y)=S(x-1,y-1)+y</em>S(x-1,y)<br />
+初始条件为：S(x,1)=S(x,x)=1  </p>
+
+<h3 id="section-3">4. 小球有区别，盒子有区别</h3>
+<p>和上边的情况类似，只是加了盒子有区别，那么当分好小球后，再加上盒子的排列数就好了，共有m!S(n,m)种放法。  </p>
+
+<p>by delta</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-12T21:02:00+08:00" pubdate data-updated="true">Oct 12<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/combination/'>combination</a>, <a class='category' href='/blog/categories/mathematics/'>mathematics</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/10/12/n-ball-2-m-box/#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2012
+
+    delta
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'delta4d';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://delta4d.github.com/blog/2012/10/12/n-ball-2-m-box/';
+        var disqus_url = 'http://delta4d.github.com/blog/2012/10/12/n-ball-2-m-box/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-36393620-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>
