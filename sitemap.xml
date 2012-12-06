@@ -2,46 +2,50 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://delta4d.github.com/blog/2011/03/19/hello-world/</loc>
-        <lastmod>2012-11-23T20:11:13+08:00</lastmod>
+        <lastmod>2012-11-28T10:34:58+08:00</lastmod>
     </url>
     <url>
         <loc>http://delta4d.github.com/blog/2012/10/12/n-ball-2-m-box/</loc>
-        <lastmod>2012-11-23T19:58:27+08:00</lastmod>
+        <lastmod>2012-11-28T10:34:58+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://delta4d.github.com/blog/2012/11/10/hello-world/</loc>
+        <lastmod>2012-11-28T10:34:58+08:00</lastmod>
     </url>
     <url>
         <loc>http://delta4d.github.com/blog/2012/11/10/use-octopress-on-a-new-computer/</loc>
-        <lastmod>2012-11-12T00:10:56+08:00</lastmod>
+        <lastmod>2012-11-28T10:34:58+08:00</lastmod>
     </url>
     <url>
         <loc>http://delta4d.github.com/blog/2012/11/11/latex-test/</loc>
-        <lastmod>2012-11-12T00:08:50+08:00</lastmod>
+        <lastmod>2012-11-28T10:34:58+08:00</lastmod>
     </url>
     <url>
         <loc>http://delta4d.github.com/blog/2012/11/14/chu-deng-shu-lun-100ti/</loc>
-        <lastmod>2012-11-17T00:12:02+08:00</lastmod>
+        <lastmod>2012-11-28T10:34:58+08:00</lastmod>
     </url>
     <url>
         <loc>http://delta4d.github.com/blog/2012/11/16/vim-function-already-exists/</loc>
-        <lastmod>2012-11-17T00:09:17+08:00</lastmod>
+        <lastmod>2012-11-28T10:34:58+08:00</lastmod>
     </url>
     <url>
         <loc>http://delta4d.github.com/blog/2012/11/23/evince-display-chinese-wrong/</loc>
-        <lastmod>2012-11-23T19:18:17+08:00</lastmod>
+        <lastmod>2012-11-28T10:34:58+08:00</lastmod>
     </url>
     <url>
         <loc>http://delta4d.github.com/x/</loc>
-        <lastmod>2012-11-16T22:47:47+08:00</lastmod>
+        <lastmod>2012-12-04T22:33:04+08:00</lastmod>
     </url>
     <url>
         <loc>http://delta4d.github.com/blog/archives/</loc>
-        <lastmod>2012-11-23T20:11:13+08:00</lastmod>
+        <lastmod>2012-11-28T10:34:58+08:00</lastmod>
     </url>
     <url>
         <loc>http://delta4d.github.com/</loc>
-        <lastmod>2012-11-23T20:11:13+08:00</lastmod>
+        <lastmod>2012-11-28T10:34:58+08:00</lastmod>
     </url>
     <url>
         <loc>http://delta4d.github.com/aboutme/</loc>
-        <lastmod>2012-11-10T19:33:22+08:00</lastmod>
+        <lastmod>2012-11-28T10:34:58+08:00</lastmod>
     </url>
 </urlset>
