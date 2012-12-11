@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ACM | LOST]]></title>
+  <link href="http://delta4d.github.com/blog/categories/acm/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.com/"/>
+  <updated>2012-12-11T23:35:55+08:00</updated>
+  <id>http://delta4d.github.com/</id>
+  <author>
+    <name><![CDATA[delta]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ACM集训队选拔结束]]></title>
+    <link href="http://delta4d.github.com/blog/2011/06/12/acm-team-selection/"/>
+    <updated>2011-06-12T20:41:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2011/06/12/acm-team-selection</id>
+    <content type="html"><![CDATA[<p>集训队选拔在这一周结束了，周末两场比赛，一场第二，一场第七，ym并且祝贺第一次AK的<a href="http://vsforever.co.cc/blog/">vout</a>，拿下了最后一场选拔赛的第一名。</p>
+
+<p>这两场比赛对我刺激还是比较大的，由于数列题较多，我大多都是程序或人肉出前几个数据然后去<a href="http://oeis.org/">数列百科</a>搜出递推公式然后AC的，但是这个在真正比赛中明显是不可以的，所以这两场对于我来说水分很大，以后要好好加强这方面的训练。</p>
+
+<p>记着去年暑假集训的时候，有很多场比赛有那么一道题除我之外其他人全部做出来了，有几场比赛都是以0题结束全场比赛，那种感觉真的异常失落和无奈，但是我依然很喜欢集训队的氛围，里面都是一群可爱的人啊。</p>
+
+<p>只希望今年能够拼尽全力不留遗憾吧。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[2011-05-22]]></title>
+    <link href="http://delta4d.github.com/blog/2011/05/22/2011-05-22/"/>
+    <updated>2011-05-22T23:00:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2011/05/22/2011-05-22</id>
+    <content type="html"><![CDATA[<p>这个礼拜继续着集训队的选拔，有两场比赛，结果比预想的好，一次第二，一次第六。总的感觉就是不要怕麻烦，要迎头去写，这两次最终都是做出了这种以前很不愿意写的麻烦题，才是排名上升的，对自己的激励是比较大的。今天的比赛收获比较大，学到了一个新的解法，<a href="http://www.matrix67.com/blog/archives/276">矩阵求幂</a>，其实和指数二分求幂是一样的，关键是你能不能将问题用矩阵的形式表现出来。还有5场比赛，好好加油吧。</p>
+
+<p>最近发现做事情的时候时间过得很快，不做事的时候时间也很快，&gt;_&lt;，今天晚上准备把软工课程的project传到校内免费空间上试试的，没想到就这么搞了一晚上还没搞好，因为工程是用zend frmaework做的，起初传上去的时候显示403，经过尝试发现只要把.htaccess文件删掉就好了，登录页显示出来了，但是登录的时候又会产生一大片出错信息，各种找不到啊，觉得应该是删除了.htaccess的问题，就上网查了下怎么配置这个文件，quitely weep，没搞定啊。不过晚上到也不是一点收获都没有，学到了好多mysql的东西，又在空间上折腾了下wordpress，自己配置了一下，装了插件和主题，算是把基本操作熟悉了下。</p>
+
+<p>就这么多吧……</p>
+]]></content>
+  </entry>
+  
+</feed>

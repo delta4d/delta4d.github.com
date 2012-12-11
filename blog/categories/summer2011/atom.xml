@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: summer2011 | LOST]]></title>
+  <link href="http://delta4d.github.com/blog/categories/summer2011/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.com/"/>
+  <updated>2012-12-11T23:35:55+08:00</updated>
+  <id>http://delta4d.github.com/</id>
+  <author>
+    <name><![CDATA[delta]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ACM集训队选拔结束]]></title>
+    <link href="http://delta4d.github.com/blog/2011/06/12/acm-team-selection/"/>
+    <updated>2011-06-12T20:41:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2011/06/12/acm-team-selection</id>
+    <content type="html"><![CDATA[<p>集训队选拔在这一周结束了，周末两场比赛，一场第二，一场第七，ym并且祝贺第一次AK的<a href="http://vsforever.co.cc/blog/">vout</a>，拿下了最后一场选拔赛的第一名。</p>
+
+<p>这两场比赛对我刺激还是比较大的，由于数列题较多，我大多都是程序或人肉出前几个数据然后去<a href="http://oeis.org/">数列百科</a>搜出递推公式然后AC的，但是这个在真正比赛中明显是不可以的，所以这两场对于我来说水分很大，以后要好好加强这方面的训练。</p>
+
+<p>记着去年暑假集训的时候，有很多场比赛有那么一道题除我之外其他人全部做出来了，有几场比赛都是以0题结束全场比赛，那种感觉真的异常失落和无奈，但是我依然很喜欢集训队的氛围，里面都是一群可爱的人啊。</p>
+
+<p>只希望今年能够拼尽全力不留遗憾吧。</p>
+]]></content>
+  </entry>
+  
+</feed>

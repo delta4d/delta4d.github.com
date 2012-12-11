@@ -3,12 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Evince中文显示错误 - LOST</title>
+	<title>二次曲线的判断 - LOST</title>
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="今天用Evince打开一个pdf，本来应该显示中文的地方都是空白，google后发现是poppler的问题，缺少了编码集poppler-data，那么安装好这个包就可一了 on debian 1
-sudo apt-get install poppler-data on archlinux 1 &hellip;">
+	<meta name="description" content="之所以想起这个问题是因为ZOJ3488，题目是说给定二次曲线方程ax^2+bxy+c^2+dx+ey+f=0，判断曲线类型，其中保证曲线肯定存在且b=0，我准备更一般的来研究一下这个问题 若b=0，则： 1.1 a或c中有一个为0，则位抛物线 1.2 方程可以化为：a(x+d/(2a))^2+c( &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,20 +107,60 @@ sudo apt-get install poppler-data on archlinux 1 &hellip;">
 		
 	
 	<div id="content" class="inner"><article class="post">
-	<h1 class="title">Evince中文显示错误</h1>
-	<div class="entry-content"><p>今天用Evince打开一个pdf，本来应该显示中文的地方都是空白，google后发现是<a href="http://poppler.freedesktop.org">poppler</a>的问题，缺少了编码集poppler-data，那么安装好这个包就可一了</p>
+	<h1 class="title">二次曲线的判断</h1>
+	<div class="entry-content"><p>之所以想起这个问题是因为<a href="http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=3488">ZOJ3488</a>，题目是说给定二次曲线方程ax^2+bxy+c^2+dx+ey+f=0，判断曲线类型，其中保证曲线肯定存在且b=0，我准备更一般的来研究一下这个问题</p>
 
-<p>on debian</p>
+<ol>
+  <li>若b=0，则：</li>
+</ol>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">sudo apt-get install poppler-data</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>1.1 a或c中有一个为0，则位抛物线</p>
 
-<p>on archlinux</p>
+<p>1.2 方程可以化为：a(x+d/(2a))^2+c(y+e/(2c))^2=d^2/(4a)+e^2/(4c)-f</p>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">sudo pacman -S poppler-data</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>记D=d^2/(4a)+e^2/(4c)-f</p>
 
-<p>于是基于poppler的pdf阅读器就都有可能出现这个问题，详见<a href="http://en.wikipedia.org/wiki/Poppler_(software)#PDF_readers_using_Poppler">PDF Readers Using Poppler</a></p>
+<p>若D=0，则该方程表示点(-d/(2a), -e/(2c))</p>
+
+<p>若ac&gt;0,a=c,acD&gt;0,则表示圆</p>
+
+<p>若ac&gt;0,a!=c,acD&gt;0,则表示椭圆</p>
+
+<p>若ac&lt;0,表示双曲线</p>
+
+<p>其他情况方程不表示任何曲线，方程有误</p>
+
+<ol>
+  <li>若b!=0，则：</li>
+</ol>
+
+<p>ax^2+bxy+cy^2+dx+ey+f=0 ———–（1）</p>
+
+<p>做旋转变换z‘=z<em>e^(i</em>t)</p>
+
+<p>那么x=x<em>cos(t)-y</em>sin(t), y=x<em>sin(t)+y</em>cos(t)</p>
+
+<p>带入（1）则xy项的系数为：</p>
+
+<p>-2a<em>cos(t)sin(t)+b(cos(t)</em>cos(t)-sin(t)<em>sin(t))+2c</em>sin(t)cos(t)</p>
+
+<p>=-a<em>sin(2t)+b</em>cos(2t)+c*sin(2t)</p>
+
+<p>=(c-a)sin(2t)+b*cos(2t)</p>
+
+<p>令它为0，则tan(2t)=b/(a-c)，当a=c时 tan(2t)=infinity，2t=pi/2</p>
+
+<p>因为tan(2t)=b/(a-c)</p>
+
+<p>那么cos(2t)=(a-c)/sqrt(b^2+(a-c)^2)，sin(2t)=b/sqrt(b^2+(a-c)^2)</p>
+
+<p>(a<em>cos^2(t)+b</em>sin(t)cos(t)+c<em>sin^2(t))x^2+(a</em>sin^2(t)-b<em>sin(t)cos(t)+c</em>cos^2(t))y^2+(d<em>cos(t)+c</em>sin(t))x+(-d<em>sin(t)+c</em>cos(t))y+e=0</p>
+
+<p>(a<em>(1+cos(2t)/2)+b</em>sin(2t)/2+c<em>(1-cos(2t))/2)x^2+(a</em>(1-cos(2t)/2)-b<em>sin(2t)/2+c</em>(1+cos(2t))/2)y^2+(c<em>sin(t))x+(-d</em>sin(t)+c*cos(t))y+e=0</p>
+
+<p>(a+c+sqrt(b^2+(a-c)^2))/2<em>x^2+(a+c-sqrt(b^2+(a-c)^2))/2</em>y^2+c<em>sin(t))x+(-d</em>sin(t)+c*cos(t))y+e=0</p>
+
+<p>转化为情况1</p>
 </div>
 
 
@@ -138,16 +177,16 @@ sudo apt-get install poppler-data on archlinux 1 &hellip;">
   
 
 
-<time datetime="2012-11-23T19:06:00+08:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2012</time></div>
+<time datetime="2011-04-20T19:31:00+08:00" pubdate data-updated="true">Apr 20<span>th</span>, 2011</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/evince/'>evince</a>, <a class='category' href='/blog/categories/linux/'>linux</a>
+	<a class='category' href='/blog/categories/conic/'>conic</a>, <a class='category' href='/blog/categories/mathematics/'>mathematics</a>
 
 
 </div>
 	
-		<span class="comments"><a href="/blog/2012/11/23/evince-display-chinese-wrong/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2011/04/20/conic-judgement/#disqus_thread">Comments</a></span>
 	
 </div></article>
 
@@ -190,8 +229,8 @@ sudo apt-get install poppler-data on archlinux 1 &hellip;">
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://delta4d.github.com/blog/2012/11/23/evince-display-chinese-wrong/';
-        var disqus_url = 'http://delta4d.github.com/blog/2012/11/23/evince-display-chinese-wrong/';
+        var disqus_identifier = 'http://delta4d.github.com/blog/2011/04/20/conic-judgement/';
+        var disqus_url = 'http://delta4d.github.com/blog/2011/04/20/conic-judgement/';
         var disqus_script = 'embed.js';
       
     (function () {
