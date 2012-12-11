@@ -3,7 +3,7 @@ layout: post
 title: "Evince中文显示错误"
 date: 2012-11-23 19:06
 comments: true
-categories: ["Linux","Evince"]
+categories: ["linux","evince"]
 ---
 
 今天用Evince打开一个pdf，本来应该显示中文的地方都是空白，google后发现是[poppler](http://poppler.freedesktop.org)的问题，缺少了编码集poppler-data，那么安装好这个包就可一了
