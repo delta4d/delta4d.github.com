@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "hello, world!"
-date: 2011-03-19 1:31
+date: 2011-03-19 01:31
 comments: true
 categories: test
 ---
