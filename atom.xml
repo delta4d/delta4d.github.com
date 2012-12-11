@@ -4,7 +4,7 @@
   <title><![CDATA[LOST]]></title>
   <link href="http://delta4d.github.com/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2012-12-04T22:33:14+08:00</updated>
+  <updated>2012-12-11T23:06:24+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -12,6 +12,182 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[linux终端在同一行输出结果]]></title>
+    <link href="http://delta4d.github.com/blog/2012/12/11/sh-deleting-one-line/"/>
+    <updated>2012-12-11T16:00:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2012/12/11/sh-deleting-one-line</id>
+    <content type="html"><![CDATA[<p>最近了解了一下<a href="http://dwm.suckless.org/">dwm</a>，想定制下状态栏，于是首先想写一个检测内存的脚本。脚本并不复杂，但仍然用了好多时间来查找资料，使用linux果然还是要多写程序脚本啊。</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>mem_used.sh  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#!/bin/bash</span>
+</span><span class="line">
+</span><span class="line"><span class="k">function </span>get_mem_used <span class="o">{</span>
+</span><span class="line">	<span class="nb">eval</span> <span class="sb">`</span>free -m | awk <span class="s1">&#39;NR==3 {printf &quot;used=%.2lf per=%.2lf&quot;, $3, 100*$3/($3+$4)}&#39;</span><span class="sb">`</span>
+</span><span class="line">	<span class="nb">echo</span> <span class="s2">&quot;MEM:$per%($used MB)&quot;</span>
+</span><span class="line"><span class="o">}</span>
+</span><span class="line">
+</span><span class="line"><span class="k">while </span><span class="nb">true</span>; <span class="k">do</span>
+</span><span class="line"><span class="k">	</span><span class="nb">echo</span> <span class="k">$(</span>get_mem_used<span class="k">)</span>
+</span><span class="line">	sleep 1
+</span><span class="line"><span class="k">done</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>将会产生如下的输出：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">MEM:25.07%(758.00 MB)
+</span><span class="line">MEM:25.04%(757.00 MB)
+</span><span class="line">MEM:25.07%(758.00 MB)</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>然后我就想如何能让每条记录都在同一行更新，man echo will be helpful。首先使用-e选项开启转义符，\b即为退格</p>
+
+<p>于是可以这样</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">echo -e "foo"
+</span><span class="line">echo -e "\b\b\bbar"</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>但是echo默认输出了换行，于是需要开启-n去掉换行</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">echo -ne "foo"
+</span><span class="line">echo -ne "\rbar"</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>这样将会产生正确输出，但是这样太麻烦了，有些时候\b太多，有些时候甚至不能确定有多少个\b</p>
+
+<p>于是可以使用\r，它的作用是使当前光标回到当前行首</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">echo -ne "foo"
+</span><span class="line">echo -ne "\rbar"</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>这样就可以了。但是当每次记录长度不一样时还是会出错，比如</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">echo -ne "barbar"
+</span><span class="line">echo -ne "\rfoo"</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>这样会输出foobar而不是foo</p>
+
+<p>后来查阅资料说可以使用<a href="http://wiki.bash-hackers.org/scripting/terminalcodes">terminalcodes</a></p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">echo -ne "barbar"
+</span><span class="line">echo -ne "\033[1K\rfoo"</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>即首先清空行首到当前位置的内容，然后光标回行首，再输出foo</p>
+
+<p>利用以上说的便可以实现很多linux程序等待时出现的<code>/|\-</code>旋转效果</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>rotate.sh  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#!/bin/bash</span>
+</span><span class="line">
+</span><span class="line"><span class="k">function </span>rotate <span class="o">{</span>
+</span><span class="line">	<span class="nv">cnt</span><span class="o">=</span>0
+</span><span class="line">	<span class="k">while </span><span class="nb">true</span>; <span class="k">do</span>
+</span><span class="line"><span class="k">		case</span> <span class="nv">$cnt</span> in
+</span><span class="line">			0<span class="o">)</span> <span class="nb">echo</span> -ne <span class="s2">&quot;|\r&quot;</span>;;
+</span><span class="line">			1<span class="o">)</span> <span class="nb">echo</span> -ne <span class="s2">&quot;/\r&quot;</span>;;
+</span><span class="line">			2<span class="o">)</span> <span class="nb">echo</span> -ne <span class="s2">&quot;-\r&quot;</span>;;
+</span><span class="line">			3<span class="o">)</span> <span class="nb">echo</span> -ne <span class="s2">&quot;\\r&quot;</span>;;
+</span><span class="line">			*<span class="o">)</span> <span class="nb">exit</span> -1;;
+</span><span class="line">		<span class="k">esac</span>
+</span><span class="line"><span class="k">		</span>sleep 0.2
+</span><span class="line">		<span class="o">((</span> <span class="nv">cnt</span><span class="o">=(</span>cnt+1<span class="o">)</span>%4 <span class="o">))</span>
+</span><span class="line">	<span class="k">done</span>
+</span><span class="line"><span class="o">}</span>
+</span><span class="line">
+</span><span class="line">rotate
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[家路]]></title>
+    <link href="http://delta4d.github.com/blog/2012/12/10/music-moved/"/>
+    <updated>2012-12-10T22:23:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2012/12/10/music-moved</id>
+    <content type="html"><![CDATA[<p>平常听歌都喜欢随便在豆瓣虾米百度什么的打开随便听听，今天偶然听到一阵旋律，眼角突然就挂上了泪，是一首日本歌，其实歌词也不懂，但突然就很有感触。是<a href="http://ja.wikipedia.org/wiki/%E4%B8%AD%E5%AD%9D%E4%BB%8B">中孝介</a>的”家路”，我原来只是不知不觉想家了。</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">ひそやかに 影を落とす					华灯初上，影子静静地
+</span><span class="line">夕映えの街に 灯がともる顷					留在泻满夕阳的大街上
+</span><span class="line">未知し风 吹かれて君は					被陌生的风吹拂著的你
+</span><span class="line">离れた空の下 何を想う					在他乡想著什麼呢
+</span><span class="line">足早に过ぎゆく夕空に飞び立つ					如同掠过暮霭而
+</span><span class="line">鸟の群れが家路を辿るように					归巢的那群鸟一样
+</span><span class="line">ここへ戻っておいで君の休まる场所へ				回来吧，沿著归途
+</span><span class="line">空の向こうで明日が手招いてる					在天空的彼端，明日正在召唤
+</span><span class="line">いくつもの梦を数え						屈指可数的梦
+</span><span class="line">谁もが答えを探している					谁都在追寻著答案
+</span><span class="line">足早に行き交う人波に 纷れて					清晨急匆匆的人群
+</span><span class="line">君らしさを见失ったなら					模糊了你的模样
+</span><span class="line">ここへ戻っておいで羽を休める场所へ				回来吧，沿著归途
+</span><span class="line">今日という日を好きになれますように				珍惜每一个今天
+</span><span class="line">今君が流した いとしいその涙が					而今，若为擦乾你的泪光
+</span><span class="line">乾くのなら仆は风にでもなろう					我愿意化作清风
+</span><span class="line">ここへ戻っておいで君の休まる场所へ				回来吧，沿著归途
+</span><span class="line">相変わらずの笑颜で						用不变的笑容
+</span><span class="line">明日を恙无(つつがな)く过ごせますように				祈愿明天平安顺利</span></code></pre></td></tr></table></div></figure></notextile></div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Evince中文显示错误]]></title>
@@ -131,29 +307,6 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[hello, world!]]></title>
-    <link href="http://delta4d.github.com/blog/2012/11/10/hello-world/"/>
-    <updated>2012-11-10T18:32:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2012/11/10/hello-world</id>
-    <content type="html"><![CDATA[
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-</pre></td><td class="code"><pre><code class="cpp"><span class="line"><span class="cp">#include &lt;iostream&gt;</span>
-</span><span class="line">
-</span><span class="line"><span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-</span><span class="line">	<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;hello,world!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-</span><span class="line">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class="line"><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[n个小球放进m个盒子]]></title>
     <link href="http://delta4d.github.com/blog/2012/10/12/n-ball-2-m-box/"/>
     <updated>2012-10-12T21:02:00+08:00</updated>
@@ -192,6 +345,67 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
 <p>和上边的情况类似，只是加了盒子有区别，那么当分好小球后，再加上盒子的排列数就好了，共有m!S(n,m)种放法。  </p>
 
 <p>by delta</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Archlinux开机加载NTFS分区]]></title>
+    <link href="http://delta4d.github.com/blog/2011/09/06/archlinux-load-ntfs-partion-at-boot/"/>
+    <updated>2011-09-06T09:47:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2011/09/06/archlinux-load-ntfs-partion-at-boot</id>
+    <content type="html"><![CDATA[<p>修改/etc/fstab文件，添加如下内容：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">/dev/sda1 /media/sda1 ntfs-3g defaults,locale=zh_CN.UTF8 0 0
+</span><span class="line">/dev/sda2 /media/sda2 ntfs-3g defaults,locale=zh_CN.UTF8 0 0</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>需要注意几点：</p>
+
+<ol>
+  <li>/dev/sdax为电脑上对应的分区，视具体情况而定</li>
+  <li>/media/sdax为/media中的目录需要提前建立好，名字任意</li>
+  <li>ntfs-3g需要提前安装好，其后所接的参数可以通过手册来查询</li>
+</ol>
+
+<p>reference:</p>
+
+<ul>
+  <li><a href="http://en.wikipedia.org/wiki/Fstab">fstab具体参数意义及书写格式</a></li>
+  <li>man fstab</li>
+</ul>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[todolist 2011]]></title>
+    <link href="http://delta4d.github.com/blog/2011/04/06/todolist-2011/"/>
+    <updated>2011-04-06T22:31:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2011/04/06/todolist-2011</id>
+    <content type="html"><![CDATA[<p>校赛之后状态一直很差，做了两场比赛，AC都不超过两道，AC的还都是用三四次WA换来的。
+曾经给自己立下过很多目标，现如今都已随风而去。
+今天不知为何居然蛋疼的想写日志，给自己立些目标吧，毕竟我也快大四了……</p>
+
+<ol>
+  <li>多做在线比赛，尤其是Codeforces的和Topcoder的</li>
+  <li>每场比赛后都要写解题报告</li>
+  <li>多和同学交流</li>
+  <li>多瞻仰大牛代码和博客</li>
+  <li>先努力进入集训队，再努力进入校队</li>
+  <li>学习python</li>
+  <li>学习网页的开发，网络编程</li>
+  <li>看《具体数学》，做完练习题</li>
+  <li>专业课程学习也要抓紧，经过3年的实践，我发现还是成绩考得高点心里比较舒服，嗯嗯</li>
+  <li>好好考虑自己的未来，到底考研还是不考呢？？</li>
+  <li>为Arsenal祈福，甭管啥冠军，赶紧拿一个先，还有门将赶紧给换掉吧</li>
+  <li>多做运动，少玩游戏</li>
+  <li>星期四看火影，星期天看海贼和柯南</li>
+  <li>看美剧的时候不带字幕看一遍，带着英文字幕再看一遍</li>
+  <li>晚上不洗澡的话，尽量洗洗脚</li>
+  <li>嗯，先这样吧</li>
+</ol>
+
+<p>一年后的今天，看着这些文字，不知道我会有什么样的表情……</p>
 ]]></content>
   </entry>
   

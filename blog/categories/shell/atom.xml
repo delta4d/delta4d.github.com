@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: linux | LOST]]></title>
-  <link href="http://delta4d.github.com/blog/categories/linux/atom.xml" rel="self"/>
+  <title><![CDATA[Category: shell | LOST]]></title>
+  <link href="http://delta4d.github.com/blog/categories/shell/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
   <updated>2012-12-11T23:06:24+08:00</updated>
   <id>http://delta4d.github.com/</id>
@@ -136,35 +136,6 @@ echo -ne "\033[1K\rfoo"
 </span><span class='line'>
 </span><span class='line'>&lt;p&gt;rotate
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Archlinux开机加载NTFS分区]]></title>
-    <link href="http://delta4d.github.com/blog/2011/09/06/archlinux-load-ntfs-partion-at-boot/"/>
-    <updated>2011-09-06T09:47:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/09/06/archlinux-load-ntfs-partion-at-boot</id>
-    <content type="html"><![CDATA[<p>修改/etc/fstab文件，添加如下内容：</p>
-
-<p><code>
-/dev/sda1 /media/sda1 ntfs-3g defaults,locale=zh_CN.UTF8 0 0
-/dev/sda2 /media/sda2 ntfs-3g defaults,locale=zh_CN.UTF8 0 0
-</code></p>
-
-<p>需要注意几点：</p>
-
-<ol>
-  <li>/dev/sdax为电脑上对应的分区，视具体情况而定</li>
-  <li>/media/sdax为/media中的目录需要提前建立好，名字任意</li>
-  <li>ntfs-3g需要提前安装好，其后所接的参数可以通过手册来查询</li>
-</ol>
-
-<p>reference:</p>
-
-<ul>
-  <li><a href="http://en.wikipedia.org/wiki/Fstab">fstab具体参数意义及书写格式</a></li>
-  <li>man fstab</li>
-</ul>
 ]]></content>
   </entry>
   
