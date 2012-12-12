@@ -1,0 +1,11 @@
+---
+layout: post
+title: "summer2011 goes on"
+date: 2011-08-17 18:30
+comments: true
+categories: ["summer2011"]
+---
+
+虽然7月份集训选拔并没有进入前15，但是由于前面有同学不参加比赛所以很幸运可以参加8月份的集训，并且能够和[肥羊](http://hi.baidu.com/sheep_finalfreedom)和[riversouther](http://hi.baidu.com/riversouthers)组成一队来参加比赛着实让我感觉非常非常的开心和幸运。
+
+集训于昨天已经开始了，一切都是新鲜的，感觉还是很好的，昨天加了ZJU的ACM群，看到hhgg在群里说welcome delta，霎时感觉有一种强烈的归属感，总之是很开心啦，接下来的时间我也要好好努力！
