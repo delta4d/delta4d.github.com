@@ -1,0 +1,362 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>LOST</title>
+	<meta name="author" content="delta">
+
+	
+	<meta name="description" content="之所以想起这个问题是因为ZOJ3488，题目是说给定二次曲线方程ax^2+bxy+c^2+dx+ey+f=0，判断曲线类型，其中保证曲线肯定存在且b=0，我准备更一般的来研究一下这个问题 若b=0，则： 1.1 a或c中有一个为0，则位抛物线 1.2 方程可以化为：a(x+d/(2a))^2+c &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="LOST" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">LOST</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+	<li><a href="/aboutme">AboutMe</a></li>
+	<li><a href="/x">X</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+	<li><a href="/aboutme">AboutMe</a></li>
+	<li><a href="/x">X</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:delta4d.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:delta4d.github.com">
+	</form>
+</nav>
+
+</header>
+	
+		
+	
+	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2011/04/20/conic-judgement/">二次曲线的判断</a></h1>
+	<div class="entry-content">
+		<p>之所以想起这个问题是因为<a href="http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=3488">ZOJ3488</a>，题目是说给定二次曲线方程ax^2+bxy+c^2+dx+ey+f=0，判断曲线类型，其中保证曲线肯定存在且b=0，我准备更一般的来研究一下这个问题</p>
+
+<ol>
+  <li>若b=0，则：</li>
+</ol>
+
+<p>1.1 a或c中有一个为0，则位抛物线</p>
+
+<p>1.2 方程可以化为：a(x+d/(2a))^2+c(y+e/(2c))^2=d^2/(4a)+e^2/(4c)-f</p>
+
+<p>记D=d^2/(4a)+e^2/(4c)-f</p>
+
+<p>若D=0，则该方程表示点(-d/(2a), -e/(2c))</p>
+
+<p>若ac&gt;0,a=c,acD&gt;0,则表示圆</p>
+
+<p>若ac&gt;0,a!=c,acD&gt;0,则表示椭圆</p>
+
+<p>若ac&lt;0,表示双曲线</p>
+
+<p>其他情况方程不表示任何曲线，方程有误</p>
+
+<ol>
+  <li>若b!=0，则：</li>
+</ol>
+
+<p>ax^2+bxy+cy^2+dx+ey+f=0 ———–（1）</p>
+
+<p>做旋转变换z‘=z<em>e^(i</em>t)</p>
+
+<p>那么x=x<em>cos(t)-y</em>sin(t), y=x<em>sin(t)+y</em>cos(t)</p>
+
+<p>带入（1）则xy项的系数为：</p>
+
+<p>-2a<em>cos(t)sin(t)+b(cos(t)</em>cos(t)-sin(t)<em>sin(t))+2c</em>sin(t)cos(t)</p>
+
+<p>=-a<em>sin(2t)+b</em>cos(2t)+c*sin(2t)</p>
+
+<p>=(c-a)sin(2t)+b*cos(2t)</p>
+
+<p>令它为0，则tan(2t)=b/(a-c)，当a=c时 tan(2t)=infinity，2t=pi/2</p>
+
+<p>因为tan(2t)=b/(a-c)</p>
+
+<p>那么cos(2t)=(a-c)/sqrt(b^2+(a-c)^2)，sin(2t)=b/sqrt(b^2+(a-c)^2)</p>
+
+<p>(a<em>cos^2(t)+b</em>sin(t)cos(t)+c<em>sin^2(t))x^2+(a</em>sin^2(t)-b<em>sin(t)cos(t)+c</em>cos^2(t))y^2+(d<em>cos(t)+c</em>sin(t))x+(-d<em>sin(t)+c</em>cos(t))y+e=0</p>
+
+<p>(a<em>(1+cos(2t)/2)+b</em>sin(2t)/2+c<em>(1-cos(2t))/2)x^2+(a</em>(1-cos(2t)/2)-b<em>sin(2t)/2+c</em>(1+cos(2t))/2)y^2+(c<em>sin(t))x+(-d</em>sin(t)+c*cos(t))y+e=0</p>
+
+<p>(a+c+sqrt(b^2+(a-c)^2))/2<em>x^2+(a+c-sqrt(b^2+(a-c)^2))/2</em>y^2+c<em>sin(t))x+(-d</em>sin(t)+c*cos(t))y+e=0</p>
+
+<p>转化为情况1</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-20T19:31:00+08:00" pubdate data-updated="true">Apr 20<span>th</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/conic/'>conic</a>, <a class='category' href='/blog/categories/mathematics/'>mathematics</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2011/04/20/conic-judgement//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2011/04/06/todolist-2011/">Todolist 2011</a></h1>
+	<div class="entry-content">
+		<p>校赛之后状态一直很差，做了两场比赛，AC都不超过两道，AC的还都是用三四次WA换来的。
+曾经给自己立下过很多目标，现如今都已随风而去。
+今天不知为何居然蛋疼的想写日志，给自己立些目标吧，毕竟我也快大四了……</p>
+
+<ol>
+  <li>多做在线比赛，尤其是Codeforces的和Topcoder的</li>
+  <li>每场比赛后都要写解题报告</li>
+  <li>多和同学交流</li>
+  <li>多瞻仰大牛代码和博客</li>
+  <li>先努力进入集训队，再努力进入校队</li>
+  <li>学习python</li>
+  <li>学习网页的开发，网络编程</li>
+  <li>看《具体数学》，做完练习题</li>
+  <li>专业课程学习也要抓紧，经过3年的实践，我发现还是成绩考得高点心里比较舒服，嗯嗯</li>
+  <li>好好考虑自己的未来，到底考研还是不考呢？？</li>
+  <li>为Arsenal祈福，甭管啥冠军，赶紧拿一个先，还有门将赶紧给换掉吧</li>
+  <li>多做运动，少玩游戏</li>
+  <li>星期四看火影，星期天看海贼和柯南</li>
+  <li>看美剧的时候不带字幕看一遍，带着英文字幕再看一遍</li>
+  <li>晚上不洗澡的话，尽量洗洗脚</li>
+  <li>嗯，先这样吧</li>
+</ol>
+
+<p>一年后的今天，看着这些文字，不知道我会有什么样的表情……</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-04-06T22:31:00+08:00" pubdate data-updated="true">Apr 6<span>th</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/life/'>life</a>, <a class='category' href='/blog/categories/todolist/'>todolist</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2011/04/06/todolist-2011//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2011/03/19/hello-world/">Hello, World!</a></h1>
+	<div class="entry-content">
+		
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="cp">#include &lt;stdio.h&gt;</span>
+</span><span class="line">
+</span><span class="line"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="line">	<span class="n">printf</span><span class="p">(</span><span class="s">&quot;hello,world!&quot;</span><span class="p">);</span>
+</span><span class="line">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-19T01:31:00+08:00" pubdate data-updated="true">Mar 19<span>th</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/test/'>test</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2011/03/19/hello-world//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+<nav id="pagenavi">
+    
+        <a href="/blog/page/2/" class="prev">Prev</a>
+    
+    
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2012
+
+    delta
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'delta4d';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-36393620-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>

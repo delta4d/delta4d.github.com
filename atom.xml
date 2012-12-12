@@ -4,7 +4,7 @@
   <title><![CDATA[LOST]]></title>
   <link href="http://delta4d.github.com/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2012-12-11T23:39:26+08:00</updated>
+  <updated>2012-12-12T16:31:18+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -167,23 +167,23 @@
 <span class="line-number">17</span>
 <span class="line-number">18</span>
 <span class="line-number">19</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">ひそやかに 影を落とす					华灯初上，影子静静地
+</pre></td><td class="code"><pre><code class=""><span class="line">ひそやかに 影を落とす					华灯初上 影子静静地
 </span><span class="line">夕映えの街に 灯がともる顷					留在泻满夕阳的大街上
 </span><span class="line">未知し风 吹かれて君は					被陌生的风吹拂著的你
 </span><span class="line">离れた空の下 何を想う					在他乡想著什麼呢
 </span><span class="line">足早に过ぎゆく夕空に飞び立つ					如同掠过暮霭而
 </span><span class="line">鸟の群れが家路を辿るように					归巢的那群鸟一样
-</span><span class="line">ここへ戻っておいで君の休まる场所へ				回来吧，沿著归途
-</span><span class="line">空の向こうで明日が手招いてる					在天空的彼端，明日正在召唤
+</span><span class="line">ここへ戻っておいで君の休まる场所へ				回来吧 沿著归途
+</span><span class="line">空の向こうで明日が手招いてる					在天空的彼端 明日正在召唤
 </span><span class="line">いくつもの梦を数え						屈指可数的梦
 </span><span class="line">谁もが答えを探している					谁都在追寻著答案
 </span><span class="line">足早に行き交う人波に 纷れて					清晨急匆匆的人群
 </span><span class="line">君らしさを见失ったなら					模糊了你的模样
-</span><span class="line">ここへ戻っておいで羽を休める场所へ				回来吧，沿著归途
+</span><span class="line">ここへ戻っておいで羽を休める场所へ				回来吧 沿著归途
 </span><span class="line">今日という日を好きになれますように				珍惜每一个今天
-</span><span class="line">今君が流した いとしいその涙が					而今，若为擦乾你的泪光
+</span><span class="line">今君が流した いとしいその涙が					而今 若为擦乾你的泪光
 </span><span class="line">乾くのなら仆は风にでもなろう					我愿意化作清风
-</span><span class="line">ここへ戻っておいで君の休まる场所へ				回来吧，沿著归途
+</span><span class="line">ここへ戻っておいで君の休まる场所へ				回来吧 沿著归途
 </span><span class="line">相変わらずの笑颜で						用不变的笑容
 </span><span class="line">明日を恙无(つつがな)く过ごせますように				祈愿明天平安顺利</span></code></pre></td></tr></table></div></figure></notextile></div>
 ]]></content>
@@ -349,6 +349,116 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[MAC安装记]]></title>
+    <link href="http://delta4d.github.com/blog/2011/11/10/mac-install/"/>
+    <updated>2011-11-10T23:28:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2011/11/10/mac-install</id>
+    <content type="html"><![CDATA[<p>想装MAC纯属瞎折腾，现在装好了也一直扔在那里没有用。。</p>
+
+<p>10月份的时候在试着装Lion，结果每次在安装进度条20%的时候就死掉了，现在装的是东皇SL v3，先说下我的配置：</p>
+
+<p>DELL INSPIRON 1318</p>
+
+<p>网卡 BCM5906(wired)，BCM4312(wireless)</p>
+
+<p>显卡 GeForce 8400M GS</p>
+
+<p>声卡 Sigmatel@Intel 82801(Ich8)</p>
+
+<p>其实装MAC最重要的是看有没有对应的硬件驱动，如果都有的话就差不多了，至于其他的条件，可以到<a href="http://bbs.pcbeta.com/">远景论坛</a>查看。</p>
+
+<p>黑苹果的安装教程一开始看着感觉好多，现在装好了其实也没有几步，下面是在WIN下的安装教程的简单步骤，具体操作还是要自仔细看教程</p>
+
+<ol>
+  <li>
+    <p>现在镜像，分为原版和破解版，破解版安装较为容易，原版以后可以试试，不过看教程都差不太多</p>
+  </li>
+  <li>
+    <p>安装变色龙引导或bootthink</p>
+  </li>
+  <li>
+    <p>将镜像dump到磁盘分区或U盘（工具为Leopard hd install helper），也可以刻盘。如何分区什么的就不说了</p>
+  </li>
+  <li>
+    <p>添加对应kext（内核扩展），通常用于设备驱动程序，放在根目录Extra/Extensions下，一开始只放必要的几个就可以了</p>
+  </li>
+  <li>
+    <p>不断的troubleshooting直至安装成功，我重启了不下二十次，镜像也dump了很多次，这个过程很需要耐心</p>
+  </li>
+  <li>
+    <p>用WINPE将C盘重新设置为活动分区</p>
+  </li>
+  <li>
+    <p>将启动盘下的kext拷到MAC根目录下，接下来还是不断的重启再troubleshooting，这里的kext可能要比安装镜像的多一点</p>
+  </li>
+  <li>
+    <p>装硬件驱动</p>
+  </li>
+</ol>
+
+<p>[备忘]</p>
+
+<p>驱动盘kext：</p>
+
+<p>AppleACPIPS2Nub.kext</p>
+
+<p>ApplePS2Controller.kext</p>
+
+<p>FakeSMC.kext</p>
+
+<p>MAC盘kext:</p>
+
+<p>AppleACPIPS2Nub.kext</p>
+
+<p>ApplePS2Controller.kext</p>
+
+<p>FakeSMC.kext</p>
+
+<p>NullCPUPowerManagement.kext</p>
+
+<p>硬件驱动：</p>
+
+<p>GeForce 8400M GS: Natit.kext</p>
+
+<p>BCM5906: BCM5906MEthernet.kext</p>
+
+<p>Sigmatel@Intel 82801: VoodooHDA.kext</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[2011-10]]></title>
+    <link href="http://delta4d.github.com/blog/2011/11/06/2011-10/"/>
+    <updated>2011-11-06T13:35:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2011/11/06/2011-10</id>
+    <content type="html"><![CDATA[<p>wordpress又被墙了，90代理也挂了一阵，想更新下blog真不容易啊</p>
+
+<p>记过去的10月：</p>
+
+<ol>
+  <li>
+    <p>本不打算读研的我，被肥羊pia去试着保研，最后很幸运的获得外推去上海交大的机会。9月份的时候学校免试生面试，本以为到下午才会轮到我的，结果当下午去后却发现我们组就只剩我一个人没有面试了（人生中的第一次面试就迟到了= =），抽好签拿着英文阅读材料就进去了，总共大概7个老师，看起来都很和蔼。因为迟到了，所以没时间看材料，老师让我当场看然后问了我一个自然段的大概意思，我就说了一句，然后就冷场了，连忙补了句that’s all。后来老师问我认为自己的优点是什么，我顿时哑口无言，坐在凳子上低着头，去回避老师的目光。老师后来说我的目的太不明确了，这样的话没有导师敢要我的。事实上我确实不明白自己会什么，要什么，是什么。过了两天是上机考试，本来以为凭着ACM的基础可以轻松过关的，但实际上却遭遇了很多不顺，最终虽然排名不错但是成绩着实糟糕，正经写出的题目就只有签名题。</p>
+
+    <p>10月初上交那边要面试，我们一共9个人浩浩荡荡就杀往了上海，这是我第一次去上海，第一次坐高铁，第一次做动车，第一次坐地铁。上海并不像脑子里的想象，不过第一印象还是不错的。到了上交后本以为是团面，后来被告知是单面，我暗自庆幸了一下，团面的话我可能除了说下名字后就不会插话了。因为我顺序靠后，听前面面完的同学说有英文自我介绍，我想了一会儿，发现除了名字好像就没什么说的了。到我面试的时候说了不到10秒钟，that’s all之后老师们都很意外，我只能苦笑。后来老师看我成绩不高，又没项目经验，虽然说搞ACM，但是又没有什么获奖经历，前者我只能说平时不努力后者我只好自嘲道成长比较慢。有一个老师问我学的最好的是哪门学科，我很虚的说C语言，幸亏只是问了些基础的数据结构方面的（这和C好像关系不大。。），后来又有老师问我印象最深的学科，我说数学分析，后来问了我一个极限问题：百米世界纪录有没有极限。我听到的第一反应就是完了，后来镇静了一下想到时间肯定是大于0的，就说因为是有界递减序列所以极限存在，其实我很害怕老师追问极限的相关东西了，我实在已经忘的差不多了，后来谢天谢地，老师没有再问，我可能是当时我们组里面试时间最短的了吧。</p>
+
+    <p>ps:写简历的时候我居然先写的英文简历后来翻译成中文，后来一直没有想通为什么。。</p>
+  </li>
+  <li>
+    <p>就在上交面试的那个礼拜周末，我再次去了上海，这是我大学中的第一次ACM/ICPC regional比赛，浙大6支队伍全部出动。</p>
+
+    <p>星期5到了宾馆，和riversouther一个房间，折腾了好一会儿网络，然后晚上去吃饭，赞于指导的bg。第二天行程被安排满了，第一次去复旦，发现大学其实都差不多，只是感觉人出奇的少。晚上吃完晚宴，回宾馆玩了一会儿空轨后追随集训队传统我们队一块看了《非诚勿扰》，第一次完整的看这样的节目，发现还需要习惯一下。据说每成功一对rp++，那天成功了三对，心情不错，大概11点半就睡了。</p>
+
+    <p>星期天比赛前我们三个都蹲了大号，由于找厕所耗费了不少体力= =，我和肥羊还担心riversouther在比赛前能不能赶回来。比赛开始后，1个小时过去了，没有过题…4个小时过去了，没有过题，过得最多的那个题目是真心搞不出来，封board之后，跑了一个小时的表终于跑完了，写了几十兆的程序交上去，后来弹出了一个是否确认提交的窗口，心想这下没戏了，后来居然返回yes。其实最后时刻想乱搞A的，当时有一个想法闪了一下，但是没乱搞，后来听说那样居然可以过，懊恼啊。这场比赛对难度估计不足，4个小时没有过题，加上看错题目，sample是退化三角形，我们居然都没有画一画，而去错误的排除了这种情况。糊里糊涂第一次regional就这样结束了，后来shi哥过来问我们情况，说道还有福州。</p>
+  </li>
+</ol>
+
+<p>ps:FutureGazer普吉加油，RunForDream&amp;PIA福州加油!</p>
+
+<p>pss: FutureGazer普吉夺冠，大赞！！！</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Archlinux开机加载NTFS分区]]></title>
     <link href="http://delta4d.github.com/blog/2011/09/06/archlinux-load-ntfs-partion-at-boot/"/>
     <updated>2011-09-06T09:47:00+08:00</updated>
@@ -374,6 +484,82 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
   <li><a href="http://en.wikipedia.org/wiki/Fstab">fstab具体参数意义及书写格式</a></li>
   <li>man fstab</li>
 </ul>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[开学了]]></title>
+    <link href="http://delta4d.github.com/blog/2011/09/05/school-open/"/>
+    <updated>2011-09-05T21:15:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2011/09/05/school-open</id>
+    <content type="html"><![CDATA[<p>开学第一天，稍微回顾下这个可能是我最后的一个暑假。</p>
+
+<p>7月份在参加ACM的集训，和去年不同的是今年认识了更多的人，一块相互鼓励相互探讨，最终能够一块进入8月份集训名单着实非常开心。期间回家了两个礼拜，家人还是一如既往的让我考虑下考研的事情，但不知为什么，我总是提不起兴趣，不知道自己现在为什么对考试什么的比较抵触，也很久没有那种静下心来踏踏实实做事情的时候了。我不清楚这3年的时光里，我的身上到底发生了什么，可能唯一能确定的就是比以前更懒了吧。今年世园会在西安举行，母亲很早以前就对我说作为西安人总要去一下的，我在家的那段时间母亲也催了我不少次，我也不清楚自己哪里来的倔强，总之就是不想出去，很多时候不想走路，不想说话，大部分时间不是在沙发上就是在床上。有一天很早母亲就叫我说今天去世园会逛逛，我头埋在被窝里说到不去不去，母亲后来就没有再问我，我也永远不会知道留在卧室门口的母亲会挂着一副怎样的表情。在家的时间总是特别悠闲和舒服，花了一个下午和一个上午的时间搞好了arch，gnome3的确漂亮了不少，用习惯了感觉还是不错的，就是arch的东西好难配啊，网络，字体等等，现在还有很多东西没有搞好…</p>
+
+<p>晒晒桌面，貌似gnome3根本没有桌面的概念，居然去除了最小化，不得不说非常大胆</p>
+
+<p><img src="http://delta4d.github.com/images/2011-09-05-archlinux-desktop.png" alt="archlinux gnome3 desktop" /></p>
+
+<p>2个礼拜还看完了两部动漫《高达seed》和《浪客剑心》，都是比较老的动漫了，还是值得一看的。8月中旬回到了学校参加集训，能够和肥羊和riversouther组成RunForDream(RFD同时也是我们三个id的首字母)一起奋战regional很幸运也很高兴，集训的时间总是过得很快，这期间学了不少东西，SCC，2-SAT，最小树形图，还有终于会写二分了。。。8月份又看完了三部动漫(我的时间好多。。)《Fate Stay Night》，《Anohana》(我们仍未知道那天所看见的花的名字，名字好长orz)，《空之境界》，都比较短，《Anohana》还是比较温馨的吧，看过后不禁会想儿时的朋友现在会是怎样的一副模样。fate和空境所阐述的便复杂很多，尤其是空境，很多地方都看不懂，不过还是很喜欢两仪式的。</p>
+
+<p>本以为会写很多花在集训上面，结果写了很多家里和动漫的时光……</p>
+
+<p>I am still on the way, running for dream ……</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[summer2011 goes on]]></title>
+    <link href="http://delta4d.github.com/blog/2011/08/17/summer2011-goes-on/"/>
+    <updated>2011-08-17T18:30:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2011/08/17/summer2011-goes-on</id>
+    <content type="html"><![CDATA[<p>虽然7月份集训选拔并没有进入前15，但是由于前面有同学不参加比赛所以很幸运可以参加8月份的集训，并且能够和<a href="http://hi.baidu.com/sheep_finalfreedom">肥羊</a>和<a href="http://hi.baidu.com/riversouthers">riversouther</a>组成一队来参加比赛着实让我感觉非常非常的开心和幸运。</p>
+
+<p>集训于昨天已经开始了，一切都是新鲜的，感觉还是很好的，昨天加了ZJU的ACM群，看到hhgg在群里说welcome delta，霎时感觉有一种强烈的归属感，总之是很开心啦，接下来的时间我也要好好努力！</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[summer2011 round4 over]]></title>
+    <link href="http://delta4d.github.com/blog/2011/07/24/summer2011-round4-over/"/>
+    <updated>2011-07-24T19:54:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2011/07/24/summer2011-round4-over</id>
+    <content type="html"><![CDATA[<p>summer2011最后一轮结束，最终rank16。最后一个round contest2暴0了，比较郁闷，不过结果并不算坏，自己差不多也就这个程度吧。</p>
+
+<p>很喜欢集训队的氛围，大家都很好玩，整个过程中我也学到了不少东西，认识了一些朋友，总之，很幸运吧，可以这样度过二十多天。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[summer2011 round3 over]]></title>
+    <link href="http://delta4d.github.com/blog/2011/07/18/summer2011-round3-over/"/>
+    <updated>2011-07-18T15:49:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2011/07/18/summer2011-round3-over</id>
+    <content type="html"><![CDATA[<p>这一轮数学题特别多，我一看到这种题就很想做，但是都做不出来，&gt;_&lt;，太弱了，每场比赛都有跳坑，有些题目还是可以做的，比赛的时候应该认真想一下的。rating还是处在一个比较尴尬的位置，还有最后一个round，不知道等待我的会是什么结果，每场比赛都要拼出去，嗯嗯。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[summer2011 round2 over]]></title>
+    <link href="http://delta4d.github.com/blog/2011/07/12/summer2011-round2-over/"/>
+    <updated>2011-07-12T14:33:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2011/07/12/summer2011-round2-over</id>
+    <content type="html"><![CDATA[<p>summer2011第二轮结束，从总的结果来看round1好了一些，最后一场暴0有点不应该，而且有三道题居然都没看过，这个我觉的是不应该的，以后还是先把题目大致浏览一遍再做吧。</p>
+
+<p>round2还是比较有收获的，第一次靠着以前看的一些线段树的思想居然自己写出来了，着实很兴奋。教训有很多，在写代码之前一定要好好审视一下自己的算法，否则浪费的时间就太多了，又影响心情，还有比赛时一定要冷静，有想法的话，要敢于去写，或者尝试换换思维，不要把自己逼近死胡同。</p>
+
+<p>集训已经进行了一半，还有机会，好好加油吧。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[summer2011 round1 over]]></title>
+    <link href="http://delta4d.github.com/blog/2011/07/07/summer2011-round1-over/"/>
+    <updated>2011-07-07T17:51:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2011/07/07/summer2011-round1-over</id>
+    <content type="html"><![CDATA[<p>summer2011第一阶段结束了，稍微总结一下。第一场很神奇的贪心过了一道，但是在算期望的题目上，将一个改写n的地方写成了n+1，但是推倒导来的式子却显得格外的漂亮，其实还是自己没搞清楚；第二场很快的过了一道，然后一直在做博弈题而没有去看其他的，其实这个做不出来应该没有什么怨言了，因为我压根就不知道SG的存在么。第三场是我们组的题目，结果没有验出队友数据里的错误，导致vout不断WA，罪过啊。第四场第一道题目经历15次提交才AC，其中还有两次CE，太不小心了，不过终场前的绝杀还是让我感到很爽快的。</p>
+
+<p>总的来说，状况并不是很好，但结果也不是特别糟，还有3轮还有机会，以后每场比赛都要细心，看到题目要敢想敢做，不能在畏首畏尾了，大不了就是个WA么。</p>
 ]]></content>
   </entry>
   
@@ -428,122 +614,6 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
     <p>前天晚上Codeforces的比赛历史性的拿到了前10名，很兴奋啊，虽然是div2，本以为rating会大涨的，结果只是微调了一下，一开始有点失望，但是后来想了想，又感觉挺高兴的。不管怎样以后还是要多搞，多多少少总是会有收获的吧。</p>
   </li>
 </ol>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[二次曲线的判断]]></title>
-    <link href="http://delta4d.github.com/blog/2011/04/20/conic-judgement/"/>
-    <updated>2011-04-20T19:31:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/04/20/conic-judgement</id>
-    <content type="html"><![CDATA[<p>之所以想起这个问题是因为<a href="http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=3488">ZOJ3488</a>，题目是说给定二次曲线方程ax^2+bxy+c^2+dx+ey+f=0，判断曲线类型，其中保证曲线肯定存在且b=0，我准备更一般的来研究一下这个问题</p>
-
-<ol>
-  <li>若b=0，则：</li>
-</ol>
-
-<p>1.1 a或c中有一个为0，则位抛物线</p>
-
-<p>1.2 方程可以化为：a(x+d/(2a))^2+c(y+e/(2c))^2=d^2/(4a)+e^2/(4c)-f</p>
-
-<p>记D=d^2/(4a)+e^2/(4c)-f</p>
-
-<p>若D=0，则该方程表示点(-d/(2a), -e/(2c))</p>
-
-<p>若ac&gt;0,a=c,acD&gt;0,则表示圆</p>
-
-<p>若ac&gt;0,a!=c,acD&gt;0,则表示椭圆</p>
-
-<p>若ac&lt;0,表示双曲线</p>
-
-<p>其他情况方程不表示任何曲线，方程有误</p>
-
-<ol>
-  <li>若b!=0，则：</li>
-</ol>
-
-<p>ax^2+bxy+cy^2+dx+ey+f=0 ———–（1）</p>
-
-<p>做旋转变换z‘=z<em>e^(i</em>t)</p>
-
-<p>那么x=x<em>cos(t)-y</em>sin(t), y=x<em>sin(t)+y</em>cos(t)</p>
-
-<p>带入（1）则xy项的系数为：</p>
-
-<p>-2a<em>cos(t)sin(t)+b(cos(t)</em>cos(t)-sin(t)<em>sin(t))+2c</em>sin(t)cos(t)</p>
-
-<p>=-a<em>sin(2t)+b</em>cos(2t)+c*sin(2t)</p>
-
-<p>=(c-a)sin(2t)+b*cos(2t)</p>
-
-<p>令它为0，则tan(2t)=b/(a-c)，当a=c时 tan(2t)=infinity，2t=pi/2</p>
-
-<p>因为tan(2t)=b/(a-c)</p>
-
-<p>那么cos(2t)=(a-c)/sqrt(b^2+(a-c)^2)，sin(2t)=b/sqrt(b^2+(a-c)^2)</p>
-
-<p>(a<em>cos^2(t)+b</em>sin(t)cos(t)+c<em>sin^2(t))x^2+(a</em>sin^2(t)-b<em>sin(t)cos(t)+c</em>cos^2(t))y^2+(d<em>cos(t)+c</em>sin(t))x+(-d<em>sin(t)+c</em>cos(t))y+e=0</p>
-
-<p>(a<em>(1+cos(2t)/2)+b</em>sin(2t)/2+c<em>(1-cos(2t))/2)x^2+(a</em>(1-cos(2t)/2)-b<em>sin(2t)/2+c</em>(1+cos(2t))/2)y^2+(c<em>sin(t))x+(-d</em>sin(t)+c*cos(t))y+e=0</p>
-
-<p>(a+c+sqrt(b^2+(a-c)^2))/2<em>x^2+(a+c-sqrt(b^2+(a-c)^2))/2</em>y^2+c<em>sin(t))x+(-d</em>sin(t)+c*cos(t))y+e=0</p>
-
-<p>转化为情况1</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[todolist 2011]]></title>
-    <link href="http://delta4d.github.com/blog/2011/04/06/todolist-2011/"/>
-    <updated>2011-04-06T22:31:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/04/06/todolist-2011</id>
-    <content type="html"><![CDATA[<p>校赛之后状态一直很差，做了两场比赛，AC都不超过两道，AC的还都是用三四次WA换来的。
-曾经给自己立下过很多目标，现如今都已随风而去。
-今天不知为何居然蛋疼的想写日志，给自己立些目标吧，毕竟我也快大四了……</p>
-
-<ol>
-  <li>多做在线比赛，尤其是Codeforces的和Topcoder的</li>
-  <li>每场比赛后都要写解题报告</li>
-  <li>多和同学交流</li>
-  <li>多瞻仰大牛代码和博客</li>
-  <li>先努力进入集训队，再努力进入校队</li>
-  <li>学习python</li>
-  <li>学习网页的开发，网络编程</li>
-  <li>看《具体数学》，做完练习题</li>
-  <li>专业课程学习也要抓紧，经过3年的实践，我发现还是成绩考得高点心里比较舒服，嗯嗯</li>
-  <li>好好考虑自己的未来，到底考研还是不考呢？？</li>
-  <li>为Arsenal祈福，甭管啥冠军，赶紧拿一个先，还有门将赶紧给换掉吧</li>
-  <li>多做运动，少玩游戏</li>
-  <li>星期四看火影，星期天看海贼和柯南</li>
-  <li>看美剧的时候不带字幕看一遍，带着英文字幕再看一遍</li>
-  <li>晚上不洗澡的话，尽量洗洗脚</li>
-  <li>嗯，先这样吧</li>
-</ol>
-
-<p>一年后的今天，看着这些文字，不知道我会有什么样的表情……</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[hello, world!]]></title>
-    <link href="http://delta4d.github.com/blog/2011/03/19/hello-world/"/>
-    <updated>2011-03-19T01:31:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/03/19/hello-world</id>
-    <content type="html"><![CDATA[
-<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="cp">#include &lt;stdio.h&gt;</span>
-</span><span class="line">
-</span><span class="line"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-</span><span class="line">	<span class="n">printf</span><span class="p">(</span><span class="s">&quot;hello,world!&quot;</span><span class="p">);</span>
-</span><span class="line">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class="line"><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
 ]]></content>
   </entry>
   

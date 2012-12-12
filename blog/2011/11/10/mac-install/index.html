@@ -1,0 +1,277 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>MAC安装记 - LOST</title>
+	<meta name="author" content="delta">
+
+	
+	<meta name="description" content="想装MAC纯属瞎折腾，现在装好了也一直扔在那里没有用。。 10月份的时候在试着装Lion，结果每次在安装进度条20%的时候就死掉了，现在装的是东皇SL v3，先说下我的配置： DELL INSPIRON 1318 网卡 BCM5906(wired)，BCM4312(wireless) 显卡 &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="LOST" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">LOST</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+	<li><a href="/aboutme">AboutMe</a></li>
+	<li><a href="/x">X</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+	<li><a href="/aboutme">AboutMe</a></li>
+	<li><a href="/x">X</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:delta4d.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:delta4d.github.com">
+	</form>
+</nav>
+
+</header>
+	
+		
+	
+	<div id="content" class="inner"><article class="post">
+	<h1 class="title">MAC安装记</h1>
+	<div class="entry-content"><p>想装MAC纯属瞎折腾，现在装好了也一直扔在那里没有用。。</p>
+
+<p>10月份的时候在试着装Lion，结果每次在安装进度条20%的时候就死掉了，现在装的是东皇SL v3，先说下我的配置：</p>
+
+<p>DELL INSPIRON 1318</p>
+
+<p>网卡 BCM5906(wired)，BCM4312(wireless)</p>
+
+<p>显卡 GeForce 8400M GS</p>
+
+<p>声卡 Sigmatel@Intel 82801(Ich8)</p>
+
+<p>其实装MAC最重要的是看有没有对应的硬件驱动，如果都有的话就差不多了，至于其他的条件，可以到<a href="http://bbs.pcbeta.com/">远景论坛</a>查看。</p>
+
+<p>黑苹果的安装教程一开始看着感觉好多，现在装好了其实也没有几步，下面是在WIN下的安装教程的简单步骤，具体操作还是要自仔细看教程</p>
+
+<ol>
+  <li>
+    <p>现在镜像，分为原版和破解版，破解版安装较为容易，原版以后可以试试，不过看教程都差不太多</p>
+  </li>
+  <li>
+    <p>安装变色龙引导或bootthink</p>
+  </li>
+  <li>
+    <p>将镜像dump到磁盘分区或U盘（工具为Leopard hd install helper），也可以刻盘。如何分区什么的就不说了</p>
+  </li>
+  <li>
+    <p>添加对应kext（内核扩展），通常用于设备驱动程序，放在根目录Extra/Extensions下，一开始只放必要的几个就可以了</p>
+  </li>
+  <li>
+    <p>不断的troubleshooting直至安装成功，我重启了不下二十次，镜像也dump了很多次，这个过程很需要耐心</p>
+  </li>
+  <li>
+    <p>用WINPE将C盘重新设置为活动分区</p>
+  </li>
+  <li>
+    <p>将启动盘下的kext拷到MAC根目录下，接下来还是不断的重启再troubleshooting，这里的kext可能要比安装镜像的多一点</p>
+  </li>
+  <li>
+    <p>装硬件驱动</p>
+  </li>
+</ol>
+
+<p>[备忘]</p>
+
+<p>驱动盘kext：</p>
+
+<p>AppleACPIPS2Nub.kext</p>
+
+<p>ApplePS2Controller.kext</p>
+
+<p>FakeSMC.kext</p>
+
+<p>MAC盘kext:</p>
+
+<p>AppleACPIPS2Nub.kext</p>
+
+<p>ApplePS2Controller.kext</p>
+
+<p>FakeSMC.kext</p>
+
+<p>NullCPUPowerManagement.kext</p>
+
+<p>硬件驱动：</p>
+
+<p>GeForce 8400M GS: Natit.kext</p>
+
+<p>BCM5906: BCM5906MEthernet.kext</p>
+
+<p>Sigmatel@Intel 82801: VoodooHDA.kext</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-10T23:28:00+08:00" pubdate data-updated="true">Nov 10<span>th</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mac/'>MAC</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2011/11/10/mac-install/#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2012
+
+    delta
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'delta4d';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://delta4d.github.com/blog/2011/11/10/mac-install/';
+        var disqus_url = 'http://delta4d.github.com/blog/2011/11/10/mac-install/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-36393620-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>
