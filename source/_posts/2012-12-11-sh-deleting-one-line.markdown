@@ -17,7 +17,7 @@ function get_mem_used {
 }
 
 while true; do
-	echo $(get_mem_used)
+	echo `get_mem_used`
 	sleep 1
 done
 {% endcodeblock %}
