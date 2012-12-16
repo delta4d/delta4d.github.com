@@ -4,7 +4,7 @@
   <title><![CDATA[LOST]]></title>
   <link href="http://delta4d.github.com/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2012-12-12T16:31:18+08:00</updated>
+  <updated>2012-12-16T23:11:15+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[情人无泪]]></title>
+    <link href="http://delta4d.github.com/blog/2012/12/16/lover-no-tears/"/>
+    <updated>2012-12-16T10:27:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2012/12/16/lover-no-tears</id>
+    <content type="html"><![CDATA[<p>最近闲里偷忙看完了<a href="http://zh.wikipedia.org/wiki/%E5%BC%B5%E5%B0%8F%E5%AB%BB">张小娴</a>的”情人无泪”，因为是小说精选集，实际上包含了三部小说：卖海豚的女孩，离别曲，和情人无泪。</p>
+
+<p>我不止一次的在心里对自己说“多读些书吧”，大学四年倒是摸过一些书，每次都等到有罚款通知了再把书原封不动的送回图书馆。这学期在98读书版精华区看到有人推荐张小娴的书，便去图书馆借了本“情人无泪”。借书的时候还有件好玩的事，文学类的书都在走廊两边的架子上放着，找了很久，终于在某个书架最底层发现了六本精选集，我随手拿起一本翻着，这时有一个女孩走了过来，蹲下去也拿起了一本，然而很快又放了回去，站了起来，一动不动。旁边静静的杵了一个人总让人觉得有些不自在，于是把书放了回去，这时只见那个女孩迅速蹲下，拿起我刚放下的书，回头就跑。我恍然大悟。</p>
+
+<p>三部小说都比较偏伤感，情人无泪最后真是噙着眼泪读的，我大概还是比较习惯喜剧的东西，就好象Friends和武林外传可以一遍一遍不停的看。本科时有个室友读书时总会先看最后一页，如果是好的结局的话才会开始看这本书，幸好我没有这么做。</p>
+
+<p>三部小说里都有人死去，缇缇带着幸福，夏薇带着悲哀，苏明慧是带着梦想吗。我总觉得很多悲剧本不必如此，很多情况真是一句话可以解决的事情，人可能就是这么固执吧。</p>
+
+<p>沈鱼和翁信良终没有走到一起，从来没有人知道夏薇有一台小绵羊，苏明慧还是到了失明的那一天，本想带给许宏志惊喜去买画具，结果却。。</p>
+
+<p>很多年过去了，还是不会写读后感。</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[linux终端在同一行输出结果]]></title>
@@ -40,7 +60,7 @@
 </span><span class="line"><span class="o">}</span>
 </span><span class="line">
 </span><span class="line"><span class="k">while </span><span class="nb">true</span>; <span class="k">do</span>
-</span><span class="line"><span class="k">	</span><span class="nb">echo</span> <span class="k">$(</span>get_mem_used<span class="k">)</span>
+</span><span class="line"><span class="k">	</span><span class="nb">echo</span> <span class="sb">`</span>get_mem_used<span class="sb">`</span>
 </span><span class="line">	sleep 1
 </span><span class="line"><span class="k">done</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
@@ -146,7 +166,7 @@
     <link href="http://delta4d.github.com/blog/2012/12/10/music-moved/"/>
     <updated>2012-12-10T22:23:00+08:00</updated>
     <id>http://delta4d.github.com/blog/2012/12/10/music-moved</id>
-    <content type="html"><![CDATA[<p>平常听歌都喜欢随便在豆瓣虾米百度什么的打开随便听听，今天偶然听到一阵旋律，眼角突然就挂上了泪，是一首日本歌，其实歌词也不懂，但突然就很有感触。，后来看了下歌曲，是<a href="http://ja.wikipedia.org/wiki/%E4%B8%AD%E5%AD%9D%E4%BB%8B">中孝介</a>的”家路”，原来我只是不知不觉想家了。</p>
+    <content type="html"><![CDATA[<p>平常听歌都喜欢随便在豆瓣虾米百度什么的打开随便听听，今天偶然听到一阵旋律，眼角突然就挂上了泪，是一首日文歌，其实歌词也不懂，但突然就很有感触。后来看了下歌曲，是<a href="http://ja.wikipedia.org/wiki/%E4%B8%AD%E5%AD%9D%E4%BB%8B">中孝介</a>的”家路”，原来我只是不知不觉想家了。</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -588,32 +608,6 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
 <p>最近发现做事情的时候时间过得很快，不做事的时候时间也很快，&gt;_&lt;，今天晚上准备把软工课程的project传到校内免费空间上试试的，没想到就这么搞了一晚上还没搞好，因为工程是用zend frmaework做的，起初传上去的时候显示403，经过尝试发现只要把.htaccess文件删掉就好了，登录页显示出来了，但是登录的时候又会产生一大片出错信息，各种找不到啊，觉得应该是删除了.htaccess的问题，就上网查了下怎么配置这个文件，quitely weep，没搞定啊。不过晚上到也不是一点收获都没有，学到了好多mysql的东西，又在空间上折腾了下wordpress，自己配置了一下，装了插件和主题，算是把基本操作熟悉了下。</p>
 
 <p>就这么多吧……</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[come back]]></title>
-    <link href="http://delta4d.github.com/blog/2011/05/16/come-back/"/>
-    <updated>2011-05-16T15:22:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/05/16/come-back</id>
-    <content type="html"><![CDATA[<p>很久没写博了，本来是打算做完每场比赛后都写解题报告的，结果每场比赛都被虐，导致完全没有积极性了，我太弱了，T_T。</p>
-
-<p>稍微总结一下最近的生活吧：</p>
-
-<ol>
-  <li>
-    <p>How I Met Your Mother 跟到最新了，话说我貌似还是比较适合看喜剧</p>
-  </li>
-  <li>
-    <p>装了Ubuntu 11.04后各种死机，放个视频要重启3次，不知道是电脑出问题了，还是系统的问题。最后还是决定重装系统，为了新鲜，没有换回Ubuntu 10.10，换了一个很年轻的系统Linux Mint 10，其实就是Ubuntu的一个改装版，感觉还是不错的，尤其是terminal，每次打开都会有不同的问候语</p>
-  </li>
-  <li>
-    <p>手机坏了，里面的喇叭坏了，现在只有短信功能，我觉的一是没有人给我打电话，二是我也懒的找地方去修，所以手机一直处于昏睡状态。我妈push了我好几次，让我买个新的，而我（懒啊懒）……后来跟妈妈都是Q聊的，怎么说呢，看着母亲不停的催促和问候感觉挺幸福的。得赶紧修手机了</p>
-  </li>
-  <li>
-    <p>前天晚上Codeforces的比赛历史性的拿到了前10名，很兴奋啊，虽然是div2，本以为rating会大涨的，结果只是微调了一下，一开始有点失望，但是后来想了想，又感觉挺高兴的。不管怎样以后还是要多搞，多多少少总是会有收获的吧。</p>
-  </li>
-</ol>
 ]]></content>
   </entry>
   
