@@ -7,7 +7,15 @@
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="wordpress又被墙了，90代理也挂了一阵，想更新下blog真不容易啊 记过去的10月： 本不打算读研的我，被肥羊pia去试着保研，最后很幸运的获得外推去上海交大的机会。9月份的时候学校免试生面试，本以为到下午才会轮到我的，结果当下午去后却发现我们组就只剩我一个人没有面试了（ &hellip;">
+	<meta name="description" content="zz《精通UNIX shell脚本编程》
+这是节省CPU周期和磁盘I/O时间的一个小技巧，而且不受管道的2048个字符数的限制 1
+2
+3
+4
+5
+while read LINE
+do echo &quot;$LINE&quot; :
+done &lt; &lt;(command) &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -107,6 +115,540 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/05/23/shell-script-while-cmd-output/">Shell Script While Cmd Output</a></h1>
+	<div class="entry-content">
+		<p>zz《精通UNIX shell脚本编程》
+这是节省CPU周期和磁盘I/O时间的一个小技巧，而且不受管道的2048个字符数的限制</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line"><span class="k">while </span><span class="nb">read </span>LINE
+</span><span class="line"><span class="k">do</span>
+</span><span class="line"><span class="k">    </span><span class="nb">echo</span> <span class="s2">&quot;$LINE&quot;</span>
+</span><span class="line">    :
+</span><span class="line"><span class="k">done</span> &lt; &lt;<span class="o">(</span><span class="nb">command</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>这个方法看起来有点奇特。这里所作的就是在done循环中止符之后，从循环底部进行输入重定向，用done&lt;表示。&lt;(command)符号执行命令，并把命令的输出结果指向循环底部。
+注意：在&lt; &lt;(command)中的两个&lt; &lt;之间必须有空格</p>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-23T15:18:00+08:00" pubdate data-updated="true">May 23<span>rd</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/shell/'>shell</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/05/23/shell-script-while-cmd-output//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/05/06/win7-no-sound/">Win7 No Sound</a></h1>
+	<div class="entry-content">
+		<p>今天可能由于卸载了实况还是什么导致系统没有声音了，重装了声音驱动也不行</p>
+
+<p>后来运行dxdiag提示缺少ksuser.dll，下了ksuser.dll后解决问题</p>
+
+<p>另外缺少了ksuser.dll新浪体育视频直播也不能正常播放了。。</p>
+
+<p>参考http://baike.baidu.com/view/660830.htm?fromTaglist</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-06T23:52:00+08:00" pubdate data-updated="true">May 6<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/windows/'>windows</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/05/06/win7-no-sound//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/04/06/donelist-2011-and-todolist-2012/">Donelist 2011 & Todolist 2012</a></h1>
+	<div class="entry-content">
+		<p>去年我问今天现在会是什么表情，我现在坐在计算机前没什么表情</p>
+
+<h3 id="donelist-2011">donelist 2011</h3>
+
+<ol>
+  <li>多做在线比赛，尤其是Codeforces的和Topcoder的
+    <ul>
+      <li>Codeforces做了挺多的，Topcoder很少做，最近很少做了</li>
+    </ul>
+  </li>
+  <li>每场比赛后都要写解题报告
+    <ul>
+      <li>只坚持了几场，由于能做的题目太少了，赛后又很少去fix，弱爆了</li>
+    </ul>
+  </li>
+  <li>多和同学交流
+    <ul>
+      <li>这条完成的还算不错</li>
+    </ul>
+  </li>
+  <li>多瞻仰大牛代码和博客
+    <ul>
+      <li>谈不上多，偶尔会看了一些</li>
+    </ul>
+  </li>
+  <li>先努力进入集训队，再努力进入校队
+    <ul>
+      <li>幸运的做到了，幸运的和肥羊还有riversouther组成RunForDream征战regional</li>
+    </ul>
+  </li>
+  <li>学习python
+    <ul>
+      <li>学了，又忘了</li>
+    </ul>
+  </li>
+  <li>学习网页的开发，网络编程
+    <ul>
+      <li>学了一点，又忘了</li>
+    </ul>
+  </li>
+  <li>看《具体数学》，做完练习题
+    <ul>
+      <li>数论之后的就没有做了</li>
+    </ul>
+  </li>
+  <li>专业课程学习也要抓紧，经过3年的实践，我发现还是成绩考得高点心里比较舒服，嗯嗯
+    <ul>
+      <li>我自欺欺人了，专业课程马马虎虎，兴趣不大</li>
+    </ul>
+  </li>
+  <li>好好考虑自己的未来，到底考研还是不考呢？？
+    <ul>
+      <li>最后幸运的保研了</li>
+    </ul>
+  </li>
+  <li>为Arsenal祈福，甭管啥冠军，赶紧拿一个先，还有门将赶紧给换掉吧
+    <ul>
+      <li>F4和N8出走，依旧无冠，门将位置发掘了ccc尼，虽然有时也失误，但比阿穆霸气靠谱多了。。</li>
+    </ul>
+  </li>
+  <li>多做运动，少玩游戏
+    <ul>
+      <li>呵呵</li>
+    </ul>
+  </li>
+  <li>星期四看火影，星期天看海贼和柯南
+    <ul>
+      <li>只追了海贼，还看了好多动漫，现在都静不下来去看东西了。。</li>
+    </ul>
+  </li>
+  <li>看美剧的时候不带字幕看一遍，带着英文字幕再看一遍
+    <ul>
+      <li>这个做到了，因为急着想看但还没有出字幕所以只能不带字幕看，然后因为听不懂= =，所以只能带着字幕再看一遍。。</li>
+    </ul>
+  </li>
+  <li>晚上不洗澡的话，尽量洗洗脚
+    <ul>
+      <li>呵呵</li>
+    </ul>
+  </li>
+  <li>嗯，先这样吧
+    <ul>
+      <li>嗯</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="todolist-2012">todolist 2012</h3>
+
+<ol>
+  <li>争取进省赛，话说8号就是ACM校赛了，希望能和队友玩的开心</li>
+  <li>体测补测一定要及格</li>
+  <li>毕业设计要赶紧做，求顺利毕业</li>
+  <li>多看书，读各类经典</li>
+  <li>要练习练听力，其实就是看美剧，话说”how I met your mother”里的mother肿么还不出来</li>
+  <li>多搞搞Linux，其实一直都断断续续的，用过一阵，后来还是耐不住游戏的寂寞回到win</li>
+  <li>好好学数学</li>
+  <li>多参加codeforces和topcoder之类的比赛</li>
+  <li>学学日语，看动漫玩游戏可以方便点</li>
+  <li>晚上坚持跑步</li>
+  <li>陪着Arsenal</li>
+  <li>多看看密码算法</li>
+  <li>嗯，先这样吧</li>
+</ol>
+
+<p>以后还是过年的时候写todolist吧。。</p>
+
+<p>2013新年我又会是一副什么样子，带着怎样的心情。。</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-06T00:51:00+08:00" pubdate data-updated="true">Apr 6<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/donelist/'>donelist</a>, <a class='category' href='/blog/categories/life/'>life</a>, <a class='category' href='/blog/categories/todolist/'>todolist</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/04/06/donelist-2011-and-todolist-2012//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/02/29/pacman-fiwlesystem-mtab-exists-in-filesystem/">[Pacman] &#8220;Filesystem: /etc/mtab Exists in Filesystem&#8221;</a></h1>
+	<div class="entry-content">
+		<p>fixed by</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line">pacman -S filesystem --force
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p><a href="http://www.archlinux.org/news/filesystem-upgrade-manual-intervention-required/">http://www.archlinux.org/news/filesystem-upgrade-manual-intervention-required/</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-29T11:11:00+08:00" pubdate data-updated="true">Feb 29<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/pacman/'>pacman</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/02/29/pacman-fiwlesystem-mtab-exists-in-filesystem//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/02/21/make-gtk-program-beautiful-in-kde/">Archlinux中kde环境下gtk程序美化</a></h1>
+	<div class="entry-content">
+		<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line">pacman -S gtk-chtheme
+</span><span class="line">yaourt -S oxygen-molecule-theme
+</span><span class="line">gtk-chtheme
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>在theme中选择kde44-oxygen-molecule</p>
+
+<p><a href="https://wiki.archlinux.org/index.php/Uniform_Look_for_QT_and_GTK_Applications">https://wiki.archlinux.org/index.php/Uniform_Look_for_QT_and_GTK_Applications</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-21T20:14:00+08:00" pubdate data-updated="true">Feb 21<span>st</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/gtk/'>GTK</a>, <a class='category' href='/blog/categories/kde/'>KDE</a>, <a class='category' href='/blog/categories/archlinux/'>archlinux</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/02/21/make-gtk-program-beautiful-in-kde//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/01/26/linux-audio-garbled/">Linux音频乱码</a></h1>
+	<div class="entry-content">
+		<p>mp3文件采用gbk编码，而linux使用utf8，所以会造成混乱</p>
+
+<p>使用python-mutagen可以解决</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line">mid3iconv -e gbk *.mp3
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>详细参考：
+<a href="http://yp.oss.org.cn/software/show_resource.php?resource_id=313">http://yp.oss.org.cn/software/show_resource.php?resource_id=313</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-26T20:20:00+08:00" pubdate data-updated="true">Jan 26<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>linux</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/01/26/linux-audio-garbled//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/01/25/start-ibus-at-boot/">Start Ibus at Boot</a></h1>
+	<div class="entry-content">
+		<p>backup</p>
+
+<p>~/.profile</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line"><span class="c"># ibus start at boot</span>
+</span><span class="line"><span class="nb">export </span><span class="nv">XMODIFIERS</span><span class="o">=</span>@im<span class="o">=</span>ibus
+</span><span class="line"><span class="nb">export </span><span class="nv">GTK_IM_MODULE</span><span class="o">=</span>ibus
+</span><span class="line"><span class="nb">export </span><span class="nv">QT_IM_MODULE</span><span class="o">=</span>ibus
+</span><span class="line">ibus-daemon -d -x
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-25T19:59:00+08:00" pubdate data-updated="true">Jan 25<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/ibus/'>ibus</a>, <a class='category' href='/blog/categories/linux/'>linux</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/01/25/start-ibus-at-boot//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2011/11/10/mac-install/">MAC安装记</a></h1>
+	<div class="entry-content">
+		<p>想装MAC纯属瞎折腾，现在装好了也一直扔在那里没有用。。</p>
+
+<p>10月份的时候在试着装Lion，结果每次在安装进度条20%的时候就死掉了，现在装的是东皇SL v3，先说下我的配置：</p>
+
+<p>DELL INSPIRON 1318</p>
+
+<p>网卡 BCM5906(wired)，BCM4312(wireless)</p>
+
+<p>显卡 GeForce 8400M GS</p>
+
+<p>声卡 Sigmatel@Intel 82801(Ich8)</p>
+
+<p>其实装MAC最重要的是看有没有对应的硬件驱动，如果都有的话就差不多了，至于其他的条件，可以到<a href="http://bbs.pcbeta.com/">远景论坛</a>查看。</p>
+
+<p>黑苹果的安装教程一开始看着感觉好多，现在装好了其实也没有几步，下面是在WIN下的安装教程的简单步骤，具体操作还是要自仔细看教程</p>
+
+<ol>
+  <li>
+    <p>现在镜像，分为原版和破解版，破解版安装较为容易，原版以后可以试试，不过看教程都差不太多</p>
+  </li>
+  <li>
+    <p>安装变色龙引导或bootthink</p>
+  </li>
+  <li>
+    <p>将镜像dump到磁盘分区或U盘（工具为Leopard hd install helper），也可以刻盘。如何分区什么的就不说了</p>
+  </li>
+  <li>
+    <p>添加对应kext（内核扩展），通常用于设备驱动程序，放在根目录Extra/Extensions下，一开始只放必要的几个就可以了</p>
+  </li>
+  <li>
+    <p>不断的troubleshooting直至安装成功，我重启了不下二十次，镜像也dump了很多次，这个过程很需要耐心</p>
+  </li>
+  <li>
+    <p>用WINPE将C盘重新设置为活动分区</p>
+  </li>
+  <li>
+    <p>将启动盘下的kext拷到MAC根目录下，接下来还是不断的重启再troubleshooting，这里的kext可能要比安装镜像的多一点</p>
+  </li>
+  <li>
+    <p>装硬件驱动</p>
+  </li>
+</ol>
+
+<p>[备忘]</p>
+
+<p>驱动盘kext：</p>
+
+<p>AppleACPIPS2Nub.kext</p>
+
+<p>ApplePS2Controller.kext</p>
+
+<p>FakeSMC.kext</p>
+
+<p>MAC盘kext:</p>
+
+<p>AppleACPIPS2Nub.kext</p>
+
+<p>ApplePS2Controller.kext</p>
+
+<p>FakeSMC.kext</p>
+
+<p>NullCPUPowerManagement.kext</p>
+
+<p>硬件驱动：</p>
+
+<p>GeForce 8400M GS: Natit.kext</p>
+
+<p>BCM5906: BCM5906MEthernet.kext</p>
+
+<p>Sigmatel@Intel 82801: VoodooHDA.kext</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-10T23:28:00+08:00" pubdate data-updated="true">Nov 10<span>th</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mac/'>MAC</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2011/11/10/mac-install//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -225,334 +767,6 @@
 	
 </div></article>
 
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2011/09/05/school-open/">开学了</a></h1>
-	<div class="entry-content">
-		<p>开学第一天，稍微回顾下这个可能是我最后的一个暑假。</p>
-
-<p>7月份在参加ACM的集训，和去年不同的是今年认识了更多的人，一块相互鼓励相互探讨，最终能够一块进入8月份集训名单着实非常开心。期间回家了两个礼拜，家人还是一如既往的让我考虑下考研的事情，但不知为什么，我总是提不起兴趣，不知道自己现在为什么对考试什么的比较抵触，也很久没有那种静下心来踏踏实实做事情的时候了。我不清楚这3年的时光里，我的身上到底发生了什么，可能唯一能确定的就是比以前更懒了吧。今年世园会在西安举行，母亲很早以前就对我说作为西安人总要去一下的，我在家的那段时间母亲也催了我不少次，我也不清楚自己哪里来的倔强，总之就是不想出去，很多时候不想走路，不想说话，大部分时间不是在沙发上就是在床上。有一天很早母亲就叫我说今天去世园会逛逛，我头埋在被窝里说到不去不去，母亲后来就没有再问我，我也永远不会知道留在卧室门口的母亲会挂着一副怎样的表情。在家的时间总是特别悠闲和舒服，花了一个下午和一个上午的时间搞好了arch，gnome3的确漂亮了不少，用习惯了感觉还是不错的，就是arch的东西好难配啊，网络，字体等等，现在还有很多东西没有搞好…</p>
-
-<p>晒晒桌面，貌似gnome3根本没有桌面的概念，居然去除了最小化，不得不说非常大胆</p>
-
-<p><img src="/images/2011-09-05-archlinux-desktop.png" alt="archlinux gnome3 desktop" /></p>
-
-<p>2个礼拜还看完了两部动漫《高达seed》和《浪客剑心》，都是比较老的动漫了，还是值得一看的。8月中旬回到了学校参加集训，能够和肥羊和riversouther组成RunForDream(RFD同时也是我们三个id的首字母)一起奋战regional很幸运也很高兴，集训的时间总是过得很快，这期间学了不少东西，SCC，2-SAT，最小树形图，还有终于会写二分了。。。8月份又看完了三部动漫(我的时间好多。。)《Fate Stay Night》，《Anohana》(我们仍未知道那天所看见的花的名字，名字好长orz)，《空之境界》，都比较短，《Anohana》还是比较温馨的吧，看过后不禁会想儿时的朋友现在会是怎样的一副模样。fate和空境所阐述的便复杂很多，尤其是空境，很多地方都看不懂，不过还是很喜欢两仪式的。</p>
-
-<p>本以为会写很多花在集训上面，结果写了很多家里和动漫的时光……</p>
-
-<p>I am still on the way, running for dream ……</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-05T21:15:00+08:00" pubdate data-updated="true">Sep 5<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/acm/'>ACM</a>, <a class='category' href='/blog/categories/anime/'>anime</a>, <a class='category' href='/blog/categories/archlinux/'>archlinux</a>, <a class='category' href='/blog/categories/family/'>family</a>, <a class='category' href='/blog/categories/life/'>life</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2011/09/05/school-open//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2011/08/17/summer2011-goes-on/">Summer2011 Goes On</a></h1>
-	<div class="entry-content">
-		<p>虽然7月份集训选拔并没有进入前15，但是由于前面有同学不参加比赛所以很幸运可以参加8月份的集训，并且能够和<a href="http://hi.baidu.com/sheep_finalfreedom">肥羊</a>和<a href="http://hi.baidu.com/riversouthers">riversouther</a>组成一队来参加比赛着实让我感觉非常非常的开心和幸运。</p>
-
-<p>集训于昨天已经开始了，一切都是新鲜的，感觉还是很好的，昨天加了ZJU的ACM群，看到hhgg在群里说welcome delta，霎时感觉有一种强烈的归属感，总之是很开心啦，接下来的时间我也要好好努力！</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-08-17T18:30:00+08:00" pubdate data-updated="true">Aug 17<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/summer2011/'>summer2011</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2011/08/17/summer2011-goes-on//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2011/07/24/summer2011-round4-over/">Summer2011 Round4 Over</a></h1>
-	<div class="entry-content">
-		<p>summer2011最后一轮结束，最终rank16。最后一个round contest2暴0了，比较郁闷，不过结果并不算坏，自己差不多也就这个程度吧。</p>
-
-<p>很喜欢集训队的氛围，大家都很好玩，整个过程中我也学到了不少东西，认识了一些朋友，总之，很幸运吧，可以这样度过二十多天。</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-24T19:54:00+08:00" pubdate data-updated="true">Jul 24<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/summer2011/'>summer2011</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2011/07/24/summer2011-round4-over//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2011/07/18/summer2011-round3-over/">Summer2011 Round3 Over</a></h1>
-	<div class="entry-content">
-		<p>这一轮数学题特别多，我一看到这种题就很想做，但是都做不出来，&gt;_&lt;，太弱了，每场比赛都有跳坑，有些题目还是可以做的，比赛的时候应该认真想一下的。rating还是处在一个比较尴尬的位置，还有最后一个round，不知道等待我的会是什么结果，每场比赛都要拼出去，嗯嗯。</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-18T15:49:00+08:00" pubdate data-updated="true">Jul 18<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/summer2011/'>summer2011</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2011/07/18/summer2011-round3-over//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2011/07/12/summer2011-round2-over/">Summer2011 Round2 Over</a></h1>
-	<div class="entry-content">
-		<p>summer2011第二轮结束，从总的结果来看round1好了一些，最后一场暴0有点不应该，而且有三道题居然都没看过，这个我觉的是不应该的，以后还是先把题目大致浏览一遍再做吧。</p>
-
-<p>round2还是比较有收获的，第一次靠着以前看的一些线段树的思想居然自己写出来了，着实很兴奋。教训有很多，在写代码之前一定要好好审视一下自己的算法，否则浪费的时间就太多了，又影响心情，还有比赛时一定要冷静，有想法的话，要敢于去写，或者尝试换换思维，不要把自己逼近死胡同。</p>
-
-<p>集训已经进行了一半，还有机会，好好加油吧。</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-12T14:33:00+08:00" pubdate data-updated="true">Jul 12<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/summer2011/'>summer2011</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2011/07/12/summer2011-round2-over//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2011/07/07/summer2011-round1-over/">Summer2011 Round1 Over</a></h1>
-	<div class="entry-content">
-		<p>summer2011第一阶段结束了，稍微总结一下。第一场很神奇的贪心过了一道，但是在算期望的题目上，将一个改写n的地方写成了n+1，但是推倒导来的式子却显得格外的漂亮，其实还是自己没搞清楚；第二场很快的过了一道，然后一直在做博弈题而没有去看其他的，其实这个做不出来应该没有什么怨言了，因为我压根就不知道SG的存在么。第三场是我们组的题目，结果没有验出队友数据里的错误，导致vout不断WA，罪过啊。第四场第一道题目经历15次提交才AC，其中还有两次CE，太不小心了，不过终场前的绝杀还是让我感到很爽快的。</p>
-
-<p>总的来说，状况并不是很好，但结果也不是特别糟，还有3轮还有机会，以后每场比赛都要细心，看到题目要敢想敢做，不能在畏首畏尾了，大不了就是个WA么。</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-07T17:51:00+08:00" pubdate data-updated="true">Jul 7<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/summer2011/'>summer2011</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2011/07/07/summer2011-round1-over//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2011/06/12/acm-team-selection/">ACM集训队选拔结束</a></h1>
-	<div class="entry-content">
-		<p>集训队选拔在这一周结束了，周末两场比赛，一场第二，一场第七，ym并且祝贺第一次AK的<a href="http://vsforever.co.cc/blog/">vout</a>，拿下了最后一场选拔赛的第一名。</p>
-
-<p>这两场比赛对我刺激还是比较大的，由于数列题较多，我大多都是程序或人肉出前几个数据然后去<a href="http://oeis.org/">数列百科</a>搜出递推公式然后AC的，但是这个在真正比赛中明显是不可以的，所以这两场对于我来说水分很大，以后要好好加强这方面的训练。</p>
-
-<p>记着去年暑假集训的时候，有很多场比赛有那么一道题除我之外其他人全部做出来了，有几场比赛都是以0题结束全场比赛，那种感觉真的异常失落和无奈，但是我依然很喜欢集训队的氛围，里面都是一群可爱的人啊。</p>
-
-<p>只希望今年能够拼尽全力不留遗憾吧。</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-12T20:41:00+08:00" pubdate data-updated="true">Jun 12<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/acm/'>ACM</a>, <a class='category' href='/blog/categories/life/'>life</a>, <a class='category' href='/blog/categories/summer2011/'>summer2011</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2011/06/12/acm-team-selection//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2011/05/22/2011-05-22/">2011-05-22</a></h1>
-	<div class="entry-content">
-		<p>这个礼拜继续着集训队的选拔，有两场比赛，结果比预想的好，一次第二，一次第六。总的感觉就是不要怕麻烦，要迎头去写，这两次最终都是做出了这种以前很不愿意写的麻烦题，才是排名上升的，对自己的激励是比较大的。今天的比赛收获比较大，学到了一个新的解法，<a href="http://www.matrix67.com/blog/archives/276">矩阵求幂</a>，其实和指数二分求幂是一样的，关键是你能不能将问题用矩阵的形式表现出来。还有5场比赛，好好加油吧。</p>
-
-<p>最近发现做事情的时候时间过得很快，不做事的时候时间也很快，&gt;_&lt;，今天晚上准备把软工课程的project传到校内免费空间上试试的，没想到就这么搞了一晚上还没搞好，因为工程是用zend frmaework做的，起初传上去的时候显示403，经过尝试发现只要把.htaccess文件删掉就好了，登录页显示出来了，但是登录的时候又会产生一大片出错信息，各种找不到啊，觉得应该是删除了.htaccess的问题，就上网查了下怎么配置这个文件，quitely weep，没搞定啊。不过晚上到也不是一点收获都没有，学到了好多mysql的东西，又在空间上折腾了下wordpress，自己配置了一下，装了插件和主题，算是把基本操作熟悉了下。</p>
-
-<p>就这么多吧……</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-22T23:00:00+08:00" pubdate data-updated="true">May 22<span>nd</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/acm/'>ACM</a>, <a class='category' href='/blog/categories/life/'>life</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2011/05/22/2011-05-22//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
 <nav id="pagenavi">
     
         <a href="/" class="prev">Prev</a>
@@ -562,7 +776,7 @@
     
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav></div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+	<footer id="footer" class="inner">Copyright &copy; 2013
 
     delta
 

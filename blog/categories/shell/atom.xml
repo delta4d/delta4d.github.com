@@ -4,7 +4,7 @@
   <title><![CDATA[Category: shell | LOST]]></title>
   <link href="http://delta4d.github.com/blog/categories/shell/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2012-12-26T22:52:55+08:00</updated>
+  <updated>2013-01-14T19:36:48+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -136,6 +136,28 @@ echo -ne "\033[1K\rfoo"
 </span><span class='line'>
 </span><span class='line'>&lt;p&gt;rotate
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[shell script while cmd output]]></title>
+    <link href="http://delta4d.github.com/blog/2012/05/23/shell-script-while-cmd-output/"/>
+    <updated>2012-05-23T15:18:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2012/05/23/shell-script-while-cmd-output</id>
+    <content type="html"><![CDATA[<p>zz《精通UNIX shell脚本编程》
+这是节省CPU周期和磁盘I/O时间的一个小技巧，而且不受管道的2048个字符数的限制</p>
+
+<p><code>sh
+while read LINE
+do
+    echo "$LINE"
+    :
+done &lt; &lt;(command)
+</code></p>
+
+<p>这个方法看起来有点奇特。这里所作的就是在done循环中止符之后，从循环底部进行输入重定向，用done&lt;表示。&lt;(command)符号执行命令，并把命令的输出结果指向循环底部。
+注意：在&lt; &lt;(command)中的两个&lt; &lt;之间必须有空格</p>
+
 ]]></content>
   </entry>
   

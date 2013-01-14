@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: KDE | LOST]]></title>
+  <link href="http://delta4d.github.com/blog/categories/kde/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.com/"/>
+  <updated>2013-01-14T19:36:48+08:00</updated>
+  <id>http://delta4d.github.com/</id>
+  <author>
+    <name><![CDATA[delta]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[archlinux中kde环境下gtk程序美化]]></title>
+    <link href="http://delta4d.github.com/blog/2012/02/21/make-gtk-program-beautiful-in-kde/"/>
+    <updated>2012-02-21T20:14:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2012/02/21/make-gtk-program-beautiful-in-kde</id>
+    <content type="html"><![CDATA[<p><code>sh
+pacman -S gtk-chtheme
+yaourt -S oxygen-molecule-theme
+gtk-chtheme
+</code></p>
+
+<p>在theme中选择kde44-oxygen-molecule</p>
+
+<p><a href="https://wiki.archlinux.org/index.php/Uniform_Look_for_QT_and_GTK_Applications">https://wiki.archlinux.org/index.php/Uniform_Look_for_QT_and_GTK_Applications</a></p>
+]]></content>
+  </entry>
+  
+</feed>

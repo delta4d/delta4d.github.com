@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: pacman | LOST]]></title>
+  <link href="http://delta4d.github.com/blog/categories/pacman/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.com/"/>
+  <updated>2013-01-14T19:36:48+08:00</updated>
+  <id>http://delta4d.github.com/</id>
+  <author>
+    <name><![CDATA[delta]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[[Pacman] not enough random bytes available]]></title>
+    <link href="http://delta4d.github.com/blog/2012/05/25/pacman-not-enough-random-bytes-available/"/>
+    <updated>2012-05-25T15:21:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2012/05/25/pacman-not-enough-random-bytes-available</id>
+    <content type="html"><![CDATA[<p>pacman更新到4.x中出现了认证系统，需要先执行pacman-key –init来生成key，但是这时可能出现not enough random bytes available，后来查了下发现Linux系统生成随机数是根据系统熵来获得的，这是因为系统熵不够的缘故。系统熵值可以通过</p>
+
+<p><code>sh
+cat /proc/sys/kernel/random/entropy_avail
+</code></p>
+
+<p>来查看。所谓熵就是系统的混乱程度。</p>
+
+<p>如果你在图形界面的话，那么只要鼠标动几下就可以获得很高的熵值。</p>
+
+<p>如果在字符界面的话，那么可以用手随便敲一些命令，无效的也可以，反正我是对着键盘乱敲的= =，这时可能会使得熵值达到3000多一点，这样执行pacman-key可能还是会报熵值不足，不要着急按Ctrl+C，这时你可以通过Ctrl+Alt+F2切换到tty2，然后继续对着键盘一阵乱敲，然后切换到tty1，就会发现命令已经执行完了。其实只要做一些大量IO的事情就可以了，比如cp一个大体积文件，或者使用dd等等，不一一说明了。</p>
+
+<p>pacman更新好后，pacman.conf可能需要改一下，查看/etc目录会发现有两个pacman配置文件，一个是旧的pacman.conf，一个是4.x的pacman.conf.pacnew，只需要将后者覆盖前者就可以了，记着要对前者备份哦。新的配置文件中有SigLevel选项，默认应该是关闭的，你可以根据需求进行选择：</p>
+
+<ul>
+  <li>Required: 强制检查签名</li>
+  <li>Optional: 如果签名存在就检查，但会接受未签名软件包和数据库</li>
+  <li>Never:不会进行任何签名检查。</li>
+</ul>
+
+<p>如果开启签名的话，后面安装软件的过程中可能还会遇到一些其他问题，这里就不一一说明了。。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[Pacman] "filesystem: /etc/mtab exists in filesystem"]]></title>
+    <link href="http://delta4d.github.com/blog/2012/02/29/pacman-fiwlesystem-mtab-exists-in-filesystem/"/>
+    <updated>2012-02-29T11:11:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2012/02/29/pacman-fiwlesystem-mtab-exists-in-filesystem</id>
+    <content type="html"><![CDATA[<p>fixed by</p>
+
+<p><code>sh
+pacman -S filesystem --force
+</code></p>
+
+<p><a href="http://www.archlinux.org/news/filesystem-upgrade-manual-intervention-required/">http://www.archlinux.org/news/filesystem-upgrade-manual-intervention-required/</a></p>
+]]></content>
+  </entry>
+  
+</feed>

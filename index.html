@@ -721,78 +721,29 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
 
 
     <article class="post">
-	<h1 class="title"><a href="/blog/2011/11/10/mac-install/">MAC安装记</a></h1>
+	<h1 class="title"><a href="/blog/2012/05/25/pacman-not-enough-random-bytes-available/">[Pacman] Not Enough Random Bytes Available</a></h1>
 	<div class="entry-content">
-		<p>想装MAC纯属瞎折腾，现在装好了也一直扔在那里没有用。。</p>
+		<p>pacman更新到4.x中出现了认证系统，需要先执行pacman-key –init来生成key，但是这时可能出现not enough random bytes available，后来查了下发现Linux系统生成随机数是根据系统熵来获得的，这是因为系统熵不够的缘故。系统熵值可以通过</p>
 
-<p>10月份的时候在试着装Lion，结果每次在安装进度条20%的时候就死掉了，现在装的是东皇SL v3，先说下我的配置：</p>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line">cat /proc/sys/kernel/random/entropy_avail
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>DELL INSPIRON 1318</p>
+<p>来查看。所谓熵就是系统的混乱程度。</p>
 
-<p>网卡 BCM5906(wired)，BCM4312(wireless)</p>
+<p>如果你在图形界面的话，那么只要鼠标动几下就可以获得很高的熵值。</p>
 
-<p>显卡 GeForce 8400M GS</p>
+<p>如果在字符界面的话，那么可以用手随便敲一些命令，无效的也可以，反正我是对着键盘乱敲的= =，这时可能会使得熵值达到3000多一点，这样执行pacman-key可能还是会报熵值不足，不要着急按Ctrl+C，这时你可以通过Ctrl+Alt+F2切换到tty2，然后继续对着键盘一阵乱敲，然后切换到tty1，就会发现命令已经执行完了。其实只要做一些大量IO的事情就可以了，比如cp一个大体积文件，或者使用dd等等，不一一说明了。</p>
 
-<p>声卡 Sigmatel@Intel 82801(Ich8)</p>
+<p>pacman更新好后，pacman.conf可能需要改一下，查看/etc目录会发现有两个pacman配置文件，一个是旧的pacman.conf，一个是4.x的pacman.conf.pacnew，只需要将后者覆盖前者就可以了，记着要对前者备份哦。新的配置文件中有SigLevel选项，默认应该是关闭的，你可以根据需求进行选择：</p>
 
-<p>其实装MAC最重要的是看有没有对应的硬件驱动，如果都有的话就差不多了，至于其他的条件，可以到<a href="http://bbs.pcbeta.com/">远景论坛</a>查看。</p>
+<ul>
+  <li>Required: 强制检查签名</li>
+  <li>Optional: 如果签名存在就检查，但会接受未签名软件包和数据库</li>
+  <li>Never:不会进行任何签名检查。</li>
+</ul>
 
-<p>黑苹果的安装教程一开始看着感觉好多，现在装好了其实也没有几步，下面是在WIN下的安装教程的简单步骤，具体操作还是要自仔细看教程</p>
-
-<ol>
-  <li>
-    <p>现在镜像，分为原版和破解版，破解版安装较为容易，原版以后可以试试，不过看教程都差不太多</p>
-  </li>
-  <li>
-    <p>安装变色龙引导或bootthink</p>
-  </li>
-  <li>
-    <p>将镜像dump到磁盘分区或U盘（工具为Leopard hd install helper），也可以刻盘。如何分区什么的就不说了</p>
-  </li>
-  <li>
-    <p>添加对应kext（内核扩展），通常用于设备驱动程序，放在根目录Extra/Extensions下，一开始只放必要的几个就可以了</p>
-  </li>
-  <li>
-    <p>不断的troubleshooting直至安装成功，我重启了不下二十次，镜像也dump了很多次，这个过程很需要耐心</p>
-  </li>
-  <li>
-    <p>用WINPE将C盘重新设置为活动分区</p>
-  </li>
-  <li>
-    <p>将启动盘下的kext拷到MAC根目录下，接下来还是不断的重启再troubleshooting，这里的kext可能要比安装镜像的多一点</p>
-  </li>
-  <li>
-    <p>装硬件驱动</p>
-  </li>
-</ol>
-
-<p>[备忘]</p>
-
-<p>驱动盘kext：</p>
-
-<p>AppleACPIPS2Nub.kext</p>
-
-<p>ApplePS2Controller.kext</p>
-
-<p>FakeSMC.kext</p>
-
-<p>MAC盘kext:</p>
-
-<p>AppleACPIPS2Nub.kext</p>
-
-<p>ApplePS2Controller.kext</p>
-
-<p>FakeSMC.kext</p>
-
-<p>NullCPUPowerManagement.kext</p>
-
-<p>硬件驱动：</p>
-
-<p>GeForce 8400M GS: Natit.kext</p>
-
-<p>BCM5906: BCM5906MEthernet.kext</p>
-
-<p>Sigmatel@Intel 82801: VoodooHDA.kext</p>
+<p>如果开启签名的话，后面安装软件的过程中可能还会遇到一些其他问题，这里就不一一说明了。。</p>
 
 		
 		
@@ -812,16 +763,16 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
   
 
 
-<time datetime="2011-11-10T23:28:00+08:00" pubdate data-updated="true">Nov 10<span>th</span>, 2011</time></div>
+<time datetime="2012-05-25T15:21:00+08:00" pubdate data-updated="true">May 25<span>th</span>, 2012</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/mac/'>MAC</a>
+	<a class='category' href='/blog/categories/archlinux/'>archlinux</a>, <a class='category' href='/blog/categories/pacman/'>pacman</a>
 
 
 </div>
 	
-		<span class="comments"><a href="/blog/2011/11/10/mac-install//index.html#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2012/05/25/pacman-not-enough-random-bytes-available//index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
@@ -832,7 +783,7 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
     
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav></div>
-	<footer id="footer" class="inner">Copyright &copy; 2012
+	<footer id="footer" class="inner">Copyright &copy; 2013
 
     delta
 

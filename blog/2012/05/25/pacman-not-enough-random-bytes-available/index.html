@@ -1,0 +1,229 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>[Pacman] not enough random bytes available - LOST</title>
+	<meta name="author" content="delta">
+
+	
+	<meta name="description" content="pacman更新到4.x中出现了认证系统，需要先执行pacman-key –init来生成key，但是这时可能出现not enough random bytes available，后来查了下发现Linux系统生成随机数是根据系统熵来获得的，这是因为系统熵不够的缘故。系统熵值可以通过 1
+cat &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="LOST" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">LOST</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+	<li><a href="/aboutme">AboutMe</a></li>
+	<li><a href="/x">X</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+	<li><a href="/aboutme">AboutMe</a></li>
+	<li><a href="/x">X</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:delta4d.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:delta4d.github.com">
+	</form>
+</nav>
+
+</header>
+	
+		
+	
+	<div id="content" class="inner"><article class="post">
+	<h1 class="title">[Pacman] Not Enough Random Bytes Available</h1>
+	<div class="entry-content"><p>pacman更新到4.x中出现了认证系统，需要先执行pacman-key –init来生成key，但是这时可能出现not enough random bytes available，后来查了下发现Linux系统生成随机数是根据系统熵来获得的，这是因为系统熵不够的缘故。系统熵值可以通过</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line">cat /proc/sys/kernel/random/entropy_avail
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>来查看。所谓熵就是系统的混乱程度。</p>
+
+<p>如果你在图形界面的话，那么只要鼠标动几下就可以获得很高的熵值。</p>
+
+<p>如果在字符界面的话，那么可以用手随便敲一些命令，无效的也可以，反正我是对着键盘乱敲的= =，这时可能会使得熵值达到3000多一点，这样执行pacman-key可能还是会报熵值不足，不要着急按Ctrl+C，这时你可以通过Ctrl+Alt+F2切换到tty2，然后继续对着键盘一阵乱敲，然后切换到tty1，就会发现命令已经执行完了。其实只要做一些大量IO的事情就可以了，比如cp一个大体积文件，或者使用dd等等，不一一说明了。</p>
+
+<p>pacman更新好后，pacman.conf可能需要改一下，查看/etc目录会发现有两个pacman配置文件，一个是旧的pacman.conf，一个是4.x的pacman.conf.pacnew，只需要将后者覆盖前者就可以了，记着要对前者备份哦。新的配置文件中有SigLevel选项，默认应该是关闭的，你可以根据需求进行选择：</p>
+
+<ul>
+  <li>Required: 强制检查签名</li>
+  <li>Optional: 如果签名存在就检查，但会接受未签名软件包和数据库</li>
+  <li>Never:不会进行任何签名检查。</li>
+</ul>
+
+<p>如果开启签名的话，后面安装软件的过程中可能还会遇到一些其他问题，这里就不一一说明了。。</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-25T15:21:00+08:00" pubdate data-updated="true">May 25<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/archlinux/'>archlinux</a>, <a class='category' href='/blog/categories/pacman/'>pacman</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/05/25/pacman-not-enough-random-bytes-available/#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
+
+    delta
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'delta4d';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://delta4d.github.com/blog/2012/05/25/pacman-not-enough-random-bytes-available/';
+        var disqus_url = 'http://delta4d.github.com/blog/2012/05/25/pacman-not-enough-random-bytes-available/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-36393620-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>
