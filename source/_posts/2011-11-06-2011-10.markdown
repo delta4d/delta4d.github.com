@@ -3,7 +3,7 @@ layout: post
 title: "2011-10"
 date: 2011-11-06 13:35
 comments: true
-categories: ["ACM", "Life", "Feeling"]
+categories: ["ACM", "life", "feeling"]
 ---
 
 wordpress又被墙了，90代理也挂了一阵，想更新下blog真不容易啊
