@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Life | LOST]]></title>
+  <title><![CDATA[Category: life | LOST]]></title>
   <link href="http://delta4d.github.com/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2013-01-14T19:36:48+08:00</updated>
+  <updated>2013-01-27T22:56:50+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -12,6 +12,135 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Scream]]></title>
+    <link href="http://delta4d.github.com/blog/2012/12/26/the-scream/"/>
+    <updated>2012-12-26T22:37:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2012/12/26/the-scream</id>
+    <content type="html"><![CDATA[<p>the little boy inside me lately</p>
+
+<p><a href="http://en.wikipedia.org/wiki/The_Scream">The Scream</a></p>
+
+<p><img src="/images/2012-12-26-the-scream.jpg" alt="The Scream" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[donelist 2011 & todolist 2012]]></title>
+    <link href="http://delta4d.github.com/blog/2012/04/06/donelist-2011-and-todolist-2012/"/>
+    <updated>2012-04-06T00:51:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2012/04/06/donelist-2011-and-todolist-2012</id>
+    <content type="html"><![CDATA[<p>去年我问今天现在会是什么表情，我现在坐在计算机前没什么表情</p>
+
+<h3 id="donelist-2011">donelist 2011</h3>
+
+<ol>
+  <li>多做在线比赛，尤其是Codeforces的和Topcoder的
+    <ul>
+      <li>Codeforces做了挺多的，Topcoder很少做，最近很少做了</li>
+    </ul>
+  </li>
+  <li>每场比赛后都要写解题报告
+    <ul>
+      <li>只坚持了几场，由于能做的题目太少了，赛后又很少去fix，弱爆了</li>
+    </ul>
+  </li>
+  <li>多和同学交流
+    <ul>
+      <li>这条完成的还算不错</li>
+    </ul>
+  </li>
+  <li>多瞻仰大牛代码和博客
+    <ul>
+      <li>谈不上多，偶尔会看了一些</li>
+    </ul>
+  </li>
+  <li>先努力进入集训队，再努力进入校队
+    <ul>
+      <li>幸运的做到了，幸运的和肥羊还有riversouther组成RunForDream征战regional</li>
+    </ul>
+  </li>
+  <li>学习python
+    <ul>
+      <li>学了，又忘了</li>
+    </ul>
+  </li>
+  <li>学习网页的开发，网络编程
+    <ul>
+      <li>学了一点，又忘了</li>
+    </ul>
+  </li>
+  <li>看《具体数学》，做完练习题
+    <ul>
+      <li>数论之后的就没有做了</li>
+    </ul>
+  </li>
+  <li>专业课程学习也要抓紧，经过3年的实践，我发现还是成绩考得高点心里比较舒服，嗯嗯
+    <ul>
+      <li>我自欺欺人了，专业课程马马虎虎，兴趣不大</li>
+    </ul>
+  </li>
+  <li>好好考虑自己的未来，到底考研还是不考呢？？
+    <ul>
+      <li>最后幸运的保研了</li>
+    </ul>
+  </li>
+  <li>为Arsenal祈福，甭管啥冠军，赶紧拿一个先，还有门将赶紧给换掉吧
+    <ul>
+      <li>F4和N8出走，依旧无冠，门将位置发掘了ccc尼，虽然有时也失误，但比阿穆霸气靠谱多了。。</li>
+    </ul>
+  </li>
+  <li>多做运动，少玩游戏
+    <ul>
+      <li>呵呵</li>
+    </ul>
+  </li>
+  <li>星期四看火影，星期天看海贼和柯南
+    <ul>
+      <li>只追了海贼，还看了好多动漫，现在都静不下来去看东西了。。</li>
+    </ul>
+  </li>
+  <li>看美剧的时候不带字幕看一遍，带着英文字幕再看一遍
+    <ul>
+      <li>这个做到了，因为急着想看但还没有出字幕所以只能不带字幕看，然后因为听不懂= =，所以只能带着字幕再看一遍。。</li>
+    </ul>
+  </li>
+  <li>晚上不洗澡的话，尽量洗洗脚
+    <ul>
+      <li>呵呵</li>
+    </ul>
+  </li>
+  <li>嗯，先这样吧
+    <ul>
+      <li>嗯</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="todolist-2012">todolist 2012</h3>
+
+<ol>
+  <li>争取进省赛，话说8号就是ACM校赛了，希望能和队友玩的开心</li>
+  <li>体测补测一定要及格</li>
+  <li>毕业设计要赶紧做，求顺利毕业</li>
+  <li>多看书，读各类经典</li>
+  <li>要练习练听力，其实就是看美剧，话说”how I met your mother”里的mother肿么还不出来</li>
+  <li>多搞搞Linux，其实一直都断断续续的，用过一阵，后来还是耐不住游戏的寂寞回到win</li>
+  <li>好好学数学</li>
+  <li>多参加codeforces和topcoder之类的比赛</li>
+  <li>学学日语，看动漫玩游戏可以方便点</li>
+  <li>晚上坚持跑步</li>
+  <li>陪着Arsenal</li>
+  <li>多看看密码算法</li>
+  <li>嗯，先这样吧</li>
+</ol>
+
+<p>以后还是过年的时候写todolist吧。。</p>
+
+<p>2013新年我又会是一副什么样子，带着怎样的心情。。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2011-10]]></title>
@@ -42,6 +171,42 @@
 <p>ps:FutureGazer普吉加油，RunForDream&amp;PIA福州加油!</p>
 
 <p>pss: FutureGazer普吉夺冠，大赞！！！</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[开学了]]></title>
+    <link href="http://delta4d.github.com/blog/2011/09/05/school-open/"/>
+    <updated>2011-09-05T21:15:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2011/09/05/school-open</id>
+    <content type="html"><![CDATA[<p>开学第一天，稍微回顾下这个可能是我最后的一个暑假。</p>
+
+<p>7月份在参加ACM的集训，和去年不同的是今年认识了更多的人，一块相互鼓励相互探讨，最终能够一块进入8月份集训名单着实非常开心。期间回家了两个礼拜，家人还是一如既往的让我考虑下考研的事情，但不知为什么，我总是提不起兴趣，不知道自己现在为什么对考试什么的比较抵触，也很久没有那种静下心来踏踏实实做事情的时候了。我不清楚这3年的时光里，我的身上到底发生了什么，可能唯一能确定的就是比以前更懒了吧。今年世园会在西安举行，母亲很早以前就对我说作为西安人总要去一下的，我在家的那段时间母亲也催了我不少次，我也不清楚自己哪里来的倔强，总之就是不想出去，很多时候不想走路，不想说话，大部分时间不是在沙发上就是在床上。有一天很早母亲就叫我说今天去世园会逛逛，我头埋在被窝里说到不去不去，母亲后来就没有再问我，我也永远不会知道留在卧室门口的母亲会挂着一副怎样的表情。在家的时间总是特别悠闲和舒服，花了一个下午和一个上午的时间搞好了arch，gnome3的确漂亮了不少，用习惯了感觉还是不错的，就是arch的东西好难配啊，网络，字体等等，现在还有很多东西没有搞好…</p>
+
+<p>晒晒桌面，貌似gnome3根本没有桌面的概念，居然去除了最小化，不得不说非常大胆</p>
+
+<p><img src="/images/2011-09-05-archlinux-desktop.png" alt="archlinux gnome3 desktop" /></p>
+
+<p>2个礼拜还看完了两部动漫《高达seed》和《浪客剑心》，都是比较老的动漫了，还是值得一看的。8月中旬回到了学校参加集训，能够和肥羊和riversouther组成RunForDream(RFD同时也是我们三个id的首字母)一起奋战regional很幸运也很高兴，集训的时间总是过得很快，这期间学了不少东西，SCC，2-SAT，最小树形图，还有终于会写二分了。。。8月份又看完了三部动漫(我的时间好多。。)《Fate Stay Night》，《Anohana》(我们仍未知道那天所看见的花的名字，名字好长orz)，《空之境界》，都比较短，《Anohana》还是比较温馨的吧，看过后不禁会想儿时的朋友现在会是怎样的一副模样。fate和空境所阐述的便复杂很多，尤其是空境，很多地方都看不懂，不过还是很喜欢两仪式的。</p>
+
+<p>本以为会写很多花在集训上面，结果写了很多家里和动漫的时光……</p>
+
+<p>I am still on the way, running for dream ……</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ACM集训队选拔结束]]></title>
+    <link href="http://delta4d.github.com/blog/2011/06/12/acm-team-selection/"/>
+    <updated>2011-06-12T20:41:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2011/06/12/acm-team-selection</id>
+    <content type="html"><![CDATA[<p>集训队选拔在这一周结束了，周末两场比赛，一场第二，一场第七，ym并且祝贺第一次AK的<a href="http://vsforever.co.cc/blog/">vout</a>，拿下了最后一场选拔赛的第一名。</p>
+
+<p>这两场比赛对我刺激还是比较大的，由于数列题较多，我大多都是程序或人肉出前几个数据然后去<a href="http://oeis.org/">数列百科</a>搜出递推公式然后AC的，但是这个在真正比赛中明显是不可以的，所以这两场对于我来说水分很大，以后要好好加强这方面的训练。</p>
+
+<p>记着去年暑假集训的时候，有很多场比赛有那么一道题除我之外其他人全部做出来了，有几场比赛都是以0题结束全场比赛，那种感觉真的异常失落和无奈，但是我依然很喜欢集训队的氛围，里面都是一群可爱的人啊。</p>
+
+<p>只希望今年能够拼尽全力不留遗憾吧。</p>
 ]]></content>
   </entry>
   

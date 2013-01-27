@@ -1,0 +1,281 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>gentoo notes 01 - LOST</title>
+	<meta name="author" content="delta">
+
+	
+	<meta name="description" content="Why Gentoo
+久仰Gentoo大名，过去一年断断续续在虚拟机上装过好几次Gentoo了，一直想在实体机上试试，于是趁放假的时候折腾折腾。 Start Gentoo是编译安装的，于是可以进行相关编译选项优化。同时Gentoo是可以滚动升级的，这样方便不少。开始装机的时候还是想着自己编译内核的 &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="LOST" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">LOST</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+	<li><a href="/aboutme">AboutMe</a></li>
+	<li><a href="/x">X</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+	<li><a href="/aboutme">AboutMe</a></li>
+	<li><a href="/x">X</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:delta4d.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:delta4d.github.com">
+	</form>
+</nav>
+
+</header>
+	
+		
+	
+	<div id="content" class="inner"><article class="post">
+	<h1 class="title">Gentoo Notes 01</h1>
+	<div class="entry-content"><h2 id="why-gentoo">Why Gentoo</h2>
+<p>久仰Gentoo大名，过去一年断断续续在虚拟机上装过好几次Gentoo了，一直想在实体机上试试，于是趁放假的时候折腾折腾。</p>
+
+<h2 id="start">Start</h2>
+
+<p>Gentoo是编译安装的，于是可以进行相关编译选项优化。同时Gentoo是可以滚动升级的，这样方便不少。开始装机的时候还是想着自己编译内核的，结果开机后不断panic，把我也搞的panic了，于是老老实实用genkernel，以后有机会在好好编译内核吧，先把系统起来在说。很多用户觉得Gentoo编译太费时间了，所以不选择Gentoo，但装机大多都是可以一劳永逸的，配置好后并不会频繁的装软件了。装好基本系统其实还是比较快的，使用genkernel也只用了一个小时左右，装好X然后装DE便会比较慢了，键盘控，喜欢轻量级的话装个WM是便会很快了。</p>
+
+<h2 id="errors">Errors</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">!!The filesystem mounted at /dev/sdb3 does not appear to be a valid /. Try again 
+</span><span class="line">!!Could not find the root block device in. 
+</span><span class="line">Please specify another value or: press Enter for the same , type "shell" ......</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>可能是grub.conf写错了，需要注意一下两个变量：</p>
+
+<ul>
+  <li><code>root (hd0,0)</code>指/boot在/dev/sda1。(hd0,0-3)表示四个主分区，(hd0,&gt;3)表示逻辑分区，其中grub从0开始，而linux从1开始表示分区。</li>
+  <li><code>real_root=/dev/sdax</code>指/在/dev/sdax</li>
+</ul>
+
+<p>startx的时候出现no screens found
+   可能是显卡驱动装的不对，可以执行<code>emerge -av $(qlist -IC x11-drivers)</code>，我的是nvidia，在make.conf中设置好<code>VIDEO_CARDS="nvidia"</code>，然后装好n卡驱动，在执行<code>nvidia-xconfig</code>后就可以了。</p>
+
+<p>emerge complains  <a href="http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=2&amp;chap=1">click me!</a></p>
+
+<h2 id="why-gentoo-again">Why Gentoo Again</h2>
+<ol>
+  <li>漂亮的字符界面。第一次虚拟机装Gentoo时的最深的印象。</li>
+  <li>强大的portage和emerge。portage告诉emerge在哪里下载源代码，编译选项是什么。</li>
+  <li>overlay？就目前的感觉想archlinux的aur。里面应该有不少好玩的东西。</li>
+  <li>详尽的文档。</li>
+  <li>……</li>
+</ol>
+
+<p>实体机用了才不到两天，还有好多好多东西需要学习和探索。Happy Hunting。</p>
+
+<h2 id="de-vs-wm">DE vs WM</h2>
+<p>一开始想装wm的，因为在<a href="https://bbs.archlinux.org/viewforum.php?id=47">archlinux forum</a>里看到很多wm非常漂亮，还有很多<a href="https://bbs.archlinux.org/viewtopic.php?id=138281">轻量级软件</a>提供选择。也确实一开始试的是openbox和monsterwm的，还是不习惯。最后换成了KDE，其实KDE以前没怎么用过（其实连linux都没怎么用过，总是不知不觉切会win后就不再进入linux了），就目前来看KDE表现还是不错的，但还是有些问题没有解决。。一开始挺好的，但是感觉有些不稳定，无法启动kde程序，gtk倒是没问题，后来删除了~/.kde4恢复默认设置倒是好了。另外qtconfig配置无法保存，这个直接导致了有些qt程序字体比较难看等。</p>
+
+<h2 id="octopress-in-gentoo">Octopress in Gentoo</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">...custom_require.rb:36:in 'require': cannot load such file auto_gem (LoadError)
+</span><span class="line">...custom_require.rb:36:in 'require'</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p><code>unset RUBYOPT</code> fix it.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">Building site: source -&gt; public
+</span><span class="line">File "&lt;string&gt;", line 1
+</span><span class="line">import sys; print sys.executable
+</span><span class="line">^
+</span><span class="line">SyntaxError: invalid syntax</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Follow <a href="http://blog.gonzih.org/blog/2011/09/21/fix-octopress-pygments-error-on-arch-linux/">this</a>. But I change rubypython from 0.5.3 to 0.6.3 in Gemfile.lock, it fixs everything I ran into..</p>
+
+<h2 id="reference">Reference</h2>
+<ol>
+  <li><a href="http://www.google.com">Google</a></li>
+  <li><a href="http://www.gentoo.org/doc/en/handbook/">Gentoo Handbook</a></li>
+  <li><a href="http://www.gentoo.org/doc/en/xorg-config.xml">Gentoo Xorg</a></li>
+</ol>
+
+<h2 id="whats-going-on">What’s Going On</h2>
+<p>Keep Using, Keep Hunting。有没有gentoo notes 02我也不知道。。</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-27T19:26:00+08:00" pubdate data-updated="true">Jan 27<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/gentoo/'>gentoo</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2013/01/27/gentoo-notes-01/#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
+
+    delta
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'delta4d';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://delta4d.github.com/blog/2013/01/27/gentoo-notes-01/';
+        var disqus_url = 'http://delta4d.github.com/blog/2013/01/27/gentoo-notes-01/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-36393620-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>

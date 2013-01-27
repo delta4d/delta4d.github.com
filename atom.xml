@@ -4,7 +4,7 @@
   <title><![CDATA[LOST]]></title>
   <link href="http://delta4d.github.com/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2013-01-14T19:36:48+08:00</updated>
+  <updated>2013-01-27T22:56:50+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -12,6 +12,87 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[gentoo notes 01]]></title>
+    <link href="http://delta4d.github.com/blog/2013/01/27/gentoo-notes-01/"/>
+    <updated>2013-01-27T19:26:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2013/01/27/gentoo-notes-01</id>
+    <content type="html"><![CDATA[<h2 id="why-gentoo">Why Gentoo</h2>
+<p>久仰Gentoo大名，过去一年断断续续在虚拟机上装过好几次Gentoo了，一直想在实体机上试试，于是趁放假的时候折腾折腾。</p>
+
+<h2 id="start">Start</h2>
+
+<p>Gentoo是编译安装的，于是可以进行相关编译选项优化。同时Gentoo是可以滚动升级的，这样方便不少。开始装机的时候还是想着自己编译内核的，结果开机后不断panic，把我也搞的panic了，于是老老实实用genkernel，以后有机会在好好编译内核吧，先把系统起来在说。很多用户觉得Gentoo编译太费时间了，所以不选择Gentoo，但装机大多都是可以一劳永逸的，配置好后并不会频繁的装软件了。装好基本系统其实还是比较快的，使用genkernel也只用了一个小时左右，装好X然后装DE便会比较慢了，键盘控，喜欢轻量级的话装个WM是便会很快了。</p>
+
+<h2 id="errors">Errors</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">!!The filesystem mounted at /dev/sdb3 does not appear to be a valid /. Try again 
+</span><span class="line">!!Could not find the root block device in. 
+</span><span class="line">Please specify another value or: press Enter for the same , type "shell" ......</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>可能是grub.conf写错了，需要注意一下两个变量：</p>
+
+<ul>
+  <li><code>root (hd0,0)</code>指/boot在/dev/sda1。(hd0,0-3)表示四个主分区，(hd0,&gt;3)表示逻辑分区，其中grub从0开始，而linux从1开始表示分区。</li>
+  <li><code>real_root=/dev/sdax</code>指/在/dev/sdax</li>
+</ul>
+
+<p>startx的时候出现no screens found
+   可能是显卡驱动装的不对，可以执行<code>emerge -av $(qlist -IC x11-drivers)</code>，我的是nvidia，在make.conf中设置好<code>VIDEO_CARDS="nvidia"</code>，然后装好n卡驱动，在执行<code>nvidia-xconfig</code>后就可以了。</p>
+
+<p>emerge complains  <a href="http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=2&amp;chap=1">click me!</a></p>
+
+<h2 id="why-gentoo-again">Why Gentoo Again</h2>
+<ol>
+  <li>漂亮的字符界面。第一次虚拟机装Gentoo时的最深的印象。</li>
+  <li>强大的portage和emerge。portage告诉emerge在哪里下载源代码，编译选项是什么。</li>
+  <li>overlay？就目前的感觉想archlinux的aur。里面应该有不少好玩的东西。</li>
+  <li>详尽的文档。</li>
+  <li>……</li>
+</ol>
+
+<p>实体机用了才不到两天，还有好多好多东西需要学习和探索。Happy Hunting。</p>
+
+<h2 id="de-vs-wm">DE vs WM</h2>
+<p>一开始想装wm的，因为在<a href="https://bbs.archlinux.org/viewforum.php?id=47">archlinux forum</a>里看到很多wm非常漂亮，还有很多<a href="https://bbs.archlinux.org/viewtopic.php?id=138281">轻量级软件</a>提供选择。也确实一开始试的是openbox和monsterwm的，还是不习惯。最后换成了KDE，其实KDE以前没怎么用过（其实连linux都没怎么用过，总是不知不觉切会win后就不再进入linux了），就目前来看KDE表现还是不错的，但还是有些问题没有解决。。一开始挺好的，但是感觉有些不稳定，无法启动kde程序，gtk倒是没问题，后来删除了~/.kde4恢复默认设置倒是好了。另外qtconfig配置无法保存，这个直接导致了有些qt程序字体比较难看等。</p>
+
+<h2 id="octopress-in-gentoo">Octopress in Gentoo</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">...custom_require.rb:36:in 'require': cannot load such file auto_gem (LoadError)
+</span><span class="line">...custom_require.rb:36:in 'require'</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p><code>unset RUBYOPT</code> fix it.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">Building site: source -&gt; public
+</span><span class="line">File "&lt;string&gt;", line 1
+</span><span class="line">import sys; print sys.executable
+</span><span class="line">^
+</span><span class="line">SyntaxError: invalid syntax</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Follow <a href="http://blog.gonzih.org/blog/2011/09/21/fix-octopress-pygments-error-on-arch-linux/">this</a>. But I change rubypython from 0.5.3 to 0.6.3 in Gemfile.lock, it fixs everything I ran into..</p>
+
+<h2 id="reference">Reference</h2>
+<ol>
+  <li><a href="http://www.google.com">Google</a></li>
+  <li><a href="http://www.gentoo.org/doc/en/handbook/">Gentoo Handbook</a></li>
+  <li><a href="http://www.gentoo.org/doc/en/xorg-config.xml">Gentoo Xorg</a></li>
+</ol>
+
+<h2 id="whats-going-on">What’s Going On</h2>
+<p>Keep Using, Keep Hunting。有没有gentoo notes 02我也不知道。。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Scream]]></title>
@@ -263,6 +344,15 @@
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[初等数论100题]]></title>
+    <link href="http://delta4d.github.com/blog/2012/11/14/chu-deng-shu-lun-100ti/"/>
+    <updated>2012-11-14T23:58:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2012/11/14/chu-deng-shu-lun-100ti</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[latex test]]></title>
     <link href="http://delta4d.github.com/blog/2012/11/11/latex-test/"/>
     <updated>2012-11-11T23:33:00+08:00</updated>
@@ -327,6 +417,29 @@
 </span><span class="line">usename.github.com/_deploy$ cd ..</span></code></pre></td></tr></table></div></figure></notextile></div>
 <p>reference:
 <a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one">dblock.org</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[hello, world!]]></title>
+    <link href="http://delta4d.github.com/blog/2012/11/10/hello-world/"/>
+    <updated>2012-11-10T18:32:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2012/11/10/hello-world</id>
+    <content type="html"><![CDATA[
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="cpp"><span class="line"><span class="cp">#include &lt;iostream&gt;</span>
+</span><span class="line">
+</span><span class="line"><span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="line">	<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;hello,world!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span><span class="line">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
 ]]></content>
   </entry>
   
@@ -630,145 +743,6 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
 </span><span class="line"><span class="nb">export </span><span class="nv">QT_IM_MODULE</span><span class="o">=</span>ibus
 </span><span class="line">ibus-daemon -d -x
 </span></code></pre></td></tr></table></div></figure></notextile></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[MAC安装记]]></title>
-    <link href="http://delta4d.github.com/blog/2011/11/10/mac-install/"/>
-    <updated>2011-11-10T23:28:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/11/10/mac-install</id>
-    <content type="html"><![CDATA[<p>想装MAC纯属瞎折腾，现在装好了也一直扔在那里没有用。。</p>
-
-<p>10月份的时候在试着装Lion，结果每次在安装进度条20%的时候就死掉了，现在装的是东皇SL v3，先说下我的配置：</p>
-
-<p>DELL INSPIRON 1318</p>
-
-<p>网卡 BCM5906(wired)，BCM4312(wireless)</p>
-
-<p>显卡 GeForce 8400M GS</p>
-
-<p>声卡 Sigmatel@Intel 82801(Ich8)</p>
-
-<p>其实装MAC最重要的是看有没有对应的硬件驱动，如果都有的话就差不多了，至于其他的条件，可以到<a href="http://bbs.pcbeta.com/">远景论坛</a>查看。</p>
-
-<p>黑苹果的安装教程一开始看着感觉好多，现在装好了其实也没有几步，下面是在WIN下的安装教程的简单步骤，具体操作还是要自仔细看教程</p>
-
-<ol>
-  <li>
-    <p>现在镜像，分为原版和破解版，破解版安装较为容易，原版以后可以试试，不过看教程都差不太多</p>
-  </li>
-  <li>
-    <p>安装变色龙引导或bootthink</p>
-  </li>
-  <li>
-    <p>将镜像dump到磁盘分区或U盘（工具为Leopard hd install helper），也可以刻盘。如何分区什么的就不说了</p>
-  </li>
-  <li>
-    <p>添加对应kext（内核扩展），通常用于设备驱动程序，放在根目录Extra/Extensions下，一开始只放必要的几个就可以了</p>
-  </li>
-  <li>
-    <p>不断的troubleshooting直至安装成功，我重启了不下二十次，镜像也dump了很多次，这个过程很需要耐心</p>
-  </li>
-  <li>
-    <p>用WINPE将C盘重新设置为活动分区</p>
-  </li>
-  <li>
-    <p>将启动盘下的kext拷到MAC根目录下，接下来还是不断的重启再troubleshooting，这里的kext可能要比安装镜像的多一点</p>
-  </li>
-  <li>
-    <p>装硬件驱动</p>
-  </li>
-</ol>
-
-<p>[备忘]</p>
-
-<p>驱动盘kext：</p>
-
-<p>AppleACPIPS2Nub.kext</p>
-
-<p>ApplePS2Controller.kext</p>
-
-<p>FakeSMC.kext</p>
-
-<p>MAC盘kext:</p>
-
-<p>AppleACPIPS2Nub.kext</p>
-
-<p>ApplePS2Controller.kext</p>
-
-<p>FakeSMC.kext</p>
-
-<p>NullCPUPowerManagement.kext</p>
-
-<p>硬件驱动：</p>
-
-<p>GeForce 8400M GS: Natit.kext</p>
-
-<p>BCM5906: BCM5906MEthernet.kext</p>
-
-<p>Sigmatel@Intel 82801: VoodooHDA.kext</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[2011-10]]></title>
-    <link href="http://delta4d.github.com/blog/2011/11/06/2011-10/"/>
-    <updated>2011-11-06T13:35:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/11/06/2011-10</id>
-    <content type="html"><![CDATA[<p>wordpress又被墙了，90代理也挂了一阵，想更新下blog真不容易啊</p>
-
-<p>记过去的10月：</p>
-
-<ol>
-  <li>
-    <p>本不打算读研的我，被肥羊pia去试着保研，最后很幸运的获得外推去上海交大的机会。9月份的时候学校免试生面试，本以为到下午才会轮到我的，结果当下午去后却发现我们组就只剩我一个人没有面试了（人生中的第一次面试就迟到了= =），抽好签拿着英文阅读材料就进去了，总共大概7个老师，看起来都很和蔼。因为迟到了，所以没时间看材料，老师让我当场看然后问了我一个自然段的大概意思，我就说了一句，然后就冷场了，连忙补了句that’s all。后来老师问我认为自己的优点是什么，我顿时哑口无言，坐在凳子上低着头，去回避老师的目光。老师后来说我的目的太不明确了，这样的话没有导师敢要我的。事实上我确实不明白自己会什么，要什么，是什么。过了两天是上机考试，本来以为凭着ACM的基础可以轻松过关的，但实际上却遭遇了很多不顺，最终虽然排名不错但是成绩着实糟糕，正经写出的题目就只有签名题。</p>
-
-    <p>10月初上交那边要面试，我们一共9个人浩浩荡荡就杀往了上海，这是我第一次去上海，第一次坐高铁，第一次做动车，第一次坐地铁。上海并不像脑子里的想象，不过第一印象还是不错的。到了上交后本以为是团面，后来被告知是单面，我暗自庆幸了一下，团面的话我可能除了说下名字后就不会插话了。因为我顺序靠后，听前面面完的同学说有英文自我介绍，我想了一会儿，发现除了名字好像就没什么说的了。到我面试的时候说了不到10秒钟，that’s all之后老师们都很意外，我只能苦笑。后来老师看我成绩不高，又没项目经验，虽然说搞ACM，但是又没有什么获奖经历，前者我只能说平时不努力后者我只好自嘲道成长比较慢。有一个老师问我学的最好的是哪门学科，我很虚的说C语言，幸亏只是问了些基础的数据结构方面的（这和C好像关系不大。。），后来又有老师问我印象最深的学科，我说数学分析，后来问了我一个极限问题：百米世界纪录有没有极限。我听到的第一反应就是完了，后来镇静了一下想到时间肯定是大于0的，就说因为是有界递减序列所以极限存在，其实我很害怕老师追问极限的相关东西了，我实在已经忘的差不多了，后来谢天谢地，老师没有再问，我可能是当时我们组里面试时间最短的了吧。</p>
-
-    <p>ps:写简历的时候我居然先写的英文简历后来翻译成中文，后来一直没有想通为什么。。</p>
-  </li>
-  <li>
-    <p>就在上交面试的那个礼拜周末，我再次去了上海，这是我大学中的第一次ACM/ICPC regional比赛，浙大6支队伍全部出动。</p>
-
-    <p>星期5到了宾馆，和riversouther一个房间，折腾了好一会儿网络，然后晚上去吃饭，赞于指导的bg。第二天行程被安排满了，第一次去复旦，发现大学其实都差不多，只是感觉人出奇的少。晚上吃完晚宴，回宾馆玩了一会儿空轨后追随集训队传统我们队一块看了《非诚勿扰》，第一次完整的看这样的节目，发现还需要习惯一下。据说每成功一对rp++，那天成功了三对，心情不错，大概11点半就睡了。</p>
-
-    <p>星期天比赛前我们三个都蹲了大号，由于找厕所耗费了不少体力= =，我和肥羊还担心riversouther在比赛前能不能赶回来。比赛开始后，1个小时过去了，没有过题…4个小时过去了，没有过题，过得最多的那个题目是真心搞不出来，封board之后，跑了一个小时的表终于跑完了，写了几十兆的程序交上去，后来弹出了一个是否确认提交的窗口，心想这下没戏了，后来居然返回yes。其实最后时刻想乱搞A的，当时有一个想法闪了一下，但是没乱搞，后来听说那样居然可以过，懊恼啊。这场比赛对难度估计不足，4个小时没有过题，加上看错题目，sample是退化三角形，我们居然都没有画一画，而去错误的排除了这种情况。糊里糊涂第一次regional就这样结束了，后来shi哥过来问我们情况，说道还有福州。</p>
-  </li>
-</ol>
-
-<p>ps:FutureGazer普吉加油，RunForDream&amp;PIA福州加油!</p>
-
-<p>pss: FutureGazer普吉夺冠，大赞！！！</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Archlinux开机加载NTFS分区]]></title>
-    <link href="http://delta4d.github.com/blog/2011/09/06/archlinux-load-ntfs-partion-at-boot/"/>
-    <updated>2011-09-06T09:47:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/09/06/archlinux-load-ntfs-partion-at-boot</id>
-    <content type="html"><![CDATA[<p>修改/etc/fstab文件，添加如下内容：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">/dev/sda1 /media/sda1 ntfs-3g defaults,locale=zh_CN.UTF8 0 0
-</span><span class="line">/dev/sda2 /media/sda2 ntfs-3g defaults,locale=zh_CN.UTF8 0 0</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>需要注意几点：</p>
-
-<ol>
-  <li>/dev/sdax为电脑上对应的分区，视具体情况而定</li>
-  <li>/media/sdax为/media中的目录需要提前建立好，名字任意</li>
-  <li>ntfs-3g需要提前安装好，其后所接的参数可以通过手册来查询</li>
-</ol>
-
-<p>reference:</p>
-
-<ul>
-  <li><a href="http://en.wikipedia.org/wiki/Fstab">fstab具体参数意义及书写格式</a></li>
-  <li>man fstab</li>
-</ul>
 ]]></content>
   </entry>
   
