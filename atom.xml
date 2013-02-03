@@ -4,7 +4,7 @@
   <title><![CDATA[LOST]]></title>
   <link href="http://delta4d.github.com/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2013-01-27T22:56:50+08:00</updated>
+  <updated>2013-02-03T17:48:05+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -12,6 +12,57 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[goagent on linux]]></title>
+    <link href="http://delta4d.github.com/blog/2013/02/03/goagent-on-linux/"/>
+    <updated>2013-02-03T17:11:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2013/02/03/goagent-on-linux</id>
+    <content type="html"><![CDATA[<p>不知从什么时候开始，每次装机后翻墙变为第一件要做的事。<a href="https://code.google.com/p/goagent/">goagent</a>已经进入了2.x时代，配置也方便了不少，其实跟着wiki走一遍就好了。</p>
+
+<h2 id="install">Install</h2>
+<ol>
+  <li>在<a href="https://developers.google.com/appengine/">GAE</a>建立自己的工程，记住工程的名字</li>
+  <li>将local/proxy.ini中的appid改为你自己的刚刚建立的工程名</li>
+  <li>进入server目录执行<code>uploaddir=python python uploader.zip</code>将文件上传到服务器</li>
+  <li>进入local执行<code>python2 proxy.py</code></li>
+  <li>安装插件SwitchySharp，可以在chromewebstore找到</li>
+</ol>
+
+<h2 id="issues">Issues</h2>
+<ol>
+  <li>
+    <p>gevent or pyopenssl disabled</p>
+
+    <pre><code>sudo emerge -va gevent
+sudo emerge -va pyopenssl
+</code></pre>
+
+    <p>add keywords changes according to output msg</p>
+  </li>
+  <li>
+    <p>twitter | youtube 无法登录
+打开chrome导入local目录下的CA.crt即可</p>
+  </li>
+</ol>
+
+<h2 id="start-at-boot">Start at Boot</h2>
+<p>local目录下有自启动脚本，适用于win，gentoo下可以这么做</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="coffeescript"><span class="line"><span class="c1">#!/usr/bin/env sh</span>
+</span><span class="line"><span class="c1">#/etc/local.d/goagent.start</span>
+</span><span class="line">
+</span><span class="line"><span class="nx">nohup</span> <span class="nx">python2</span> <span class="nx">path</span><span class="o">/</span><span class="nx">to</span><span class="o">/</span><span class="nx">proxy</span><span class="p">.</span><span class="nx">py</span> <span class="o">&amp;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="reference">Reference</h2>
+<p><a href="http://en.gentoo-wiki.com/wiki/Run_a_command_on_boot">Gentoo run a command on boot</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[gentoo notes 01]]></title>
@@ -340,15 +391,6 @@
 </code></pre>
 
 <p>但是这样会出现<em>function xxx already exists add ! to replace it</em>的警告，按照提示在function后加上!就可以消除警告了，这是由于如果函数出现过，加入!会redifine。555，rbl。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[初等数论100题]]></title>
-    <link href="http://delta4d.github.com/blog/2012/11/14/chu-deng-shu-lun-100ti/"/>
-    <updated>2012-11-14T23:58:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2012/11/14/chu-deng-shu-lun-100ti</id>
-    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   

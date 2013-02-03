@@ -7,8 +7,7 @@
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="Why Gentoo
-久仰Gentoo大名，过去一年断断续续在虚拟机上装过好几次Gentoo了，一直想在实体机上试试，于是趁放假的时候折腾折腾。 Start Gentoo是编译安装的，于是可以进行相关编译选项优化。同时Gentoo是可以滚动升级的，这样方便不少。 &hellip;">
+	<meta name="description" content="不知从什么时候开始，每次装机后翻墙变为第一件要做的事。goagent已经进入了2.x时代，配置也方便了不少，其实跟着wiki走一遍就好了。 Install 在GAE建立自己的工程，记住工程的名字 将local/proxy.ini中的appid改为你自己的刚刚建立的工程名 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,6 +107,85 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2013/02/03/goagent-on-linux/">Goagent on Linux</a></h1>
+	<div class="entry-content">
+		<p>不知从什么时候开始，每次装机后翻墙变为第一件要做的事。<a href="https://code.google.com/p/goagent/">goagent</a>已经进入了2.x时代，配置也方便了不少，其实跟着wiki走一遍就好了。</p>
+
+<h2 id="install">Install</h2>
+<ol>
+  <li>在<a href="https://developers.google.com/appengine/">GAE</a>建立自己的工程，记住工程的名字</li>
+  <li>将local/proxy.ini中的appid改为你自己的刚刚建立的工程名</li>
+  <li>进入server目录执行<code>uploaddir=python python uploader.zip</code>将文件上传到服务器</li>
+  <li>进入local执行<code>python2 proxy.py</code></li>
+  <li>安装插件SwitchySharp，可以在chromewebstore找到</li>
+</ol>
+
+<h2 id="issues">Issues</h2>
+<ol>
+  <li>
+    <p>gevent or pyopenssl disabled</p>
+
+    <pre><code>sudo emerge -va gevent
+sudo emerge -va pyopenssl
+</code></pre>
+
+    <p>add keywords changes according to output msg</p>
+  </li>
+  <li>
+    <p>twitter | youtube 无法登录
+打开chrome导入local目录下的CA.crt即可</p>
+  </li>
+</ol>
+
+<h2 id="start-at-boot">Start at Boot</h2>
+<p>local目录下有自启动脚本，适用于win，gentoo下可以这么做</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="coffeescript"><span class="line"><span class="c1">#!/usr/bin/env sh</span>
+</span><span class="line"><span class="c1">#/etc/local.d/goagent.start</span>
+</span><span class="line">
+</span><span class="line"><span class="nx">nohup</span> <span class="nx">python2</span> <span class="nx">path</span><span class="o">/</span><span class="nx">to</span><span class="o">/</span><span class="nx">proxy</span><span class="p">.</span><span class="nx">py</span> <span class="o">&amp;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="reference">Reference</h2>
+<p><a href="http://en.gentoo-wiki.com/wiki/Run_a_command_on_boot">Gentoo run a command on boot</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-03T17:11:00+08:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>linux</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2013/02/03/goagent-on-linux//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -632,43 +710,6 @@
 </div>
 	
 		<span class="comments"><a href="/blog/2012/11/16/vim-function-already-exists//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2012/11/14/chu-deng-shu-lun-100ti/">初等数论100题</a></h1>
-	<div class="entry-content">
-		
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-14T23:58:00+08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/mathematics/'>mathematics</a>, <a class='category' href='/blog/categories/number-theory/'>number theory</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2012/11/14/chu-deng-shu-lun-100ti//index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
