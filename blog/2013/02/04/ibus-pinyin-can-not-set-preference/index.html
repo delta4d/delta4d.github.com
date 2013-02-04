@@ -3,11 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>goagent on linux - LOST</title>
+	<title>ibus-pinyin can not set preference - LOST</title>
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="不知从什么时候开始，每次装机后翻墙变为第一件要做的事。goagent已经进入了2.x时代，配置也方便了不少，其实跟着wiki走一遍就好了。 Install 在GAE建立自己的工程，记住工程的名字 将local/proxy.ini中的appid改为你自己的刚刚建立的工程名 &hellip;">
+	<meta name="description" content="在ibus-setup的时候选择ibus-pinyin的首选项可能会出现‘ImportError: No module named gtk’，这是由于默认python会指向python3，而不是python2。python的版本引出了多少问题啊。。 这时只要指定相关文件的python版本就可以了 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -109,50 +109,52 @@
 		
 	
 	<div id="content" class="inner"><article class="post">
-	<h1 class="title">Goagent on Linux</h1>
-	<div class="entry-content"><p>不知从什么时候开始，每次装机后翻墙变为第一件要做的事。<a href="https://code.google.com/p/goagent/">goagent</a>已经进入了2.x时代，配置也方便了不少，其实跟着wiki走一遍就好了。</p>
+	<h1 class="title">Ibus-pinyin Can Not Set Preference</h1>
+	<div class="entry-content"><p>在ibus-setup的时候选择ibus-pinyin的首选项可能会出现‘ImportError: No module named gtk’，这是由于默认python会指向python3，而不是python2。python的版本引出了多少问题啊。。</p>
 
-<h2 id="install">Install</h2>
-<ol>
-  <li>在<a href="https://developers.google.com/appengine/">GAE</a>建立自己的工程，记住工程的名字</li>
-  <li>将local/proxy.ini中的appid改为你自己的刚刚建立的工程名</li>
-  <li>进入server目录执行<code>uploaddir=python python uploader.zip</code>将文件上传到服务器</li>
-  <li>进入local执行<code>python2 proxy.py</code></li>
-  <li>安装插件SwitchySharp，可以在chromewebstore找到</li>
-</ol>
+<p>这时只要指定相关文件的python版本就可以了</p>
 
-<h2 id="issues">Issues</h2>
-<ol>
-  <li>
-    <p>gevent or pyopenssl disabled</p>
+<p>执行<code>locate ibus-setup-pinyin</code>找到文件位置，然后将python替换成python2即可</p>
 
-    <pre><code>sudo emerge -va gevent
-sudo emerge -va pyopenssl
-</code></pre>
+<p>下面是一个简单的脚本</p>
 
-    <p>add keywords changes according to output msg</p>
-  </li>
-  <li>
-    <p>twitter | youtube 无法登录
-打开chrome导入local目录下的CA.crt即可</p>
-  </li>
-</ol>
-
-<h2 id="start-at-boot">Start at Boot</h2>
-<p>local目录下有自启动脚本，适用于win，gentoo下可以这么做</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>ibus-setup-pinyin-fix </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
 <span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="coffeescript"><span class="line"><span class="c1">#!/usr/bin/env sh</span>
-</span><span class="line"><span class="c1">#/etc/local.d/goagent.start</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line"><span class="c">#!/usr/bin/env sh</span>
 </span><span class="line">
-</span><span class="line"><span class="nx">nohup</span> <span class="nx">python2</span> <span class="nx">path</span><span class="o">/</span><span class="nx">to</span><span class="o">/</span><span class="nx">proxy</span><span class="p">.</span><span class="nx">py</span> <span class="o">&amp;</span>
+</span><span class="line"><span class="o">[[</span> <span class="nv">$EUID</span> -ne 0 <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="o">{</span>
+</span><span class="line">	<span class="nb">echo</span> <span class="s2">&quot;Run this with ROOT!&quot;</span>
+</span><span class="line">	<span class="nb">exit</span>
+</span><span class="line"><span class="o">}</span>
+</span><span class="line">
+</span><span class="line"><span class="nb">read</span> -p <span class="s2">&quot;This script should be executed only one time, \</span>
+</span><span class="line"><span class="s2">r u sure to continue ? [Y/N] &quot;</span> IN
+</span><span class="line">
+</span><span class="line"><span class="o">[[</span> <span class="s2">&quot;$IN&quot;</span> !<span class="o">=</span> <span class="s2">&quot;Y&quot;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span>
+</span><span class="line">
+</span><span class="line"><span class="nv">FILE</span><span class="o">=</span><span class="s2">&quot;`locate ibus-setup-pinyin`&quot;</span>
+</span><span class="line">
+</span><span class="line">cp <span class="s2">&quot;$FILE&quot;</span> <span class="s2">&quot;$FILE-bak&quot;</span>
+</span><span class="line">cat <span class="s2">&quot;$FILE-bak&quot;</span> | sed <span class="s1">&#39;s/python/python2/g&#39;</span> &gt; <span class="s2">&quot;$FILE&quot;</span>
+</span><span class="line"><span class="nb">echo</span> <span class="s2">&quot;the original file was backed up to $FILE-bak&quot;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="reference">Reference</h2>
-<p><a href="http://en.gentoo-wiki.com/wiki/Run_a_command_on_boot">Gentoo run a command on boot</a></p>
 </div>
 
 
@@ -169,16 +171,16 @@ sudo emerge -va pyopenssl
   
 
 
-<time datetime="2013-02-03T17:11:00+08:00" pubdate data-updated="true">Feb 3<span>rd</span>, 2013</time></div>
+<time datetime="2013-02-04T01:38:00+08:00" pubdate data-updated="true">Feb 4<span>th</span>, 2013</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/linux/'>linux</a>
+	<a class='category' href='/blog/categories/ibus/'>ibus</a>
 
 
 </div>
 	
-		<span class="comments"><a href="/blog/2013/02/03/goagent-on-linux/#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2013/02/04/ibus-pinyin-can-not-set-preference/#disqus_thread">Comments</a></span>
 	
 </div></article>
 
@@ -221,8 +223,8 @@ sudo emerge -va pyopenssl
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://delta4d.github.com/blog/2013/02/03/goagent-on-linux/';
-        var disqus_url = 'http://delta4d.github.com/blog/2013/02/03/goagent-on-linux/';
+        var disqus_identifier = 'http://delta4d.github.com/blog/2013/02/04/ibus-pinyin-can-not-set-preference/';
+        var disqus_url = 'http://delta4d.github.com/blog/2013/02/04/ibus-pinyin-can-not-set-preference/';
         var disqus_script = 'embed.js';
       
     (function () {

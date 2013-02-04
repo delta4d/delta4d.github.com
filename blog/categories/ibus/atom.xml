@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ibus | LOST]]></title>
   <link href="http://delta4d.github.com/blog/categories/ibus/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2013-02-03T17:48:05+08:00</updated>
+  <updated>2013-02-04T14:41:13+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ibus-pinyin can not set preference]]></title>
+    <link href="http://delta4d.github.com/blog/2013/02/04/ibus-pinyin-can-not-set-preference/"/>
+    <updated>2013-02-04T01:38:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2013/02/04/ibus-pinyin-can-not-set-preference</id>
+    <content type="html"><![CDATA[<p>在ibus-setup的时候选择ibus-pinyin的首选项可能会出现‘ImportError: No module named gtk’，这是由于默认python会指向python3，而不是python2。python的版本引出了多少问题啊。。</p>
+
+<p>这时只要指定相关文件的python版本就可以了</p>
+
+<p>执行<code>locate ibus-setup-pinyin</code>找到文件位置，然后将python替换成python2即可</p>
+
+<p>下面是一个简单的脚本</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>ibus-setup-pinyin-fix </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c">#!/usr/bin/env sh&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;<span class="o">[[</span> <span class="nv">$EUID</span> -ne 0 <span class="o">]]</span> &amp;amp;&amp;amp; <span class="o">{</span>
+</span><span class='line'>	<span class="nb">echo</span> “Run this with ROOT!”
+</span><span class='line'>	<span class="nb">exit</span>
+</span><span class='line'><span class="o">}</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;read -p “This script should be executed only one <span class="nb">time</span>, <span class="se">\</span>
+</span><span class='line'>r u sure to <span class="k">continue</span> ? <span class="o">[</span>Y/N<span class="o">]</span> “ IN&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;<span class="o">[[</span> “<span class="nv">$IN</span>” !<span class="o">=</span> “Y” <span class="o">]]</span> &amp;amp;&amp;amp; <span class="nb">exit</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;FILE<span class="o">=</span>”&lt;code&gt;locate ibus-setup-pinyin&lt;/code&gt;”&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;cp “<span class="nv">$FILE</span>” “<span class="nv">$FILE</span>-bak”
+</span><span class='line'>cat “<span class="nv">$FILE</span>-bak” | sed ‘s/python/python2/g’ &amp;gt; “<span class="nv">$FILE</span>”
+</span><span class='line'><span class="nb">echo</span> “the original file was backed up to <span class="nv">$FILE</span>-bak”
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[start ibus at boot]]></title>

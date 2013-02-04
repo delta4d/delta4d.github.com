@@ -7,7 +7,7 @@
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="不知从什么时候开始，每次装机后翻墙变为第一件要做的事。goagent已经进入了2.x时代，配置也方便了不少，其实跟着wiki走一遍就好了。 Install 在GAE建立自己的工程，记住工程的名字 将local/proxy.ini中的appid改为你自己的刚刚建立的工程名 &hellip;">
+	<meta name="description" content="在ibus-setup的时候选择ibus-pinyin的首选项可能会出现‘ImportError: No module named gtk’，这是由于默认python会指向python3，而不是python2。python的版本引出了多少问题啊。。 这时只要指定相关文件的python版本就可以了 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -89,6 +89,8 @@
 		
 		
 		
+		<a class="github" href="https://github.com/delta4d" title="GitHub">GitHub</a>
+		
 		
 		
 		
@@ -107,6 +109,87 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2013/02/04/ibus-pinyin-can-not-set-preference/">Ibus-pinyin Can Not Set Preference</a></h1>
+	<div class="entry-content">
+		<p>在ibus-setup的时候选择ibus-pinyin的首选项可能会出现‘ImportError: No module named gtk’，这是由于默认python会指向python3，而不是python2。python的版本引出了多少问题啊。。</p>
+
+<p>这时只要指定相关文件的python版本就可以了</p>
+
+<p>执行<code>locate ibus-setup-pinyin</code>找到文件位置，然后将python替换成python2即可</p>
+
+<p>下面是一个简单的脚本</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>ibus-setup-pinyin-fix </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line"><span class="c">#!/usr/bin/env sh</span>
+</span><span class="line">
+</span><span class="line"><span class="o">[[</span> <span class="nv">$EUID</span> -ne 0 <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="o">{</span>
+</span><span class="line">	<span class="nb">echo</span> <span class="s2">&quot;Run this with ROOT!&quot;</span>
+</span><span class="line">	<span class="nb">exit</span>
+</span><span class="line"><span class="o">}</span>
+</span><span class="line">
+</span><span class="line"><span class="nb">read</span> -p <span class="s2">&quot;This script should be executed only one time, \</span>
+</span><span class="line"><span class="s2">r u sure to continue ? [Y/N] &quot;</span> IN
+</span><span class="line">
+</span><span class="line"><span class="o">[[</span> <span class="s2">&quot;$IN&quot;</span> !<span class="o">=</span> <span class="s2">&quot;Y&quot;</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span>
+</span><span class="line">
+</span><span class="line"><span class="nv">FILE</span><span class="o">=</span><span class="s2">&quot;`locate ibus-setup-pinyin`&quot;</span>
+</span><span class="line">
+</span><span class="line">cp <span class="s2">&quot;$FILE&quot;</span> <span class="s2">&quot;$FILE-bak&quot;</span>
+</span><span class="line">cat <span class="s2">&quot;$FILE-bak&quot;</span> | sed <span class="s1">&#39;s/python/python2/g&#39;</span> &gt; <span class="s2">&quot;$FILE&quot;</span>
+</span><span class="line"><span class="nb">echo</span> <span class="s2">&quot;the original file was backed up to $FILE-bak&quot;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-04T01:38:00+08:00" pubdate data-updated="true">Feb 4<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/ibus/'>ibus</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2013/02/04/ibus-pinyin-can-not-set-preference//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -767,73 +850,6 @@ sudo emerge -va pyopenssl
 </div>
 	
 		<span class="comments"><a href="/blog/2012/11/11/latex-test//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2012/11/10/use-octopress-on-a-new-computer/">Use Octopress on a New Computer</a></h1>
-	<div class="entry-content">
-		<p>when you are bloging with octopress, don’t forget the following commands</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">git add .
-</span><span class="line">git commit -m 'ur commit'
-</span><span class="line">git push origin source</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>then when you are on another computer, trying to setup a bloging enviroment with octopress, because ‘rake deploy’ upload the generated files, so it needs a little work, you can go like this:</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">$ git clone git@github.com:username/username.github.com.git
-</span><span class="line">$ cd username.github.com
-</span><span class="line">username.github.com$ git checkout source
-</span><span class="line">username.github.com$ mkdir _deploy
-</span><span class="line">username.github.com$ cd _deploy
-</span><span class="line">username.github.com/_deploy$ git init
-</span><span class="line">username.github.com/_deploy$ git remote add origin git@github.com:username/username.github.com.git
-</span><span class="line">usename.github.com/_deploy$ git pull origin master
-</span><span class="line">usename.github.com/_deploy$ cd ..</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>reference:
-<a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one">dblock.org</a></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-10T19:37:00+08:00" pubdate data-updated="true">Nov 10<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/git/'>git</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2012/11/10/use-octopress-on-a-new-computer//index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

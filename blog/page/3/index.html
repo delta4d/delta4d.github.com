@@ -7,7 +7,16 @@
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="想装MAC纯属瞎折腾，现在装好了也一直扔在那里没有用。。 10月份的时候在试着装Lion，结果每次在安装进度条20%的时候就死掉了，现在装的是东皇SL v3，先说下我的配置： DELL INSPIRON 1318 网卡 BCM5906(wired)，BCM4312(wireless) 显卡 &hellip;">
+	<meta name="description" content="backup ~/.profile 1
+2
+3
+4
+5
+# ibus start at boot
+export XMODIFIERS=@im=ibus
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+ibus-daemon -d -x Jan &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -89,6 +98,8 @@
 		
 		
 		
+		<a class="github" href="https://github.com/delta4d" title="GitHub">GitHub</a>
+		
 		
 		
 		
@@ -107,6 +118,57 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/01/25/start-ibus-at-boot/">Start Ibus at Boot</a></h1>
+	<div class="entry-content">
+		<p>backup</p>
+
+<p>~/.profile</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line"><span class="c"># ibus start at boot</span>
+</span><span class="line"><span class="nb">export </span><span class="nv">XMODIFIERS</span><span class="o">=</span>@im<span class="o">=</span>ibus
+</span><span class="line"><span class="nb">export </span><span class="nv">GTK_IM_MODULE</span><span class="o">=</span>ibus
+</span><span class="line"><span class="nb">export </span><span class="nv">QT_IM_MODULE</span><span class="o">=</span>ibus
+</span><span class="line">ibus-daemon -d -x
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-25T19:59:00+08:00" pubdate data-updated="true">Jan 25<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/ibus/'>ibus</a>, <a class='category' href='/blog/categories/linux/'>linux</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/01/25/start-ibus-at-boot//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -572,49 +634,6 @@
 </div>
 	
 		<span class="comments"><a href="/blog/2011/07/07/summer2011-round1-over//blog/page/3/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2011/06/12/acm-team-selection/">ACM集训队选拔结束</a></h1>
-	<div class="entry-content">
-		<p>集训队选拔在这一周结束了，周末两场比赛，一场第二，一场第七，ym并且祝贺第一次AK的<a href="http://vsforever.co.cc/blog/">vout</a>，拿下了最后一场选拔赛的第一名。</p>
-
-<p>这两场比赛对我刺激还是比较大的，由于数列题较多，我大多都是程序或人肉出前几个数据然后去<a href="http://oeis.org/">数列百科</a>搜出递推公式然后AC的，但是这个在真正比赛中明显是不可以的，所以这两场对于我来说水分很大，以后要好好加强这方面的训练。</p>
-
-<p>记着去年暑假集训的时候，有很多场比赛有那么一道题除我之外其他人全部做出来了，有几场比赛都是以0题结束全场比赛，那种感觉真的异常失落和无奈，但是我依然很喜欢集训队的氛围，里面都是一群可爱的人啊。</p>
-
-<p>只希望今年能够拼尽全力不留遗憾吧。</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-12T20:41:00+08:00" pubdate data-updated="true">Jun 12<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/acm/'>ACM</a>, <a class='category' href='/blog/categories/life/'>life</a>, <a class='category' href='/blog/categories/summer2011/'>summer2011</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2011/06/12/acm-team-selection//blog/page/3/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
