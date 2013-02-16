@@ -10,4 +10,4 @@ the little boy inside me lately
 
 [The Scream](http://en.wikipedia.org/wiki/The_Scream)
 
-![The Scream](/images/2012-12-26-the-scream.jpg)
+![The Scream](/images/upload/2012-12-26-the-scream.jpg)
