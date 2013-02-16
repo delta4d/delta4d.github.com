@@ -7,7 +7,7 @@
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="$\LaTeX$ using kramdown % <![CDATA[ \begin{align*} & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right) = \sum_{i=1}^n \sum_{j= &hellip;">
+	<meta name="description" content="由于每次修改vimrc后都要重启vim才会在读取配置文件，感觉非常麻烦。（汗，认识vim时间也不短了，但一直木有进步。。）后来觉得可以source，于是自定义了快捷键 map &lt;silent&gt; &lt;leader&gt;ss :!source ~/.vimrc 但是显示了一大堆错误 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -109,6 +109,53 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/11/16/vim-function-already-exists/">VIM Function Already Exists</a></h1>
+	<div class="entry-content">
+		<p>由于每次修改vimrc后都要重启vim才会在读取配置文件，感觉非常麻烦。（汗，认识vim时间也不短了，但一直木有进步。。）后来觉得可以source，于是自定义了快捷键</p>
+
+<pre><code>map &lt;silent&gt; &lt;leader&gt;ss :!source ~/.vimrc
+</code></pre>
+
+<p>但是显示了一大堆错误，大家可能已经看出来了，对的，不应该加<em>!</em>的，vimrc不应该由shell来解释，而应该由vim解释，于是修改为：</p>
+
+<pre><code>map &lt;silent&gt; &lt;leader&gt;ss :source ~/.vimrc
+</code></pre>
+
+<p>但是这样会出现<em>function xxx already exists add ! to replace it</em>的警告，按照提示在function后加上!就可以消除警告了，这是由于如果函数出现过，加入!会redifine。555，rbl。</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-16T23:55:00+08:00" pubdate data-updated="true">Nov 16<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/vim/'>VIM</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/11/16/vim-function-already-exists//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -689,52 +736,6 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
 </div>
 	
 		<span class="comments"><a href="/blog/2012/02/21/make-gtk-program-beautiful-in-kde//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2012/01/26/linux-audio-garbled/">Linux音频乱码</a></h1>
-	<div class="entry-content">
-		<p>mp3文件采用gbk编码，而linux使用utf8，所以会造成混乱</p>
-
-<p>使用python-mutagen可以解决</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="sh"><span class="line">mid3iconv -e gbk *.mp3
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>详细参考：
-<a href="http://yp.oss.org.cn/software/show_resource.php?resource_id=313">http://yp.oss.org.cn/software/show_resource.php?resource_id=313</a></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-26T20:20:00+08:00" pubdate data-updated="true">Jan 26<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/linux/'>linux</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2012/01/26/linux-audio-garbled//blog/page/2/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | LOST]]></title>
   <link href="http://delta4d.github.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2013-02-11T20:12:19+08:00</updated>
+  <updated>2013-02-16T20:01:33+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -12,6 +12,26 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[git项目嵌套]]></title>
+    <link href="http://delta4d.github.com/blog/2013/02/16/git-submodule/"/>
+    <updated>2013-02-16T19:38:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2013/02/16/git-submodule</id>
+    <content type="html"><![CDATA[<p>以前看到有的github项目有如下的情况：</p>
+
+<p><img src="/images/upload/2013-02-16-git-submodule.png" alt="" /></p>
+
+<p>就是一个git项目的子目录也是一个项目，在github上看起来就像链接一样。今天终于发现，这其实是git的submodule，具体可参考<a href="http://git-scm.com/book/en/Git-Tools-Submodules">这里</a>，也可以<code>git submodule --help</code></p>
+
+<p>具体做的时候可以这样：</p>
+
+<p><code>
+cd repo_dir
+git submodule git@github.com:yourname/yourrepo.git
+</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[use octopress on a new computer]]></title>

@@ -3,11 +3,14 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>x - LOST</title>
+	<title>git项目嵌套 - LOST</title>
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="宠辱不惊看庭中花落花开，去留无意看天上云卷云舒。 你随便的一说，我却认真的难过。 此刻多恬静，星光满天。 所谓坚强，就是用高傲的姿态看着不属于你的东西完整地离去。 事实证明，你提供的细节越多，也就越少人敢于质疑，哪怕完全是错的。 有人独倚晚妆楼。楼外柳。眉暗不禁秋。 以大多数人的努力程度之低， &hellip;">
+	<meta name="description" content="以前看到有的github项目有如下的情况： 就是一个git项目的子目录也是一个项目，在github上看起来就像链接一样。今天终于发现，这其实是git的submodule，具体可参考这里，也可以git submodule --help 具体做的时候可以这样： 1
+2
+cd repo_dir
+git &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -108,40 +111,48 @@
 	
 		
 	
-	<div id="content" class="inner"><article class="page">
-    
-    <h1 class="title">X</h1>
-    
-    <div class="entry-content"><ul>
-  <li>宠辱不惊看庭中花落花开，去留无意看天上云卷云舒。</li>
-  <li>你随便的一说，我却认真的难过。</li>
-  <li>此刻多恬静，星光满天。</li>
-  <li>所谓坚强，就是用高傲的姿态看着不属于你的东西完整地离去。</li>
-  <li>事实证明，你提供的细节越多，也就越少人敢于质疑，哪怕完全是错的。</li>
-  <li>有人独倚晚妆楼。楼外柳。眉暗不禁秋。</li>
-  <li>以大多数人的努力程度之低，根本轮不到拼天赋。</li>
-  <li>很多烦恼在于不合时宜的期待。</li>
-  <li>有些东西注定不会流行，也注定不会消亡。</li>
-  <li>翻手为云，覆手为雨，上帝不经意间的一个小动作，换来的是人间数年的悲欢离合。</li>
-  <li>她一直觉得自己在自言自语，突然有了回声，立刻恐慌了。</li>
-  <li>我一直以为人是慢慢变老的，其实不是，人是一瞬间变老的。</li>
-  <li>我现在才明白，只要有想见的人，就不再是孤单一人了。</li>
-  <li>永远不是一种距离，而是一种决定。</li>
-  <li>有些故事，还没讲完那就算了吧。</li>
-  <li>死亡是霸道的。</li>
-  <li>行将失去的东西，都有难以言喻的美。</li>
-  <li>人总是害怕追求自己最重要的梦想，因为他们觉得自己不配拥有，或是觉得自己没有能力去完成。</li>
-  <li>所有毒药都应该是甜的。</li>
-  <li>花开花落，总有时序。</li>
-  <li>最高的严肃往往貌似玩世不恭。</li>
-  <li>我知道我一无所知。</li>
-  <li>嫉妒无非是虚荣心的受伤。</li>
-  <li>有悲观垫底的执着，实际上是一种超脱。</li>
-  <li>其实，并没有男人和女人，只有着一个男人或着一个女人。</li>
-  <li>每一个问题都有两个相反的答案。</li>
-</ul>
+	<div id="content" class="inner"><article class="post">
+	<h1 class="title">Git项目嵌套</h1>
+	<div class="entry-content"><p>以前看到有的github项目有如下的情况：</p>
+
+<p><img src="/images/upload/2013-02-16-git-submodule.png" alt="" /></p>
+
+<p>就是一个git项目的子目录也是一个项目，在github上看起来就像链接一样。今天终于发现，这其实是git的submodule，具体可参考<a href="http://git-scm.com/book/en/Git-Tools-Submodules">这里</a>，也可以<code>git submodule --help</code></p>
+
+<p>具体做的时候可以这样：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">cd repo_dir
+</span><span class="line">git submodule git@github.com:yourname/yourrepo.git</span></code></pre></td></tr></table></div></figure></notextile></div>
 </div>
-</article>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-16T19:38:00+08:00" pubdate data-updated="true">Feb 16<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/git/'>git</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2013/02/16/git-submodule/#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 	<div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
@@ -162,7 +173,6 @@
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
 </section>
-
 </div>
 	<footer id="footer" class="inner">Copyright &copy; 2013
 
@@ -183,8 +193,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://delta4d.github.com/x/index.html';
-        var disqus_url = 'http://delta4d.github.com/x/index.html';
+        var disqus_identifier = 'http://delta4d.github.com/blog/2013/02/16/git-submodule/';
+        var disqus_url = 'http://delta4d.github.com/blog/2013/02/16/git-submodule/';
         var disqus_script = 'embed.js';
       
     (function () {
