@@ -11,8 +11,9 @@ categories: ["todolist", "donelist"]
 [donelist 2012](http://delta4d.github.com/blog/2012/04/06/donelist-2011-and-todolist-2012/)
 -------------
 
-1. 争取进省赛，话说8号就是ACM校赛了，希望能和队友玩的开心
-*	done，和肥羊还有riversouther组队参加了校赛省赛，很开心。现在也祝两位队友一切顺利
+1.	争取进省赛，话说8号就是ACM校赛了，希望能和队友玩的开心
+
+	done，和肥羊还有riversouther组队参加了校赛省赛，很开心。现在也祝两位队友一切顺利
 2. 体测补测一定要及格
 * 可算是达到毕业要求了
 3. 毕业设计要赶紧做，求顺利毕业
