@@ -7,10 +7,7 @@
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="以前看到有的github项目有如下的情况： 就是一个git项目的子目录也是一个项目，在github上看起来就像链接一样。今天终于发现，这其实是git的submodule，具体可参考这里，也可以git submodule --help 具体做的时候可以这样： 1
-2
-cd repo_dir
-git &hellip;">
+	<meta name="description" content="通过emerge来安装java就不赘述了，可以看这篇很详细的wiki，click me -_- 由于每天水水98的需求，但是rvpn在linux下工作的总不是那么尽如人意，每次都要换回win，很麻烦但也无可奈何。今天又开始折腾rvpn，把以前装的icedtea都删掉了， &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -115,6 +112,51 @@ git &hellip;">
 
 
     <article class="post">
+	<h1 class="title"><a href="/blog/2013/02/28/java-on-gentoo/">Java on Gentoo</a></h1>
+	<div class="entry-content">
+		<p>通过emerge来安装java就不赘述了，可以看这篇很详细的wiki，<a href="http://www.gentoo.org/doc/en/java.xml">click me -_-</a></p>
+
+<p>由于每天水水98的需求，但是rvpn在linux下工作的总不是那么尽如人意，每次都要换回win，很麻烦但也无可奈何。今天又开始折腾rvpn，把以前装的icedtea都删掉了，将rvpn提供的jre又装了一遍，rvpn居然就正常工作了，如此看来rvpn的wiki还是很靠谱的= =。另外使用rvpn提供的javaws运行topcode arena也正常了。Lucky night!</p>
+
+<p>Gentoo提供了一个java配置工具java-config，设置从portage安装的java很方便。如果要手动选择java版本的话可以将你所需的JAVA_HOME软链到/etc/java-config-2/current-system-vm，具体可以看看<a href="http://www.gentoo.org/proj/en/java/java-devel.xml">这个</a>。</p>
+
+<p>还有一个问题是java启动程序可能出现中文乱码，解决方法也很简单。在JAVA_HOME/lib/fonts目录下建立fallback目录，然后将你喜欢的中文字体软链/拷贝到这个目录就可以了。</p>
+
+<p>好怀念在ZJU的时光啊，很多时候会想自己当初没走的那条路，假如当时那样如今会是怎样。前两天吃饭的时候意外碰到了本科前两年同班同学，他问道”你怎么会在这里？我还以为……“，我很多时候也会这样问自己，我是怎么成为今天的自己的。很多事情结束后就感觉曾未经历过似的，难道真的是梦一场么。午夜果然是容易感伤么？</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-28T00:25:00+08:00" pubdate data-updated="true">Feb 28<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/feeling/'>feeling</a>, <a class='category' href='/blog/categories/java/'>java</a>, <a class='category' href='/blog/categories/rvpn/'>rvpn</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2013/02/28/java-on-gentoo//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
 	<h1 class="title"><a href="/blog/2013/02/16/git-submodule/">Git项目嵌套</a></h1>
 	<div class="entry-content">
 		<p>以前看到有的github项目有如下的情况：</p>
@@ -170,10 +212,10 @@ git &hellip;">
 <h2 id="donelist-2012httpdelta4dgithubcomblog20120406donelist-2011-and-todolist-2012"><a href="http://delta4d.github.com/blog/2012/04/06/donelist-2011-and-todolist-2012/">donelist 2012</a></h2>
 
 <ol>
-  <li>争取进省赛，话说8号就是ACM校赛了，希望能和队友玩的开心
-    <ul>
-      <li>done，和肥羊还有riversouther组队参加了校赛省赛，很开心。现在也祝两位队友一切顺利</li>
-    </ul>
+  <li>
+    <p>争取进省赛，话说8号就是ACM校赛了，希望能和队友玩的开心</p>
+
+    <p>done，和肥羊还有riversouther组队参加了校赛省赛，很开心。现在也祝两位队友一切顺利</p>
   </li>
   <li>体测补测一定要及格
     <ul>
@@ -871,55 +913,6 @@ sudo emerge -va pyopenssl
 </div>
 	
 		<span class="comments"><a href="/blog/2012/12/10/music-moved//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2012/11/23/evince-display-chinese-wrong/">Evince中文显示错误</a></h1>
-	<div class="entry-content">
-		<p>今天用Evince打开一个pdf，本来应该显示中文的地方都是空白，google后发现是<a href="http://poppler.freedesktop.org">poppler</a>的问题，缺少了编码集poppler-data，那么安装好这个包就可一了</p>
-
-<p>on debian</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">sudo apt-get install poppler-data</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>on archlinux</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">sudo pacman -S poppler-data</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>于是基于poppler的pdf阅读器就都有可能出现这个问题，详见<a href="http://en.wikipedia.org/wiki/Poppler_(software)#PDF_readers_using_Poppler">PDF Readers Using Poppler</a></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-23T19:06:00+08:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/evince/'>evince</a>, <a class='category' href='/blog/categories/linux/'>linux</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2012/11/23/evince-display-chinese-wrong//index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: feeling | LOST]]></title>
   <link href="http://delta4d.github.com/blog/categories/feeling/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2013-02-16T20:01:33+08:00</updated>
+  <updated>2013-02-28T01:02:08+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Java on Gentoo]]></title>
+    <link href="http://delta4d.github.com/blog/2013/02/28/java-on-gentoo/"/>
+    <updated>2013-02-28T00:25:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2013/02/28/java-on-gentoo</id>
+    <content type="html"><![CDATA[<p>通过emerge来安装java就不赘述了，可以看这篇很详细的wiki，<a href="http://www.gentoo.org/doc/en/java.xml">click me -_-</a></p>
+
+<p>由于每天水水98的需求，但是rvpn在linux下工作的总不是那么尽如人意，每次都要换回win，很麻烦但也无可奈何。今天又开始折腾rvpn，把以前装的icedtea都删掉了，将rvpn提供的jre又装了一遍，rvpn居然就正常工作了，如此看来rvpn的wiki还是很靠谱的= =。另外使用rvpn提供的javaws运行topcode arena也正常了。Lucky night!</p>
+
+<p>Gentoo提供了一个java配置工具java-config，设置从portage安装的java很方便。如果要手动选择java版本的话可以将你所需的JAVA_HOME软链到/etc/java-config-2/current-system-vm，具体可以看看<a href="http://www.gentoo.org/proj/en/java/java-devel.xml">这个</a>。</p>
+
+<p>还有一个问题是java启动程序可能出现中文乱码，解决方法也很简单。在JAVA_HOME/lib/fonts目录下建立fallback目录，然后将你喜欢的中文字体软链/拷贝到这个目录就可以了。</p>
+
+<p>好怀念在ZJU的时光啊，很多时候会想自己当初没走的那条路，假如当时那样如今会是怎样。前两天吃饭的时候意外碰到了本科前两年同班同学，他问道”你怎么会在这里？我还以为……“，我很多时候也会这样问自己，我是怎么成为今天的自己的。很多事情结束后就感觉曾未经历过似的，难道真的是梦一场么。午夜果然是容易感伤么？</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Scream]]></title>
