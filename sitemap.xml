@@ -146,7 +146,7 @@
     </url>
     <url>
         <loc>http://delta4d.github.com/blog/2013/02/11/donelist-2012-and-todolist-2013/</loc>
-        <lastmod>2013-02-27T19:23:02+08:00</lastmod>
+        <lastmod>2013-03-07T22:25:51+08:00</lastmod>
     </url>
     <url>
         <loc>http://delta4d.github.com/blog/2013/02/16/git-submodule/</loc>
@@ -161,8 +161,12 @@
         <lastmod>2013-03-06T14:55:05+08:00</lastmod>
     </url>
     <url>
+        <loc>http://delta4d.github.com/blog/2013/03/07/gentoo-notes-02/</loc>
+        <lastmod>2013-03-07T22:27:27+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://delta4d.github.com/x/</loc>
-        <lastmod>2013-02-27T20:52:22+08:00</lastmod>
+        <lastmod>2013-03-07T21:33:25+08:00</lastmod>
     </url>
     <url>
         <loc>http://delta4d.github.com/aboutme/</loc>
@@ -170,10 +174,10 @@
     </url>
     <url>
         <loc>http://delta4d.github.com/blog/archives/</loc>
-        <lastmod>2013-03-06T14:55:05+08:00</lastmod>
+        <lastmod>2013-03-07T22:27:27+08:00</lastmod>
     </url>
     <url>
         <loc>http://delta4d.github.com/</loc>
-        <lastmod>2013-03-06T14:55:05+08:00</lastmod>
+        <lastmod>2013-03-07T22:27:27+08:00</lastmod>
     </url>
 </urlset>
