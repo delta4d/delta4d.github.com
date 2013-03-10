@@ -21,7 +21,7 @@ Reference
 * [XFCE Look](http://xfce-look.org/)
 * [Box Look](http://box-look.org/)
 
-然后推荐下archlinux论坛，arch论坛活跃度比较高，大家也都很热情。里面有很难找到的[DWM](http://dwm.suckless.org/)资源等等。下面这个子论坛里每个都有Screenshots Show，各种DE/WM screenshots，总之资源还是比较丰富的。
+然后推荐下archlinux论坛，arch论坛活跃度比较高，大家也都很热情。里面有很难找到的[DWM](http://dwm.suckless.org/)资源等等。下面这个子论坛里每个月都有Screenshots Show，各种DE/WM screenshots，总之资源还是比较丰富的。
 
 * [Artwork and Screenshots](https://bbs.archlinux.org/viewforum.php?id=47)
 
