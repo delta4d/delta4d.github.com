@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[LOST]]></title>
+  <title><![CDATA[Try To Think]]></title>
   <link href="http://delta4d.github.com/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2013-03-07T22:27:18+08:00</updated>
+  <updated>2013-03-10T23:58:59+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -41,7 +41,7 @@
 </ul>
 
 <h2 id="whats-going-on">What’s Going On</h2>
-<p>至于能用Linux多长时间，我不知道。有没有Gentoo Notes 03，我也不知道。</p>
+<p>至于能用Linux多长时间我不知道。有没有Gentoo Notes 03我也不知道。</p>
 ]]></content>
   </entry>
   
