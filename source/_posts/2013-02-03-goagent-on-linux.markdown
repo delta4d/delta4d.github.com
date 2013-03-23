@@ -14,7 +14,7 @@ Install
 2. 将local/proxy.ini中的appid改为你自己的刚刚建立的工程名
 3. 进入server目录执行`uploaddir=python python uploader.zip`将文件上传到服务器
 4. 进入local执行`python2 proxy.py`
-5. 安装插件SwitchySharp，可以在chromewebstore找到
+5. 安装插件SwitchySharp，可以在[chromewebstore](https://chrome.google.com/webstore/category/home)找到
 
 Issues
 ------
