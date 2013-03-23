@@ -1,24 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: git | Try To Think]]></title>
-  <link href="http://delta4d.github.com/blog/categories/git/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-03-23T21:25:30+08:00</updated>
-  <id>http://delta4d.github.com/</id>
-  <author>
-    <name><![CDATA[delta]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Git命令快速参考 - Try To Think</title>
+	<meta name="author" content="delta">
 
-  
-  <entry>
-    <title type="html"><![CDATA[Git命令快速参考]]></title>
-    <link href="http://delta4d.github.com/blog/2013/03/23/git-command-quick-reference/"/>
-    <updated>2013-03-23T14:54:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/03/23/git-command-quick-reference</id>
-    <content type="html"><![CDATA[<h2 id="section">安装和初始化</h2>
+	
+	<meta name="description" content="安装和初始化 配置全局用户名和电子邮件地址 $ git config --global user.name "Your Name"
+$ git config --global user.email "you@example.com" 为特定的版本库配置用户名和电子邮件地址 $ cd /path/ &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Try To Think" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Try To Think</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+	<li><a href="/aboutme">AboutMe</a></li>
+	<li><a href="/x">X</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+	<li><a href="/aboutme">AboutMe</a></li>
+	<li><a href="/x">X</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:delta4d.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+		<a class="github" href="https://github.com/delta4d" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:delta4d.github.com">
+	</form>
+</nav>
+
+</header>
+	
+		
+	
+	<div id="content" class="inner"><article class="post">
+	<h1 class="title">Git命令快速参考</h1>
+	<div class="entry-content"><h2 id="section">安装和初始化</h2>
 
 <ul>
   <li>
@@ -610,58 +703,100 @@ $ git commit -m "&lt;some message&gt;"
   <li><a href="http://git-scm.com/docs">Git Doc</a></li>
   <li><a href="https://help.github.com/">Github Help</a></li>
 </ul>
-]]></content>
-  </entry>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  <entry>
-    <title type="html"><![CDATA[git项目嵌套]]></title>
-    <link href="http://delta4d.github.com/blog/2013/02/16/git-submodule/"/>
-    <updated>2013-02-16T19:38:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/02/16/git-submodule</id>
-    <content type="html"><![CDATA[<p>以前看到有的github项目有如下的情况：</p>
 
-<p><img src="/images/upload/2013-02-16-git-submodule.png" alt="" /></p>
 
-<p>就是一个git项目的子目录也是一个项目，在github上看起来就像链接一样。今天终于发现，这其实是git的submodule，具体可参考<a href="http://git-scm.com/book/en/Git-Tools-Submodules">这里</a>，也可以<code>git submodule --help</code></p>
+<time datetime="2013-03-23T14:54:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2013</time></div>
+	<div class="tags">
 
-<p>具体做的时候可以这样：</p>
 
-<p><code>
-cd repo_dir
-git submodule git@github.com:yourname/yourrepo.git
-</code></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[use octopress on a new computer]]></title>
-    <link href="http://delta4d.github.com/blog/2012/11/10/use-octopress-on-a-new-computer/"/>
-    <updated>2012-11-10T19:37:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2012/11/10/use-octopress-on-a-new-computer</id>
-    <content type="html"><![CDATA[<p>when you are bloging with octopress, don’t forget the following commands</p>
+	<a class='category' href='/blog/categories/git/'>git</a>
 
-<p><code>
-	git add .
-	git commit -m 'ur commit'
-	git push origin source
-</code></p>
 
-<p>then when you are on another computer, trying to setup a bloging enviroment with octopress, because ‘rake deploy’ upload the generated files, so it needs a little work, you can go like this:</p>
+</div>
+	
+		<span class="comments"><a href="/blog/2013/03/23/git-command-quick-reference/#disqus_thread">Comments</a></span>
+	
+</div></article>
 
-<p><code>
-	$ git clone git@github.com:username/username.github.com.git
-	$ cd username.github.com
-	username.github.com$ git checkout source
-	username.github.com$ mkdir _deploy
-	username.github.com$ cd _deploy
-	username.github.com/_deploy$ git init
-	username.github.com/_deploy$ git remote add origin git@github.com:username/username.github.com.git
-	usename.github.com/_deploy$ git pull origin master
-	usename.github.com/_deploy$ cd ..
-</code>
-reference:
-<a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one">dblock.org</a></p>
-]]></content>
-  </entry>
-  
-</feed>
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
+
+    delta
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'delta4d';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://delta4d.github.com/blog/2013/03/23/git-command-quick-reference/';
+        var disqus_url = 'http://delta4d.github.com/blog/2013/03/23/git-command-quick-reference/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-36393620-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>
