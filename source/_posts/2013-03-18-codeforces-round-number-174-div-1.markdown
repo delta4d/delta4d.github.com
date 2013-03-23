@@ -11,6 +11,7 @@ categories: ["codeforces"]
 
 [source code](https://github.com/delta4d/AlgoSolution/blob/master/codeforces/174/1/A.cpp)
 
+
 对于一个数列，有三个操作：
 
 	1. 给a个数同时加x
