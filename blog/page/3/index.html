@@ -7,15 +7,8 @@
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="zz《精通UNIX shell脚本编程》
-这是节省CPU周期和磁盘I/O时间的一个小技巧，而且不受管道的2048个字符数的限制 1
-2
-3
-4
-5
-while read LINE
-do echo &quot;$LINE&quot; :
-done &lt; &lt;(command) &hellip;">
+	<meta name="description" content="pacman更新到4.x中出现了认证系统，需要先执行pacman-key –init来生成key，但是这时可能出现not enough random bytes available，后来查了下发现Linux系统生成随机数是根据系统熵来获得的，这是因为系统熵不够的缘故。系统熵值可以通过 1
+cat &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -117,6 +110,63 @@ done &lt; &lt;(command) &hellip;">
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/05/25/pacman-not-enough-random-bytes-available/">[Pacman] Not Enough Random Bytes Available</a></h1>
+	<div class="entry-content">
+		<p>pacman更新到4.x中出现了认证系统，需要先执行pacman-key –init来生成key，但是这时可能出现not enough random bytes available，后来查了下发现Linux系统生成随机数是根据系统熵来获得的，这是因为系统熵不够的缘故。系统熵值可以通过</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line">cat /proc/sys/kernel/random/entropy_avail
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>来查看。所谓熵就是系统的混乱程度。</p>
+
+<p>如果你在图形界面的话，那么只要鼠标动几下就可以获得很高的熵值。</p>
+
+<p>如果在字符界面的话，那么可以用手随便敲一些命令，无效的也可以，反正我是对着键盘乱敲的= =，这时可能会使得熵值达到3000多一点，这样执行pacman-key可能还是会报熵值不足，不要着急按Ctrl+C，这时你可以通过Ctrl+Alt+F2切换到tty2，然后继续对着键盘一阵乱敲，然后切换到tty1，就会发现命令已经执行完了。其实只要做一些大量IO的事情就可以了，比如cp一个大体积文件，或者使用dd等等，不一一说明了。</p>
+
+<p>pacman更新好后，pacman.conf可能需要改一下，查看/etc目录会发现有两个pacman配置文件，一个是旧的pacman.conf，一个是4.x的pacman.conf.pacnew，只需要将后者覆盖前者就可以了，记着要对前者备份哦。新的配置文件中有SigLevel选项，默认应该是关闭的，你可以根据需求进行选择：</p>
+
+<ul>
+  <li>Required: 强制检查签名</li>
+  <li>Optional: 如果签名存在就检查，但会接受未签名软件包和数据库</li>
+  <li>Never:不会进行任何签名检查。</li>
+</ul>
+
+<p>如果开启签名的话，后面安装软件的过程中可能还会遇到一些其他问题，这里就不一一说明了。。</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-25T15:21:00+08:00" pubdate data-updated="true">May 25<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/archlinux/'>archlinux</a>, <a class='category' href='/blog/categories/pacman/'>pacman</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/05/25/pacman-not-enough-random-bytes-available//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -709,63 +759,6 @@ done &lt; &lt;(command) &hellip;">
 </div>
 	
 		<span class="comments"><a href="/blog/2011/11/06/2011-10//blog/page/3/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2011/09/06/archlinux-load-ntfs-partion-at-boot/">Archlinux开机加载NTFS分区</a></h1>
-	<div class="entry-content">
-		<p>修改/etc/fstab文件，添加如下内容：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">/dev/sda1 /media/sda1 ntfs-3g defaults,locale=zh_CN.UTF8 0 0
-</span><span class="line">/dev/sda2 /media/sda2 ntfs-3g defaults,locale=zh_CN.UTF8 0 0</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>需要注意几点：</p>
-
-<ol>
-  <li>/dev/sdax为电脑上对应的分区，视具体情况而定</li>
-  <li>/media/sdax为/media中的目录需要提前建立好，名字任意</li>
-  <li>ntfs-3g需要提前安装好，其后所接的参数可以通过手册来查询</li>
-</ol>
-
-<p>reference:</p>
-
-<ul>
-  <li><a href="http://en.wikipedia.org/wiki/Fstab">fstab具体参数意义及书写格式</a></li>
-  <li>man fstab</li>
-</ul>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-06T09:47:00+08:00" pubdate data-updated="true">Sep 6<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/fstab/'>fstab</a>, <a class='category' href='/blog/categories/linux/'>linux</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2011/09/06/archlinux-load-ntfs-partion-at-boot//blog/page/3/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

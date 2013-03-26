@@ -7,8 +7,7 @@
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="安装和初始化 配置全局用户名和电子邮件地址 $ git config --global user.name "Your Name"
-$ git config --global user.email "you@example.com" 为特定的版本库配置用户名和电子邮件地址 $ cd /path/ &hellip;">
+	<meta name="description" content="A. Lucky Permutation source code 判定是否存在一个置换使得一个序列经过两次相同的置换达到逆序。 考虑若P(x)=y，则由于P(P(x))=n-x+1，则P(y)=n-x+1，即P(x)=y =&gt; P(y)=n-x+1，连续应用此式可以得到 P(x) = y &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -110,6 +109,118 @@ $ git config --global user.email "you@example.com" 为特定的版本库配置�
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2013/03/23/codeforces-round-number-176-div-1/">Codeforces Round #176 (Div. 1)</a></h1>
+	<div class="entry-content">
+		<h2 id="a-lucky-permutationhttpwwwcodeforcescomcontest286problema"><a href="http://www.codeforces.com/contest/286/problem/A">A. Lucky Permutation</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/A.cpp">source code</a></p>
+
+<p>判定是否存在一个置换使得一个序列经过两次相同的置换达到逆序。</p>
+
+<p>考虑若P(x)=y，则由于P(P(x))=n-x+1，则P(y)=n-x+1，即P(x)=y =&gt; P(y)=n-x+1，连续应用此式可以得到</p>
+
+<pre><code>P(x) = y
+P(y) = n - x + 1
+P(n - x + 1) = n - y + 1
+P(n - y + 1) = x
+</code></pre>
+
+<p>即4个构成一组，于是当n%4=0或1时存在解，否则不存在。</p>
+
+<p>不知道为什么，感觉有点像密码学里的<a href="http://en.wikipedia.org/wiki/Meet-in-the-middle_attack">Meet-In-The-Middle</a></p>
+
+<h2 id="b-shiftinghttpwwwcodeforcescomcontest286problemb"><a href="http://www.codeforces.com/contest/286/problem/B">B. Shifting</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/B.cpp">source code</a></p>
+
+<p>对于一个序列{pi}，定义操作f(p,k)为将序列按k个分为一组，最后一组若不够分，则含有n%k个元素，然后对于每一个小组循环左移。问f(f(…f(p=[1,2,…,n],2)…,n-1),n)是多少。</p>
+
+<p>对于每一个k，共进行n/k次循环左移，共有n(1/2+1/3+…+1/n)=nln(n)次循环左移，只需要将每次循环左移复杂度降到O(1)就可以了。比如f([1..9], 3)：</p>
+
+<pre><code>1 2 3 4 5 6 7 8 9 =&gt;
+2 3 1 5 6 3 8 9 7
+将被移动的字符看作*，于是：
+* 2 3 * 5 6 * 8 9
+  2 3 * 5 6 * 8 9 *
+这样就可以将左移变为O(1)了
+</code></pre>
+
+<h2 id="c-main-sequencehttpwwwcodeforcescomcontest286problemc"><a href="http://www.codeforces.com/contest/286/problem/C">C. Main Sequence</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/C.cpp">source code</a></p>
+
+<p>定义一个正确的括号序列为：</p>
+
+<pre><code>1. 空序列为括号序列
+2. 若{a1, a2, ..., al}和{b1, b2, ..., bk}是括号序列，则{a1, a2, ..., al, b1, b2, ..., bk}也是括号序列
+3. 若{a1, a2, ..., al}是括号序列，则{v, a1, a2, ..., al, -v}是括号序列，v是一个正整数
+</code></pre>
+
+<p>现在有一个括号序列{xi}，已知{pi=|xi|}，和{i|xi&lt;0}的一个子集，问是否可以还原{xi}，若存在多解，任意输出一个，否则输出NO。</p>
+
+<p>和正常的括号匹配差不多，因为要求了某些必须取负数，即相当于有括号，所以从右向左压栈，然后正常的匹配就可以了。</p>
+
+<h2 id="d-touristshttpwwwcodeforcescomcontest286problemd"><a href="http://www.codeforces.com/contest/286/problem/D">D. Tourists</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/D.cpp">source code</a></p>
+
+<p>在(-1,0)和(1,0)处有两个人同时沿Oy正方向运动，每秒运动一个单位，现在在某个时刻t会出现(0,a)-(0,b)这样一堵墙，若此时两个人正好位于Oy的[a,b]之间那么这两个人就互相看不见对方，现在给出所有这样的(a,b,t)三元组，还有从q1，q2…时刻出发的人，查询每对人有多长时间是看不到对方的。(a,b,t,qi&gt;=0)</p>
+
+<p>以时间t为自变量，纵坐标为应变量，用x表示，那么对于从时间t出发的人对应的关系为x=t-q（更精确的应该为x=max(0,t-q)，然而因为墙壁不会出现在负轴，所以写成这样对结果没有影响），对于每个墙壁(a,b,t)，关系为x=a,t=t与x=b,t=t之间的带状区域，可以看到被挡到的时间为x=t-q被带状区域所截取的线段的横截距，因为斜率为1，所以也等于纵截距。为了便于判断相交和计算做坐标变换(t,x)=&gt;(t-x,x)，那么人的方程变为t=q，是一条垂直于横轴的直线,带状区域变为左顶角为PI/4的梯形，此时所求即为直线和这个梯形交集的纵截距，也等于q-t（t为梯形最左点的横坐标）可以将梯形看作两个PI/4的角的交，只是在计算的时候下面的角是被减掉的，如果处理出所有这样的角的话，就很容易计算了。比如q和ti(0&lt;=i&lt;k)相交，那么最后所求为sigma(q-ti)=k*q-sigma(ti)，这样只需要处理出ti前缀和，最后二分就可以了。处理角的过程是将所有带状区域的上下边界统一排序，并且维护当前所有线对应的出现时间的最小值，用堆就可以了，当处理到某个区域的下界的时候，这个区域对应的时间t要出堆，依次处理就可以了。</p>
+
+<h2 id="e-ladies-shophttpwwwcodeforcescomcontest286probleme"><a href="http://www.codeforces.com/contest/286/problem/E">E. Ladies’ Shop</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/E.cpp">source code</a></p>
+
+<p>有一些背包，只能够装重量为ai的物品，不能多也不能少，现在有一些物品，但是重量还没有确定，现在让你确定重量1&lt;=p1&lt;p2&lt;…&lt;pk满足下列条件（每个重量的物品有无穷多个）</p>
+
+<pre><code>1. 每个包都会被用到。即对于每一个i都存在一些物品它们的总重量为ai
+2. 对于任何不超过m的重量的物品，必须有一个包可以放置它
+3. 对于满足1和2的重量分配，使k最小化
+</code></pre>
+
+<p>题目意思就是说对于物品{pi}它们的任意不大于m的组合都能在{ai}中找到，比较直接的做法就是无限背包作出所有不大于m的重量，然后去和{ai}比较，但是n,m=10^6，这样会超时，首先，所有重量肯定是{ai}的一个子集，否则就会不满足条件2，其次，加入{pi}是一个满足条件的重量分配，对于每一个i，pi,2pi,3pi…tpi&lt;=m都应该有包对应，即总存在某个j使得aj=x*pi，于是要找出所有组合只需要将{ai}中的任意两个相加就可以判断出{pi}的所有组合了，将{ai}看作一个数，它的平方即为任意两个的和，于是可以用<a href="http://en.wikipedia.org/wiki/Fast_Fourier_transform">FFT</a>做了，采用<a href="http://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm">[Cooley–Tukey FFT algorithm]</a>(这个算法于1965年提出，实际上只是重新发现了<a href="http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Gauss</a>在1805年提出的算法，orz）。假若平方封闭，那么便是可以分配，否则不存在方案，要最小化k，只需要选那些最小的元，即所有其他的重量里没有它的因子。</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>弱爆了啊。42min才搞出A，然后一直再搞B，其实应该多看下C的，最后15min看了C，就感觉很可搞，可惜时间不多了，情急之下居然把statck写成queue了，赛后稍微调了一下就过了。这次还是出现了会做的题目在比赛中没有做出来的情况&gt;_&lt;。B还是该早些放弃的，D和E压根就没有读题，以后至少要将每道题目都读一遍，至于会不会做就是另外一回事了。啊啊啊，弱爆了弱爆了。 </p>
+
+<p>终于fix了D和E，D首先要用数学的语言去描述题目场景，那个坐标变换太神了。E首先要从题目条件判断出重量是{ai}的子集，然后就要看能不能联想到FFT了。啊啊啊，弱爆了弱爆了。</p>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-23T23:12:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/codeforces/'>codeforces</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2013/03/23/codeforces-round-number-176-div-1//index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -1268,7 +1379,7 @@ $ git commit -m "&lt;some message&gt;"
   <li>将local/proxy.ini中的appid改为你自己的刚刚建立的工程名</li>
   <li>进入server目录执行<code>uploaddir=python python uploader.zip</code>将文件上传到服务器</li>
   <li>进入local执行<code>python2 proxy.py</code></li>
-  <li>安装插件SwitchySharp，可以在chromewebstore找到</li>
+  <li>安装插件SwitchySharp，可以在<a href="https://chrome.google.com/webstore/category/home">chromewebstore</a>找到</li>
 </ol>
 
 <h2 id="issues">Issues</h2>
@@ -1332,115 +1443,6 @@ sudo emerge -va pyopenssl
 </div>
 	
 		<span class="comments"><a href="/blog/2013/02/03/goagent-on-linux//index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2013/01/27/gentoo-notes-01/">Gentoo Notes 01</a></h1>
-	<div class="entry-content">
-		<h2 id="why-gentoo">Why Gentoo</h2>
-<p>久仰Gentoo大名，过去一年断断续续在虚拟机上装过好几次Gentoo了，一直想在实体机上试试，于是趁放假的时候折腾折腾。</p>
-
-<h2 id="start">Start</h2>
-
-<p>Gentoo是编译安装的，于是可以进行相关编译选项优化。同时Gentoo是可以滚动升级的，这样方便不少。开始装机的时候还是想着自己编译内核的，结果开机后不断panic，把我也搞的panic了，于是老老实实用genkernel，以后有机会在好好编译内核吧，先把系统起来在说。很多用户觉得Gentoo编译太费时间了，所以不选择Gentoo，但装机大多都是可以一劳永逸的，配置好后并不会频繁的装软件了。装好基本系统其实还是比较快的，使用genkernel也只用了一个小时左右，装好X然后装DE便会比较慢了，键盘控，喜欢轻量级的话装个WM是便会很快了。</p>
-
-<h2 id="errors">Errors</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">!!The filesystem mounted at /dev/sdb3 does not appear to be a valid /. Try again 
-</span><span class="line">!!Could not find the root block device in. 
-</span><span class="line">Please specify another value or: press Enter for the same , type "shell" ......</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>可能是grub.conf写错了，需要注意一下两个变量：</p>
-
-<ul>
-  <li><code>root (hd0,0)</code>指/boot在/dev/sda1。(hd0,0-3)表示四个主分区，(hd0,&gt;3)表示逻辑分区，其中grub从0开始，而linux从1开始表示分区。</li>
-  <li><code>real_root=/dev/sdax</code>指/在/dev/sdax</li>
-</ul>
-
-<p>startx的时候出现no screens found
-   可能是显卡驱动装的不对，可以执行<code>emerge -av $(qlist -IC x11-drivers)</code>，我的是nvidia，在make.conf中设置好<code>VIDEO_CARDS="nvidia"</code>，然后装好n卡驱动，在执行<code>nvidia-xconfig</code>后就可以了。</p>
-
-<p>emerge complains  <a href="http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=2&amp;chap=1">click me!</a></p>
-
-<h2 id="why-gentoo-again">Why Gentoo Again</h2>
-<ol>
-  <li>漂亮的字符界面。第一次虚拟机装Gentoo时的最深的印象。</li>
-  <li>强大的portage和emerge。portage告诉emerge在哪里下载源代码，编译选项是什么。</li>
-  <li>overlay？就目前的感觉想archlinux的aur。里面应该有不少好玩的东西。</li>
-  <li>详尽的文档。</li>
-  <li>……</li>
-</ol>
-
-<p>实体机用了才不到两天，还有好多好多东西需要学习和探索。Happy Hunting。</p>
-
-<h2 id="de-vs-wm">DE vs WM</h2>
-<p>一开始想装wm的，因为在<a href="https://bbs.archlinux.org/viewforum.php?id=47">archlinux forum</a>里看到很多wm非常漂亮，还有很多<a href="https://bbs.archlinux.org/viewtopic.php?id=138281">轻量级软件</a>提供选择。也确实一开始试的是openbox和monsterwm的，还是不习惯。最后换成了KDE，其实KDE以前没怎么用过（其实连linux都没怎么用过，总是不知不觉切会win后就不再进入linux了），就目前来看KDE表现还是不错的，但还是有些问题没有解决。。一开始挺好的，但是感觉有些不稳定，无法启动kde程序，gtk倒是没问题，后来删除了~/.kde4恢复默认设置倒是好了。另外qtconfig配置无法保存，这个直接导致了有些qt程序字体比较难看等。</p>
-
-<h2 id="octopress-in-gentoo">Octopress in Gentoo</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">...custom_require.rb:36:in 'require': cannot load such file auto_gem (LoadError)
-</span><span class="line">...custom_require.rb:36:in 'require'</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p><code>unset RUBYOPT</code> fix it.</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">Building site: source -&gt; public
-</span><span class="line">File "&lt;string&gt;", line 1
-</span><span class="line">import sys; print sys.executable
-</span><span class="line">^
-</span><span class="line">SyntaxError: invalid syntax</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Follow <a href="http://blog.gonzih.org/blog/2011/09/21/fix-octopress-pygments-error-on-arch-linux/">this</a>. But I change rubypython from 0.5.3 to 0.6.3 in Gemfile.lock, it fixs everything I ran into..</p>
-
-<h2 id="reference">Reference</h2>
-<ol>
-  <li><a href="http://www.google.com">Google</a></li>
-  <li><a href="http://www.gentoo.org/doc/en/handbook/">Gentoo Handbook</a></li>
-  <li><a href="http://www.gentoo.org/doc/en/xorg-config.xml">Gentoo Xorg</a></li>
-</ol>
-
-<h2 id="whats-going-on">What’s Going On</h2>
-<p>Keep Using, Keep Hunting。有没有gentoo notes 02我也不知道。。</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-27T19:26:00+08:00" pubdate data-updated="true">Jan 27<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/gentoo/'>gentoo</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2013/01/27/gentoo-notes-01//index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
