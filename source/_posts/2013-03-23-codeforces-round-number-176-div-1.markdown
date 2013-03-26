@@ -1,0 +1,88 @@
+---
+layout: post
+title: "Codeforces Round #176 (Div. 1)"
+date: 2013-03-23 23:12
+comments: true
+categories: ["codeforces"]
+---
+
+[A. Lucky Permutation](http://www.codeforces.com/contest/286/problem/A)
+----------------------
+
+[source code](https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/A.cpp)
+
+判定是否存在一个置换使得一个序列经过两次相同的置换达到逆序。
+
+考虑若P(x)=y，则由于P(P(x))=n-x+1，则P(y)=n-x+1，即P(x)=y => P(y)=n-x+1，连续应用此式可以得到
+
+	P(x) = y
+	P(y) = n - x + 1
+	P(n - x + 1) = n - y + 1
+	P(n - y + 1) = x
+
+即4个构成一组，于是当n%4=0或1时存在解，否则不存在。
+
+不知道为什么，感觉有点像密码学里的[Meet-In-The-Middle](http://en.wikipedia.org/wiki/Meet-in-the-middle_attack)
+
+[B. Shifting](http://www.codeforces.com/contest/286/problem/B)
+-------------
+
+[source code](https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/B.cpp)
+
+对于一个序列{pi}，定义操作f(p,k)为将序列按k个分为一组，最后一组若不够分，则含有n%k个元素，然后对于每一个小组循环左移。问f(f(...f(p=[1,2,...,n],2)...,n-1),n)是多少。
+
+对于每一个k，共进行n/k次循环左移，共有n(1/2+1/3+...+1/n)=nln(n)次循环左移，只需要将每次循环左移复杂度降到O(1)就可以了。比如f([1..9], 3)：
+
+	1 2 3 4 5 6 7 8 9 =>
+	2 3 1 5 6 3 8 9 7
+	将被移动的字符看作*，于是：
+	* 2 3 * 5 6 * 8 9
+	  2 3 * 5 6 * 8 9 *
+	这样就可以将左移变为O(1)了
+
+[C. Main Sequence](http://www.codeforces.com/contest/286/problem/C)
+------------------
+
+[source code](https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/C.cpp)
+
+定义一个正确的括号序列为：
+
+	1. 空序列为括号序列
+	2. 若{a1, a2, ..., al}和{b1, b2, ..., bk}是括号序列，则{a1, a2, ..., al, b1, b2, ..., bk}也是括号序列
+	3. 若{a1, a2, ..., al}是括号序列，则{v, a1, a2, ..., al, -v}是括号序列，v是一个正整数
+
+
+现在有一个括号序列{xi}，已知{pi=\|xi\|}，和{i\|xi\<0}的一个子集，问是否可以还原{xi}，若存在多解，任意输出一个，否则输出NO。
+
+和正常的括号匹配差不多，因为要求了某些必须取负数，即相当于有括号，所以从右向左压栈，然后正常的匹配就可以了。
+
+[D. Tourists](http://www.codeforces.com/contest/286/problem/D)
+-------------
+
+[source code](https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/D.cpp)
+
+在(-1,0)和(1,0)处有两个人同时沿Oy正方向运动，每秒运动一个单位，现在在某个时刻t会出现(0,a)-(0,b)这样一堵墙，若此时两个人正好位于Oy的[a,b]之间那么这两个人就互相看不见对方，现在给出所有这样的(a,b,t)三元组，还有从q1，q2...时刻出发的人，查询每对人有多长时间是看不到对方的。(a,b,t,qi\>=0)
+
+以时间t为自变量，纵坐标为应变量，用x表示，那么对于从时间t出发的人对应的关系为x=t-q（更精确的应该为x=max(0,t-q)，然而因为墙壁不会出现在负轴，所以写成这样对结果没有影响），对于每个墙壁(a,b,t)，关系为x=a,t=t与x=b,t=t之间的带状区域，可以看到被挡到的时间为x=t-q被带状区域所截取的线段的横截距，因为斜率为1，所以也等于纵截距。为了便于判断相交和计算做坐标变换(t,x)=\>(t-x,x)，那么人的方程变为t=q，是一条垂直于横轴的直线,带状区域变为左顶角为PI/4的梯形，此时所求即为直线和这个梯形交集的纵截距，也等于q-t（t为梯形最左点的横坐标）可以将梯形看作两个PI/4的角的交，只是在计算的时候下面的角是被减掉的，如果处理出所有这样的角的话，就很容易计算了。比如q和ti(0\<=i\<k)相交，那么最后所求为sigma(q-ti)=k*q-sigma(ti)，这样只需要处理出ti前缀和，最后二分就可以了。处理角的过程是将所有带状区域的上下边界统一排序，并且维护当前所有线对应的出现时间的最小值，用堆就可以了，当处理到某个区域的下界的时候，这个区域对应的时间t要出堆，依次处理就可以了。
+
+
+[E. Ladies' Shop](http://www.codeforces.com/contest/286/problem/E)
+-----------------
+
+[source code](https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/E.cpp)
+
+有一些背包，只能够装重量为ai的物品，不能多也不能少，现在有一些物品，但是重量还没有确定，现在让你确定重量1<=p1<p2<...<pk满足下列条件（每个重量的物品有无穷多个）
+
+	1. 每个包都会被用到。即对于每一个i都存在一些物品它们的总重量为ai
+	2. 对于任何不超过m的重量的物品，必须有一个包可以放置它
+	3. 对于满足1和2的重量分配，使k最小化
+
+题目意思就是说对于物品{pi}它们的任意不大于m的组合都能在{ai}中找到，比较直接的做法就是无限背包作出所有不大于m的重量，然后去和{ai}比较，但是n,m=10^6，这样会超时，首先，所有重量肯定是{ai}的一个子集，否则就会不满足条件2，其次，加入{pi}是一个满足条件的重量分配，对于每一个i，pi,2pi,3pi...tpi<=m都应该有包对应，即总存在某个j使得aj=x*pi，于是要找出所有组合只需要将{ai}中的任意两个相加就可以判断出{pi}的所有组合了，将{ai}看作一个数，它的平方即为任意两个的和，于是可以用[FFT](http://en.wikipedia.org/wiki/Fast_Fourier_transform)做了，采用[[Cooley–Tukey FFT algorithm]](http://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm)（这个算法于1965年提出，实际上只是重新发现了[Gauss](http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss)在1805年提出的算法，orz）。假若平方封闭，那么便是可以分配，否则不存在方案，要最小化k，只需要选那些最小的元，即所有其他的重量里没有它的因子。
+
+Summary
+-------
+
+弱爆了啊。42min才搞出A，然后一直再搞B，其实应该多看下C的，最后15min看了C，就感觉很可搞，可惜时间不多了，情急之下居然把statck写成queue了，赛后稍微调了一下就过了。这次还是出现了会做的题目在比赛中没有做出来的情况>_<。B还是该早些放弃的，D和E压根就没有读题，以后至少要将每道题目都读一遍，至于会不会做就是另外一回事了。啊啊啊，弱爆了弱爆了。 
+
+终于fix了D和E，D首先要用数学的语言去描述题目场景，那个坐标变换太神了。E首先要从题目条件判断出重量是{ai}的子集，然后就要看能不能联想到FFT了。啊啊啊，弱爆了弱爆了。
+
