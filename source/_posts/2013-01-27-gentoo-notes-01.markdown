@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "gentoo notes 01"
+title: "gentoo notes 01 - start"
 date: 2013-01-27 19:26
 comments: true
 categories: ["gentoo"]

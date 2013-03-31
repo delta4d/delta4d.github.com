@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "gentoo notes 02"
+title: "gentoo notes 02 - customize"
 date: 2013-03-07 21:25
 comments: true
 categories: ["gentoo"]
