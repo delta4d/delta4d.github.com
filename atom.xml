@@ -4,7 +4,7 @@
   <title><![CDATA[Try To Think]]></title>
   <link href="http://delta4d.github.com/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2013-03-27T00:44:38+08:00</updated>
+  <updated>2013-04-01T00:40:38+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -86,7 +86,7 @@ P(n - y + 1) = x
 3. 对于满足1和2的重量分配，使k最小化
 </code></pre>
 
-<p>题目意思就是说对于物品{pi}它们的任意不大于m的组合都能在{ai}中找到，比较直接的做法就是无限背包作出所有不大于m的重量，然后去和{ai}比较，但是n,m=10^6，这样会超时，首先，所有重量肯定是{ai}的一个子集，否则就会不满足条件2，其次，加入{pi}是一个满足条件的重量分配，对于每一个i，pi,2pi,3pi…tpi&lt;=m都应该有包对应，即总存在某个j使得aj=x*pi，于是要找出所有组合只需要将{ai}中的任意两个相加就可以判断出{pi}的所有组合了，将{ai}看作一个数，它的平方即为任意两个的和，于是可以用<a href="http://en.wikipedia.org/wiki/Fast_Fourier_transform">FFT</a>做了，采用<a href="http://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm">[Cooley–Tukey FFT algorithm]</a>(这个算法于1965年提出，实际上只是重新发现了<a href="http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Gauss</a>在1805年提出的算法，orz）。假若平方封闭，那么便是可以分配，否则不存在方案，要最小化k，只需要选那些最小的元，即所有其他的重量里没有它的因子。</p>
+<p>题目意思就是说对于物品{pi}它们的任意不大于m的组合都能在{ai}中找到，比较直接的做法就是无限背包作出所有不大于m的重量，然后去和{ai}比较，但是n,m=10^6，这样会超时，首先，所有重量肯定是{ai}的一个子集，否则就会不满足条件2，其次，加入{pi}是一个满足条件的重量分配，对于每一个i，pi,2pi,3pi…tpi&lt;=m都应该有包对应，即总存在某个j使得aj=x*pi，于是要找出所有组合只需要将{ai}中的任意两个相加就可以判断出{pi}的所有组合了，将{ai}看作一个数，它的平方即为任意两个的和，于是可以用<a href="http://en.wikipedia.org/wiki/Fast_Fourier_transform">FFT</a>做了，采用<a href="http://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm">[Cooley–Tukey FFT algorithm]</a>（这个算法于1965年提出，实际上只是重新发现了<a href="http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Gauss</a>在1805年提出的算法，orz）。假若平方封闭，那么便是可以分配，否则不存在方案，要最小化k，只需要选那些最小的元，即所有其他的重量里没有它的因子。</p>
 
 <h2 id="summary">Summary</h2>
 
@@ -762,7 +762,7 @@ $ git commit -m "&lt;some message&gt;"
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[gentoo notes 02]]></title>
+    <title type="html"><![CDATA[gentoo notes 02 -- customize]]></title>
     <link href="http://delta4d.github.com/blog/2013/03/07/gentoo-notes-02/"/>
     <updated>2013-03-07T21:25:00+08:00</updated>
     <id>http://delta4d.github.com/blog/2013/03/07/gentoo-notes-02</id>
@@ -1070,7 +1070,7 @@ sudo emerge -va pyopenssl
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[gentoo notes 01]]></title>
+    <title type="html"><![CDATA[gentoo notes 01 -- start]]></title>
     <link href="http://delta4d.github.com/blog/2013/01/27/gentoo-notes-01/"/>
     <updated>2013-01-27T19:26:00+08:00</updated>
     <id>http://delta4d.github.com/blog/2013/01/27/gentoo-notes-01</id>

@@ -182,7 +182,7 @@ P(n - y + 1) = x
 3. 对于满足1和2的重量分配，使k最小化
 </code></pre>
 
-<p>题目意思就是说对于物品{pi}它们的任意不大于m的组合都能在{ai}中找到，比较直接的做法就是无限背包作出所有不大于m的重量，然后去和{ai}比较，但是n,m=10^6，这样会超时，首先，所有重量肯定是{ai}的一个子集，否则就会不满足条件2，其次，加入{pi}是一个满足条件的重量分配，对于每一个i，pi,2pi,3pi…tpi&lt;=m都应该有包对应，即总存在某个j使得aj=x*pi，于是要找出所有组合只需要将{ai}中的任意两个相加就可以判断出{pi}的所有组合了，将{ai}看作一个数，它的平方即为任意两个的和，于是可以用<a href="http://en.wikipedia.org/wiki/Fast_Fourier_transform">FFT</a>做了，采用<a href="http://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm">[Cooley–Tukey FFT algorithm]</a>(这个算法于1965年提出，实际上只是重新发现了<a href="http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Gauss</a>在1805年提出的算法，orz）。假若平方封闭，那么便是可以分配，否则不存在方案，要最小化k，只需要选那些最小的元，即所有其他的重量里没有它的因子。</p>
+<p>题目意思就是说对于物品{pi}它们的任意不大于m的组合都能在{ai}中找到，比较直接的做法就是无限背包作出所有不大于m的重量，然后去和{ai}比较，但是n,m=10^6，这样会超时，首先，所有重量肯定是{ai}的一个子集，否则就会不满足条件2，其次，加入{pi}是一个满足条件的重量分配，对于每一个i，pi,2pi,3pi…tpi&lt;=m都应该有包对应，即总存在某个j使得aj=x*pi，于是要找出所有组合只需要将{ai}中的任意两个相加就可以判断出{pi}的所有组合了，将{ai}看作一个数，它的平方即为任意两个的和，于是可以用<a href="http://en.wikipedia.org/wiki/Fast_Fourier_transform">FFT</a>做了，采用<a href="http://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm">[Cooley–Tukey FFT algorithm]</a>（这个算法于1965年提出，实际上只是重新发现了<a href="http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Gauss</a>在1805年提出的算法，orz）。假若平方封闭，那么便是可以分配，否则不存在方案，要最小化k，只需要选那些最小的元，即所有其他的重量里没有它的因子。</p>
 
 <h2 id="summary">Summary</h2>
 
@@ -944,7 +944,7 @@ $ git commit -m "&lt;some message&gt;"
 
 
     <article class="post">
-	<h1 class="title"><a href="/blog/2013/03/07/gentoo-notes-02/">Gentoo Notes 02</a></h1>
+	<h1 class="title"><a href="/blog/2013/03/07/gentoo-notes-02/">Gentoo Notes 02 &#8211; Customize</a></h1>
 	<div class="entry-content">
 		<p>notes02写点桌面美化的东西吧。其实用过KDE，Gnome，Awesome，Openbox等各种环境，最后稳定下来到XFCE4，其实以上提到都是很不错的环境，但是我有时候就是会对很多其实无关痛痒的东西较真，真正关系到自己的东西或事情反倒不那么上心了。KDE就是很不错的一个桌面环境，至于当初为什么换掉现在也记不清楚了。说到底，DE/WM这种东西不能太过在意，用Linux毕竟不是来玩桌面的。自从知道Linux的存在后，就不停的折腾发行版，DE/WM，但最后并没有学到多少东西，最后觉得还是得踏踏实实的用才行。下面是现在的一张桌面截图：</p>
 
