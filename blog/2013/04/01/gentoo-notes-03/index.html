@@ -1,24 +1,118 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: gentoo | Try To Think]]></title>
-  <link href="http://delta4d.github.com/blog/categories/gentoo/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-04-02T16:19:17+08:00</updated>
-  <id>http://delta4d.github.com/</id>
-  <author>
-    <name><![CDATA[delta]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>gentoo notes 03 - programs - Try To Think</title>
+	<meta name="author" content="delta">
 
-  
-  <entry>
-    <title type="html"><![CDATA[gentoo notes 03 - programs]]></title>
-    <link href="http://delta4d.github.com/blog/2013/04/01/gentoo-notes-03/"/>
-    <updated>2013-04-01T21:45:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/04/01/gentoo-notes-03</id>
-    <content type="html"><![CDATA[<p>稍微总结下gentoo下常用的一些软件。</p>
+	
+	<meta name="description" content="稍微总结下gentoo下常用的一些软件。 Emerge emerge是使用portage的一个工具。 查询emerge相关选项的含义 $ man emerge 更新portage树 # 使用rsnyc
+$ emerge --sync
+# rsync不能用时，使用gentoo每天的portage快照 &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Try To Think" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Try To Think</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+	<li><a href="/aboutme">AboutMe</a></li>
+	<li><a href="/x">X</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+	<li><a href="/aboutme">AboutMe</a></li>
+	<li><a href="/x">X</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:delta4d.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+		<a class="github" href="https://github.com/delta4d" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:delta4d.github.com">
+	</form>
+</nav>
+
+</header>
+	
+		
+	
+	<div id="content" class="inner"><article class="post">
+	<h1 class="title">Gentoo Notes 03 - Programs</h1>
+	<div class="entry-content"><p>稍微总结下gentoo下常用的一些软件。</p>
 
 <h2 id="emerge">Emerge</h2>
 
@@ -405,115 +499,100 @@ $ layman -S
   <li><a href="http://eix.berlios.de/">Eix Homepage</a></li>
   <li><a href="http://www.gentoo.org/proj/en/overlays/userguide.xml">Gentoo Overlays</a></li>
 </ul>
-]]></content>
-  </entry>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  <entry>
-    <title type="html"><![CDATA[gentoo notes 02 - customize]]></title>
-    <link href="http://delta4d.github.com/blog/2013/03/07/gentoo-notes-02/"/>
-    <updated>2013-03-07T21:25:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/03/07/gentoo-notes-02</id>
-    <content type="html"><![CDATA[<p>notes02写点桌面美化的东西吧。其实用过KDE，Gnome，Awesome，Openbox等各种环境，最后稳定下来到XFCE4，其实以上提到都是很不错的环境，但是我有时候就是会对很多其实无关痛痒的东西较真，真正关系到自己的东西或事情反倒不那么上心了。KDE就是很不错的一个桌面环境，至于当初为什么换掉现在也记不清楚了。说到底，DE/WM这种东西不能太过在意，用Linux毕竟不是来玩桌面的。自从知道Linux的存在后，就不停的折腾发行版，DE/WM，但最后并没有学到多少东西，最后觉得还是得踏踏实实的用才行。下面是现在的一张桌面截图：</p>
 
-<p><img src="http://delta4d.github.com/images/upload/2013-03-07-desktop.png" width="50%" height="50%" /></p>
 
-<h2 id="reference">Reference</h2>
-<p>首先是一些主题美化站，deviantart上有很多不错的主题。</p>
+<time datetime="2013-04-01T21:45:00+08:00" pubdate data-updated="true">Apr 1<span>st</span>, 2013</time></div>
+	<div class="tags">
 
-<ul>
-  <li><a href="http://www.deviantart.com/">deviantART</a></li>
-  <li><a href="http://customize.org/">Customize</a></li>
-  <li><a href="http://gnome-look.org/">Gnome Look</a></li>
-  <li><a href="http://kde-look.org/">KDE Look</a></li>
-  <li><a href="http://xfce-look.org/">XFCE Look</a></li>
-  <li><a href="http://box-look.org/">Box Look</a></li>
-</ul>
 
-<p>然后推荐下archlinux论坛，arch论坛活跃度比较高，大家也都很热情。里面有很难找到的<a href="http://dwm.suckless.org/">DWM</a>资源等等。下面这个子论坛里每个月都有Screenshots Show，各种DE/WM screenshots，总之资源还是比较丰富的。</p>
+	<a class='category' href='/blog/categories/gentoo/'>gentoo</a>
 
-<ul>
-  <li><a href="https://bbs.archlinux.org/viewforum.php?id=47">Artwork and Screenshots</a></li>
-</ul>
 
-<h2 id="whats-going-on">What’s Going On</h2>
-<p>至于能用Linux多长时间我不知道。有没有Gentoo Notes 03我也不知道。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[gentoo notes 01 - start]]></title>
-    <link href="http://delta4d.github.com/blog/2013/01/27/gentoo-notes-01/"/>
-    <updated>2013-01-27T19:26:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/01/27/gentoo-notes-01</id>
-    <content type="html"><![CDATA[<h2 id="why-gentoo">Why Gentoo</h2>
-<p>久仰Gentoo大名，过去一年断断续续在虚拟机上装过好几次Gentoo了，一直想在实体机上试试，于是趁放假的时候折腾折腾。</p>
+</div>
+	
+		<span class="comments"><a href="/blog/2013/04/01/gentoo-notes-03/#disqus_thread">Comments</a></span>
+	
+</div></article>
 
-<h2 id="start">Start</h2>
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
 
-<p>Gentoo是编译安装的，于是可以进行相关编译选项优化。同时Gentoo是可以滚动升级的，这样方便不少。开始装机的时候还是想着自己编译内核的，结果开机后不断panic，把我也搞的panic了，于是老老实实用genkernel，以后有机会在好好编译内核吧，先把系统起来在说。很多用户觉得Gentoo编译太费时间了，所以不选择Gentoo，但装机大多都是可以一劳永逸的，配置好后并不会频繁的装软件了。装好基本系统其实还是比较快的，使用genkernel也只用了一个小时左右，装好X然后装DE便会比较慢了，键盘控，喜欢轻量级的话装个WM是便会很快了。</p>
 
-<h2 id="errors">Errors</h2>
 
-<p><code>
-!!The filesystem mounted at /dev/sdb3 does not appear to be a valid /. Try again 
-!!Could not find the root block device in. 
-Please specify another value or: press Enter for the same , type "shell" ......
-</code></p>
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
 
-<p>可能是grub.conf写错了，需要注意一下两个变量：</p>
+    delta
 
-<ul>
-  <li><code>root (hd0,0)</code>指/boot在/dev/sda1。(hd0,0-3)表示四个主分区，(hd0,&gt;3)表示逻辑分区，其中grub从0开始，而linux从1开始表示分区。</li>
-  <li><code>real_root=/dev/sdax</code>指/在/dev/sdax</li>
-</ul>
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
 
-<p>startx的时候出现no screens found
-   可能是显卡驱动装的不对，可以执行<code>emerge -av $(qlist -IC x11-drivers)</code>，我的是nvidia，在make.conf中设置好<code>VIDEO_CARDS="nvidia"</code>，然后装好n卡驱动，在执行<code>nvidia-xconfig</code>后就可以了。</p>
 
-<p>emerge complains  <a href="http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=2&amp;chap=1">click me!</a></p>
+<script type="text/javascript">
+      var disqus_shortname = 'delta4d';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://delta4d.github.com/blog/2013/04/01/gentoo-notes-03/';
+        var disqus_url = 'http://delta4d.github.com/blog/2013/04/01/gentoo-notes-03/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
-<h2 id="why-gentoo-again">Why Gentoo Again</h2>
-<ol>
-  <li>漂亮的字符界面。第一次虚拟机装Gentoo时的最深的印象。</li>
-  <li>强大的portage和emerge。portage告诉emerge在哪里下载源代码，编译选项是什么。</li>
-  <li>overlay？就目前的感觉想archlinux的aur。里面应该有不少好玩的东西。</li>
-  <li>详尽的文档。</li>
-  <li>……</li>
-</ol>
 
-<p>实体机用了才不到两天，还有好多好多东西需要学习和探索。Happy Hunting。</p>
 
-<h2 id="de-vs-wm">DE vs WM</h2>
-<p>一开始想装wm的，因为在<a href="https://bbs.archlinux.org/viewforum.php?id=47">archlinux forum</a>里看到很多wm非常漂亮，还有很多<a href="https://bbs.archlinux.org/viewtopic.php?id=138281">轻量级软件</a>提供选择。也确实一开始试的是openbox和monsterwm的，还是不习惯。最后换成了KDE，其实KDE以前没怎么用过（其实连linux都没怎么用过，总是不知不觉切会win后就不再进入linux了），就目前来看KDE表现还是不错的，但还是有些问题没有解决。。一开始挺好的，但是感觉有些不稳定，无法启动kde程序，gtk倒是没问题，后来删除了~/.kde4恢复默认设置倒是好了。另外qtconfig配置无法保存，这个直接导致了有些qt程序字体比较难看等。</p>
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-36393620-1']);
+		_gaq.push(['_trackPageview']);
 
-<h2 id="octopress-in-gentoo">Octopress in Gentoo</h2>
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
 
-<p><code>
-...custom_require.rb:36:in 'require': cannot load such file auto_gem (LoadError)
-...custom_require.rb:36:in 'require'
-</code></p>
 
-<p><code>unset RUBYOPT</code> fix it.</p>
 
-<p>```
-Building site: source -&gt; public
-File “<string>", line 1
-import sys; print sys.executable</string></p>
-<p>SyntaxError: invalid syntax
-```</p>
-
-<p>Follow <a href="http://blog.gonzih.org/blog/2011/09/21/fix-octopress-pygments-error-on-arch-linux/">this</a>. But I change rubypython from 0.5.3 to 0.6.3 in Gemfile.lock, it fixs everything I ran into..</p>
-
-<h2 id="reference">Reference</h2>
-<ol>
-  <li><a href="http://www.google.com">Google</a></li>
-  <li><a href="http://www.gentoo.org/doc/en/handbook/">Gentoo Handbook</a></li>
-  <li><a href="http://www.gentoo.org/doc/en/xorg-config.xml">Gentoo Xorg</a></li>
-</ol>
-
-<h2 id="whats-going-on">What’s Going On</h2>
-<p>Keep Using, Keep Hunting。有没有gentoo notes 02我也不知道。。</p>
-]]></content>
-  </entry>
-  
-</feed>
+</body>
+</html>
