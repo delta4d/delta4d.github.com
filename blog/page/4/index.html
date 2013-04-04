@@ -7,7 +7,7 @@
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="wordpress又被墙了，90代理也挂了一阵，想更新下blog真不容易啊 记过去的10月： 本不打算读研的我，被肥羊pia去试着保研，最后很幸运的获得外推去上海交大的机会。9月份的时候学校免试生面试，本以为到下午才会轮到我的，结果当下午去后却发现我们组就只剩我一个人没有面试了（ &hellip;">
+	<meta name="description" content="想装MAC纯属瞎折腾，现在装好了也一直扔在那里没有用。。 10月份的时候在试着装Lion，结果每次在安装进度条20%的时候就死掉了，现在装的是东皇SL v3，先说下我的配置： DELL INSPIRON 1318 网卡 BCM5906(wired)，BCM4312(wireless) 显卡 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -109,6 +109,112 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2011/11/10/mac-install/">MAC安装记</a></h1>
+	<div class="entry-content">
+		<p>想装MAC纯属瞎折腾，现在装好了也一直扔在那里没有用。。</p>
+
+<p>10月份的时候在试着装Lion，结果每次在安装进度条20%的时候就死掉了，现在装的是东皇SL v3，先说下我的配置：</p>
+
+<p>DELL INSPIRON 1318</p>
+
+<p>网卡 BCM5906(wired)，BCM4312(wireless)</p>
+
+<p>显卡 GeForce 8400M GS</p>
+
+<p>声卡 Sigmatel@Intel 82801(Ich8)</p>
+
+<p>其实装MAC最重要的是看有没有对应的硬件驱动，如果都有的话就差不多了，至于其他的条件，可以到<a href="http://bbs.pcbeta.com/">远景论坛</a>查看。</p>
+
+<p>黑苹果的安装教程一开始看着感觉好多，现在装好了其实也没有几步，下面是在WIN下的安装教程的简单步骤，具体操作还是要自仔细看教程</p>
+
+<ol>
+  <li>
+    <p>现在镜像，分为原版和破解版，破解版安装较为容易，原版以后可以试试，不过看教程都差不太多</p>
+  </li>
+  <li>
+    <p>安装变色龙引导或bootthink</p>
+  </li>
+  <li>
+    <p>将镜像dump到磁盘分区或U盘（工具为Leopard hd install helper），也可以刻盘。如何分区什么的就不说了</p>
+  </li>
+  <li>
+    <p>添加对应kext（内核扩展），通常用于设备驱动程序，放在根目录Extra/Extensions下，一开始只放必要的几个就可以了</p>
+  </li>
+  <li>
+    <p>不断的troubleshooting直至安装成功，我重启了不下二十次，镜像也dump了很多次，这个过程很需要耐心</p>
+  </li>
+  <li>
+    <p>用WINPE将C盘重新设置为活动分区</p>
+  </li>
+  <li>
+    <p>将启动盘下的kext拷到MAC根目录下，接下来还是不断的重启再troubleshooting，这里的kext可能要比安装镜像的多一点</p>
+  </li>
+  <li>
+    <p>装硬件驱动</p>
+  </li>
+</ol>
+
+<p>[备忘]</p>
+
+<p>驱动盘kext：</p>
+
+<p>AppleACPIPS2Nub.kext</p>
+
+<p>ApplePS2Controller.kext</p>
+
+<p>FakeSMC.kext</p>
+
+<p>MAC盘kext:</p>
+
+<p>AppleACPIPS2Nub.kext</p>
+
+<p>ApplePS2Controller.kext</p>
+
+<p>FakeSMC.kext</p>
+
+<p>NullCPUPowerManagement.kext</p>
+
+<p>硬件驱动：</p>
+
+<p>GeForce 8400M GS: Natit.kext</p>
+
+<p>BCM5906: BCM5906MEthernet.kext</p>
+
+<p>Sigmatel@Intel 82801: VoodooHDA.kext</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-10T23:28:00+08:00" pubdate data-updated="true">Nov 10<span>th</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mac/'>MAC</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2011/11/10/mac-install//blog/page/4/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -511,47 +617,6 @@
 </div>
 	
 		<span class="comments"><a href="/blog/2011/06/12/acm-team-selection//blog/page/4/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2011/05/22/2011-05-22/">2011-05-22</a></h1>
-	<div class="entry-content">
-		<p>这个礼拜继续着集训队的选拔，有两场比赛，结果比预想的好，一次第二，一次第六。总的感觉就是不要怕麻烦，要迎头去写，这两次最终都是做出了这种以前很不愿意写的麻烦题，才是排名上升的，对自己的激励是比较大的。今天的比赛收获比较大，学到了一个新的解法，<a href="http://www.matrix67.com/blog/archives/276">矩阵求幂</a>，其实和指数二分求幂是一样的，关键是你能不能将问题用矩阵的形式表现出来。还有5场比赛，好好加油吧。</p>
-
-<p>最近发现做事情的时候时间过得很快，不做事的时候时间也很快，&gt;_&lt;，今天晚上准备把软工课程的project传到校内免费空间上试试的，没想到就这么搞了一晚上还没搞好，因为工程是用zend frmaework做的，起初传上去的时候显示403，经过尝试发现只要把.htaccess文件删掉就好了，登录页显示出来了，但是登录的时候又会产生一大片出错信息，各种找不到啊，觉得应该是删除了.htaccess的问题，就上网查了下怎么配置这个文件，quitely weep，没搞定啊。不过晚上到也不是一点收获都没有，学到了好多mysql的东西，又在空间上折腾了下wordpress，自己配置了一下，装了插件和主题，算是把基本操作熟悉了下。</p>
-
-<p>就这么多吧……</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-22T23:00:00+08:00" pubdate data-updated="true">May 22<span>nd</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/acm/'>ACM</a>, <a class='category' href='/blog/categories/life/'>life</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2011/05/22/2011-05-22//blog/page/4/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

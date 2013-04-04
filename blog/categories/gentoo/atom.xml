@@ -4,7 +4,7 @@
   <title><![CDATA[Category: gentoo | Try To Think]]></title>
   <link href="http://delta4d.github.com/blog/categories/gentoo/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2013-04-02T16:19:17+08:00</updated>
+  <updated>2013-04-04T23:24:27+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -356,7 +356,7 @@ $ eix-test-obsolete -c -b # 陈旧和遗失包查询
 <h2 id="layman">Layman</h2>
 
 <blockquote>
-  <p>用来管理overlays的工具</p>
+  <p>用来管理overlays的工具。</p>
 </blockquote>
 
 <ul>
