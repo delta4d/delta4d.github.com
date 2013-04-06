@@ -7,12 +7,7 @@
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="when you are bloging with octopress, don’t forget the following commands 1
-2
-3
-git add .
-git commit -m 'ur commit'
-git push origin source then when &hellip;">
+	<meta name="description" content="$\LaTeX$ using kramdown % <![CDATA[ \begin{align*} & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right) = \sum_{i=1}^n \sum_{j= &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -114,6 +109,63 @@ git push origin source then when &hellip;">
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/11/11/latex-test/">Latex Test</a></h1>
+	<div class="entry-content">
+		<p>$\LaTeX$ using kramdown</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align*}
+  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
+      \vdots & \ddots & \vdots \\
+      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 \\
+      \vdots \\
+      y_n
+    \end{array} \right)
+\end{align*}
+ %]]></script>
+
+<p>see <a href="http://chuchao333.github.com/blog/2012/08/18/supporting-latex-in-octopress/">this</a> for more details</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-11T23:33:00+08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/test/'>test</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/11/11/latex-test//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -683,57 +735,6 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
 </div>
 	
 		<span class="comments"><a href="/blog/2012/01/26/linux-audio-garbled//blog/page/3/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2012/01/25/start-ibus-at-boot/">Start Ibus at Boot</a></h1>
-	<div class="entry-content">
-		<p>backup</p>
-
-<p>~/.profile</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-</pre></td><td class="code"><pre><code class="sh"><span class="line"><span class="c"># ibus start at boot</span>
-</span><span class="line"><span class="nb">export </span><span class="nv">XMODIFIERS</span><span class="o">=</span>@im<span class="o">=</span>ibus
-</span><span class="line"><span class="nb">export </span><span class="nv">GTK_IM_MODULE</span><span class="o">=</span>ibus
-</span><span class="line"><span class="nb">export </span><span class="nv">QT_IM_MODULE</span><span class="o">=</span>ibus
-</span><span class="line">ibus-daemon -d -x
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-25T19:59:00+08:00" pubdate data-updated="true">Jan 25<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/ibus/'>ibus</a>, <a class='category' href='/blog/categories/linux/'>linux</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2012/01/25/start-ibus-at-boot//blog/page/3/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
