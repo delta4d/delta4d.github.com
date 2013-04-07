@@ -4,7 +4,7 @@
   <title><![CDATA[Category: codeforces | Try To Think]]></title>
   <link href="http://delta4d.github.com/blog/categories/codeforces/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2013-04-07T15:45:54+08:00</updated>
+  <updated>2013-04-07T15:54:53+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -90,7 +90,7 @@
 
 & F_{n+1} = \sum_{i=1}^{K_n-1}(10a_i+4)(10a_i+7) + \sum_{i=1}^{K_n-1}(10a_i+7)(10a_{i+1}+4) \\
 
-& F_{n+1} = 100F_n+100\sum_{i=1}^{K_n-1}a_i^2 + 110\sum_{i=1}^{K_n-1}a_i+56(K_n-1)+70(a_{K_n}-a_1) \\
+& F_{n+1} = 100F_n+100\sum_{i=1}^{K_n-1}a_i^2 + 220\sum_{i=1}^{K_n-1}a_i+56(K_n-1)+70(a_{K_n}-a_1) \\
 
 \end{align*}
 
