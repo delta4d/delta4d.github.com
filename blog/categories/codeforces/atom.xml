@@ -4,7 +4,7 @@
   <title><![CDATA[Category: codeforces | Try To Think]]></title>
   <link href="http://delta4d.github.com/blog/categories/codeforces/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2013-04-06T19:13:49+08:00</updated>
+  <updated>2013-04-07T15:45:54+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -96,7 +96,7 @@
 
  %]]&gt;</script>
 
-<p>上面是对于当前处理字符为4的情况，7的情况只需要再加上最后一项即可，然后可以设</p>
+<p>上面是对于当前处理字符为4的情况，7的情况只需要再加上最后一项<script type="math/tex">(10a_{K_n}+4)(10a_{K_n}+7)</script>即可，然后可以设</p>
 
 <script type="math/tex; mode=display">
 	S_n = \sum_{i=1}^{K_n-1}a_i, \quad T_n = \sum_{i=1}^{K_n-1}a_i^2
