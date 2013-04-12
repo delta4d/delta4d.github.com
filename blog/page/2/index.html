@@ -7,7 +7,10 @@
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="我的2012并不算坏，也不算好。前两天和几个高中同学吃饭，听他们谈起以前的同学，我居然全然记不得他们提到的名字了。上了大学后，渐渐从不求甚解变为了不求解到了现在，总觉得自己将自己闲置了。每每看到身旁掠过的各种忙碌的身影，便会心生惭愧。总会有人问我”既然你那么闲，那么平时你都在干什么？”，是啊， &hellip;">
+	<meta name="description" content="以前看到有的github项目有如下的情况： 就是一个git项目的子目录也是一个项目，在github上看起来就像链接一样。今天终于发现，这其实是git的submodule，具体可参考这里，也可以git submodule --help 具体做的时候可以这样： 1
+2
+cd repo_dir
+git &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -109,6 +112,54 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2013/02/16/git-submodule/">Git项目嵌套</a></h1>
+	<div class="entry-content">
+		<p>以前看到有的github项目有如下的情况：</p>
+
+<p><img src="/images/upload/2013-02-16-git-submodule.png" alt="" /></p>
+
+<p>就是一个git项目的子目录也是一个项目，在github上看起来就像链接一样。今天终于发现，这其实是git的submodule，具体可参考<a href="http://git-scm.com/book/en/Git-Tools-Submodules">这里</a>，也可以<code>git submodule --help</code></p>
+
+<p>具体做的时候可以这样：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">cd repo_dir
+</span><span class="line">git submodule git@github.com:yourname/yourrepo.git</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-16T19:38:00+08:00" pubdate data-updated="true">Feb 16<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/git/'>git</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2013/02/16/git-submodule//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -869,53 +920,6 @@ sudo emerge -va pyopenssl
 </div>
 	
 		<span class="comments"><a href="/blog/2012/11/23/evince-display-chinese-wrong//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2012/11/16/vim-function-already-exists/">VIM Function Already Exists</a></h1>
-	<div class="entry-content">
-		<p>由于每次修改vimrc后都要重启vim才会在读取配置文件，感觉非常麻烦。（汗，认识vim时间也不短了，但一直木有进步。。）后来觉得可以source，于是自定义了快捷键</p>
-
-<pre><code>map &lt;silent&gt; &lt;leader&gt;ss :!source ~/.vimrc
-</code></pre>
-
-<p>但是显示了一大堆错误，大家可能已经看出来了，对的，不应该加<em>!</em>的，vimrc不应该由shell来解释，而应该由vim解释，于是修改为：</p>
-
-<pre><code>map &lt;silent&gt; &lt;leader&gt;ss :source ~/.vimrc
-</code></pre>
-
-<p>但是这样会出现<em>function xxx already exists add ! to replace it</em>的警告，按照提示在function后加上!就可以消除警告了，这是由于如果函数出现过，加入!会redifine。555，rbl。</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-16T23:55:00+08:00" pubdate data-updated="true">Nov 16<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/vim/'>VIM</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2012/11/16/vim-function-already-exists//blog/page/2/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 

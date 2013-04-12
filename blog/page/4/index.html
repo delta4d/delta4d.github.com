@@ -7,16 +7,9 @@
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="backup ~/.profile 1
-2
-3
-4
-5
-# ibus start at boot
-export XMODIFIERS=@im=ibus
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus
-ibus-daemon -d -x Jan &hellip;">
+	<meta name="description" content="mp3文件采用gbk编码，而linux使用utf8，所以会造成混乱 使用python-mutagen可以解决 1
+mid3iconv -e gbk *.mp3 详细参考：
+http://yp.oss.org.cn/software/show_resource.php?resource_id= &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -118,6 +111,52 @@ ibus-daemon -d -x Jan &hellip;">
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2012/01/26/linux-audio-garbled/">Linux音频乱码</a></h1>
+	<div class="entry-content">
+		<p>mp3文件采用gbk编码，而linux使用utf8，所以会造成混乱</p>
+
+<p>使用python-mutagen可以解决</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="sh"><span class="line">mid3iconv -e gbk *.mp3
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>详细参考：
+<a href="http://yp.oss.org.cn/software/show_resource.php?resource_id=313">http://yp.oss.org.cn/software/show_resource.php?resource_id=313</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-26T20:20:00+08:00" pubdate data-updated="true">Jan 26<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/linux/'>linux</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2012/01/26/linux-audio-garbled//blog/page/4/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -595,45 +634,6 @@ ibus-daemon -d -x Jan &hellip;">
 </div>
 	
 		<span class="comments"><a href="/blog/2011/07/12/summer2011-round2-over//blog/page/4/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2011/07/07/summer2011-round1-over/">Summer2011 Round1 Over</a></h1>
-	<div class="entry-content">
-		<p>summer2011第一阶段结束了，稍微总结一下。第一场很神奇的贪心过了一道，但是在算期望的题目上，将一个改写n的地方写成了n+1，但是推倒导来的式子却显得格外的漂亮，其实还是自己没搞清楚；第二场很快的过了一道，然后一直在做博弈题而没有去看其他的，其实这个做不出来应该没有什么怨言了，因为我压根就不知道SG的存在么。第三场是我们组的题目，结果没有验出队友数据里的错误，导致vout不断WA，罪过啊。第四场第一道题目经历15次提交才AC，其中还有两次CE，太不小心了，不过终场前的绝杀还是让我感到很爽快的。</p>
-
-<p>总的来说，状况并不是很好，但结果也不是特别糟，还有3轮还有机会，以后每场比赛都要细心，看到题目要敢想敢做，不能在畏首畏尾了，大不了就是个WA么。</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-07T17:51:00+08:00" pubdate data-updated="true">Jul 7<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/summer2011/'>summer2011</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2011/07/07/summer2011-round1-over//blog/page/4/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
