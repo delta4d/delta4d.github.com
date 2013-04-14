@@ -4,7 +4,7 @@
   <title><![CDATA[Category: shell | Try To Think]]></title>
   <link href="http://delta4d.github.com/blog/categories/shell/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2013-04-13T00:11:45+08:00</updated>
+  <updated>2013-04-14T15:03:32+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -20,30 +20,19 @@
     <id>http://delta4d.github.com/blog/2012/12/11/sh-deleting-one-line</id>
     <content type="html"><![CDATA[<p>最近了解了一下<a href="http://dwm.suckless.org/">dwm</a>，想定制下状态栏，于是首先想写一个检测内存的脚本。脚本并不复杂，但仍然用了好多时间来查找资料，使用linux果然还是要多写程序脚本啊。</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>mem_used.sh  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bash&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;function get_mem_used <span class="o">{</span>
-</span><span class='line'>	<span class="nb">eval</span> &lt;code&gt;free -m | awk <span class="s1">&#39;NR==3 {printf &quot;used=%.2lf per=%.2lf&quot;, $3, 100*$3/($3+$4)}&#39;</span>&lt;/code&gt;
-</span><span class='line'>	<span class="nb">echo</span> “MEM:<span class="nv">$per</span>%<span class="o">(</span><span class="nv">$used</span> MB<span class="o">)</span>”
-</span><span class='line'><span class="o">}</span>&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;while <span class="nb">true</span>; <span class="k">do</span>
-</span><span class='line'><span class="k">	</span><span class="nb">echo</span> &lt;code&gt;get_mem_used&lt;/code&gt;
-</span><span class='line'>	sleep 1
-</span><span class='line'><span class="k">done</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock mem_used.sh lang:bash %}
+#!/bin/bash</p>
+
+<p>function get_mem_used {
+	eval <code>free -m | awk 'NR==3 {printf "used=%.2lf per=%.2lf", $3, 100*$3/($3+$4)}'</code>
+	echo “MEM:$per%($used MB)”
+}</p>
+
+<p>while true; do
+	echo <code>get_mem_used</code>
+	sleep 1
+done
+{% endcodeblock %}</p>
 
 <p>将会产生如下的输出：</p>
 
@@ -98,44 +87,26 @@ echo -ne "\033[1K\rfoo"
 
 <p>利用以上说的便可以实现很多linux程序等待时出现的<code>/|\-</code>旋转效果</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>rotate.sh  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bash&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;function rotate <span class="o">{</span>
-</span><span class='line'>	<span class="nv">cnt</span><span class="o">=</span>0
-</span><span class='line'>	<span class="k">while </span><span class="nb">true</span>; <span class="k">do</span>
-</span><span class='line'><span class="k">		case</span> <span class="nv">$cnt</span> in
-</span><span class='line'>			0<span class="o">)</span> <span class="nb">echo</span> -ne “|<span class="se">\r</span>”;;
-</span><span class='line'>			1<span class="o">)</span> <span class="nb">echo</span> -ne “/<span class="se">\r</span>”;;
-</span><span class='line'>			2<span class="o">)</span> <span class="nb">echo</span> -ne “-<span class="se">\r</span>”;;
-</span><span class='line'>			3<span class="o">)</span> <span class="nb">echo</span> -ne “<span class="se">\r</span>”;;
-</span><span class='line'>			*<span class="o">)</span> <span class="nb">exit</span> -1;;
-</span><span class='line'>		<span class="k">esac</span>
-</span><span class='line'><span class="k">		</span>sleep 0.2
-</span><span class='line'>		<span class="o">((</span> <span class="nv">cnt</span><span class="o">=(</span>cnt+1<span class="o">)</span>%4 <span class="o">))</span>
-</span><span class='line'>	<span class="k">done</span>
-</span><span class='line'><span class="o">}</span>&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;rotate
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock rotate.sh lang:bash %}
+#!/bin/bash</p>
+
+<p>function rotate {
+	cnt=0
+	while true; do
+		case $cnt in
+			0) echo -ne “|\r”;;
+			1) echo -ne “/\r”;;
+			2) echo -ne “-\r”;;
+			3) echo -ne “\r”;;
+			*) exit -1;;
+		esac
+		sleep 0.2
+		(( cnt=(cnt+1)%4 ))
+	done
+}</p>
+
+<p>rotate
+{% endcodeblock %}</p>
 ]]></content>
   </entry>
   
