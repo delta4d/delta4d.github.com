@@ -9,7 +9,7 @@ categories: ["codeforces"]
 [A. Greg and Array](http://www.codeforces.com/contest/295/problem/A)
 -------------------
 
-[source code]()
+[source code](https://github.com/delta4d/AlgoSolution/blob/master/codeforces/179/1/A.cpp)
 
 一个数组a，有一些系列操作l,r,d，给a[l..r]中的每个数加d，现在有一系列询问x,y，表示执行操作x..y。输出所有询问后的数组。
 
@@ -18,7 +18,7 @@ categories: ["codeforces"]
 [B. Greg and Graph](http://www.codeforces.com/contest/295/problem/B)
 -------------------
 
-[source code]()
+[source code](https://github.com/delta4d/AlgoSolution/blob/master/codeforces/179/1/B.cpp)
 
 给一个500个点的有向图，现在按给定顺序依此去除一个点，每次去点时输出所有点对最短路的和。
 
@@ -27,7 +27,7 @@ categories: ["codeforces"]
 [C. Greg and Friends](http://www.codeforces.com/contest/295/problem/C)
 ---------------------
 
-[source code]()
+[source code](https://github.com/delta4d/AlgoSolution/blob/master/codeforces/179/1/C.cpp)
 
 过河问题，但是人的重量只有50和100两种，人数为50。现在查询最少需要几步使得所有人到达对岸，在最少的情况下有多少中乘船方案。
 
@@ -36,7 +36,7 @@ categories: ["codeforces"]
 [D. Greg and Caves](http://www.codeforces.com/contest/295/problem/D)
 -------------------
 
-[source code]()
+[source code](https://github.com/delta4d/AlgoSolution/blob/master/codeforces/179/1/D.cpp)
 
 nxm的矩形方阵，存在这么一些行[l..r]，每一行只有两个格子是黑色，存在t，对于[l..t]的行，第i行的以黑色块为端点构成的线段包含在i+1行对应的线段内，[t..r]内刚好相反，i+1包含在i内。求所有染色方案数。
 
@@ -75,10 +75,13 @@ $$
 [E. Yaroslav and Points](http://www.codeforces.com/contest/295/problem/E)
 ------------------------
 
-[source code]()
+[source code](https://github.com/delta4d/AlgoSolution/blob/master/codeforces/179/1/E.cpp)
 
+有一个数列{xi}，现在有一个操作i,pi,di，表示x[pi]=x[pi]+di，有一系列查询l，r表示查询位于区间[l,r]内的xi的两两差的和，即$$\sum_{l\le x_i\le xj\le r}(x_j-x_i)$$。
+
+具体做法是线段树，所查询的和可以由两个部分合并，每个区段需要保留三个参数，改区间内数的多少，数的和，和该区间内的两两差的和。
 
 Summary
 -------
 
-A比较顺利，B一开始将500看成5000了，想不出来，后来仔细一看发现是500，赶紧按floyd写了一遍，提交wa，后来又wa了两次，在还剩30min的时候过掉，当时没有想清楚就直接写然后交了，以后一定要先想清楚，否则真是得不偿失啊。后来看C，虽然可以做，但是实在没有20min写对的实力，如果B过的快一点，C还是有可能的。
+A比较顺利，B一开始将500看成5000了，想不出来，后来仔细一看发现是500，赶紧按floyd写了一遍，提交wa，后来又wa了两次，在还剩30min的时候过掉，当时没有想清楚就直接写然后交了，以后一定要先想清楚，否则真是得不偿失啊。后来看C，虽然可以做，但是实在没有20min写对的实力，如果B过的快一点，C还是有可能的。很不扎实啊，尤其是B的floyd。啊啊啊，弱爆了弱爆了。
