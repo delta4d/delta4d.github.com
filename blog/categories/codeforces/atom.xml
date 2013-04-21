@@ -4,7 +4,7 @@
   <title><![CDATA[Category: codeforces | Try To Think]]></title>
   <link href="http://delta4d.github.com/blog/categories/codeforces/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2013-04-16T23:01:05+08:00</updated>
+  <updated>2013-04-21T22:40:45+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -12,6 +12,69 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Codeforces Round #180 (Div. 1)]]></title>
+    <link href="http://delta4d.github.com/blog/2013/04/20/codeforces-round-number-180-div-1/"/>
+    <updated>2013-04-20T17:56:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2013/04/20/codeforces-round-number-180-div-1</id>
+    <content type="html"><![CDATA[<h2 id="a-parity-gamehttpwwwcodeforcescomcontest297problema"><a href="http://www.codeforces.com/contest/297/problem/A">A. Parity Game</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/180/1/A.cpp">source code</a></p>
+
+<p>有两个01串a和b，对于a有两种操作，a-&gt;a[1..-1]和a-&gt;a+parity(a)，问能否通过这两种操作使a变为b。</p>
+
+<p>考察操作中的不变量，可以看到，a中1的个数是确定的，如果a中1的个数为偶数，那么两种操作均不会增加1，如果为奇数，那么1的个数之多智能增加1，对于parity操作0是可以随意添加的，于是只要a中最多能有的1的个数不比b少，那么a均可以变为b。</p>
+
+<h2 id="b-fish-weighthttpwwwcodeforcescomcontest297problemb"><a href="http://www.codeforces.com/contest/297/problem/B">B. Fish Weight</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/180/1/B.cpp">source code</a></p>
+
+<p>去掉背景，就是问对于给定的<script type="math/tex">\sum_{i=1}^{k}b_iw_i</script>和<script type="math/tex">\sum_{i=1}^{k}c_iw_i</script>，<script type="math/tex">% &lt;![CDATA[
+0<w_1\le w_2\le ...\le w_n %]]&gt;</script>，能否有{wi}的一个分配方案使得使第一个式子严格大于第二个。</p>
+
+<p>首先用第一个式子减第二个，令<script type="math/tex">a_i=b_i-c_i</script>，得到<script type="math/tex">X=\sum_{i=1}^{k}a_iw_i</script>，问X是否可以严格大于0。可以发现，如果an&gt;0，那么使wn趋于无穷大，总可以使X&gt;0，那么当an&lt;0时，我们肯定要使anwn造成的影响最小，那么要使wn最小，根据条件可以知道，wn最小为w[n-1]，于是w[n-1]系数变为a[n]+a[n-1]，规模化为n-1的原问题，如此一直向前，如果存在某个系数&gt;0，那么可知分配方案是存在的，否则无解。</p>
+
+<h2 id="c-splitting-the-uniquenesshttpwwwcodeforcescomcontest297problemc"><a href="http://www.codeforces.com/contest/297/problem/C">C. Splitting the Uniqueness</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/180/1/C.cpp">source code</a></p>
+
+<p>有一个数列{si}，对于每个si可以分解为si=ai+bi，于是由{si}可以生成两个数列{ai},{bi}。现在定义almost unique的数列为之多去掉ceil(n/3)项可以使数列项两两不同的数列，问是否存在si的一个分法，使得{ai}{bi}almost unique。其中si,ai,bi&gt;=0，且si两两不同。</p>
+
+<p>不妨设s1&lt;s2&lt;…&lt;sn。假设一个数列{xn}中不同元素的个数为k，于是要使{x}unique，至少要去掉n-k个元素，于是almost unique的数列中不同元素的个数至少为n-ceil[n/3]。如果{si}分布很稀疏的话，比如s[i+1]-s[i]&gt;=2，那么只要让a[i]=i,b[i]=s[i]-i就可以了，因为s[i]各不相等，所以b[i+1]&gt;[i]，于是只要集中精力考虑{si}很密集的情况就可以了，比如{si}={1,2,…,n}。可以有以下的分法：</p>
+
+<pre><code>s: 1 2 3 4 5 6 7 8 9	1 2 3 4 5 6 7 8 9
+a: 1 2 3 0 0 0 4 5 6 	1 0 3 1 4 2 5 3 6
+b: 0 0 0 4 5 6 1 2 3	0 2 0 3 1 4 2 5 3
+</code></pre>
+
+<p>两种分法都是可以的。</p>
+
+<h2 id="d-color-the-carpethttpwwwcodeforcescomcontest297problemd"><a href="http://www.codeforces.com/contest/297/problem/D">D. Color the Carpet</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/180/1/D.cpp">source code</a></p>
+
+<p>给一个h*w的方格，然后用k种颜色给这个方格染色，给出相邻单元格颜色之间的关系(相同和不相同)，问是否存在一个染色方案使得至少满足3/4的颜色关系。</p>
+
+<p>首先共有T=w(h-1)+h(w-1)个约束关系。假若k=1，那么只有一种染色方案，直接判断就可以了，如果k&gt;1，接下来说明这种方案总是存在的。只需构造出k=2的方案。首先将第一行染色，满足第一行的行关系，然后染第二行，使得满足第二行的行关系，现在比较第一行和第二行之间不满足的列关系个数，记为c，如果c&lt;=w/2，那么继续，否则交换第二行的两种颜色，可知第二行的行关系依然满足，但是列关系不满足的个数变为w-c&lt;=w/2，如此继续直到最后一行。那么不满足的关系之多为S=w/2*(h-1)，如果h&gt;=w，则可知S/T&lt;=3/4，如果h&lt;w，那么先染列就好了。</p>
+
+<h2 id="e-mystic-carvingshttpwwwcodeforcescomcontest297probleme"><a href="http://www.codeforces.com/contest/297/problem/E">E. Mystic Carvings</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/180/1/E.cpp">source code</a></p>
+
+<p>略去题目背景，最后问题转化为要高效查询一个区间内有多少个完整区间，并且区间是在环上的。</p>
+
+<p>首先考虑一条直线的情形，假设区间集合为{ai,bi}，按bi递增排序，那么当处理到第k个区间[ak,bk]时，前面的所有区间[ai,bi]都会有bi&lt;bk，于是只需查询有多少ai&gt;ak，可以用树状数组或线段树来记录ai，每处理完一个区间后在ai处加1就可以了。</p>
+
+<p>然后考虑环的情况，将整个大区间扩成两倍长即可，于是以前的区间[a,b]可以变为[b,a+n],[a+n,b+n]，可以看到对于两个区间[a,b]和[x,y]，[x,y]只能包含于[a,b]和[b,a+n]中的一个，于是环的情况也解决了。</p>
+
+<p>题目具体的分解转化可以看官方<a href="http://www.codeforces.com/blog/entry/7440">Tutorial</a>。</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>A完全考虑错了方向，但是居然过了pretest，pretest也太弱了，B比较顺利，C比较侥幸。这应该是典型的需要”Do More Thinking Than Coding”的比赛，差不多都需要去充分挖掘题目条件给特定问题带来哪些特点和便利，观察啊观察，从反面考虑啊，神奇的构造啊，啊啊啊，弱爆了弱爆了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #179 (Div. 1)]]></title>
@@ -340,46 +403,6 @@ P(n - y + 1) = x
 <h2 id="summary">Summary</h2>
 
 <p>A，B，C都是可以做的，但是比赛的时候只搞出了A，B和C在赛后很快fix了，很不扎实啊(&gt;_&lt;)。D和E只能通过看官方报告来获取想法，希望能一点一点提高吧。总之这是一套很不错的题目。以上。。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Codeforces Round #170 (Div. 1)]]></title>
-    <link href="http://delta4d.github.com/blog/2013/03/01/codeforces-round-number-170-div-1/"/>
-    <updated>2013-03-01T15:16:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/03/01/codeforces-round-number-170-div-1</id>
-    <content type="html"><![CDATA[<h2 id="a-learning-languageshttpwwwcodeforcescomcontest277problema"><a href="http://www.codeforces.com/contest/277/problem/A">A. Learning Languages</a></h2>
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/170/1/A.cpp">source code</a></p>
-
-<p>n个员工，m种语言，每个员工可以说0种或某些语言，语言相同的员工可以直接沟通，员工也可以间接沟通，即有员工帮他们翻译即可，于是只要是通过语言构成的联通块种任意两个人都可以沟通。问最少还要某些员工学几种语言可以达到员工两两可以沟通。</p>
-
-<p>首先通过dfs或并查集找出所有联通块，可以发现每个联通块所会的语言是不同的，否则他们就联通了，现在只要将所有联通块连起来就可以了，可以看出需要再学联通块个数-1种语言就好了。每个人都不会任何语言的情况要特殊处理下。</p>
-
-<h2 id="b-set-of-pointshttpwwwcodeforcescomcontest277problemb"><a href="http://www.codeforces.com/contest/277/problem/B">B. Set of Points</a></h2>
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/170/1/B.cpp">source code</a></p>
-
-<p>一个平面点集的convexity是指最大的能构成凸多边形的子集元素个数。问n个点，convexity为m是否可行，可行的话输出任意一组可行解，要求任意三点不共线，点为整点。否则输出-1。(m&lt;=n&lt;=2m)</p>
-
-<p>构造性算法。说到凸多边形，很容易联想到圆的内接多边形，在加上n&lt;=2m的限制，便想到两个同心多边形。至于不能的情况，便是m=3，n&gt;=5了。</p>
-
-<h2 id="c-gamehttpwwwcodeforcescomcontest277problemc"><a href="http://www.codeforces.com/contest/277/problem/C">C. Game</a></h2>
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/170/1/C.cpp">source code</a></p>
-
-<p>有一张方格纸，两个人可以轮流用剪刀沿着纵横方向剪，每次不必剪透，可以只剪一部分，但是不能不剪，剪完后的纸张还是在原位。当方格纸变为一个一个单位正方形时游戏就结束了，剪最后一刀的人获胜。现在给出一个已经经过剪裁的纸张，判断先手还是后手赢，若先手赢给出先手的第一步。</p>
-
-<p>类似<a href="http://en.wikipedia.org/wiki/Nim">NIM</a>。由于行列是分离的，所以经过分离后会形成m-1+n-1个堆，和NIM对应起来。比较复杂的是处理出这些堆，处理完后直接用NIM的结果就可以了。</p>
-
-<h2 id="d-google-code-jamhttpwwwcodeforcescomcontest277problemd"><a href="http://www.codeforces.com/contest/277/problem/D">D. Google Code Jam</a></h2>
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/170/1/D.cpp">source code</a></p>
-
-<p>模拟codejam，找出最优解题顺序。注意罚时是最后一个正确的提交对应的时间，另外注意精度问题。具体可看<a href="http://www.codeforces.com/blog/entry/6815">这个</a></p>
-
-<h2 id="e-binary-tree-on-planehttpwwwcodeforcescomcontest277probleme"><a href="http://www.codeforces.com/contest/277/problem/E">E. Binary Tree on Plane</a></h2>
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/170/1/E.cpp">source code</a></p>
-
-<p>平面上有一些点，现在要连一些边，使这些点构成一个有向二叉树，并且线段总和最小。要求一个点的父亲的纵座标要严格大于当前点的纵座标。方案不存在的话输出-1。</p>
-
-<p>最小费用最大流，由纵座标小的向纵座标大的连边，由于有二叉的限制，所以拆分点，使入度最大为2。具体可看代码。</p>
 ]]></content>
   </entry>
   
