@@ -4,7 +4,7 @@
   <title><![CDATA[Category: codeforces | Try To Think]]></title>
   <link href="http://delta4d.github.com/blog/categories/codeforces/atom.xml" rel="self"/>
   <link href="http://delta4d.github.com/"/>
-  <updated>2013-04-22T20:16:43+08:00</updated>
+  <updated>2013-05-09T00:18:47+08:00</updated>
   <id>http://delta4d.github.com/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -12,6 +12,92 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Codeforces Round #182 (Div. 1)]]></title>
+    <link href="http://delta4d.github.com/blog/2013/05/06/codeforces-round-number-182-div-1/"/>
+    <updated>2013-05-06T13:19:00+08:00</updated>
+    <id>http://delta4d.github.com/blog/2013/05/06/codeforces-round-number-182-div-1</id>
+    <content type="html"><![CDATA[<h2 id="a-yaroslav-and-sequencehttpwwwcodeforcescomcontest301problema"><a href="http://www.codeforces.com/contest/301/problem/A">A. Yaroslav and Sequence</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/182/1/A.cpp">source code</a></p>
+
+<p>给定一个2n-1长度的数列，可以选取这个数列中的n个数然后取其相反数，这样的操作不限次数。问这个数列所有元素和最大可能是多少。</p>
+
+<p>比如头两次选取重复的部分的长度为L，那么两次操作后改变符号的元素为2(n-L)个，若能使2(n-L)=n+1，那么接下来在做一次操作，便可以达到只改变一个元素的效果，此时L=(n-1)/2，只有当n为奇数的时候才有可能，当n为偶数时能够改变的最小元素个数为2，因为假若经过若干次变换达到了只改变一个元素的效果，考虑不变量，假设每操作一个元素那么加1，则操作k次后的和为kn。那么考虑只有一个元素改变的情况，其他元素被操作的次数为偶数，于是总的改变元素的次数为奇数，而kn为偶数，矛盾，所以若干次操作最少也会改变两个元素，且这个界是可以达到的，取L=n/2+1就可以了。</p>
+
+<h2 id="b-yaroslav-and-timehttpwwwcodeforcescomcontest301problemb"><a href="http://www.codeforces.com/contest/301/problem/B">B. Yaroslav and Time</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/182/1/B.cpp">source code</a></p>
+
+<p>从i到j需要消耗(|xi-xj|+|yi-yj|)*d单位的资源，i可以增加ai单位的资源，但是第二次到i的时候不会重复增加，期间可以购买资源，问从要从1到n最少需要购买多少资源。</p>
+
+<p>由于经过i后不管去向哪里都会增加ai，于是将dis(i,j)可以看作ij曼哈顿距离乘以d减去ai，然后正常求最短路就可以了。</p>
+
+<h2 id="c-yaroslav-and-algorithmhttpwwwcodeforcescomcontest301problemc"><a href="http://www.codeforces.com/contest/301/problem/C">C. Yaroslav and Algorithm</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/182/1/C.rb">source code</a></p>
+
+<p>有这样一个算法A：</p>
+
+<pre><code>1. A接受一个字符串a为输入
+2. A包含了一些命令。命令i要么为si&gt;&gt;wi，或者si&lt;&gt;wi，si和wi是长度不大于7的字符串，包含数字和'?'
+3. 每一次迭代过程中，A找到最小的一个索引i，使得si是a中的一个子串。若没有找到则算法结束
+4. 用k表示每次迭代找到的命令，将a中si用wi代替，若为&gt;&gt;则继续迭代，若为&lt;&gt;则算法结束
+5. 算法结束后的a作为A的输出
+</code></pre>
+
+<p>现在给定n（&lt;=100）个数字，要求每个数字经过算法A后都加一。要求输出一系列的命令构成算法A完成要求，其中对A有如下限制：</p>
+
+<pre><code>1. 每一个命令都是合法的
+2. 命令总数不能超过50
+3. 算法会将每个输入的数字加一
+4. 对于每个数字迭代次数不能超过200
+</code></pre>
+
+<p>很直接的想法就是对于每个输入x&lt;&gt;x+1，然而由于输入有100个，而命令不能超过50，所以这样是不可以的，于是需要想一个适用于所有数字的命令而不是针对特定数字的。</p>
+
+<p>需要用’?’来完成要求，以123来举例，我们首先可以随便找一个数，比如找到了1，将1变为1?，则123-&gt;1?23，然后不断的将?后移变为123?，然后将3?变为4就可以了，比较麻烦的是需要进位的情况，这样就需要往前处理，比如99变为99?后我们可以将9?变为9??，此时99-&gt;99??，然后99??-&gt;9??0-&gt;??00-&gt;100。</p>
+
+<h2 id="d-yaroslav-and-divisorshttpwwwcodeforcescomcontest301problemd"><a href="http://www.codeforces.com/contest/301/problem/D">D. Yaroslav and Divisors</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/182/1/D.cpp">source code</a></p>
+
+<p>给定一个大小为n（&lt;=200000）的数组p，p为1-n的一个排列，然后有m（&lt;=200000）个查询l，r，问在p[l..r]中满足pi整数pj的数对ij有多少。</p>
+
+<p>对于每个i在1-n中i的倍数为n/i个，则共有n/1+n/2+…+n/n=nln(n)个满足整除关系的点对，按数组索引预处理出这样的点对，比如对索引i，找出所有的j&lt;=i使得p[j]整除p[i]或p[i]整除p[j]。然后从p左侧开始扫描，引入计数数组c，当扫描到i时，对于区间[1,j]中的每个k，c[k]+=1，则对于查询[l,i]的结果即c[l]。</p>
+
+<h2 id="e-yaroslav-and-arrangementshttpwwwcodeforcescomcontest301probleme"><a href="http://www.codeforces.com/contest/301/problem/E">E. Yaroslav and Arrangements</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/182/1/E.cpp">source code</a></p>
+
+<p>定义good array {an}为：</p>
+
+<pre><code>1. a1 = min{an}
+2. |a1 - a2| = 1, |a2 - a3| = 1, ..., |a(n-1) - an| = 1, |an - a1| = 1
+</code></pre>
+
+<p>定义great array {br}为：</p>
+
+<pre><code>1. b1 &lt;= b2 &lt;= ... &lt;= br
+2. 1 &lt;= r &lt;= n, 1 &lt;= bi &lt;= m
+3. {br}的所有排列中有t个good array，且 1 &lt;= t &lt;= k
+</code></pre>
+
+<p>给定n，m，k求{br}的个数</p>
+
+<p>考虑下goodarray有什么性质。首先若{an}good，则{an-a1}good，所以我们可以固定最小元为0。设x=min{an},y=max{an}，那么y-x&lt;=n/2（利用这个可以降低这一维的长度），这是因为假若y太大，就不能构成环了，基于同样的原因，[x,y]之间的每个数在{an}中都必须出现，否则会出现断层。其次n为偶数，这是由于a1-an=(a1-a2)+(a2-a3)+(a(n-1)-an)，即a1-an为n-1个1或-1的和，即a1-an于n-1奇偶性相同，而a1-an为奇数，所以n为偶数，这样dp的时候这个维的长度可以减半，这个在具体推导转移方程的时候也可以看出来。最后考虑y的周围两个数，因为y最大，所以y的两侧只能是y-1，这样可以发现如下规律</p>
+
+<pre><code>0 1 2 1 0 1 0 1 2 1 =&gt; 0 (1 2 1) 0 1 0 (1 2 1) =&gt; 0 1 0 1 0 1
+</code></pre>
+
+<p>即可以把(y-1 y y-1)看作y-1，则会构成一个最小值为x最大值为y-1且规模更小的good array，这样就可以适用动态规划了。我们逐个添加元素，需要记录当前处理的元素，当前array大小，当前元素选了多少个，所有排列中有多少great array。如果当前元素i有y个，可见至少需要i-1 x+y个，共有C(x+y-1,x)种选法，然后枚举当前元素选多少个更新就可以了。</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>这场由于技术原因最后是unrated，momo作者。正准备写B的时候A被hack了，检查了半天最后发现数组开小了，改完之后就直接睡了，以后要多注意啊。C是一道很好玩的题目，E的dp也很好，最后还是要momo作者。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #180 (Div. 1)]]></title>
@@ -339,70 +425,6 @@ P(n - y + 1) = x
 
 <p>终于fix了D和E，D首先要用数学的语言去描述题目场景，那个坐标变换太神了。E首先要从题目条件判断出重量是{ai}的子集，然后就要看能不能联想到FFT了。啊啊啊，弱爆了弱爆了。</p>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Codeforces Round #174 (Div. 1)]]></title>
-    <link href="http://delta4d.github.com/blog/2013/03/18/codeforces-round-number-174-div-1/"/>
-    <updated>2013-03-18T21:00:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/03/18/codeforces-round-number-174-div-1</id>
-    <content type="html"><![CDATA[<h2 id="a-cows-and-sequencehttpwwwcodeforcescomcontest283problema"><a href="http://www.codeforces.com/contest/283/problem/A">A. Cows and Sequence</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/174/1/A.cpp">source code</a></p>
-
-<p>对于一个数列，有三个操作：</p>
-
-<pre><code>1. 给a个数同时加x
-2. 在末尾加入元素k
-3. 去掉末尾的元素
-</code></pre>
-
-<p>对于每一次操作，查询数列的平均值，共有2*10^5次操作。三个操作都可以看作区间操作，[1,a]上同时加x，[sz,sz+1]加x，[sz-1,sz]减去数列末尾sz处的值，于是可以用树状数组来做。 </p>
-
-<h2 id="b-cow-programhttpwwwcodeforcescomcontest283problemb"><a href="http://www.codeforces.com/contest/283/problem/B">B. Cow Program</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/174/1/B.cpp">source code</a></p>
-
-<p>初始时给定两个数x=1，y=0，还有一个序列{an}，在这个基础上有一些列操作</p>
-
-<pre><code>1. 某一步后若x&lt;=0或y&gt;n，程序终止
-2. x+=ax, y+=ax
-3. x-=ax, y+=ax
-4. 交替执行步骤2和3，或许有限步后结束，或许永远不会终止
-</code></pre>
-
-<p>现在给定序列{a[2..n]}，接下来将这个程序跑n-1遍，第i遍执行序列i, a2, …, an，若程序终止，输出y的值，否则输出-1</p>
-
-<p><em>注意2和3中的ax，其中是以x是变量，是数组下标。比赛时没仔细看直接以为按顺序执行ai，做了很多无用功。略怨念</em></p>
-
-<p>可以看到共有n*2个状态，2代表当前操作是2还是3，可以直接记忆化搜索。我写的比较麻烦，用了map&lt;int, vector&lt;int&gt; &gt;来表示图，比如mp[a+ax] = x。</p>
-
-<h2 id="c-coin-troubleshttpwwwcodeforcescomcontest283problemc"><a href="http://www.codeforces.com/contest/283/problem/C">C. Coin Troubles</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/174/1/C.cpp">source code</a></p>
-
-<p>给定n种硬币，面值总共为t，然后有q种限制(bi, ci)，表示类型bi的硬币比ci多，现在要求有多少种方案。其中bi各不相同，ci各不相同。</p>
-
-<p>对于每种限制(bi,ci)，从bi到ci连一条有向边，所谓bi各不相同就是同一个点不能有1条以上出边，ci各不相同即一个点不能有1条以上入边，于是只能够构成一条链，也有可能是圈，然而这是不合法的，直接输出0即可。找到链后，比如是x1,x2,…,xk，于是可以做新的硬币，Si=x1+…+xi，就可以处理，xi一定要比xj多的要求(i&gt;j)，找方案数的话做一遍背包就可以了。其实细节还是挺多的，具体可以看代码。</p>
-
-<h2 id="d-cows-and-cool-sequenceshttpwwwcodeforcescomcontest283problemd"><a href="http://www.codeforces.com/contest/283/problem/D">D. Cows and Cool Sequences</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/174/1/D.cpp">source code</a></p>
-
-<p>定义cool pair (x,y)是x能够用y个连续整数的和表示，cool sequence{an}是对所有(ai,a{i+1})是cool pair。想在给定一个数列，要求改动最少的数使其是cool sequence。还是直接看<a href="http://www.codeforces.com/blog/entry/7036">官方报告</a>吧，基于一个发现然后n^2dp。</p>
-
-<h2 id="e-cow-tennis-tournamenthttpwwwcodeforcescomcontest283probleme"><a href="http://www.codeforces.com/contest/283/problem/E">E. Cow Tennis Tournament</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/174/1/E.cpp">source code</a></p>
-
-<p>数列{sn}表示一些cow的等级，cow_i能够打败cow_j当且仅当s_i&gt;s_j，现在有一些操作[a,b]，等级在在区间[a,b]里的cow的胜负关系会发生改变。最后问查询无序数对(p,q,r)有多少，其中存在一个排列使得cow_p-&gt;cow_q-&gt;cow_r-&gt;cow_p，i-&gt;j表是cow_i可以击败cow_j。</p>
-
-<p>首先最后答案为C(m,3)-sigma(C(win_i,2))。用c[n][n]表示胜负关系是否被改变，那么当一次查询[a,b]时，矩形[a,b]x[a,b]里的关系将被反转，用垂直扫描线，线段树就可以解决。具体还是看<a href="http://www.codeforces.com/blog/entry/7036">官方报告</a>吧。</p>
-
-<h2 id="summary">Summary</h2>
-
-<p>A，B，C都是可以做的，但是比赛的时候只搞出了A，B和C在赛后很快fix了，很不扎实啊(&gt;_&lt;)。D和E只能通过看官方报告来获取想法，希望能一点一点提高吧。总之这是一套很不错的题目。以上。。</p>
 ]]></content>
   </entry>
   

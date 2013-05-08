@@ -7,7 +7,8 @@
 	<meta name="author" content="delta">
 
 	
-	<meta name="description" content="通过emerge来安装java就不赘述了，可以看这篇很详细的wiki，click me -_- 由于每天水水98的需求，但是rvpn在linux下工作的总不是那么尽如人意，每次都要换回win，很麻烦但也无可奈何。今天又开始折腾rvpn，把以前装的icedtea都删掉了， &hellip;">
+	<meta name="description" content="A. Learning Languages
+source code n个员工，m种语言，每个员工可以说0种或某些语言，语言相同的员工可以直接沟通，员工也可以间接沟通，即有员工帮他们翻译即可，于是只要是通过语言构成的联通块种任意两个人都可以沟通。问最少还要某些员工学几种语言可以达到员工两两可以沟通 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -109,6 +110,74 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h1 class="title"><a href="/blog/2013/03/01/codeforces-round-number-170-div-1/">Codeforces Round #170 (Div. 1)</a></h1>
+	<div class="entry-content">
+		<h2 id="a-learning-languageshttpwwwcodeforcescomcontest277problema"><a href="http://www.codeforces.com/contest/277/problem/A">A. Learning Languages</a></h2>
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/170/1/A.cpp">source code</a></p>
+
+<p>n个员工，m种语言，每个员工可以说0种或某些语言，语言相同的员工可以直接沟通，员工也可以间接沟通，即有员工帮他们翻译即可，于是只要是通过语言构成的联通块种任意两个人都可以沟通。问最少还要某些员工学几种语言可以达到员工两两可以沟通。</p>
+
+<p>首先通过dfs或并查集找出所有联通块，可以发现每个联通块所会的语言是不同的，否则他们就联通了，现在只要将所有联通块连起来就可以了，可以看出需要再学联通块个数-1种语言就好了。每个人都不会任何语言的情况要特殊处理下。</p>
+
+<h2 id="b-set-of-pointshttpwwwcodeforcescomcontest277problemb"><a href="http://www.codeforces.com/contest/277/problem/B">B. Set of Points</a></h2>
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/170/1/B.cpp">source code</a></p>
+
+<p>一个平面点集的convexity是指最大的能构成凸多边形的子集元素个数。问n个点，convexity为m是否可行，可行的话输出任意一组可行解，要求任意三点不共线，点为整点。否则输出-1。(m&lt;=n&lt;=2m)</p>
+
+<p>构造性算法。说到凸多边形，很容易联想到圆的内接多边形，在加上n&lt;=2m的限制，便想到两个同心多边形。至于不能的情况，便是m=3，n&gt;=5了。</p>
+
+<h2 id="c-gamehttpwwwcodeforcescomcontest277problemc"><a href="http://www.codeforces.com/contest/277/problem/C">C. Game</a></h2>
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/170/1/C.cpp">source code</a></p>
+
+<p>有一张方格纸，两个人可以轮流用剪刀沿着纵横方向剪，每次不必剪透，可以只剪一部分，但是不能不剪，剪完后的纸张还是在原位。当方格纸变为一个一个单位正方形时游戏就结束了，剪最后一刀的人获胜。现在给出一个已经经过剪裁的纸张，判断先手还是后手赢，若先手赢给出先手的第一步。</p>
+
+<p>类似<a href="http://en.wikipedia.org/wiki/Nim">NIM</a>。由于行列是分离的，所以经过分离后会形成m-1+n-1个堆，和NIM对应起来。比较复杂的是处理出这些堆，处理完后直接用NIM的结果就可以了。</p>
+
+<h2 id="d-google-code-jamhttpwwwcodeforcescomcontest277problemd"><a href="http://www.codeforces.com/contest/277/problem/D">D. Google Code Jam</a></h2>
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/170/1/D.cpp">source code</a></p>
+
+<p>模拟codejam，找出最优解题顺序。注意罚时是最后一个正确的提交对应的时间，另外注意精度问题。具体可看<a href="http://www.codeforces.com/blog/entry/6815">这个</a></p>
+
+<h2 id="e-binary-tree-on-planehttpwwwcodeforcescomcontest277probleme"><a href="http://www.codeforces.com/contest/277/problem/E">E. Binary Tree on Plane</a></h2>
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/170/1/E.cpp">source code</a></p>
+
+<p>平面上有一些点，现在要连一些边，使这些点构成一个有向二叉树，并且线段总和最小。要求一个点的父亲的纵座标要严格大于当前点的纵座标。方案不存在的话输出-1。</p>
+
+<p>最小费用最大流，由纵座标小的向纵座标大的连边，由于有二叉的限制，所以拆分点，使入度最大为2。具体可看代码。</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-01T15:16:00+08:00" pubdate data-updated="true">Mar 1<span>st</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/codeforces/'>codeforces</a>
+
+
+</div>
+	
+		<span class="comments"><a href="/blog/2013/03/01/codeforces-round-number-170-div-1//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -837,82 +906,6 @@ sudo emerge -va pyopenssl
 </div>
 	
 		<span class="comments"><a href="/blog/2012/12/11/sh-deleting-one-line//blog/page/2/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h1 class="title"><a href="/blog/2012/12/10/music-moved/">家路</a></h1>
-	<div class="entry-content">
-		<p>平常听歌都喜欢随便在豆瓣虾米百度什么的打开随便听听，今天偶然听到一阵旋律，眼角突然就挂上了泪，是一首日文歌，其实歌词也不懂，但突然就很有感触。后来看了下歌曲，是<a href="http://ja.wikipedia.org/wiki/%E4%B8%AD%E5%AD%9D%E4%BB%8B">中孝介</a>的”家路”，原来我只是不知不觉想家了。</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">ひそやかに 影を落とす                   		华灯初上 影子静静地
-</span><span class="line">夕映えの街に 灯がともる顷               		留在泻满夕阳的大街上
-</span><span class="line">未知し风 吹かれて君は                   		被陌生的风吹拂著的你
-</span><span class="line">离れた空の下 何を想う                   		在他乡想著什麼呢
-</span><span class="line">足早に过ぎゆく夕空に飞び立つ            		如同掠过暮霭而
-</span><span class="line">鸟の群れが家路を辿るように              		归巢的那群鸟一样
-</span><span class="line">ここへ戻っておいで君の休まる场所へ      		回来吧 沿著归途
-</span><span class="line">空の向こうで明日が手招いてる            		在天空的彼端 明日正在召唤
-</span><span class="line">いくつもの梦を数え                      		屈指可数的梦
-</span><span class="line">谁もが答えを探している                  		谁都在追寻著答案
-</span><span class="line">足早に行き交う人波に 纷れて             		清晨急匆匆的人群
-</span><span class="line">君らしさを见失ったなら                  		模糊了你的模样
-</span><span class="line">ここへ戻っておいで羽を休める场所へ      		回来吧 沿著归途
-</span><span class="line">今日という日を好きになれますように      		珍惜每一个今天
-</span><span class="line">今君が流した いとしいその涙が           		而今 若为擦乾你的泪光
-</span><span class="line">乾くのなら仆は风にでもなろう            		我愿意化作清风
-</span><span class="line">ここへ戻っておいで君の休まる场所へ      		回来吧 沿著归途
-</span><span class="line">相変わらずの笑颜で                      		用不变的笑容
-</span><span class="line">明日を恙无(つつがな)く过ごせますように  		祈愿明天平安顺利</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-10T22:23:00+08:00" pubdate data-updated="true">Dec 10<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/music/'>music</a>
-
-
-</div>
-	
-		<span class="comments"><a href="/blog/2012/12/10/music-moved//blog/page/2/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
