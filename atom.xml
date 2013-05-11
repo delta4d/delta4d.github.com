@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Try To Think]]></title>
-  <link href="http://delta4d.github.com/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-05-09T00:31:08+08:00</updated>
-  <id>http://delta4d.github.com/</id>
+  <link href="http://delta4d.github.io/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.io/"/>
+  <updated>2013-05-11T14:30:20+08:00</updated>
+  <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #182 (Div. 1)]]></title>
-    <link href="http://delta4d.github.com/blog/2013/05/06/codeforces-round-number-182-div-1/"/>
+    <link href="http://delta4d.github.io/blog/2013/05/06/codeforces-round-number-182-div-1/"/>
     <updated>2013-05-06T13:19:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/05/06/codeforces-round-number-182-div-1</id>
+    <id>http://delta4d.github.io/blog/2013/05/06/codeforces-round-number-182-div-1</id>
     <content type="html"><![CDATA[<h2 id="a-yaroslav-and-sequencehttpwwwcodeforcescomcontest301problema"><a href="http://www.codeforces.com/contest/301/problem/A">A. Yaroslav and Sequence</a></h2>
 
 <p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/182/1/A.cpp">source code</a></p>
@@ -101,9 +101,9 @@
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #180 (Div. 1)]]></title>
-    <link href="http://delta4d.github.com/blog/2013/04/20/codeforces-round-number-180-div-1/"/>
+    <link href="http://delta4d.github.io/blog/2013/04/20/codeforces-round-number-180-div-1/"/>
     <updated>2013-04-20T17:56:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/04/20/codeforces-round-number-180-div-1</id>
+    <id>http://delta4d.github.io/blog/2013/04/20/codeforces-round-number-180-div-1</id>
     <content type="html"><![CDATA[<h2 id="a-parity-gamehttpwwwcodeforcescomcontest297problema"><a href="http://www.codeforces.com/contest/297/problem/A">A. Parity Game</a></h2>
 
 <p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/180/1/A.cpp">source code</a></p>
@@ -164,9 +164,9 @@ b: 0 0 0 4 5 6 1 2 3	0 2 0 3 1 4 2 5 3
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #179 (Div. 1)]]></title>
-    <link href="http://delta4d.github.com/blog/2013/04/12/codeforces-round-number-179-div-1/"/>
+    <link href="http://delta4d.github.io/blog/2013/04/12/codeforces-round-number-179-div-1/"/>
     <updated>2013-04-12T14:09:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/04/12/codeforces-round-number-179-div-1</id>
+    <id>http://delta4d.github.io/blog/2013/04/12/codeforces-round-number-179-div-1</id>
     <content type="html"><![CDATA[<h2 id="a-greg-and-arrayhttpwwwcodeforcescomcontest295problema"><a href="http://www.codeforces.com/contest/295/problem/A">A. Greg and Array</a></h2>
 
 <p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/179/1/A.cpp">source code</a></p>
@@ -245,9 +245,9 @@ T(n,m)=\sum_{t=1}^{n}\sum_{k=2}^{m}(A(t,k)*B(t,k)*(m-k+1))
   
   <entry>
     <title type="html"><![CDATA[单调队列/栈]]></title>
-    <link href="http://delta4d.github.com/blog/2013/04/06/monotonous-queue-and-stack/"/>
+    <link href="http://delta4d.github.io/blog/2013/04/06/monotonous-queue-and-stack/"/>
     <updated>2013-04-06T17:43:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/04/06/monotonous-queue-and-stack</id>
+    <id>http://delta4d.github.io/blog/2013/04/06/monotonous-queue-and-stack</id>
     <content type="html"><![CDATA[<p>这两天连续碰到单调队列/栈的问题，稍微总结一下。</p>
 
 <p>单调队列/栈即在队列/栈的基础上加上单调。其中每个元素进出各一次，所以复杂度一般是O(n)。单调队列实际上是一个双端队列，队列头删除元素，队列尾添加元素。比较典型的应用是k窗口问题，即一个数列{xi}，用一个长度为k的窗口从左向右扫描，每次都查询当前窗口中的最大元素。</p>
@@ -288,9 +288,9 @@ T(n,m)=\sum_{t=1}^{n}\sum_{k=2}^{m}(A(t,k)*B(t,k)*(m-k+1))
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #177 (Div. 1)]]></title>
-    <link href="http://delta4d.github.com/blog/2013/04/03/codeforces-round-number-177-div-1/"/>
+    <link href="http://delta4d.github.io/blog/2013/04/03/codeforces-round-number-177-div-1/"/>
     <updated>2013-04-03T13:11:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/04/03/codeforces-round-number-177-div-1</id>
+    <id>http://delta4d.github.io/blog/2013/04/03/codeforces-round-number-177-div-1</id>
     <content type="html"><![CDATA[<h2 id="a-polo-the-penguin-and-stringshttpwwwcodeforcescomcontest288problema"><a href="http://www.codeforces.com/contest/288/problem/A">A. Polo the Penguin and Strings</a></h2>
 
 <p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/177/1/A.cpp">source code</a></p>
@@ -389,9 +389,9 @@ T(n,m)=\sum_{t=1}^{n}\sum_{k=2}^{m}(A(t,k)*B(t,k)*(m-k+1))
   
   <entry>
     <title type="html"><![CDATA[gentoo notes 03 - programs]]></title>
-    <link href="http://delta4d.github.com/blog/2013/04/01/gentoo-notes-03/"/>
+    <link href="http://delta4d.github.io/blog/2013/04/01/gentoo-notes-03/"/>
     <updated>2013-04-01T21:45:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/04/01/gentoo-notes-03</id>
+    <id>http://delta4d.github.io/blog/2013/04/01/gentoo-notes-03</id>
     <content type="html"><![CDATA[<p>稍微总结下gentoo下常用的一些软件。</p>
 
 <h2 id="emerge">Emerge</h2>
@@ -784,9 +784,9 @@ $ layman -S
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #176 (Div. 1)]]></title>
-    <link href="http://delta4d.github.com/blog/2013/03/23/codeforces-round-number-176-div-1/"/>
+    <link href="http://delta4d.github.io/blog/2013/03/23/codeforces-round-number-176-div-1/"/>
     <updated>2013-03-23T23:12:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/03/23/codeforces-round-number-176-div-1</id>
+    <id>http://delta4d.github.io/blog/2013/03/23/codeforces-round-number-176-div-1</id>
     <content type="html"><![CDATA[<h2 id="a-lucky-permutationhttpwwwcodeforcescomcontest286problema"><a href="http://www.codeforces.com/contest/286/problem/A">A. Lucky Permutation</a></h2>
 
 <p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/A.cpp">source code</a></p>
@@ -868,9 +868,9 @@ P(n - y + 1) = x
   
   <entry>
     <title type="html"><![CDATA[Git命令快速参考]]></title>
-    <link href="http://delta4d.github.com/blog/2013/03/23/git-command-quick-reference/"/>
+    <link href="http://delta4d.github.io/blog/2013/03/23/git-command-quick-reference/"/>
     <updated>2013-03-23T14:54:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/03/23/git-command-quick-reference</id>
+    <id>http://delta4d.github.io/blog/2013/03/23/git-command-quick-reference</id>
     <content type="html"><![CDATA[<h2 id="section">安装和初始化</h2>
 
 <ul>
@@ -1468,9 +1468,9 @@ $ git commit -m "&lt;some message&gt;"
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #174 (Div. 1)]]></title>
-    <link href="http://delta4d.github.com/blog/2013/03/18/codeforces-round-number-174-div-1/"/>
+    <link href="http://delta4d.github.io/blog/2013/03/18/codeforces-round-number-174-div-1/"/>
     <updated>2013-03-18T21:00:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/03/18/codeforces-round-number-174-div-1</id>
+    <id>http://delta4d.github.io/blog/2013/03/18/codeforces-round-number-174-div-1</id>
     <content type="html"><![CDATA[<h2 id="a-cows-and-sequencehttpwwwcodeforcescomcontest283problema"><a href="http://www.codeforces.com/contest/283/problem/A">A. Cows and Sequence</a></h2>
 
 <p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/174/1/A.cpp">source code</a></p>
@@ -1532,12 +1532,12 @@ $ git commit -m "&lt;some message&gt;"
   
   <entry>
     <title type="html"><![CDATA[gentoo notes 02 - customize]]></title>
-    <link href="http://delta4d.github.com/blog/2013/03/07/gentoo-notes-02/"/>
+    <link href="http://delta4d.github.io/blog/2013/03/07/gentoo-notes-02/"/>
     <updated>2013-03-07T21:25:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/03/07/gentoo-notes-02</id>
+    <id>http://delta4d.github.io/blog/2013/03/07/gentoo-notes-02</id>
     <content type="html"><![CDATA[<p>notes02写点桌面美化的东西吧。其实用过KDE，Gnome，Awesome，Openbox等各种环境，最后稳定下来到XFCE4，其实以上提到都是很不错的环境，但是我有时候就是会对很多其实无关痛痒的东西较真，真正关系到自己的东西或事情反倒不那么上心了。KDE就是很不错的一个桌面环境，至于当初为什么换掉现在也记不清楚了。说到底，DE/WM这种东西不能太过在意，用Linux毕竟不是来玩桌面的。自从知道Linux的存在后，就不停的折腾发行版，DE/WM，但最后并没有学到多少东西，最后觉得还是得踏踏实实的用才行。下面是现在的一张桌面截图：</p>
 
-<p><img src="http://delta4d.github.com/images/upload/2013-03-07-desktop.png" width="50%" height="50%" /></p>
+<p><img src="http://delta4d.github.io/images/upload/2013-03-07-desktop.png" width="50%" height="50%" /></p>
 
 <h2 id="reference">Reference</h2>
 <p>首先是一些主题美化站，deviantart上有很多不错的主题。</p>
@@ -1564,9 +1564,9 @@ $ git commit -m "&lt;some message&gt;"
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #170 (Div. 1)]]></title>
-    <link href="http://delta4d.github.com/blog/2013/03/01/codeforces-round-number-170-div-1/"/>
+    <link href="http://delta4d.github.io/blog/2013/03/01/codeforces-round-number-170-div-1/"/>
     <updated>2013-03-01T15:16:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/03/01/codeforces-round-number-170-div-1</id>
+    <id>http://delta4d.github.io/blog/2013/03/01/codeforces-round-number-170-div-1</id>
     <content type="html"><![CDATA[<h2 id="a-learning-languageshttpwwwcodeforcescomcontest277problema"><a href="http://www.codeforces.com/contest/277/problem/A">A. Learning Languages</a></h2>
 <p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/170/1/A.cpp">source code</a></p>
 
@@ -1604,9 +1604,9 @@ $ git commit -m "&lt;some message&gt;"
   
   <entry>
     <title type="html"><![CDATA[Java on Gentoo]]></title>
-    <link href="http://delta4d.github.com/blog/2013/02/28/java-on-gentoo/"/>
+    <link href="http://delta4d.github.io/blog/2013/02/28/java-on-gentoo/"/>
     <updated>2013-02-28T00:25:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/02/28/java-on-gentoo</id>
+    <id>http://delta4d.github.io/blog/2013/02/28/java-on-gentoo</id>
     <content type="html"><![CDATA[<p>通过emerge来安装java就不赘述了，可以看这篇很详细的wiki，<a href="http://www.gentoo.org/doc/en/java.xml">click me -_-</a></p>
 
 <p>由于每天水水98的需求，但是rvpn在linux下工作的总不是那么尽如人意，每次都要换回win，很麻烦但也无可奈何。今天又开始折腾rvpn，把以前装的icedtea都删掉了，将rvpn提供的jre又装了一遍，rvpn居然就正常工作了，如此看来rvpn的wiki还是很靠谱的= =。另外使用rvpn提供的javaws运行topcode arena也正常了。Lucky night!</p>
@@ -1621,12 +1621,12 @@ $ git commit -m "&lt;some message&gt;"
   
   <entry>
     <title type="html"><![CDATA[git项目嵌套]]></title>
-    <link href="http://delta4d.github.com/blog/2013/02/16/git-submodule/"/>
+    <link href="http://delta4d.github.io/blog/2013/02/16/git-submodule/"/>
     <updated>2013-02-16T19:38:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/02/16/git-submodule</id>
+    <id>http://delta4d.github.io/blog/2013/02/16/git-submodule</id>
     <content type="html"><![CDATA[<p>以前看到有的github项目有如下的情况：</p>
 
-<p><img src="http://delta4d.github.com/images/upload/2013-02-16-git-submodule.png" alt="" /></p>
+<p><img src="http://delta4d.github.io/images/upload/2013-02-16-git-submodule.png" alt="" /></p>
 
 <p>就是一个git项目的子目录也是一个项目，在github上看起来就像链接一样。今天终于发现，这其实是git的submodule，具体可参考<a href="http://git-scm.com/book/en/Git-Tools-Submodules">这里</a>，也可以<code>git submodule --help</code></p>
 
@@ -1641,9 +1641,9 @@ $ git commit -m "&lt;some message&gt;"
   
   <entry>
     <title type="html"><![CDATA[donelist 2012 &amp; todolist 2013]]></title>
-    <link href="http://delta4d.github.com/blog/2013/02/11/donelist-2012-and-todolist-2013/"/>
+    <link href="http://delta4d.github.io/blog/2013/02/11/donelist-2012-and-todolist-2013/"/>
     <updated>2013-02-11T01:46:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/02/11/donelist-2012-and-todolist-2013</id>
+    <id>http://delta4d.github.io/blog/2013/02/11/donelist-2012-and-todolist-2013</id>
     <content type="html"><![CDATA[<p>我的2012并不算坏，也不算好。前两天和几个高中同学吃饭，听他们谈起以前的同学，我居然全然记不得他们提到的名字了。上了大学后，渐渐从不求甚解变为了不求解到了现在，总觉得自己将自己闲置了。每每看到身旁掠过的各种忙碌的身影，便会心生惭愧。总会有人问我”既然你那么闲，那么平时你都在干什么？”，是啊，我都在干什么呢?</p>
 
 <h2 id="donelist-2012httpdelta4dgithubcomblog20120406donelist-2011-and-todolist-2012"><a href="http://delta4d.github.com/blog/2012/04/06/donelist-2011-and-todolist-2012/">donelist 2012</a></h2>
@@ -1736,9 +1736,9 @@ $ git commit -m "&lt;some message&gt;"
   
   <entry>
     <title type="html"><![CDATA[ibus-pinyin can not set preference]]></title>
-    <link href="http://delta4d.github.com/blog/2013/02/04/ibus-pinyin-can-not-set-preference/"/>
+    <link href="http://delta4d.github.io/blog/2013/02/04/ibus-pinyin-can-not-set-preference/"/>
     <updated>2013-02-04T01:38:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/02/04/ibus-pinyin-can-not-set-preference</id>
+    <id>http://delta4d.github.io/blog/2013/02/04/ibus-pinyin-can-not-set-preference</id>
     <content type="html"><![CDATA[<p>在ibus-setup的时候选择ibus-pinyin的首选项可能会出现‘ImportError: No module named gtk’，这是由于默认python会指向python3，而不是python2。python的版本引出了多少问题啊。。</p>
 
 <p>这时只要指定相关文件的python版本就可以了</p>
@@ -1789,9 +1789,9 @@ $ git commit -m "&lt;some message&gt;"
   
   <entry>
     <title type="html"><![CDATA[goagent on linux]]></title>
-    <link href="http://delta4d.github.com/blog/2013/02/03/goagent-on-linux/"/>
+    <link href="http://delta4d.github.io/blog/2013/02/03/goagent-on-linux/"/>
     <updated>2013-02-03T17:11:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/02/03/goagent-on-linux</id>
+    <id>http://delta4d.github.io/blog/2013/02/03/goagent-on-linux</id>
     <content type="html"><![CDATA[<p>不知从什么时候开始，每次装机后翻墙变为第一件要做的事。<a href="https://code.google.com/p/goagent/">goagent</a>已经进入了2.x时代，配置也方便了不少，其实跟着wiki走一遍就好了。</p>
 
 <h2 id="install">Install</h2>
@@ -1840,9 +1840,9 @@ sudo emerge -va pyopenssl
   
   <entry>
     <title type="html"><![CDATA[gentoo notes 01 - start]]></title>
-    <link href="http://delta4d.github.com/blog/2013/01/27/gentoo-notes-01/"/>
+    <link href="http://delta4d.github.io/blog/2013/01/27/gentoo-notes-01/"/>
     <updated>2013-01-27T19:26:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/01/27/gentoo-notes-01</id>
+    <id>http://delta4d.github.io/blog/2013/01/27/gentoo-notes-01</id>
     <content type="html"><![CDATA[<h2 id="why-gentoo">Why Gentoo</h2>
 <p>久仰Gentoo大名，过去一年断断续续在虚拟机上装过好几次Gentoo了，一直想在实体机上试试，于是趁放假的时候折腾折腾。</p>
 
@@ -1921,22 +1921,22 @@ sudo emerge -va pyopenssl
   
   <entry>
     <title type="html"><![CDATA[The Scream]]></title>
-    <link href="http://delta4d.github.com/blog/2012/12/26/the-scream/"/>
+    <link href="http://delta4d.github.io/blog/2012/12/26/the-scream/"/>
     <updated>2012-12-26T22:37:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2012/12/26/the-scream</id>
+    <id>http://delta4d.github.io/blog/2012/12/26/the-scream</id>
     <content type="html"><![CDATA[<p>the little boy inside me lately</p>
 
 <p><a href="http://en.wikipedia.org/wiki/The_Scream">The Scream</a></p>
 
-<p><img src="http://delta4d.github.com/images/upload/2012-12-26-the-scream.jpg" alt="The Scream" /></p>
+<p><img src="http://delta4d.github.io/images/upload/2012-12-26-the-scream.jpg" alt="The Scream" /></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[情人无泪]]></title>
-    <link href="http://delta4d.github.com/blog/2012/12/16/lover-no-tears/"/>
+    <link href="http://delta4d.github.io/blog/2012/12/16/lover-no-tears/"/>
     <updated>2012-12-16T10:27:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2012/12/16/lover-no-tears</id>
+    <id>http://delta4d.github.io/blog/2012/12/16/lover-no-tears</id>
     <content type="html"><![CDATA[<p>最近闲里偷忙看完了<a href="http://zh.wikipedia.org/wiki/%E5%BC%B5%E5%B0%8F%E5%AB%BB">张小娴</a>的”情人无泪”，因为是小说精选集，实际上包含了三部小说：卖海豚的女孩，离别曲，和情人无泪。</p>
 
 <p>我不止一次的在心里对自己说“多读些书吧”，大学四年倒是摸过一些书，每次都等到有罚款通知了再把书原封不动的送回图书馆。这学期在98读书版精华区看到有人推荐张小娴的书，便去图书馆借了本“情人无泪”。借书的时候还有件好玩的事，文学类的书都在走廊两边的架子上放着，找了很久，终于在某个书架最底层发现了六本精选集，我随手拿起一本翻着，这时有一个女孩走了过来，蹲下去也拿起了一本，然而很快又放了回去，站了起来，一动不动。旁边静静的杵了一个人总让人觉得有些不自在，于是把书放了回去，这时只见那个女孩迅速蹲下，拿起我刚放下的书，回头就跑。我恍然大悟。</p>
@@ -1954,9 +1954,9 @@ sudo emerge -va pyopenssl
   
   <entry>
     <title type="html"><![CDATA[linux终端在同一行输出结果]]></title>
-    <link href="http://delta4d.github.com/blog/2012/12/11/sh-deleting-one-line/"/>
+    <link href="http://delta4d.github.io/blog/2012/12/11/sh-deleting-one-line/"/>
     <updated>2012-12-11T16:00:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2012/12/11/sh-deleting-one-line</id>
+    <id>http://delta4d.github.io/blog/2012/12/11/sh-deleting-one-line</id>
     <content type="html"><![CDATA[<p>最近了解了一下<a href="http://dwm.suckless.org/">dwm</a>，想定制下状态栏，于是首先想写一个检测内存的脚本。脚本并不复杂，但仍然用了好多时间来查找资料，使用linux果然还是要多写程序脚本啊。</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>mem_used.sh  </span></figcaption>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: mathematics | Try To Think]]></title>
-  <link href="http://delta4d.github.com/blog/categories/mathematics/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-05-09T00:31:20+08:00</updated>
-  <id>http://delta4d.github.com/</id>
+  <link href="http://delta4d.github.io/blog/categories/mathematics/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.io/"/>
+  <updated>2013-05-11T14:30:20+08:00</updated>
+  <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[n个小球放进m个盒子]]></title>
-    <link href="http://delta4d.github.com/blog/2012/10/12/n-ball-2-m-box/"/>
+    <link href="http://delta4d.github.io/blog/2012/10/12/n-ball-2-m-box/"/>
     <updated>2012-10-12T21:02:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2012/10/12/n-ball-2-m-box</id>
+    <id>http://delta4d.github.io/blog/2012/10/12/n-ball-2-m-box</id>
     <content type="html"><![CDATA[<p>基本的排列组合问题，因为老碰到，所以稍微做下总结。  </p>
 
 <p>一般可以按照球是否可区别，盒子是否可区别，盒子是否可空，分为2^3=8种情况，但是实际上总可以通过调整使得盒子可空转化为盒子不可空的情况，比如有n个小球，m个盒子，设每个盒子内小球数量为x[i]，那么x[1]+x[2]+…+x[m]=n，那么通过变换x’[i] = x[i] + 1，变为x’[1]+x’[2]+…+x’[m]=n+m，于是转化为将n+m个小球放入m个盒子，盒子不能为空的问题。有些情况下要    求某些盒子不为空，有些可空，那么对相应的x[i]做以上变换即可。于是接下来的讨论都是针对盒子非空的情况，共有2^2=4种情形：  </p>
@@ -57,9 +57,9 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
   
   <entry>
     <title type="html"><![CDATA[二次曲线的判断]]></title>
-    <link href="http://delta4d.github.com/blog/2011/04/20/conic-judgement/"/>
+    <link href="http://delta4d.github.io/blog/2011/04/20/conic-judgement/"/>
     <updated>2011-04-20T19:31:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/04/20/conic-judgement</id>
+    <id>http://delta4d.github.io/blog/2011/04/20/conic-judgement</id>
     <content type="html"><![CDATA[<p>之所以想起这个问题是因为<a href="http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=3488">ZOJ3488</a>，题目是说给定二次曲线方程ax^2+bxy+c^2+dx+ey+f=0，判断曲线类型，其中保证曲线肯定存在且b=0，我准备更一般的来研究一下这个问题</p>
 
 <ol>

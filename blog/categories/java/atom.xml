@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: java | Try To Think]]></title>
-  <link href="http://delta4d.github.com/blog/categories/java/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-05-09T00:31:20+08:00</updated>
-  <id>http://delta4d.github.com/</id>
+  <link href="http://delta4d.github.io/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.io/"/>
+  <updated>2013-05-11T14:30:20+08:00</updated>
+  <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Java on Gentoo]]></title>
-    <link href="http://delta4d.github.com/blog/2013/02/28/java-on-gentoo/"/>
+    <link href="http://delta4d.github.io/blog/2013/02/28/java-on-gentoo/"/>
     <updated>2013-02-28T00:25:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/02/28/java-on-gentoo</id>
+    <id>http://delta4d.github.io/blog/2013/02/28/java-on-gentoo</id>
     <content type="html"><![CDATA[<p>通过emerge来安装java就不赘述了，可以看这篇很详细的wiki，<a href="http://www.gentoo.org/doc/en/java.xml">click me -_-</a></p>
 
 <p>由于每天水水98的需求，但是rvpn在linux下工作的总不是那么尽如人意，每次都要换回win，很麻烦但也无可奈何。今天又开始折腾rvpn，把以前装的icedtea都删掉了，将rvpn提供的jre又装了一遍，rvpn居然就正常工作了，如此看来rvpn的wiki还是很靠谱的= =。另外使用rvpn提供的javaws运行topcode arena也正常了。Lucky night!</p>

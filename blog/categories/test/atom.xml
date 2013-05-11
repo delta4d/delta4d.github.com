@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: test | Try To Think]]></title>
-  <link href="http://delta4d.github.com/blog/categories/test/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-05-09T00:31:20+08:00</updated>
-  <id>http://delta4d.github.com/</id>
+  <link href="http://delta4d.github.io/blog/categories/test/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.io/"/>
+  <updated>2013-05-11T14:30:20+08:00</updated>
+  <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[latex test]]></title>
-    <link href="http://delta4d.github.com/blog/2012/11/11/latex-test/"/>
+    <link href="http://delta4d.github.io/blog/2012/11/11/latex-test/"/>
     <updated>2012-11-11T23:33:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2012/11/11/latex-test</id>
+    <id>http://delta4d.github.io/blog/2012/11/11/latex-test</id>
     <content type="html"><![CDATA[<p>$\LaTeX$ using kramdown</p>
 
 <script type="math/tex; mode=display">% &lt;![CDATA[
@@ -44,17 +44,22 @@
   
   <entry>
     <title type="html"><![CDATA[hello, world!]]></title>
-    <link href="http://delta4d.github.com/blog/2011/03/19/hello-world/"/>
+    <link href="http://delta4d.github.io/blog/2011/03/19/hello-world/"/>
     <updated>2011-03-19T01:31:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/03/19/hello-world</id>
-    <content type="html"><![CDATA[<p>{% codeblock lang:c %}
-#include <stdio.h></stdio.h></p>
-
-<p>int main() {
-	printf(“hello,world!”);
-	return 0;
-}
-{% endcodeblock %}</p>
+    <id>http://delta4d.github.io/blog/2011/03/19/hello-world</id>
+    <content type="html"><![CDATA[<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &lt;stdio.h&gt;&lt;/stdio.h&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>	<span class="n">printf</span><span class="p">(</span><span class="err">“</span><span class="n">hello</span><span class="p">,</span><span class="n">world</span><span class="o">!</span><span class="err">”</span><span class="p">);</span>
+</span><span class='line'>	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   

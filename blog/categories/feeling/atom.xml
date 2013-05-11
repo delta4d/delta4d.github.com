@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: feeling | Try To Think]]></title>
-  <link href="http://delta4d.github.com/blog/categories/feeling/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-05-09T00:31:20+08:00</updated>
-  <id>http://delta4d.github.com/</id>
+  <link href="http://delta4d.github.io/blog/categories/feeling/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.io/"/>
+  <updated>2013-05-11T14:30:20+08:00</updated>
+  <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Java on Gentoo]]></title>
-    <link href="http://delta4d.github.com/blog/2013/02/28/java-on-gentoo/"/>
+    <link href="http://delta4d.github.io/blog/2013/02/28/java-on-gentoo/"/>
     <updated>2013-02-28T00:25:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/02/28/java-on-gentoo</id>
+    <id>http://delta4d.github.io/blog/2013/02/28/java-on-gentoo</id>
     <content type="html"><![CDATA[<p>通过emerge来安装java就不赘述了，可以看这篇很详细的wiki，<a href="http://www.gentoo.org/doc/en/java.xml">click me -_-</a></p>
 
 <p>由于每天水水98的需求，但是rvpn在linux下工作的总不是那么尽如人意，每次都要换回win，很麻烦但也无可奈何。今天又开始折腾rvpn，把以前装的icedtea都删掉了，将rvpn提供的jre又装了一遍，rvpn居然就正常工作了，如此看来rvpn的wiki还是很靠谱的= =。另外使用rvpn提供的javaws运行topcode arena也正常了。Lucky night!</p>
@@ -32,9 +32,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Scream]]></title>
-    <link href="http://delta4d.github.com/blog/2012/12/26/the-scream/"/>
+    <link href="http://delta4d.github.io/blog/2012/12/26/the-scream/"/>
     <updated>2012-12-26T22:37:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2012/12/26/the-scream</id>
+    <id>http://delta4d.github.io/blog/2012/12/26/the-scream</id>
     <content type="html"><![CDATA[<p>the little boy inside me lately</p>
 
 <p><a href="http://en.wikipedia.org/wiki/The_Scream">The Scream</a></p>
@@ -45,9 +45,9 @@
   
   <entry>
     <title type="html"><![CDATA[情人无泪]]></title>
-    <link href="http://delta4d.github.com/blog/2012/12/16/lover-no-tears/"/>
+    <link href="http://delta4d.github.io/blog/2012/12/16/lover-no-tears/"/>
     <updated>2012-12-16T10:27:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2012/12/16/lover-no-tears</id>
+    <id>http://delta4d.github.io/blog/2012/12/16/lover-no-tears</id>
     <content type="html"><![CDATA[<p>最近闲里偷忙看完了<a href="http://zh.wikipedia.org/wiki/%E5%BC%B5%E5%B0%8F%E5%AB%BB">张小娴</a>的”情人无泪”，因为是小说精选集，实际上包含了三部小说：卖海豚的女孩，离别曲，和情人无泪。</p>
 
 <p>我不止一次的在心里对自己说“多读些书吧”，大学四年倒是摸过一些书，每次都等到有罚款通知了再把书原封不动的送回图书馆。这学期在98读书版精华区看到有人推荐张小娴的书，便去图书馆借了本“情人无泪”。借书的时候还有件好玩的事，文学类的书都在走廊两边的架子上放着，找了很久，终于在某个书架最底层发现了六本精选集，我随手拿起一本翻着，这时有一个女孩走了过来，蹲下去也拿起了一本，然而很快又放了回去，站了起来，一动不动。旁边静静的杵了一个人总让人觉得有些不自在，于是把书放了回去，这时只见那个女孩迅速蹲下，拿起我刚放下的书，回头就跑。我恍然大悟。</p>
@@ -65,9 +65,9 @@
   
   <entry>
     <title type="html"><![CDATA[2011-10]]></title>
-    <link href="http://delta4d.github.com/blog/2011/11/06/2011-10/"/>
+    <link href="http://delta4d.github.io/blog/2011/11/06/2011-10/"/>
     <updated>2011-11-06T13:35:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/11/06/2011-10</id>
+    <id>http://delta4d.github.io/blog/2011/11/06/2011-10</id>
     <content type="html"><![CDATA[<p>wordpress又被墙了，90代理也挂了一阵，想更新下blog真不容易啊</p>
 
 <p>记过去的10月：</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: gentoo | Try To Think]]></title>
-  <link href="http://delta4d.github.com/blog/categories/gentoo/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-05-09T00:31:20+08:00</updated>
-  <id>http://delta4d.github.com/</id>
+  <link href="http://delta4d.github.io/blog/categories/gentoo/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.io/"/>
+  <updated>2013-05-11T14:30:20+08:00</updated>
+  <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[gentoo notes 03 - programs]]></title>
-    <link href="http://delta4d.github.com/blog/2013/04/01/gentoo-notes-03/"/>
+    <link href="http://delta4d.github.io/blog/2013/04/01/gentoo-notes-03/"/>
     <updated>2013-04-01T21:45:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/04/01/gentoo-notes-03</id>
+    <id>http://delta4d.github.io/blog/2013/04/01/gentoo-notes-03</id>
     <content type="html"><![CDATA[<p>稍微总结下gentoo下常用的一些软件。</p>
 
 <h2 id="emerge">Emerge</h2>
@@ -410,12 +410,12 @@ $ layman -S
   
   <entry>
     <title type="html"><![CDATA[gentoo notes 02 - customize]]></title>
-    <link href="http://delta4d.github.com/blog/2013/03/07/gentoo-notes-02/"/>
+    <link href="http://delta4d.github.io/blog/2013/03/07/gentoo-notes-02/"/>
     <updated>2013-03-07T21:25:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/03/07/gentoo-notes-02</id>
+    <id>http://delta4d.github.io/blog/2013/03/07/gentoo-notes-02</id>
     <content type="html"><![CDATA[<p>notes02写点桌面美化的东西吧。其实用过KDE，Gnome，Awesome，Openbox等各种环境，最后稳定下来到XFCE4，其实以上提到都是很不错的环境，但是我有时候就是会对很多其实无关痛痒的东西较真，真正关系到自己的东西或事情反倒不那么上心了。KDE就是很不错的一个桌面环境，至于当初为什么换掉现在也记不清楚了。说到底，DE/WM这种东西不能太过在意，用Linux毕竟不是来玩桌面的。自从知道Linux的存在后，就不停的折腾发行版，DE/WM，但最后并没有学到多少东西，最后觉得还是得踏踏实实的用才行。下面是现在的一张桌面截图：</p>
 
-<p><img src="http://delta4d.github.com/images/upload/2013-03-07-desktop.png" width="50%" height="50%" /></p>
+<p><img src="http://delta4d.github.io/images/upload/2013-03-07-desktop.png" width="50%" height="50%" /></p>
 
 <h2 id="reference">Reference</h2>
 <p>首先是一些主题美化站，deviantart上有很多不错的主题。</p>
@@ -442,9 +442,9 @@ $ layman -S
   
   <entry>
     <title type="html"><![CDATA[gentoo notes 01 - start]]></title>
-    <link href="http://delta4d.github.com/blog/2013/01/27/gentoo-notes-01/"/>
+    <link href="http://delta4d.github.io/blog/2013/01/27/gentoo-notes-01/"/>
     <updated>2013-01-27T19:26:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/01/27/gentoo-notes-01</id>
+    <id>http://delta4d.github.io/blog/2013/01/27/gentoo-notes-01</id>
     <content type="html"><![CDATA[<h2 id="why-gentoo">Why Gentoo</h2>
 <p>久仰Gentoo大名，过去一年断断续续在虚拟机上装过好几次Gentoo了，一直想在实体机上试试，于是趁放假的时候折腾折腾。</p>
 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: codeforces | Try To Think]]></title>
-  <link href="http://delta4d.github.com/blog/categories/codeforces/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-05-09T00:31:20+08:00</updated>
-  <id>http://delta4d.github.com/</id>
+  <link href="http://delta4d.github.io/blog/categories/codeforces/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.io/"/>
+  <updated>2013-05-11T14:30:20+08:00</updated>
+  <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #182 (Div. 1)]]></title>
-    <link href="http://delta4d.github.com/blog/2013/05/06/codeforces-round-number-182-div-1/"/>
+    <link href="http://delta4d.github.io/blog/2013/05/06/codeforces-round-number-182-div-1/"/>
     <updated>2013-05-06T13:19:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/05/06/codeforces-round-number-182-div-1</id>
+    <id>http://delta4d.github.io/blog/2013/05/06/codeforces-round-number-182-div-1</id>
     <content type="html"><![CDATA[<h2 id="a-yaroslav-and-sequencehttpwwwcodeforcescomcontest301problema"><a href="http://www.codeforces.com/contest/301/problem/A">A. Yaroslav and Sequence</a></h2>
 
 <p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/182/1/A.cpp">source code</a></p>
@@ -101,9 +101,9 @@
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #180 (Div. 1)]]></title>
-    <link href="http://delta4d.github.com/blog/2013/04/20/codeforces-round-number-180-div-1/"/>
+    <link href="http://delta4d.github.io/blog/2013/04/20/codeforces-round-number-180-div-1/"/>
     <updated>2013-04-20T17:56:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/04/20/codeforces-round-number-180-div-1</id>
+    <id>http://delta4d.github.io/blog/2013/04/20/codeforces-round-number-180-div-1</id>
     <content type="html"><![CDATA[<h2 id="a-parity-gamehttpwwwcodeforcescomcontest297problema"><a href="http://www.codeforces.com/contest/297/problem/A">A. Parity Game</a></h2>
 
 <p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/180/1/A.cpp">source code</a></p>
@@ -164,9 +164,9 @@ b: 0 0 0 4 5 6 1 2 3	0 2 0 3 1 4 2 5 3
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #179 (Div. 1)]]></title>
-    <link href="http://delta4d.github.com/blog/2013/04/12/codeforces-round-number-179-div-1/"/>
+    <link href="http://delta4d.github.io/blog/2013/04/12/codeforces-round-number-179-div-1/"/>
     <updated>2013-04-12T14:09:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/04/12/codeforces-round-number-179-div-1</id>
+    <id>http://delta4d.github.io/blog/2013/04/12/codeforces-round-number-179-div-1</id>
     <content type="html"><![CDATA[<h2 id="a-greg-and-arrayhttpwwwcodeforcescomcontest295problema"><a href="http://www.codeforces.com/contest/295/problem/A">A. Greg and Array</a></h2>
 
 <p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/179/1/A.cpp">source code</a></p>
@@ -245,9 +245,9 @@ T(n,m)=\sum_{t=1}^{n}\sum_{k=2}^{m}(A(t,k)*B(t,k)*(m-k+1))
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #177 (Div. 1)]]></title>
-    <link href="http://delta4d.github.com/blog/2013/04/03/codeforces-round-number-177-div-1/"/>
+    <link href="http://delta4d.github.io/blog/2013/04/03/codeforces-round-number-177-div-1/"/>
     <updated>2013-04-03T13:11:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/04/03/codeforces-round-number-177-div-1</id>
+    <id>http://delta4d.github.io/blog/2013/04/03/codeforces-round-number-177-div-1</id>
     <content type="html"><![CDATA[<h2 id="a-polo-the-penguin-and-stringshttpwwwcodeforcescomcontest288problema"><a href="http://www.codeforces.com/contest/288/problem/A">A. Polo the Penguin and Strings</a></h2>
 
 <p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/177/1/A.cpp">source code</a></p>
@@ -346,9 +346,9 @@ T(n,m)=\sum_{t=1}^{n}\sum_{k=2}^{m}(A(t,k)*B(t,k)*(m-k+1))
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #176 (Div. 1)]]></title>
-    <link href="http://delta4d.github.com/blog/2013/03/23/codeforces-round-number-176-div-1/"/>
+    <link href="http://delta4d.github.io/blog/2013/03/23/codeforces-round-number-176-div-1/"/>
     <updated>2013-03-23T23:12:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/03/23/codeforces-round-number-176-div-1</id>
+    <id>http://delta4d.github.io/blog/2013/03/23/codeforces-round-number-176-div-1</id>
     <content type="html"><![CDATA[<h2 id="a-lucky-permutationhttpwwwcodeforcescomcontest286problema"><a href="http://www.codeforces.com/contest/286/problem/A">A. Lucky Permutation</a></h2>
 
 <p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/A.cpp">source code</a></p>

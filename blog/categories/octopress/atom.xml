@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: octopress | Try To Think]]></title>
-  <link href="http://delta4d.github.com/blog/categories/octopress/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-05-09T00:31:20+08:00</updated>
-  <id>http://delta4d.github.com/</id>
+  <link href="http://delta4d.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.io/"/>
+  <updated>2013-05-11T14:30:20+08:00</updated>
+  <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[use octopress on a new computer]]></title>
-    <link href="http://delta4d.github.com/blog/2012/11/10/use-octopress-on-a-new-computer/"/>
+    <link href="http://delta4d.github.io/blog/2012/11/10/use-octopress-on-a-new-computer/"/>
     <updated>2012-11-10T19:37:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2012/11/10/use-octopress-on-a-new-computer</id>
+    <id>http://delta4d.github.io/blog/2012/11/10/use-octopress-on-a-new-computer</id>
     <content type="html"><![CDATA[<p>when you are bloging with octopress, don’t forget the following commands</p>
 
 <p><code>

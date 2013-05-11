@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: evince | Try To Think]]></title>
-  <link href="http://delta4d.github.com/blog/categories/evince/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-05-09T00:31:20+08:00</updated>
-  <id>http://delta4d.github.com/</id>
+  <link href="http://delta4d.github.io/blog/categories/evince/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.io/"/>
+  <updated>2013-05-11T14:30:20+08:00</updated>
+  <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Evince中文显示错误]]></title>
-    <link href="http://delta4d.github.com/blog/2012/11/23/evince-display-chinese-wrong/"/>
+    <link href="http://delta4d.github.io/blog/2012/11/23/evince-display-chinese-wrong/"/>
     <updated>2012-11-23T19:06:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2012/11/23/evince-display-chinese-wrong</id>
+    <id>http://delta4d.github.io/blog/2012/11/23/evince-display-chinese-wrong</id>
     <content type="html"><![CDATA[<p>今天用Evince打开一个pdf，本来应该显示中文的地方都是空白，google后发现是<a href="http://poppler.freedesktop.org">poppler</a>的问题，缺少了编码集poppler-data，那么安装好这个包就可一了</p>
 
 <p>on debian</p>

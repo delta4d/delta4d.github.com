@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: MAC | Try To Think]]></title>
-  <link href="http://delta4d.github.com/blog/categories/mac/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-05-09T00:31:20+08:00</updated>
-  <id>http://delta4d.github.com/</id>
+  <link href="http://delta4d.github.io/blog/categories/mac/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.io/"/>
+  <updated>2013-05-11T14:30:20+08:00</updated>
+  <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[MAC安装记]]></title>
-    <link href="http://delta4d.github.com/blog/2011/11/10/mac-install/"/>
+    <link href="http://delta4d.github.io/blog/2011/11/10/mac-install/"/>
     <updated>2011-11-10T23:28:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/11/10/mac-install</id>
+    <id>http://delta4d.github.io/blog/2011/11/10/mac-install</id>
     <content type="html"><![CDATA[<p>想装MAC纯属瞎折腾，现在装好了也一直扔在那里没有用。。</p>
 
 <p>10月份的时候在试着装Lion，结果每次在安装进度条20%的时候就死掉了，现在装的是东皇SL v3，先说下我的配置：</p>

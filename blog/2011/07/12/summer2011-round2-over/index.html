@@ -1,23 +1,37 @@
 
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<title>summer2011 round2 over - Try To Think</title>
-	<meta name="author" content="delta">
+  <meta charset="utf-8">
+  <title>summer2011 round2 over - Try To Think</title>
+  <meta name="author" content="delta">
 
-	
-	<meta name="description" content="summer2011第二轮结束，从总的结果来看round1好了一些，最后一场暴0有点不应该，而且有三道题居然都没看过，这个我觉的是不应该的，以后还是先把题目大致浏览一遍再做吧。 round2还是比较有收获的，第一次靠着以前看的一些线段树的思想居然自己写出来了，着实很兴奋。教训有很多， &hellip;">
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="description" content="summer2011第二轮结束，从总的结果来看round1好了一些，最后一场暴0有点不应该，而且有三道题居然都没看过，这个我觉的是不应该的，以后还是先把题目大致浏览一遍再做吧。 round2还是比较有收获的，第一次靠着以前看的一些线段树的思想居然自己写出来了，着实很兴奋。教训有很多， &hellip;">
+  
 
-	<link href="/atom.xml" rel="alternate" title="Try To Think" type="application/atom+xml">
-	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<!-- mathjax config similar to math.stackexchange -->
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://delta4d.github.io/blog/2011/07/12/summer2011-round2-over">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Try To Think" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+<head>
+<!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
@@ -48,78 +62,63 @@
 <script type="text/javascript"
    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-
-	
 </head>
 
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36393620-1']);
+    _gaq.push(['_trackPageview']);
 
-<body>
-	<header id="header" class="inner"><h1><a href="/">Try To Think</a></h1>
-<nav id="main-nav"><ul class="main">
-	<li><a href="/">Blog</a></li>
-	<li><a href="/blog/archives">Archives</a></li>
-	<li><a href="/aboutme">AboutMe</a></li>
-	<li><a href="/x">X</a></li>
-</ul>
-</nav>
-<nav id="mobile-nav">
-	<div class="alignleft menu">
-		<a class="button">Menu</a>
-		<div class="container"><ul class="main">
-	<li><a href="/">Blog</a></li>
-	<li><a href="/blog/archives">Archives</a></li>
-	<li><a href="/aboutme">AboutMe</a></li>
-	<li><a href="/x">X</a></li>
-</ul>
-</div>
-	</div>
-	<div class="alignright search">
-		<a class="button"></a>
-		<div class="container">
-			<form action="http://google.com/search" method="get">
-				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:delta4d.github.com">
-			</form>
-		</div>
-	</div>
-</nav>
-<nav id="sub-nav" class="alignright">
-	<div class="social">
-		
-		
-		
-		
-		<a class="github" href="https://github.com/delta4d" title="GitHub">GitHub</a>
-		
-		
-		
-		
-		
-		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
-		
-	</div>
-	<form class="search" action="http://google.com/search" method="get">
-		<input class="alignright" type="text" name="q" results="0">
-		<input type="hidden" name="q" value="site:delta4d.github.com">
-	</form>
-</nav>
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Try To Think</a></h1>
+  
+</hgroup>
 
 </header>
-	
-		
-	
-	<div id="content" class="inner"><article class="post">
-	<h1 class="title">Summer2011 Round2 Over</h1>
-	<div class="entry-content"><p>summer2011第二轮结束，从总的结果来看round1好了一些，最后一场暴0有点不应该，而且有三道题居然都没看过，这个我觉的是不应该的，以后还是先把题目大致浏览一遍再做吧。</p>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:delta4d.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/aboutme">AboutMe</a></li>
+  <li><a href="/x">X</a></li>
+</ul>
 
-<p>round2还是比较有收获的，第一次靠着以前看的一些线段树的思想居然自己写出来了，着实很兴奋。教训有很多，在写代码之前一定要好好审视一下自己的算法，否则浪费的时间就太多了，又影响心情，还有比赛时一定要冷静，有想法的话，要敢于去写，或者尝试换换思维，不要把自己逼近死胡同。</p>
-
-<p>集训已经进行了一半，还有机会，好好加油吧。</p>
-</div>
-
-
-<div class="meta">
-	<div class="date">
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Summer2011 Round2 Over</h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -131,60 +130,167 @@
   
 
 
-<time datetime="2011-07-12T14:33:00+08:00" pubdate data-updated="true">Jul 12<span>th</span>, 2011</time></div>
-	<div class="tags">
+<time datetime="2011-07-12T14:33:00+08:00" pubdate data-updated="true">Jul 12<span>th</span>, 2011</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
 
 
-	<a class='category' href='/blog/categories/summer2011/'>summer2011</a>
+<div class="entry-content"><p>summer2011第二轮结束，从总的结果来看round1好了一些，最后一场暴0有点不应该，而且有三道题居然都没看过，这个我觉的是不应该的，以后还是先把题目大致浏览一遍再做吧。</p>
 
+<p>round2还是比较有收获的，第一次靠着以前看的一些线段树的思想居然自己写出来了，着实很兴奋。教训有很多，在写代码之前一定要好好审视一下自己的算法，否则浪费的时间就太多了，又影响心情，还有比赛时一定要冷静，有想法的话，要敢于去写，或者尝试换换思维，不要把自己逼近死胡同。</p>
 
-</div>
-	
-		<span class="comments"><a href="/blog/2011/07/12/summer2011-round2-over/#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-	<div class="share">
-	<div class="addthis_toolbox addthis_default_style ">
-	
-	
-	<a class="addthis_button_tweet"></a>
-	
-	
-	<a class="addthis_counter addthis_pill_style"></a>
-	</div>
-  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+<p>集训已经进行了一半，还有机会，好好加油吧。</p>
 </div>
 
 
+  <footer>
+    <p class="meta">
+      
+  
 
-<section id="comment">
-    <h1 class="title">Comments</h1>
+<span class="byline author vcard">Posted by <span class="fn">delta</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-12T14:33:00+08:00" pubdate data-updated="true">Jul 12<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/summer2011/'>summer2011</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://delta4d.github.io/blog/2011/07/12/summer2011-round2-over/" data-via="" data-counturl="http://delta4d.github.io/blog/2011/07/12/summer2011-round2-over/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/07/07/summer2011-round1-over/" title="Previous Post: summer2011 round1 over">&laquo; summer2011 round1 over</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/07/18/summer2011-round3-over/" title="Next Post: summer2011 round3 over">summer2011 round3 over &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-</section>
+  </section>
+
+
 </div>
-	<footer id="footer" class="inner"><p>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/05/06/codeforces-round-number-182-div-1/">Codeforces Round #182 (Div. 1)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/20/codeforces-round-number-180-div-1/">Codeforces Round #180 (Div. 1)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/12/codeforces-round-number-179-div-1/">Codeforces Round #179 (Div. 1)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/06/monotonous-queue-and-stack/">单调队列/栈</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/03/codeforces-round-number-177-div-1/">Codeforces Round #177 (Div. 1)</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/delta4d">@delta4d</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'delta4d',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
   Copyright &copy; 2013 - delta -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
-</footer>
-	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-	$('.fancybox').fancybox();
-})(jQuery);
-</script> <!-- Delete or comment this line to disable Fancybox -->
 
+</footer>
+  
 
 <script type="text/javascript">
       var disqus_shortname = 'delta4d';
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://delta4d.github.com/blog/2011/07/12/summer2011-round2-over/';
-        var disqus_url = 'http://delta4d.github.com/blog/2011/07/12/summer2011-round2-over/';
+        var disqus_identifier = 'http://delta4d.github.io/blog/2011/07/12/summer2011-round2-over/';
+        var disqus_url = 'http://delta4d.github.io/blog/2011/07/12/summer2011-round2-over/';
         var disqus_script = 'embed.js';
       
     (function () {
@@ -196,17 +302,21 @@
 
 
 
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-36393620-1']);
-		_gaq.push(['_trackPageview']);
 
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
 
 
 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: fstab | Try To Think]]></title>
-  <link href="http://delta4d.github.com/blog/categories/fstab/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-05-09T00:31:20+08:00</updated>
-  <id>http://delta4d.github.com/</id>
+  <link href="http://delta4d.github.io/blog/categories/fstab/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.io/"/>
+  <updated>2013-05-11T14:30:20+08:00</updated>
+  <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Archlinux开机加载NTFS分区]]></title>
-    <link href="http://delta4d.github.com/blog/2011/09/06/archlinux-load-ntfs-partion-at-boot/"/>
+    <link href="http://delta4d.github.io/blog/2011/09/06/archlinux-load-ntfs-partion-at-boot/"/>
     <updated>2011-09-06T09:47:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/09/06/archlinux-load-ntfs-partion-at-boot</id>
+    <id>http://delta4d.github.io/blog/2011/09/06/archlinux-load-ntfs-partion-at-boot</id>
     <content type="html"><![CDATA[<p>修改/etc/fstab文件，添加如下内容：</p>
 
 <p><code>

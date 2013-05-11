@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: algorithm | Try To Think]]></title>
-  <link href="http://delta4d.github.com/blog/categories/algorithm/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-05-09T00:31:20+08:00</updated>
-  <id>http://delta4d.github.com/</id>
+  <link href="http://delta4d.github.io/blog/categories/algorithm/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.io/"/>
+  <updated>2013-05-11T14:30:20+08:00</updated>
+  <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[单调队列/栈]]></title>
-    <link href="http://delta4d.github.com/blog/2013/04/06/monotonous-queue-and-stack/"/>
+    <link href="http://delta4d.github.io/blog/2013/04/06/monotonous-queue-and-stack/"/>
     <updated>2013-04-06T17:43:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2013/04/06/monotonous-queue-and-stack</id>
+    <id>http://delta4d.github.io/blog/2013/04/06/monotonous-queue-and-stack</id>
     <content type="html"><![CDATA[<p>这两天连续碰到单调队列/栈的问题，稍微总结一下。</p>
 
 <p>单调队列/栈即在队列/栈的基础上加上单调。其中每个元素进出各一次，所以复杂度一般是O(n)。单调队列实际上是一个双端队列，队列头删除元素，队列尾添加元素。比较典型的应用是k窗口问题，即一个数列{xi}，用一个长度为k的窗口从左向右扫描，每次都查询当前窗口中的最大元素。</p>

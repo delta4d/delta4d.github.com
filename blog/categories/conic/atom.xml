@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: conic | Try To Think]]></title>
-  <link href="http://delta4d.github.com/blog/categories/conic/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-05-09T00:31:20+08:00</updated>
-  <id>http://delta4d.github.com/</id>
+  <link href="http://delta4d.github.io/blog/categories/conic/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.io/"/>
+  <updated>2013-05-11T14:30:20+08:00</updated>
+  <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[二次曲线的判断]]></title>
-    <link href="http://delta4d.github.com/blog/2011/04/20/conic-judgement/"/>
+    <link href="http://delta4d.github.io/blog/2011/04/20/conic-judgement/"/>
     <updated>2011-04-20T19:31:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/04/20/conic-judgement</id>
+    <id>http://delta4d.github.io/blog/2011/04/20/conic-judgement</id>
     <content type="html"><![CDATA[<p>之所以想起这个问题是因为<a href="http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=3488">ZOJ3488</a>，题目是说给定二次曲线方程ax^2+bxy+c^2+dx+ey+f=0，判断曲线类型，其中保证曲线肯定存在且b=0，我准备更一般的来研究一下这个问题</p>
 
 <ol>

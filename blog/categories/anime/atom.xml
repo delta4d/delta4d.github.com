@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: anime | Try To Think]]></title>
-  <link href="http://delta4d.github.com/blog/categories/anime/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-05-09T00:31:20+08:00</updated>
-  <id>http://delta4d.github.com/</id>
+  <link href="http://delta4d.github.io/blog/categories/anime/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.io/"/>
+  <updated>2013-05-11T14:30:20+08:00</updated>
+  <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[开学了]]></title>
-    <link href="http://delta4d.github.com/blog/2011/09/05/school-open/"/>
+    <link href="http://delta4d.github.io/blog/2011/09/05/school-open/"/>
     <updated>2011-09-05T21:15:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/09/05/school-open</id>
+    <id>http://delta4d.github.io/blog/2011/09/05/school-open</id>
     <content type="html"><![CDATA[<p>开学第一天，稍微回顾下这个可能是我最后的一个暑假。</p>
 
 <p>7月份在参加ACM的集训，和去年不同的是今年认识了更多的人，一块相互鼓励相互探讨，最终能够一块进入8月份集训名单着实非常开心。期间回家了两个礼拜，家人还是一如既往的让我考虑下考研的事情，但不知为什么，我总是提不起兴趣，不知道自己现在为什么对考试什么的比较抵触，也很久没有那种静下心来踏踏实实做事情的时候了。我不清楚这3年的时光里，我的身上到底发生了什么，可能唯一能确定的就是比以前更懒了吧。今年世园会在西安举行，母亲很早以前就对我说作为西安人总要去一下的，我在家的那段时间母亲也催了我不少次，我也不清楚自己哪里来的倔强，总之就是不想出去，很多时候不想走路，不想说话，大部分时间不是在沙发上就是在床上。有一天很早母亲就叫我说今天去世园会逛逛，我头埋在被窝里说到不去不去，母亲后来就没有再问我，我也永远不会知道留在卧室门口的母亲会挂着一副怎样的表情。在家的时间总是特别悠闲和舒服，花了一个下午和一个上午的时间搞好了arch，gnome3的确漂亮了不少，用习惯了感觉还是不错的，就是arch的东西好难配啊，网络，字体等等，现在还有很多东西没有搞好…</p>

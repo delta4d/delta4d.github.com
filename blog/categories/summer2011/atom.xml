@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: summer2011 | Try To Think]]></title>
-  <link href="http://delta4d.github.com/blog/categories/summer2011/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-05-09T00:31:20+08:00</updated>
-  <id>http://delta4d.github.com/</id>
+  <link href="http://delta4d.github.io/blog/categories/summer2011/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.io/"/>
+  <updated>2013-05-11T14:30:20+08:00</updated>
+  <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[summer2011 goes on]]></title>
-    <link href="http://delta4d.github.com/blog/2011/08/17/summer2011-goes-on/"/>
+    <link href="http://delta4d.github.io/blog/2011/08/17/summer2011-goes-on/"/>
     <updated>2011-08-17T18:30:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/08/17/summer2011-goes-on</id>
+    <id>http://delta4d.github.io/blog/2011/08/17/summer2011-goes-on</id>
     <content type="html"><![CDATA[<p>虽然7月份集训选拔并没有进入前15，但是由于前面有同学不参加比赛所以很幸运可以参加8月份的集训，并且能够和<a href="http://hi.baidu.com/sheep_finalfreedom">肥羊</a>和<a href="http://hi.baidu.com/riversouthers">riversouther</a>组成一队来参加比赛着实让我感觉非常非常的开心和幸运。</p>
 
 <p>集训于昨天已经开始了，一切都是新鲜的，感觉还是很好的，昨天加了ZJU的ACM群，看到hhgg在群里说welcome delta，霎时感觉有一种强烈的归属感，总之是很开心啦，接下来的时间我也要好好努力！</p>
@@ -26,9 +26,9 @@
   
   <entry>
     <title type="html"><![CDATA[summer2011 round4 over]]></title>
-    <link href="http://delta4d.github.com/blog/2011/07/24/summer2011-round4-over/"/>
+    <link href="http://delta4d.github.io/blog/2011/07/24/summer2011-round4-over/"/>
     <updated>2011-07-24T19:54:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/07/24/summer2011-round4-over</id>
+    <id>http://delta4d.github.io/blog/2011/07/24/summer2011-round4-over</id>
     <content type="html"><![CDATA[<p>summer2011最后一轮结束，最终rank16。最后一个round contest2暴0了，比较郁闷，不过结果并不算坏，自己差不多也就这个程度吧。</p>
 
 <p>很喜欢集训队的氛围，大家都很好玩，整个过程中我也学到了不少东西，认识了一些朋友，总之，很幸运吧，可以这样度过二十多天。</p>
@@ -37,18 +37,18 @@
   
   <entry>
     <title type="html"><![CDATA[summer2011 round3 over]]></title>
-    <link href="http://delta4d.github.com/blog/2011/07/18/summer2011-round3-over/"/>
+    <link href="http://delta4d.github.io/blog/2011/07/18/summer2011-round3-over/"/>
     <updated>2011-07-18T15:49:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/07/18/summer2011-round3-over</id>
+    <id>http://delta4d.github.io/blog/2011/07/18/summer2011-round3-over</id>
     <content type="html"><![CDATA[<p>这一轮数学题特别多，我一看到这种题就很想做，但是都做不出来，&gt;_&lt;，太弱了，每场比赛都有跳坑，有些题目还是可以做的，比赛的时候应该认真想一下的。rating还是处在一个比较尴尬的位置，还有最后一个round，不知道等待我的会是什么结果，每场比赛都要拼出去，嗯嗯。</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[summer2011 round2 over]]></title>
-    <link href="http://delta4d.github.com/blog/2011/07/12/summer2011-round2-over/"/>
+    <link href="http://delta4d.github.io/blog/2011/07/12/summer2011-round2-over/"/>
     <updated>2011-07-12T14:33:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/07/12/summer2011-round2-over</id>
+    <id>http://delta4d.github.io/blog/2011/07/12/summer2011-round2-over</id>
     <content type="html"><![CDATA[<p>summer2011第二轮结束，从总的结果来看round1好了一些，最后一场暴0有点不应该，而且有三道题居然都没看过，这个我觉的是不应该的，以后还是先把题目大致浏览一遍再做吧。</p>
 
 <p>round2还是比较有收获的，第一次靠着以前看的一些线段树的思想居然自己写出来了，着实很兴奋。教训有很多，在写代码之前一定要好好审视一下自己的算法，否则浪费的时间就太多了，又影响心情，还有比赛时一定要冷静，有想法的话，要敢于去写，或者尝试换换思维，不要把自己逼近死胡同。</p>
@@ -59,9 +59,9 @@
   
   <entry>
     <title type="html"><![CDATA[summer2011 round1 over]]></title>
-    <link href="http://delta4d.github.com/blog/2011/07/07/summer2011-round1-over/"/>
+    <link href="http://delta4d.github.io/blog/2011/07/07/summer2011-round1-over/"/>
     <updated>2011-07-07T17:51:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2011/07/07/summer2011-round1-over</id>
+    <id>http://delta4d.github.io/blog/2011/07/07/summer2011-round1-over</id>
     <content type="html"><![CDATA[<p>summer2011第一阶段结束了，稍微总结一下。第一场很神奇的贪心过了一道，但是在算期望的题目上，将一个改写n的地方写成了n+1，但是推倒导来的式子却显得格外的漂亮，其实还是自己没搞清楚；第二场很快的过了一道，然后一直在做博弈题而没有去看其他的，其实这个做不出来应该没有什么怨言了，因为我压根就不知道SG的存在么。第三场是我们组的题目，结果没有验出队友数据里的错误，导致vout不断WA，罪过啊。第四场第一道题目经历15次提交才AC，其中还有两次CE，太不小心了，不过终场前的绝杀还是让我感到很爽快的。</p>
 
 <p>总的来说，状况并不是很好，但结果也不是特别糟，还有3轮还有机会，以后每场比赛都要细心，看到题目要敢想敢做，不能在畏首畏尾了，大不了就是个WA么。</p>

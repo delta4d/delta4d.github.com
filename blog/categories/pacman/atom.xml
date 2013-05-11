@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: pacman | Try To Think]]></title>
-  <link href="http://delta4d.github.com/blog/categories/pacman/atom.xml" rel="self"/>
-  <link href="http://delta4d.github.com/"/>
-  <updated>2013-05-09T00:31:20+08:00</updated>
-  <id>http://delta4d.github.com/</id>
+  <link href="http://delta4d.github.io/blog/categories/pacman/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.io/"/>
+  <updated>2013-05-11T14:30:20+08:00</updated>
+  <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[[Pacman] not enough random bytes available]]></title>
-    <link href="http://delta4d.github.com/blog/2012/05/25/pacman-not-enough-random-bytes-available/"/>
+    <link href="http://delta4d.github.io/blog/2012/05/25/pacman-not-enough-random-bytes-available/"/>
     <updated>2012-05-25T15:21:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2012/05/25/pacman-not-enough-random-bytes-available</id>
+    <id>http://delta4d.github.io/blog/2012/05/25/pacman-not-enough-random-bytes-available</id>
     <content type="html"><![CDATA[<p>pacman更新到4.x中出现了认证系统，需要先执行pacman-key –init来生成key，但是这时可能出现not enough random bytes available，后来查了下发现Linux系统生成随机数是根据系统熵来获得的，这是因为系统熵不够的缘故。系统熵值可以通过</p>
 
 <p><code>sh
@@ -44,9 +44,9 @@ cat /proc/sys/kernel/random/entropy_avail
   
   <entry>
     <title type="html"><![CDATA[[Pacman] "filesystem: /etc/mtab exists in filesystem"]]></title>
-    <link href="http://delta4d.github.com/blog/2012/02/29/pacman-fiwlesystem-mtab-exists-in-filesystem/"/>
+    <link href="http://delta4d.github.io/blog/2012/02/29/pacman-fiwlesystem-mtab-exists-in-filesystem/"/>
     <updated>2012-02-29T11:11:00+08:00</updated>
-    <id>http://delta4d.github.com/blog/2012/02/29/pacman-fiwlesystem-mtab-exists-in-filesystem</id>
+    <id>http://delta4d.github.io/blog/2012/02/29/pacman-fiwlesystem-mtab-exists-in-filesystem</id>
     <content type="html"><![CDATA[<p>fixed by</p>
 
 <p><code>sh
