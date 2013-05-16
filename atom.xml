@@ -4,7 +4,7 @@
   <title><![CDATA[Try To Think]]></title>
   <link href="http://delta4d.github.io/atom.xml" rel="self"/>
   <link href="http://delta4d.github.io/"/>
-  <updated>2013-05-11T14:30:20+08:00</updated>
+  <updated>2013-05-16T14:03:44+08:00</updated>
   <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -12,6 +12,62 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Codeforces Round #183 (Div. 1)]]></title>
+    <link href="http://delta4d.github.io/blog/2013/05/13/codeforces-round-number-183-div-1/"/>
+    <updated>2013-05-13T00:15:00+08:00</updated>
+    <id>http://delta4d.github.io/blog/2013/05/13/codeforces-round-number-183-div-1</id>
+    <content type="html"><![CDATA[<h2 id="a-lucky-permutation-triplehttpwwwcodeforcescomcontest303problema"><a href="http://www.codeforces.com/contest/303/problem/A">A. Lucky Permutation Triple</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/183/1/A.cpp">source code</a></p>
+
+<p>0到n-1有三个排列a,b,c，若a[i] + b[i] = c[i] (mod n)，则称(a,b,c)为lucky permutation triple，给定n，若方案存在输出任意一个，否则输出-1。</p>
+
+<p>因为a[i] + b[i] = c[i] (mod n)则sigma(a[i]) + sigma(b[i]) = sigma(c[i]) (mod n)，即n*(n-1) = n*(n-1)/2 (mod n)，那么n*(n-1)/2 = 0 (mod n)，可知当n为偶数时使不可能的，所以n只能是奇数，我们有恰好可以构造出n为奇数时的方案：</p>
+
+<pre><code>a	0	1	2	...n-2	n-1		
+c	n-2	n-3	n-4	...0	n-1
+b	calculate me! &amp; prove it is legal
+</code></pre>
+
+<h2 id="b-rectangle-puzzle-iihttpwwwcodeforcescomcontest303problemb"><a href="http://www.codeforces.com/contest/303/problem/B">B. Rectangle Puzzle II</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/183/1/B.cpp">source code</a></p>
+
+<p>给矩形[0,n]x[0,m]，矩形内有一点P(x,y)，求一个<strong>面积最大的</strong>矩形[x1,x2]x[y1,y2]包含P且(x2-x1)/(y2-y1)=a/b。若有多解，则选择矩形中心距离P最近的，若还有多解则选择序列x1y1x2y2中字典序最小的。</p>
+
+<p>构造。首先使(a,b)=1，则矩形边长为ak,bk，首先满足面积最大的要求则ak&lt;=n,bk&lt;=n，求出最大的k，这样矩形边长就确定了，然后就是怎么摆的问题了，即要满足距离最小的要求，尽量使长度为ak的线段中心往x靠就行了，在这个基础上尽量使x1,y1小就可以了。</p>
+
+<h2 id="c-minimum-modularhttpwwwcodeforcescomcontest303problemc"><a href="http://www.codeforces.com/contest/303/problem/C">C. Minimum Modular</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/183/1/C.cpp">source code</a></p>
+
+<p>给一个序列{ai}，找出最小的m使得ai关于m两两不同余，你可以在{ai}中去掉k(&lt;=4)个数以达到目的。</p>
+
+<p>可知M=max{ai}+1满足要求，即m&lt;=M。若ai和aj关于m同余，则m|ai-aj，预处理出所有ai-aj，然后枚举m，看有多少ai-aj整除m，当数目大于k*(k+1)/2时，直接跳出接着测试下一个数。要使集合A={i|存在j属于A使得m|ai-aj}的数目尽量小但是造成m|ai-aj的影响尽可能大，那么只能是下面的情况x1,x2,…xk,x(k+1)，m|xi-x(i-1)，这样构成的(i,j)对共有1+2+…+k=k(k+1)/2。当通过这个测试时然后暴力检测m就可以了。</p>
+
+<h2 id="d-rotatable-numberhttpwwwcodeforcescomcontest303problemd"><a href="http://www.codeforces.com/contest/303/problem/D">D. Rotatable Number</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/183/1/D.cpp">source code</a></p>
+
+<p>给定数字长度n，和数制上限x找出最大的数制b&lt;x，使得存在一个长度为n的<a href="http://en.wikipedia.org/wiki/Cyclic_number">Cylic Number</a>。</p>
+
+<p>cyclic number形式为(b^(p-1)-1)/p，p为素数,(b,p)=1，且b为模p的<a href="http://en.wikipedia.org/wiki/Primitive_root_modulo_n">原根</a>。那么首先n=p-1，即n+1要为素数，然后暴力枚举b直到b为一个模p的原根就可以了。</p>
+
+<h2 id="e-random-rankinghttpwwwcodeforcescomcontest303probleme"><a href="http://www.codeforces.com/contest/303/problem/E">E. Random Ranking</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/183/1/E.cpp">source code</a></p>
+
+<p>一场比赛选手i的比赛成绩均匀分布在[li,ri]区间，得分越低排名越高，求每个选手i排第j名的概率。</p>
+
+<p>一开始我想预处理出每个选手i排在选手j前面的概率，然后对于每个选手i用p[n][m]表示前n个选手有m个排到i之前的概率，但是后来发现是不对的，因为{rank(x)&lt;i}和{rank(y)&lt;i}不是独立的，比如[0,2],[1,3],[2,4]若1排到2之后，则3肯定在2之后，为了处理这个问题，分区间来讨论。预处理出所有的相邻区间，即(a,b)内不存在其他分点li或ri，这样枚举第i个人处于第k个分数区间，p[n][m]表示当前有n个人的分数在这个区间之前，m个人的分数也在这个区间之内的概率，那么第i个人排到第j名的概率为p[n][m]/m，j&gt;=n+1。</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>这场比赛时间很好，CST21:00。这场比赛基本上一直在搞B，一开始思考错方向，后来醒悟过来是构造，但是sample2过不了，看了好长时间还是觉得自己的解更优，后来问了judge才发现面积最大的条件漏掉了，改了之后又wa了三次，有一次还是代码复制的时候出错的，最后过pretest的时候已经只有100来分了。。写B最后太急了，至少后两次wa应该都是可以避免的，冷静啊冷静。后来20min就乱搞C，后来发现果然使乱搞，太急了，连同余最基本的等价条件都不能够想到。C和D虽然都会写，但是复杂度方面还是不太会搞啊，D直接从10^9暴搜啊，原根是怎么分布的啊。啊啊啊，数学弱爆了啊。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #182 (Div. 1)]]></title>
@@ -1948,134 +2004,6 @@ sudo emerge -va pyopenssl
 <p>沈鱼和翁信良终没有走到一起，从来没有人知道夏薇有一台小绵羊，苏明慧还是到了失明的那一天，本想带给许宏志惊喜去买画具，结果却。。</p>
 
 <p>很多年过去了，还是不会写读后感。</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[linux终端在同一行输出结果]]></title>
-    <link href="http://delta4d.github.io/blog/2012/12/11/sh-deleting-one-line/"/>
-    <updated>2012-12-11T16:00:00+08:00</updated>
-    <id>http://delta4d.github.io/blog/2012/12/11/sh-deleting-one-line</id>
-    <content type="html"><![CDATA[<p>最近了解了一下<a href="http://dwm.suckless.org/">dwm</a>，想定制下状态栏，于是首先想写一个检测内存的脚本。脚本并不复杂，但仍然用了好多时间来查找资料，使用linux果然还是要多写程序脚本啊。</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>mem_used.sh  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#!/bin/bash</span>
-</span><span class="line">
-</span><span class="line"><span class="k">function </span>get_mem_used <span class="o">{</span>
-</span><span class="line">	<span class="nb">eval</span> <span class="sb">`</span>free -m | awk <span class="s1">&#39;NR==3 {printf &quot;used=%.2lf per=%.2lf&quot;, $3, 100*$3/($3+$4)}&#39;</span><span class="sb">`</span>
-</span><span class="line">	<span class="nb">echo</span> <span class="s2">&quot;MEM:$per%($used MB)&quot;</span>
-</span><span class="line"><span class="o">}</span>
-</span><span class="line">
-</span><span class="line"><span class="k">while </span><span class="nb">true</span>; <span class="k">do</span>
-</span><span class="line"><span class="k">	</span><span class="nb">echo</span> <span class="sb">`</span>get_mem_used<span class="sb">`</span>
-</span><span class="line">	sleep 1
-</span><span class="line"><span class="k">done</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>将会产生如下的输出：</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">MEM:25.07%(758.00 MB)
-</span><span class="line">MEM:25.04%(757.00 MB)
-</span><span class="line">MEM:25.07%(758.00 MB)</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>然后我就想如何能让每条记录都在同一行更新，man echo will be helpful。首先使用-e选项开启转义符，\b即为退格</p>
-
-<p>于是可以这样</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">echo -e "foo"
-</span><span class="line">echo -e "\b\b\bbar"</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>但是echo默认输出了换行，于是需要开启-n去掉换行</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">echo -ne "foo"
-</span><span class="line">echo -ne "\rbar"</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>这样将会产生正确输出，但是这样太麻烦了，有些时候\b太多，有些时候甚至不能确定有多少个\b</p>
-
-<p>于是可以使用\r，它的作用是使当前光标回到当前行首</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">echo -ne "foo"
-</span><span class="line">echo -ne "\rbar"</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>这样就可以了。但是当每次记录长度不一样时还是会出错，比如</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">echo -ne "barbar"
-</span><span class="line">echo -ne "\rfoo"</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>这样会输出foobar而不是foo</p>
-
-<p>后来查阅资料说可以使用<a href="http://wiki.bash-hackers.org/scripting/terminalcodes">terminalcodes</a></p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">echo -ne "barbar"
-</span><span class="line">echo -ne "\033[1K\rfoo"</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>即首先清空行首到当前位置的内容，然后光标回行首，再输出foo</p>
-
-<p>利用以上说的便可以实现很多linux程序等待时出现的<code>/|\-</code>旋转效果</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>rotate.sh  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#!/bin/bash</span>
-</span><span class="line">
-</span><span class="line"><span class="k">function </span>rotate <span class="o">{</span>
-</span><span class="line">	<span class="nv">cnt</span><span class="o">=</span>0
-</span><span class="line">	<span class="k">while </span><span class="nb">true</span>; <span class="k">do</span>
-</span><span class="line"><span class="k">		case</span> <span class="nv">$cnt</span> in
-</span><span class="line">			0<span class="o">)</span> <span class="nb">echo</span> -ne <span class="s2">&quot;|\r&quot;</span>;;
-</span><span class="line">			1<span class="o">)</span> <span class="nb">echo</span> -ne <span class="s2">&quot;/\r&quot;</span>;;
-</span><span class="line">			2<span class="o">)</span> <span class="nb">echo</span> -ne <span class="s2">&quot;-\r&quot;</span>;;
-</span><span class="line">			3<span class="o">)</span> <span class="nb">echo</span> -ne <span class="s2">&quot;\\r&quot;</span>;;
-</span><span class="line">			*<span class="o">)</span> <span class="nb">exit</span> -1;;
-</span><span class="line">		<span class="k">esac</span>
-</span><span class="line"><span class="k">		</span>sleep 0.2
-</span><span class="line">		<span class="o">((</span> <span class="nv">cnt</span><span class="o">=(</span>cnt+1<span class="o">)</span>%4 <span class="o">))</span>
-</span><span class="line">	<span class="k">done</span>
-</span><span class="line"><span class="o">}</span>
-</span><span class="line">
-</span><span class="line">rotate
-</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 ]]></content>
   </entry>

@@ -9,7 +9,7 @@
   <meta name="author" content="delta">
 
   
-  <meta name="description" content="平常听歌都喜欢随便在豆瓣虾米百度什么的打开随便听听，今天偶然听到一阵旋律，眼角突然就挂上了泪，是一首日文歌，其实歌词也不懂，但突然就很有感触。后来看了下歌曲，是中孝介的”家路”，原来我只是不知不觉想家了。 1
+  <meta name="description" content="最近了解了一下dwm，想定制下状态栏，于是首先想写一个检测内存的脚本。脚本并不复杂，但仍然用了好多时间来查找资料，使用linux果然还是要多写程序脚本啊。 mem_used.sh 1
 2
 3
 4
@@ -20,13 +20,7 @@
 9
 10
 11
-12
-13
-14
-15
-16
-17
-18 &hellip;">
+#!/bin/bash function get_mem_used &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -128,6 +122,163 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/11/sh-deleting-one-line/">Linux终端在同一行输出结果</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-11T16:00:00+08:00" pubdate data-updated="true">Dec 11<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/12/11/sh-deleting-one-line/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近了解了一下<a href="http://dwm.suckless.org/">dwm</a>，想定制下状态栏，于是首先想写一个检测内存的脚本。脚本并不复杂，但仍然用了好多时间来查找资料，使用linux果然还是要多写程序脚本啊。</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>mem_used.sh  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#!/bin/bash</span>
+</span><span class="line">
+</span><span class="line"><span class="k">function </span>get_mem_used <span class="o">{</span>
+</span><span class="line">	<span class="nb">eval</span> <span class="sb">`</span>free -m | awk <span class="s1">&#39;NR==3 {printf &quot;used=%.2lf per=%.2lf&quot;, $3, 100*$3/($3+$4)}&#39;</span><span class="sb">`</span>
+</span><span class="line">	<span class="nb">echo</span> <span class="s2">&quot;MEM:$per%($used MB)&quot;</span>
+</span><span class="line"><span class="o">}</span>
+</span><span class="line">
+</span><span class="line"><span class="k">while </span><span class="nb">true</span>; <span class="k">do</span>
+</span><span class="line"><span class="k">	</span><span class="nb">echo</span> <span class="sb">`</span>get_mem_used<span class="sb">`</span>
+</span><span class="line">	sleep 1
+</span><span class="line"><span class="k">done</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>将会产生如下的输出：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">MEM:25.07%(758.00 MB)
+</span><span class="line">MEM:25.04%(757.00 MB)
+</span><span class="line">MEM:25.07%(758.00 MB)</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>然后我就想如何能让每条记录都在同一行更新，man echo will be helpful。首先使用-e选项开启转义符，\b即为退格</p>
+
+<p>于是可以这样</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">echo -e "foo"
+</span><span class="line">echo -e "\b\b\bbar"</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>但是echo默认输出了换行，于是需要开启-n去掉换行</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">echo -ne "foo"
+</span><span class="line">echo -ne "\rbar"</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>这样将会产生正确输出，但是这样太麻烦了，有些时候\b太多，有些时候甚至不能确定有多少个\b</p>
+
+<p>于是可以使用\r，它的作用是使当前光标回到当前行首</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">echo -ne "foo"
+</span><span class="line">echo -ne "\rbar"</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>这样就可以了。但是当每次记录长度不一样时还是会出错，比如</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">echo -ne "barbar"
+</span><span class="line">echo -ne "\rfoo"</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>这样会输出foobar而不是foo</p>
+
+<p>后来查阅资料说可以使用<a href="http://wiki.bash-hackers.org/scripting/terminalcodes">terminalcodes</a></p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">echo -ne "barbar"
+</span><span class="line">echo -ne "\033[1K\rfoo"</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>即首先清空行首到当前位置的内容，然后光标回行首，再输出foo</p>
+
+<p>利用以上说的便可以实现很多linux程序等待时出现的<code>/|\-</code>旋转效果</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>rotate.sh  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+</pre></td><td class="code"><pre><code class="bash"><span class="line"><span class="c">#!/bin/bash</span>
+</span><span class="line">
+</span><span class="line"><span class="k">function </span>rotate <span class="o">{</span>
+</span><span class="line">	<span class="nv">cnt</span><span class="o">=</span>0
+</span><span class="line">	<span class="k">while </span><span class="nb">true</span>; <span class="k">do</span>
+</span><span class="line"><span class="k">		case</span> <span class="nv">$cnt</span> in
+</span><span class="line">			0<span class="o">)</span> <span class="nb">echo</span> -ne <span class="s2">&quot;|\r&quot;</span>;;
+</span><span class="line">			1<span class="o">)</span> <span class="nb">echo</span> -ne <span class="s2">&quot;/\r&quot;</span>;;
+</span><span class="line">			2<span class="o">)</span> <span class="nb">echo</span> -ne <span class="s2">&quot;-\r&quot;</span>;;
+</span><span class="line">			3<span class="o">)</span> <span class="nb">echo</span> -ne <span class="s2">&quot;\\r&quot;</span>;;
+</span><span class="line">			*<span class="o">)</span> <span class="nb">exit</span> -1;;
+</span><span class="line">		<span class="k">esac</span>
+</span><span class="line"><span class="k">		</span>sleep 0.2
+</span><span class="line">		<span class="o">((</span> <span class="nv">cnt</span><span class="o">=(</span>cnt+1<span class="o">)</span>%4 <span class="o">))</span>
+</span><span class="line">	<span class="k">done</span>
+</span><span class="line"><span class="o">}</span>
+</span><span class="line">
+</span><span class="line">rotate
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -658,151 +809,6 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/04/06/donelist-2011-and-todolist-2012/">Donelist 2011 & Todolist 2012</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-04-06T00:51:00+08:00" pubdate data-updated="true">Apr 6<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/04/06/donelist-2011-and-todolist-2012/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>去年我问今天现在会是什么表情，我现在坐在计算机前没什么表情</p>
-
-<h3 id="donelist-2011">donelist 2011</h3>
-
-<ol>
-  <li>多做在线比赛，尤其是Codeforces的和Topcoder的
-    <ul>
-      <li>Codeforces做了挺多的，Topcoder很少做，最近很少做了</li>
-    </ul>
-  </li>
-  <li>每场比赛后都要写解题报告
-    <ul>
-      <li>只坚持了几场，由于能做的题目太少了，赛后又很少去fix，弱爆了</li>
-    </ul>
-  </li>
-  <li>多和同学交流
-    <ul>
-      <li>这条完成的还算不错</li>
-    </ul>
-  </li>
-  <li>多瞻仰大牛代码和博客
-    <ul>
-      <li>谈不上多，偶尔会看了一些</li>
-    </ul>
-  </li>
-  <li>先努力进入集训队，再努力进入校队
-    <ul>
-      <li>幸运的做到了，幸运的和肥羊还有riversouther组成RunForDream征战regional</li>
-    </ul>
-  </li>
-  <li>学习python
-    <ul>
-      <li>学了，又忘了</li>
-    </ul>
-  </li>
-  <li>学习网页的开发，网络编程
-    <ul>
-      <li>学了一点，又忘了</li>
-    </ul>
-  </li>
-  <li>看《具体数学》，做完练习题
-    <ul>
-      <li>数论之后的就没有做了</li>
-    </ul>
-  </li>
-  <li>专业课程学习也要抓紧，经过3年的实践，我发现还是成绩考得高点心里比较舒服，嗯嗯
-    <ul>
-      <li>我自欺欺人了，专业课程马马虎虎，兴趣不大</li>
-    </ul>
-  </li>
-  <li>好好考虑自己的未来，到底考研还是不考呢？？
-    <ul>
-      <li>最后幸运的保研了</li>
-    </ul>
-  </li>
-  <li>为Arsenal祈福，甭管啥冠军，赶紧拿一个先，还有门将赶紧给换掉吧
-    <ul>
-      <li>F4和N8出走，依旧无冠，门将位置发掘了ccc尼，虽然有时也失误，但比阿穆霸气靠谱多了。。</li>
-    </ul>
-  </li>
-  <li>多做运动，少玩游戏
-    <ul>
-      <li>呵呵</li>
-    </ul>
-  </li>
-  <li>星期四看火影，星期天看海贼和柯南
-    <ul>
-      <li>只追了海贼，还看了好多动漫，现在都静不下来去看东西了。。</li>
-    </ul>
-  </li>
-  <li>看美剧的时候不带字幕看一遍，带着英文字幕再看一遍
-    <ul>
-      <li>这个做到了，因为急着想看但还没有出字幕所以只能不带字幕看，然后因为听不懂= =，所以只能带着字幕再看一遍。。</li>
-    </ul>
-  </li>
-  <li>晚上不洗澡的话，尽量洗洗脚
-    <ul>
-      <li>呵呵</li>
-    </ul>
-  </li>
-  <li>嗯，先这样吧
-    <ul>
-      <li>嗯</li>
-    </ul>
-  </li>
-</ol>
-
-<h3 id="todolist-2012">todolist 2012</h3>
-
-<ol>
-  <li>争取进省赛，话说8号就是ACM校赛了，希望能和队友玩的开心</li>
-  <li>体测补测一定要及格</li>
-  <li>毕业设计要赶紧做，求顺利毕业</li>
-  <li>多看书，读各类经典</li>
-  <li>要练习练听力，其实就是看美剧，话说”how I met your mother”里的mother肿么还不出来</li>
-  <li>多搞搞Linux，其实一直都断断续续的，用过一阵，后来还是耐不住游戏的寂寞回到win</li>
-  <li>好好学数学</li>
-  <li>多参加codeforces和topcoder之类的比赛</li>
-  <li>学学日语，看动漫玩游戏可以方便点</li>
-  <li>晚上坚持跑步</li>
-  <li>陪着Arsenal</li>
-  <li>多看看密码算法</li>
-  <li>嗯，先这样吧</li>
-</ol>
-
-<p>以后还是过年的时候写todolist吧。。</p>
-
-<p>2013新年我又会是一副什么样子，带着怎样的心情。。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -820,6 +826,10 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/05/13/codeforces-round-number-183-div-1/">Codeforces Round #183 (Div. 1)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/06/codeforces-round-number-182-div-1/">Codeforces Round #182 (Div. 1)</a>
       </li>
     
@@ -833,10 +843,6 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
     
       <li class="post">
         <a href="/blog/2013/04/06/monotonous-queue-and-stack/">单调队列/栈</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/03/codeforces-round-number-177-div-1/">Codeforces Round #177 (Div. 1)</a>
       </li>
     
   </ul>

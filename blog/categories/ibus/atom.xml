@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ibus | Try To Think]]></title>
   <link href="http://delta4d.github.io/blog/categories/ibus/atom.xml" rel="self"/>
   <link href="http://delta4d.github.io/"/>
-  <updated>2013-05-11T14:30:20+08:00</updated>
+  <updated>2013-05-16T14:04:06+08:00</updated>
   <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -26,42 +26,25 @@
 
 <p>下面是一个简单的脚本</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>ibus-setup-pinyin-fix </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c">#!/usr/bin/env sh&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;<span class="o">[[</span> <span class="nv">$EUID</span> -ne 0 <span class="o">]]</span> &amp;amp;&amp;amp; <span class="o">{</span>
-</span><span class='line'>	<span class="nb">echo</span> “Run this with ROOT!”
-</span><span class='line'>	<span class="nb">exit</span>
-</span><span class='line'><span class="o">}</span>&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;read -p “This script should be executed only one <span class="nb">time</span>, <span class="se">\</span>
-</span><span class='line'>r u sure to <span class="k">continue</span> ? <span class="o">[</span>Y/N<span class="o">]</span> “ IN&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;<span class="o">[[</span> “<span class="nv">$IN</span>” !<span class="o">=</span> “Y” <span class="o">]]</span> &amp;amp;&amp;amp; <span class="nb">exit</span>&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;FILE<span class="o">=</span>”&lt;code&gt;locate ibus-setup-pinyin&lt;/code&gt;”&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;cp “<span class="nv">$FILE</span>” “<span class="nv">$FILE</span>-bak”
-</span><span class='line'>cat “<span class="nv">$FILE</span>-bak” | sed ‘s/python/python2/g’ &amp;gt; “<span class="nv">$FILE</span>”
-</span><span class='line'><span class="nb">echo</span> “the original file was backed up to <span class="nv">$FILE</span>-bak”
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock ibus-setup-pinyin-fix lang:sh%}
+#!/usr/bin/env sh</p>
+
+<p>[[ $EUID -ne 0 ]] &amp;&amp; {
+	echo “Run this with ROOT!”
+	exit
+}</p>
+
+<p>read -p “This script should be executed only one time, \
+r u sure to continue ? [Y/N] “ IN</p>
+
+<p>[[ “$IN” != “Y” ]] &amp;&amp; exit</p>
+
+<p>FILE=”<code>locate ibus-setup-pinyin</code>”</p>
+
+<p>cp “$FILE” “$FILE-bak”
+cat “$FILE-bak” | sed ‘s/python/python2/g’ &gt; “$FILE”
+echo “the original file was backed up to $FILE-bak”
+{% endcodeblock %}</p>
 ]]></content>
   </entry>
   

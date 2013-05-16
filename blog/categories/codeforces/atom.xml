@@ -4,7 +4,7 @@
   <title><![CDATA[Category: codeforces | Try To Think]]></title>
   <link href="http://delta4d.github.io/blog/categories/codeforces/atom.xml" rel="self"/>
   <link href="http://delta4d.github.io/"/>
-  <updated>2013-05-11T14:30:20+08:00</updated>
+  <updated>2013-05-16T14:04:06+08:00</updated>
   <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -12,6 +12,62 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Codeforces Round #183 (Div. 1)]]></title>
+    <link href="http://delta4d.github.io/blog/2013/05/13/codeforces-round-number-183-div-1/"/>
+    <updated>2013-05-13T00:15:00+08:00</updated>
+    <id>http://delta4d.github.io/blog/2013/05/13/codeforces-round-number-183-div-1</id>
+    <content type="html"><![CDATA[<h2 id="a-lucky-permutation-triplehttpwwwcodeforcescomcontest303problema"><a href="http://www.codeforces.com/contest/303/problem/A">A. Lucky Permutation Triple</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/183/1/A.cpp">source code</a></p>
+
+<p>0到n-1有三个排列a,b,c，若a[i] + b[i] = c[i] (mod n)，则称(a,b,c)为lucky permutation triple，给定n，若方案存在输出任意一个，否则输出-1。</p>
+
+<p>因为a[i] + b[i] = c[i] (mod n)则sigma(a[i]) + sigma(b[i]) = sigma(c[i]) (mod n)，即n*(n-1) = n*(n-1)/2 (mod n)，那么n*(n-1)/2 = 0 (mod n)，可知当n为偶数时使不可能的，所以n只能是奇数，我们有恰好可以构造出n为奇数时的方案：</p>
+
+<pre><code>a	0	1	2	...n-2	n-1		
+c	n-2	n-3	n-4	...0	n-1
+b	calculate me! &amp; prove it is legal
+</code></pre>
+
+<h2 id="b-rectangle-puzzle-iihttpwwwcodeforcescomcontest303problemb"><a href="http://www.codeforces.com/contest/303/problem/B">B. Rectangle Puzzle II</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/183/1/B.cpp">source code</a></p>
+
+<p>给矩形[0,n]x[0,m]，矩形内有一点P(x,y)，求一个<strong>面积最大的</strong>矩形[x1,x2]x[y1,y2]包含P且(x2-x1)/(y2-y1)=a/b。若有多解，则选择矩形中心距离P最近的，若还有多解则选择序列x1y1x2y2中字典序最小的。</p>
+
+<p>构造。首先使(a,b)=1，则矩形边长为ak,bk，首先满足面积最大的要求则ak&lt;=n,bk&lt;=n，求出最大的k，这样矩形边长就确定了，然后就是怎么摆的问题了，即要满足距离最小的要求，尽量使长度为ak的线段中心往x靠就行了，在这个基础上尽量使x1,y1小就可以了。</p>
+
+<h2 id="c-minimum-modularhttpwwwcodeforcescomcontest303problemc"><a href="http://www.codeforces.com/contest/303/problem/C">C. Minimum Modular</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/183/1/C.cpp">source code</a></p>
+
+<p>给一个序列{ai}，找出最小的m使得ai关于m两两不同余，你可以在{ai}中去掉k(&lt;=4)个数以达到目的。</p>
+
+<p>可知M=max{ai}+1满足要求，即m&lt;=M。若ai和aj关于m同余，则m|ai-aj，预处理出所有ai-aj，然后枚举m，看有多少ai-aj整除m，当数目大于k*(k+1)/2时，直接跳出接着测试下一个数。要使集合A={i|存在j属于A使得m|ai-aj}的数目尽量小但是造成m|ai-aj的影响尽可能大，那么只能是下面的情况x1,x2,…xk,x(k+1)，m|xi-x(i-1)，这样构成的(i,j)对共有1+2+…+k=k(k+1)/2。当通过这个测试时然后暴力检测m就可以了。</p>
+
+<h2 id="d-rotatable-numberhttpwwwcodeforcescomcontest303problemd"><a href="http://www.codeforces.com/contest/303/problem/D">D. Rotatable Number</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/183/1/D.cpp">source code</a></p>
+
+<p>给定数字长度n，和数制上限x找出最大的数制b&lt;x，使得存在一个长度为n的<a href="http://en.wikipedia.org/wiki/Cyclic_number">Cylic Number</a>。</p>
+
+<p>cyclic number形式为(b^(p-1)-1)/p，p为素数,(b,p)=1，且b为模p的<a href="http://en.wikipedia.org/wiki/Primitive_root_modulo_n">原根</a>。那么首先n=p-1，即n+1要为素数，然后暴力枚举b直到b为一个模p的原根就可以了。</p>
+
+<h2 id="e-random-rankinghttpwwwcodeforcescomcontest303probleme"><a href="http://www.codeforces.com/contest/303/problem/E">E. Random Ranking</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/183/1/E.cpp">source code</a></p>
+
+<p>一场比赛选手i的比赛成绩均匀分布在[li,ri]区间，得分越低排名越高，求每个选手i排第j名的概率。</p>
+
+<p>一开始我想预处理出每个选手i排在选手j前面的概率，然后对于每个选手i用p[n][m]表示前n个选手有m个排到i之前的概率，但是后来发现是不对的，因为{rank(x)&lt;i}和{rank(y)&lt;i}不是独立的，比如[0,2],[1,3],[2,4]若1排到2之后，则3肯定在2之后，为了处理这个问题，分区间来讨论。预处理出所有的相邻区间，即(a,b)内不存在其他分点li或ri，这样枚举第i个人处于第k个分数区间，p[n][m]表示当前有n个人的分数在这个区间之前，m个人的分数也在这个区间之内的概率，那么第i个人排到第j名的概率为p[n][m]/m，j&gt;=n+1。</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>这场比赛时间很好，CST21:00。这场比赛基本上一直在搞B，一开始思考错方向，后来醒悟过来是构造，但是sample2过不了，看了好长时间还是觉得自己的解更优，后来问了judge才发现面积最大的条件漏掉了，改了之后又wa了三次，有一次还是代码复制的时候出错的，最后过pretest的时候已经只有100来分了。。写B最后太急了，至少后两次wa应该都是可以避免的，冷静啊冷静。后来20min就乱搞C，后来发现果然使乱搞，太急了，连同余最基本的等价条件都不能够想到。C和D虽然都会写，但是复杂度方面还是不太会搞啊，D直接从10^9暴搜啊，原根是怎么分布的啊。啊啊啊，数学弱爆了啊。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #182 (Div. 1)]]></title>
@@ -341,90 +397,6 @@ T(n,m)=\sum_{t=1}^{n}\sum_{k=2}^{m}(A(t,k)*B(t,k)*(m-k+1))
 <p>D比赛的时候走偏了，我首先去计算没有公共节点的元组，然后再在这些元组中去去重，始终想不到好的方法，加上自己也确实缺少能够搞定D的信心，后面也就没有再深入去想了。如果开始从更大的角度从反面考虑的话，或许会有一些想法。啊啊，以后做题一定要霸气啊，管他ABCDE，嗯嗯。还有就是要从更多角度去思考问题，但是很多时候真的找不到合适的角度诶，要多做题，多看大牛代码，多看大牛文章。</p>
 
 <p>E花了一天终于搞定了，略兴奋。主要是要发现前后ai之间的关系，然后就只剩下一些计算了。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Codeforces Round #176 (Div. 1)]]></title>
-    <link href="http://delta4d.github.io/blog/2013/03/23/codeforces-round-number-176-div-1/"/>
-    <updated>2013-03-23T23:12:00+08:00</updated>
-    <id>http://delta4d.github.io/blog/2013/03/23/codeforces-round-number-176-div-1</id>
-    <content type="html"><![CDATA[<h2 id="a-lucky-permutationhttpwwwcodeforcescomcontest286problema"><a href="http://www.codeforces.com/contest/286/problem/A">A. Lucky Permutation</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/A.cpp">source code</a></p>
-
-<p>判定是否存在一个置换使得一个序列经过两次相同的置换达到逆序。</p>
-
-<p>考虑若P(x)=y，则由于P(P(x))=n-x+1，则P(y)=n-x+1，即P(x)=y =&gt; P(y)=n-x+1，连续应用此式可以得到</p>
-
-<pre><code>P(x) = y
-P(y) = n - x + 1
-P(n - x + 1) = n - y + 1
-P(n - y + 1) = x
-</code></pre>
-
-<p>即4个构成一组，于是当n%4=0或1时存在解，否则不存在。</p>
-
-<p>不知道为什么，感觉有点像密码学里的<a href="http://en.wikipedia.org/wiki/Meet-in-the-middle_attack">Meet-In-The-Middle</a></p>
-
-<h2 id="b-shiftinghttpwwwcodeforcescomcontest286problemb"><a href="http://www.codeforces.com/contest/286/problem/B">B. Shifting</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/B.cpp">source code</a></p>
-
-<p>对于一个序列{pi}，定义操作f(p,k)为将序列按k个分为一组，最后一组若不够分，则含有n%k个元素，然后对于每一个小组循环左移。问f(f(…f(p=[1,2,…,n],2)…,n-1),n)是多少。</p>
-
-<p>对于每一个k，共进行n/k次循环左移，共有n(1/2+1/3+…+1/n)=nln(n)次循环左移，只需要将每次循环左移复杂度降到O(1)就可以了。比如f([1..9], 3)：</p>
-
-<pre><code>1 2 3 4 5 6 7 8 9 =&gt;
-2 3 1 5 6 3 8 9 7
-将被移动的字符看作*，于是：
-* 2 3 * 5 6 * 8 9
-  2 3 * 5 6 * 8 9 *
-这样就可以将左移变为O(1)了
-</code></pre>
-
-<h2 id="c-main-sequencehttpwwwcodeforcescomcontest286problemc"><a href="http://www.codeforces.com/contest/286/problem/C">C. Main Sequence</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/C.cpp">source code</a></p>
-
-<p>定义一个正确的括号序列为：</p>
-
-<pre><code>1. 空序列为括号序列
-2. 若{a1, a2, ..., al}和{b1, b2, ..., bk}是括号序列，则{a1, a2, ..., al, b1, b2, ..., bk}也是括号序列
-3. 若{a1, a2, ..., al}是括号序列，则{v, a1, a2, ..., al, -v}是括号序列，v是一个正整数
-</code></pre>
-
-<p>现在有一个括号序列{xi}，已知{pi=|xi|}，和{i|xi&lt;0}的一个子集，问是否可以还原{xi}，若存在多解，任意输出一个，否则输出NO。</p>
-
-<p>和正常的括号匹配差不多，因为要求了某些必须取负数，即相当于有括号，所以从右向左压栈，然后正常的匹配就可以了。</p>
-
-<h2 id="d-touristshttpwwwcodeforcescomcontest286problemd"><a href="http://www.codeforces.com/contest/286/problem/D">D. Tourists</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/D.cpp">source code</a></p>
-
-<p>在(-1,0)和(1,0)处有两个人同时沿Oy正方向运动，每秒运动一个单位，现在在某个时刻t会出现(0,a)-(0,b)这样一堵墙，若此时两个人正好位于Oy的[a,b]之间那么这两个人就互相看不见对方，现在给出所有这样的(a,b,t)三元组，还有从q1，q2…时刻出发的人，查询每对人有多长时间是看不到对方的。(a,b,t,qi&gt;=0)</p>
-
-<p>以时间t为自变量，纵坐标为应变量，用x表示，那么对于从时间t出发的人对应的关系为x=t-q（更精确的应该为x=max(0,t-q)，然而因为墙壁不会出现在负轴，所以写成这样对结果没有影响），对于每个墙壁(a,b,t)，关系为x=a,t=t与x=b,t=t之间的带状区域，可以看到被挡到的时间为x=t-q被带状区域所截取的线段的横截距，因为斜率为1，所以也等于纵截距。为了便于判断相交和计算做坐标变换(t,x)=&gt;(t-x,x)，那么人的方程变为t=q，是一条垂直于横轴的直线,带状区域变为左顶角为PI/4的梯形，此时所求即为直线和这个梯形交集的纵截距，也等于q-t（t为梯形最左点的横坐标）可以将梯形看作两个PI/4的角的交，只是在计算的时候下面的角是被减掉的，如果处理出所有这样的角的话，就很容易计算了。比如q和ti(0&lt;=i&lt;k)相交，那么最后所求为sigma(q-ti)=k*q-sigma(ti)，这样只需要处理出ti前缀和，最后二分就可以了。处理角的过程是将所有带状区域的上下边界统一排序，并且维护当前所有线对应的出现时间的最小值，用堆就可以了，当处理到某个区域的下界的时候，这个区域对应的时间t要出堆，依次处理就可以了。</p>
-
-<h2 id="e-ladies-shophttpwwwcodeforcescomcontest286probleme"><a href="http://www.codeforces.com/contest/286/problem/E">E. Ladies’ Shop</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/E.cpp">source code</a></p>
-
-<p>有一些背包，只能够装重量为ai的物品，不能多也不能少，现在有一些物品，但是重量还没有确定，现在让你确定重量1&lt;=p1&lt;p2&lt;…&lt;pk满足下列条件（每个重量的物品有无穷多个）</p>
-
-<pre><code>1. 每个包都会被用到。即对于每一个i都存在一些物品它们的总重量为ai
-2. 对于任何不超过m的重量的物品，必须有一个包可以放置它
-3. 对于满足1和2的重量分配，使k最小化
-</code></pre>
-
-<p>题目意思就是说对于物品{pi}它们的任意不大于m的组合都能在{ai}中找到，比较直接的做法就是无限背包作出所有不大于m的重量，然后去和{ai}比较，但是n,m=10^6，这样会超时，首先，所有重量肯定是{ai}的一个子集，否则就会不满足条件2，其次，加入{pi}是一个满足条件的重量分配，对于每一个i，pi,2pi,3pi…tpi&lt;=m都应该有包对应，即总存在某个j使得aj=x*pi，于是要找出所有组合只需要将{ai}中的任意两个相加就可以判断出{pi}的所有组合了，将{ai}看作一个数，它的平方即为任意两个的和，于是可以用<a href="http://en.wikipedia.org/wiki/Fast_Fourier_transform">FFT</a>做了，采用<a href="http://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm">[Cooley–Tukey FFT algorithm]</a>（这个算法于1965年提出，实际上只是重新发现了<a href="http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Gauss</a>在1805年提出的算法，orz）。假若平方封闭，那么便是可以分配，否则不存在方案，要最小化k，只需要选那些最小的元，即所有其他的重量里没有它的因子。</p>
-
-<h2 id="summary">Summary</h2>
-
-<p>弱爆了啊。42min才搞出A，然后一直再搞B，其实应该多看下C的，最后15min看了C，就感觉很可搞，可惜时间不多了，情急之下居然把statck写成queue了，赛后稍微调了一下就过了。这次还是出现了会做的题目在比赛中没有做出来的情况&gt;_&lt;。B还是该早些放弃的，D和E压根就没有读题，以后至少要将每道题目都读一遍，至于会不会做就是另外一回事了。啊啊啊，弱爆了弱爆了。 </p>
-
-<p>终于fix了D和E，D首先要用数学的语言去描述题目场景，那个坐标变换太神了。E首先要从题目条件判断出重量是{ai}的子集，然后就要看能不能联想到FFT了。啊啊啊，弱爆了弱爆了。</p>
-
 ]]></content>
   </entry>
   
