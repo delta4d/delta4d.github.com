@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: number theory | Try To Think]]></title>
+  <link href="http://delta4d.github.io/blog/categories/number-theory/atom.xml" rel="self"/>
+  <link href="http://delta4d.github.io/"/>
+  <updated>2013-05-28T00:43:36+08:00</updated>
+  <id>http://delta4d.github.io/</id>
+  <author>
+    <name><![CDATA[delta]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[An Useful Congruence Identity]]></title>
+    <link href="http://delta4d.github.io/blog/2013/05/27/an-useful-congruence-identitie/"/>
+    <updated>2013-05-27T23:05:00+08:00</updated>
+    <id>http://delta4d.github.io/blog/2013/05/27/an-useful-congruence-identitie</id>
+    <content type="html"><![CDATA[<p>有这样一个同余恒等式：</p>
+
+<script type="math/tex; mode=display">
+\forall a, m, n \geq \varphi(m)\ \ a^n \equiv a^{n\ mod\ \varphi(m)+\varphi(m)}\ (mod\ m)
+</script>
+
+<p>要证明此式只需证明<script type="math/tex">a^n \equiv a^{n-\varphi(m)}\ (mod\ m)</script>，即<script type="math/tex">m\vert a^{n-\varphi(m)}(a^{\varphi(m)}-1)</script></p>
+
+<p>设m质因子分解为<script type="math/tex">\prod_{i=1}^{t}p_{i}^{\alpha_i}</script>，那么我们只需证明对任意i有<script type="math/tex">p_i^{\alpha_i}\vert a^{n-\varphi(m)}(a^{\varphi(m)}-1)</script>，对于每个i分两种情况讨论：</p>
+
+<p>(1) (a, pi)=1</p>
+
+<p>根据<a href="http://en.wikipedia.org/wiki/Euler's_theorem">欧拉定理</a>，<script type="math/tex">a^{\varphi(p_i^{\alpha_i})}\equiv 1\ (mod\ p_i^{\alpha_i})</script></p>
+
+<p>因为<script type="math/tex">\varphi(p_i^{\alpha_i})\vert \varphi(m)</script>，所以有<script type="math/tex">a^{\varphi(m)}-1\equiv 0\ (mod\ p_i^{\alpha_i})</script></p>
+
+<p>(2) (a, pi)!=1，因为pi是素数则(a, pi)=pi</p>
+
+<p>此时<script type="math/tex">(a^{\varphi(m)}-1, p_i^{\alpha_i})=1</script>，我们只需证明：<script type="math/tex"> p_i^{\alpha_i}\vert a^{n-\varphi(m)} </script></p>
+
+<p>即<script type="math/tex">n-\varphi(m)\geq \alpha_i</script></p>
+
+<p>假设<script type="math/tex">n-\varphi(m)\geq \varphi(m)</script>，则</p>
+
+<script type="math/tex; mode=display">
+\varphi(m)=\prod_{i=1}^{t}p_i^{\alpha_i-1}(p-1)\geq p_i^{\alpha_i-1}\geq 2^{\alpha_i-1}=(1+1)^{\alpha_i-1} =\sum_{i=0}^{\alpha_i-1}\binom{n}{i} \geq \sum_{i=0}^{\alpha_i-1}1 = \alpha_i
+</script>
+
+<p>所以有<script type="math/tex">p_i^{\alpha_i}\vert a^{n-\varphi(m)}</script></p>
+
+<p>综上有：当<script type="math/tex">n\geq 2\varphi(m)</script>时<script type="math/tex">p_i^{\alpha_i} \vert a^{n-\varphi(m)}(a^{\varphi(m)}-1)</script></p>
+
+<p>即<script type="math/tex">a^n \equiv a^{n-\varphi(m)}\ (mod\ p_i^{\alpha_i})</script></p>
+
+<p>当取遍所有i则</p>
+
+<script type="math/tex; mode=display">
+a^n \equiv a^{n-\varphi(m)}\ (mod\ m=\prod_{i=1}^{t}p_i^{\alpha_i})
+</script>
+
+<p>于是可以不断的减去<script type="math/tex">\varphi(m)</script>，直到<script type="math/tex">2\varphi(m)>n\geq \varphi(m)</script>，这也就是最后为什么会加上<script type="math/tex">\varphi(m)</script>的原因。</p>
+
+<p>下面有一些相关的题目：</p>
+
+<ul>
+  <li><a href="http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=2674">ZOJ 2674 Strange Limit</a></li>
+  <li><a href="http://codeforces.com/contest/17/problem/D">CodeForces Round 17 D Notepad</a></li>
+</ul>
+]]></content>
+  </entry>
+  
+</feed>

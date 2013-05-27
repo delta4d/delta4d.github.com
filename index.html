@@ -9,7 +9,7 @@
   <meta name="author" content="delta">
 
   
-  <meta name="description" content="A. Lucky Permutation Triple source code 0到n-1有三个排列a,b,c，若a[i] + b[i] = c[i] (mod n)，则称(a,b,c)为lucky permutation triple，给定n，若方案存在输出任意一个，否则输出-1。 因为a[i &hellip;">
+  <meta name="description" content="有这样一个同余恒等式： \forall a, m, n \geq \varphi(m)\ \ a^n \equiv a^{n\ mod\ \varphi(m)+\varphi(m)}\ (mod\ m) 要证明此式只需证明，即 设m质因子分解为，那么我们只需证明对任意i有，对于每个i分两种情况讨论 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -111,6 +111,91 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/05/27/an-useful-congruence-identitie/">An Useful Congruence Identity</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-27T23:05:00+08:00" pubdate data-updated="true">May 27<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/05/27/an-useful-congruence-identitie/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>有这样一个同余恒等式：</p>
+
+<script type="math/tex; mode=display">
+\forall a, m, n \geq \varphi(m)\ \ a^n \equiv a^{n\ mod\ \varphi(m)+\varphi(m)}\ (mod\ m)
+</script>
+
+<p>要证明此式只需证明<script type="math/tex">a^n \equiv a^{n-\varphi(m)}\ (mod\ m)</script>，即<script type="math/tex">m\vert a^{n-\varphi(m)}(a^{\varphi(m)}-1)</script></p>
+
+<p>设m质因子分解为<script type="math/tex">\prod_{i=1}^{t}p_{i}^{\alpha_i}</script>，那么我们只需证明对任意i有<script type="math/tex">p_i^{\alpha_i}\vert a^{n-\varphi(m)}(a^{\varphi(m)}-1)</script>，对于每个i分两种情况讨论：</p>
+
+<p>(1) (a, pi)=1</p>
+
+<p>根据<a href="http://en.wikipedia.org/wiki/Euler's_theorem">欧拉定理</a>，<script type="math/tex">a^{\varphi(p_i^{\alpha_i})}\equiv 1\ (mod\ p_i^{\alpha_i})</script></p>
+
+<p>因为<script type="math/tex">\varphi(p_i^{\alpha_i})\vert \varphi(m)</script>，所以有<script type="math/tex">a^{\varphi(m)}-1\equiv 0\ (mod\ p_i^{\alpha_i})</script></p>
+
+<p>(2) (a, pi)!=1，因为pi是素数则(a, pi)=pi</p>
+
+<p>此时<script type="math/tex">(a^{\varphi(m)}-1, p_i^{\alpha_i})=1</script>，我们只需证明：<script type="math/tex"> p_i^{\alpha_i}\vert a^{n-\varphi(m)} </script></p>
+
+<p>即<script type="math/tex">n-\varphi(m)\geq \alpha_i</script></p>
+
+<p>假设<script type="math/tex">n-\varphi(m)\geq \varphi(m)</script>，则</p>
+
+<script type="math/tex; mode=display">
+\varphi(m)=\prod_{i=1}^{t}p_i^{\alpha_i-1}(p-1)\geq p_i^{\alpha_i-1}\geq 2^{\alpha_i-1}=(1+1)^{\alpha_i-1} =\sum_{i=0}^{\alpha_i-1}\binom{n}{i} \geq \sum_{i=0}^{\alpha_i-1}1 = \alpha_i
+</script>
+
+<p>所以有<script type="math/tex">p_i^{\alpha_i}\vert a^{n-\varphi(m)}</script></p>
+
+<p>综上有：当<script type="math/tex">n\geq 2\varphi(m)</script>时<script type="math/tex">p_i^{\alpha_i} \vert a^{n-\varphi(m)}(a^{\varphi(m)}-1)</script></p>
+
+<p>即<script type="math/tex">a^n \equiv a^{n-\varphi(m)}\ (mod\ p_i^{\alpha_i})</script></p>
+
+<p>当取遍所有i则</p>
+
+<script type="math/tex; mode=display">
+a^n \equiv a^{n-\varphi(m)}\ (mod\ m=\prod_{i=1}^{t}p_i^{\alpha_i})
+</script>
+
+<p>于是可以不断的减去<script type="math/tex">\varphi(m)</script>，直到<script type="math/tex">2\varphi(m)>n\geq \varphi(m)</script>，这也就是最后为什么会加上<script type="math/tex">\varphi(m)</script>的原因。</p>
+
+<p>下面有一些相关的题目：</p>
+
+<ul>
+  <li><a href="http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=2674">ZOJ 2674 Strange Limit</a></li>
+  <li><a href="http://codeforces.com/contest/17/problem/D">CodeForces Round 17 D Notepad</a></li>
+</ul>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1882,99 +1967,6 @@ $ git commit -m "&lt;some message&gt;"
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/18/codeforces-round-number-174-div-1/">Codeforces Round #174 (Div. 1)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-18T21:00:00+08:00" pubdate data-updated="true">Mar 18<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/03/18/codeforces-round-number-174-div-1/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2 id="a-cows-and-sequencehttpwwwcodeforcescomcontest283problema"><a href="http://www.codeforces.com/contest/283/problem/A">A. Cows and Sequence</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/174/1/A.cpp">source code</a></p>
-
-<p>对于一个数列，有三个操作：</p>
-
-<pre><code>1. 给a个数同时加x
-2. 在末尾加入元素k
-3. 去掉末尾的元素
-</code></pre>
-
-<p>对于每一次操作，查询数列的平均值，共有2*10^5次操作。三个操作都可以看作区间操作，[1,a]上同时加x，[sz,sz+1]加x，[sz-1,sz]减去数列末尾sz处的值，于是可以用树状数组来做。 </p>
-
-<h2 id="b-cow-programhttpwwwcodeforcescomcontest283problemb"><a href="http://www.codeforces.com/contest/283/problem/B">B. Cow Program</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/174/1/B.cpp">source code</a></p>
-
-<p>初始时给定两个数x=1，y=0，还有一个序列{an}，在这个基础上有一些列操作</p>
-
-<pre><code>1. 某一步后若x&lt;=0或y&gt;n，程序终止
-2. x+=ax, y+=ax
-3. x-=ax, y+=ax
-4. 交替执行步骤2和3，或许有限步后结束，或许永远不会终止
-</code></pre>
-
-<p>现在给定序列{a[2..n]}，接下来将这个程序跑n-1遍，第i遍执行序列i, a2, …, an，若程序终止，输出y的值，否则输出-1</p>
-
-<p><em>注意2和3中的ax，其中是以x是变量，是数组下标。比赛时没仔细看直接以为按顺序执行ai，做了很多无用功。略怨念</em></p>
-
-<p>可以看到共有n*2个状态，2代表当前操作是2还是3，可以直接记忆化搜索。我写的比较麻烦，用了map&lt;int, vector&lt;int&gt; &gt;来表示图，比如mp[a+ax] = x。</p>
-
-<h2 id="c-coin-troubleshttpwwwcodeforcescomcontest283problemc"><a href="http://www.codeforces.com/contest/283/problem/C">C. Coin Troubles</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/174/1/C.cpp">source code</a></p>
-
-<p>给定n种硬币，面值总共为t，然后有q种限制(bi, ci)，表示类型bi的硬币比ci多，现在要求有多少种方案。其中bi各不相同，ci各不相同。</p>
-
-<p>对于每种限制(bi,ci)，从bi到ci连一条有向边，所谓bi各不相同就是同一个点不能有1条以上出边，ci各不相同即一个点不能有1条以上入边，于是只能够构成一条链，也有可能是圈，然而这是不合法的，直接输出0即可。找到链后，比如是x1,x2,…,xk，于是可以做新的硬币，Si=x1+…+xi，就可以处理，xi一定要比xj多的要求(i&gt;j)，找方案数的话做一遍背包就可以了。其实细节还是挺多的，具体可以看代码。</p>
-
-<h2 id="d-cows-and-cool-sequenceshttpwwwcodeforcescomcontest283problemd"><a href="http://www.codeforces.com/contest/283/problem/D">D. Cows and Cool Sequences</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/174/1/D.cpp">source code</a></p>
-
-<p>定义cool pair (x,y)是x能够用y个连续整数的和表示，cool sequence{an}是对所有(ai,a{i+1})是cool pair。想在给定一个数列，要求改动最少的数使其是cool sequence。还是直接看<a href="http://www.codeforces.com/blog/entry/7036">官方报告</a>吧，基于一个发现然后n^2dp。</p>
-
-<h2 id="e-cow-tennis-tournamenthttpwwwcodeforcescomcontest283probleme"><a href="http://www.codeforces.com/contest/283/problem/E">E. Cow Tennis Tournament</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/174/1/E.cpp">source code</a></p>
-
-<p>数列{sn}表示一些cow的等级，cow_i能够打败cow_j当且仅当s_i&gt;s_j，现在有一些操作[a,b]，等级在在区间[a,b]里的cow的胜负关系会发生改变。最后问查询无序数对(p,q,r)有多少，其中存在一个排列使得cow_p-&gt;cow_q-&gt;cow_r-&gt;cow_p，i-&gt;j表是cow_i可以击败cow_j。</p>
-
-<p>首先最后答案为C(m,3)-sigma(C(win_i,2))。用c[n][n]表示胜负关系是否被改变，那么当一次查询[a,b]时，矩形[a,b]x[a,b]里的关系将被反转，用垂直扫描线，线段树就可以解决。具体还是看<a href="http://www.codeforces.com/blog/entry/7036">官方报告</a>吧。</p>
-
-<h2 id="summary">Summary</h2>
-
-<p>A，B，C都是可以做的，但是比赛的时候只搞出了A，B和C在赛后很快fix了，很不扎实啊(&gt;_&lt;)。D和E只能通过看官方报告来获取想法，希望能一点一点提高吧。总之这是一套很不错的题目。以上。。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1990,6 +1982,10 @@ $ git commit -m "&lt;some message&gt;"
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/05/27/an-useful-congruence-identitie/">An Useful Congruence Identity</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/13/codeforces-round-number-183-div-1/">Codeforces Round #183 (Div. 1)</a>
       </li>
     
@@ -2003,10 +1999,6 @@ $ git commit -m "&lt;some message&gt;"
     
       <li class="post">
         <a href="/blog/2013/04/12/codeforces-round-number-179-div-1/">Codeforces Round #179 (Div. 1)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/06/monotonous-queue-and-stack/">单调队列/栈</a>
       </li>
     
   </ul>

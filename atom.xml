@@ -4,7 +4,7 @@
   <title><![CDATA[Try To Think]]></title>
   <link href="http://delta4d.github.io/atom.xml" rel="self"/>
   <link href="http://delta4d.github.io/"/>
-  <updated>2013-05-16T14:03:44+08:00</updated>
+  <updated>2013-05-28T00:43:10+08:00</updated>
   <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -12,6 +12,62 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[An Useful Congruence Identity]]></title>
+    <link href="http://delta4d.github.io/blog/2013/05/27/an-useful-congruence-identitie/"/>
+    <updated>2013-05-27T23:05:00+08:00</updated>
+    <id>http://delta4d.github.io/blog/2013/05/27/an-useful-congruence-identitie</id>
+    <content type="html"><![CDATA[<p>有这样一个同余恒等式：</p>
+
+<script type="math/tex; mode=display">
+\forall a, m, n \geq \varphi(m)\ \ a^n \equiv a^{n\ mod\ \varphi(m)+\varphi(m)}\ (mod\ m)
+</script>
+
+<p>要证明此式只需证明<script type="math/tex">a^n \equiv a^{n-\varphi(m)}\ (mod\ m)</script>，即<script type="math/tex">m\vert a^{n-\varphi(m)}(a^{\varphi(m)}-1)</script></p>
+
+<p>设m质因子分解为<script type="math/tex">\prod_{i=1}^{t}p_{i}^{\alpha_i}</script>，那么我们只需证明对任意i有<script type="math/tex">p_i^{\alpha_i}\vert a^{n-\varphi(m)}(a^{\varphi(m)}-1)</script>，对于每个i分两种情况讨论：</p>
+
+<p>(1) (a, pi)=1</p>
+
+<p>根据<a href="http://en.wikipedia.org/wiki/Euler's_theorem">欧拉定理</a>，<script type="math/tex">a^{\varphi(p_i^{\alpha_i})}\equiv 1\ (mod\ p_i^{\alpha_i})</script></p>
+
+<p>因为<script type="math/tex">\varphi(p_i^{\alpha_i})\vert \varphi(m)</script>，所以有<script type="math/tex">a^{\varphi(m)}-1\equiv 0\ (mod\ p_i^{\alpha_i})</script></p>
+
+<p>(2) (a, pi)!=1，因为pi是素数则(a, pi)=pi</p>
+
+<p>此时<script type="math/tex">(a^{\varphi(m)}-1, p_i^{\alpha_i})=1</script>，我们只需证明：<script type="math/tex"> p_i^{\alpha_i}\vert a^{n-\varphi(m)} </script></p>
+
+<p>即<script type="math/tex">n-\varphi(m)\geq \alpha_i</script></p>
+
+<p>假设<script type="math/tex">n-\varphi(m)\geq \varphi(m)</script>，则</p>
+
+<script type="math/tex; mode=display">
+\varphi(m)=\prod_{i=1}^{t}p_i^{\alpha_i-1}(p-1)\geq p_i^{\alpha_i-1}\geq 2^{\alpha_i-1}=(1+1)^{\alpha_i-1} =\sum_{i=0}^{\alpha_i-1}\binom{n}{i} \geq \sum_{i=0}^{\alpha_i-1}1 = \alpha_i
+</script>
+
+<p>所以有<script type="math/tex">p_i^{\alpha_i}\vert a^{n-\varphi(m)}</script></p>
+
+<p>综上有：当<script type="math/tex">n\geq 2\varphi(m)</script>时<script type="math/tex">p_i^{\alpha_i} \vert a^{n-\varphi(m)}(a^{\varphi(m)}-1)</script></p>
+
+<p>即<script type="math/tex">a^n \equiv a^{n-\varphi(m)}\ (mod\ p_i^{\alpha_i})</script></p>
+
+<p>当取遍所有i则</p>
+
+<script type="math/tex; mode=display">
+a^n \equiv a^{n-\varphi(m)}\ (mod\ m=\prod_{i=1}^{t}p_i^{\alpha_i})
+</script>
+
+<p>于是可以不断的减去<script type="math/tex">\varphi(m)</script>，直到<script type="math/tex">2\varphi(m)>n\geq \varphi(m)</script>，这也就是最后为什么会加上<script type="math/tex">\varphi(m)</script>的原因。</p>
+
+<p>下面有一些相关的题目：</p>
+
+<ul>
+  <li><a href="http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=2674">ZOJ 2674 Strange Limit</a></li>
+  <li><a href="http://codeforces.com/contest/17/problem/D">CodeForces Round 17 D Notepad</a></li>
+</ul>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #183 (Div. 1)]]></title>
@@ -1985,26 +2041,6 @@ sudo emerge -va pyopenssl
 <p><a href="http://en.wikipedia.org/wiki/The_Scream">The Scream</a></p>
 
 <p><img src="http://delta4d.github.io/images/upload/2012-12-26-the-scream.jpg" alt="The Scream" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[情人无泪]]></title>
-    <link href="http://delta4d.github.io/blog/2012/12/16/lover-no-tears/"/>
-    <updated>2012-12-16T10:27:00+08:00</updated>
-    <id>http://delta4d.github.io/blog/2012/12/16/lover-no-tears</id>
-    <content type="html"><![CDATA[<p>最近闲里偷忙看完了<a href="http://zh.wikipedia.org/wiki/%E5%BC%B5%E5%B0%8F%E5%AB%BB">张小娴</a>的”情人无泪”，因为是小说精选集，实际上包含了三部小说：卖海豚的女孩，离别曲，和情人无泪。</p>
-
-<p>我不止一次的在心里对自己说“多读些书吧”，大学四年倒是摸过一些书，每次都等到有罚款通知了再把书原封不动的送回图书馆。这学期在98读书版精华区看到有人推荐张小娴的书，便去图书馆借了本“情人无泪”。借书的时候还有件好玩的事，文学类的书都在走廊两边的架子上放着，找了很久，终于在某个书架最底层发现了六本精选集，我随手拿起一本翻着，这时有一个女孩走了过来，蹲下去也拿起了一本，然而很快又放了回去，站了起来，一动不动。旁边静静的杵了一个人总让人觉得有些不自在，于是把书放了回去，这时只见那个女孩迅速蹲下，拿起我刚放下的书，回头就跑。我恍然大悟。</p>
-
-<p>三部小说都比较偏伤感，情人无泪最后真是噙着眼泪读的，我大概还是比较习惯喜剧的东西，就好象Friends和武林外传可以一遍一遍不停的看。本科时有个室友读书时总会先看最后一页，如果是好的结局的话才会开始看这本书，幸好我没有这么做。</p>
-
-<p>三部小说里都有人死去，缇缇带着幸福，夏薇带着悲哀，苏明慧是带着梦想吗。我总觉得很多悲剧本不必如此，很多情况真是一句话可以解决的事情，人可能就是这么固执吧。</p>
-
-<p>沈鱼和翁信良终没有走到一起，从来没有人知道夏薇有一台小绵羊，苏明慧还是到了失明的那一天，本想带给许宏志惊喜去买画具，结果却。。</p>
-
-<p>很多年过去了，还是不会写读后感。</p>
-
 ]]></content>
   </entry>
   
