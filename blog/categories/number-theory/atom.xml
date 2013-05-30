@@ -4,7 +4,7 @@
   <title><![CDATA[Category: number theory | Try To Think]]></title>
   <link href="http://delta4d.github.io/blog/categories/number-theory/atom.xml" rel="self"/>
   <link href="http://delta4d.github.io/"/>
-  <updated>2013-05-28T00:43:36+08:00</updated>
+  <updated>2013-05-30T15:20:38+08:00</updated>
   <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -23,6 +23,8 @@
 <script type="math/tex; mode=display">
 \forall a, m, n \geq \varphi(m)\ \ a^n \equiv a^{n\ mod\ \varphi(m)+\varphi(m)}\ (mod\ m)
 </script>
+
+<p>可以看到它对指数化简作用非常明显，并且对于a和m没有任何限制，这让处理一些问题的时候非常方便，接下来我们就来证明它。</p>
 
 <p>要证明此式只需证明<script type="math/tex">a^n \equiv a^{n-\varphi(m)}\ (mod\ m)</script>，即<script type="math/tex">m\vert a^{n-\varphi(m)}(a^{\varphi(m)}-1)</script></p>
 

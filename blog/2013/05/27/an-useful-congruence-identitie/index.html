@@ -9,7 +9,7 @@
   <meta name="author" content="delta">
 
   
-  <meta name="description" content="有这样一个同余恒等式： \forall a, m, n \geq \varphi(m)\ \ a^n \equiv a^{n\ mod\ \varphi(m)+\varphi(m)}\ (mod\ m) 要证明此式只需证明，即 设m质因子分解为，那么我们只需证明对任意i有，对于每个i分两种情况讨论 &hellip;">
+  <meta name="description" content="有这样一个同余恒等式： \forall a, m, n \geq \varphi(m)\ \ a^n \equiv a^{n\ mod\ \varphi(m)+\varphi(m)}\ (mod\ m) 可以看到它对指数化简作用非常明显，并且对于a和m没有任何限制，这让处理一些问题的时候非常方便， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -144,6 +144,8 @@
 <script type="math/tex; mode=display">
 \forall a, m, n \geq \varphi(m)\ \ a^n \equiv a^{n\ mod\ \varphi(m)+\varphi(m)}\ (mod\ m)
 </script>
+
+<p>可以看到它对指数化简作用非常明显，并且对于a和m没有任何限制，这让处理一些问题的时候非常方便，接下来我们就来证明它。</p>
 
 <p>要证明此式只需证明<script type="math/tex">a^n \equiv a^{n-\varphi(m)}\ (mod\ m)</script>，即<script type="math/tex">m\vert a^{n-\varphi(m)}(a^{\varphi(m)}-1)</script></p>
 
