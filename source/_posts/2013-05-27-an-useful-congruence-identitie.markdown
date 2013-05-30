@@ -12,6 +12,8 @@ $$
 \forall a, m, n \geq \varphi(m)\ \ a^n \equiv a^{n\ mod\ \varphi(m)+\varphi(m)}\ (mod\ m)
 $$
 
+可以看到它对指数化简作用非常明显，并且对于a和m没有任何限制，这让处理一些问题的时候非常方便，接下来我们就来证明它。
+
 要证明此式只需证明$$a^n \equiv a^{n-\varphi(m)}\ (mod\ m)$$，即$$m\vert a^{n-\varphi(m)}(a^{\varphi(m)}-1)$$
 
 设m质因子分解为$$\prod_{i=1}^{t}p_{i}^{\alpha_i}$$，那么我们只需证明对任意i有$$p_i^{\alpha_i}\vert a^{n-\varphi(m)}(a^{\varphi(m)}-1)$$，对于每个i分两种情况讨论：
