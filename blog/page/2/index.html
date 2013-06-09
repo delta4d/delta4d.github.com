@@ -9,9 +9,8 @@
   <meta name="author" content="delta">
 
   
-  <meta name="description" content="A. Cows and Sequence source code 对于一个数列，有三个操作： 1. 给a个数同时加x
-2. 在末尾加入元素k
-3. 去掉末尾的元素 对于每一次操作，查询数列的平均值，共有2*10^5次操作。三个操作都可以看作区间操作，[1,a]上同时加x，[sz,sz+1]加x，[ &hellip;">
+  <meta name="description" content="安装和初始化 配置全局用户名和电子邮件地址 $ git config --global user.name "Your Name"
+$ git config --global user.email "you@example.com" 为特定的版本库配置用户名和电子邮件地址 $ cd /path/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -113,6 +112,635 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/23/git-command-quick-reference/">Git命令快速参考</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-23T14:54:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/23/git-command-quick-reference/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 id="section">安装和初始化</h2>
+
+<ul>
+  <li>
+    <p>配置全局用户名和电子邮件地址</p>
+
+    <pre><code>$ git config --global user.name "Your Name"
+$ git config --global user.email "you@example.com"
+</code></pre>
+  </li>
+  <li>
+    <p>为特定的版本库配置用户名和电子邮件地址</p>
+
+    <pre><code>$ cd /path/to/repo
+$ git config user.name "Your name"
+$ git config user.email "you@example.com"
+</code></pre>
+  </li>
+  <li>
+    <p>在命令行中使用不同颜色显示不同内容</p>
+
+    <pre><code>$ git config --global color.ui "auto"
+</code></pre>
+  </li>
+  <li>
+    <p>初始化版本库</p>
+
+    <pre><code>$ mkdir /path/to/repo
+$ cd /path/to/repo
+$ git init
+Initialized empty Git repository in /path/to/repo/.git/
+$
+... create file(s) for first commit ...
+$ git add .
+$ git commit -m 'initial import'
+Create initial commit bdebe5c: initial import
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 &lt;some file&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>克隆版本库</p>
+
+    <pre><code>$ git clone &lt;repository url&gt;
+Initialize repo/.git
+Initialize empty Git repository in /work/&lt;remote repository&gt;/.git/
+</code></pre>
+  </li>
+  <li>
+    <p>将目录中的内容纳入Git版本控制</p>
+
+    <pre><code>$ cd /path/to/existing/directory
+$ git init
+Initialized empty Git repository in /path/to/existing/directory/.git/
+$ git add .
+$ git commit -m "initial import of some project"
+</code></pre>
+  </li>
+  <li>
+    <p>在本地版本库中设置远程版本库的别名</p>
+
+    <pre><code>... from within the repository directory ...
+$ git remote add &lt;remote repository&gt; &lt;repository url&gt;
+</code></pre>
+  </li>
+</ul>
+
+<h2 id="section-1">日常操作</h2>
+
+<ul>
+  <li>
+    <p>添加新文件或暂存已有文件上的改动，然后提交</p>
+
+    <pre><code>$ git add &lt;some file&gt;
+$ git commit -m "&lt;some message&gt;"
+</code></pre>
+  </li>
+  <li>
+    <p>暂存已有文件上的部分修改</p>
+
+    <pre><code>$ git add -p [&lt;some file&gt; [&lt;some file&gt; [and so on]]]
+</code></pre>
+  </li>
+  <li>
+    <p>使用交互方式添加文件</p>
+
+    <pre><code>$ git add -i
+</code></pre>
+  </li>
+  <li>
+    <p>暂存已纳入Git版本控制之下的文件的修改</p>
+
+    <pre><code>$ git add -u [&lt;some path&gt; [&lt;some path&gt;]]
+</code></pre>
+  </li>
+  <li>
+    <p>提交已纳入Git版本控制之下的文件的所有修改</p>
+
+    <pre><code>$ git commit -m "&lt;some message&gt;" -a
+</code></pre>
+  </li>
+  <li>
+    <p>清除工作目录树中的修改</p>
+
+    <pre><code>$ git checkout HEAD &lt;some file&gt; [&lt;some file&gt;]
+</code></pre>
+  </li>
+  <li>
+    <p>取消已暂存但尚未提交的修改的暂存标识</p>
+
+    <pre><code>$ git reset HEAD &lt;some file&gt; [&lt;some file&gt;]
+</code></pre>
+  </li>
+  <li>
+    <p>修复上一次提交中的问题</p>
+
+    <p><em>改动相关文件，并暂存</em></p>
+
+    <pre><code>$ git commit -m "&lt;some message&gt;" --amend
+</code></pre>
+  </li>
+  <li>
+    <p>修复上一次提交中的问题，并复用上次的提交注释</p>
+
+    <pre><code>$ git commit -C HEAD --amend
+</code></pre>
+  </li>
+</ul>
+
+<h2 id="section-2">分支</h2>
+
+<ul>
+  <li>
+    <p>列出本地分支</p>
+
+    <pre><code>$ git branch
+</code></pre>
+  </li>
+  <li>
+    <p>列出远程分支</p>
+
+    <pre><code>$ git branch -r
+</code></pre>
+  </li>
+  <li>
+    <p>列出所有分支</p>
+
+    <pre><code>$ git branch -a
+</code></pre>
+  </li>
+  <li>
+    <p>基于当前分支（的末梢）创建新分支</p>
+
+    <pre><code>$ git branch &lt;new branch&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>检出另一条分支</p>
+
+    <pre><code>$ git checkout &lt;some branch&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>基于当前分支创建新分支，同时检出该分支</p>
+
+    <pre><code>$ git checkout -b &lt;new branch&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>基于另一个起点，创建新分支</p>
+
+    <p><em>你可以从版本库中任何一个版本开始创建新分支。这个起始点可以用一条已有的分支名称、一个提交名称，或者一个标签名称来表达。</em></p>
+
+    <pre><code>$ git branch &lt;new branch&gt; &lt;start point&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>创建同名新分支，覆盖已有分支</p>
+
+    <pre><code>$ git branch -f &lt;some existing branch&gt; [&lt;start point&gt;]
+</code></pre>
+  </li>
+  <li>
+    <p>移动或重命名分支</p>
+
+    <p><em>只有当&lt;new branch&gt;不存在时</em></p>
+
+    <pre><code>$ git checkout -m &lt;existing branch name&gt; &lt;new branch name&gt;
+</code></pre>
+
+    <p><em>如果&lt;new branch&gt;已存在，就覆盖它</em></p>
+
+    <pre><code>$ git checkout -M &lt;existing branch name&gt; &lt;new branch name&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>把另一条分支合并到当前分支</p>
+
+    <pre><code>$ git merge &lt;some branch&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>合并，但不提交</p>
+
+    <pre><code>$ git merge --no-commit &lt;some branch&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>拣选合并，并且提交</p>
+
+    <pre><code>$ git cherry-pick &lt;commit name&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>拣选合并，但不提交</p>
+
+    <pre><code>$ git cherry-pick -n &lt;commit name&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>把一条分支上的内容压合到另一条分支（上的一个提交）</p>
+
+    <pre><code>$ git merge --squash &lt;some branch&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>删除分支</p>
+
+    <p><em>仅当欲删除的分支已合并到当前分支时</em></p>
+
+    <pre><code>$ git branch -d &lt;branch to delete&gt;
+</code></pre>
+
+    <p><em>不论欲删除的分支是否已合并到当前分支</em></p>
+
+    <pre><code>$ git branch -D &lt;branch to delete&gt;
+</code></pre>
+  </li>
+</ul>
+
+<h2 id="section-3">撤销变更</h2>
+
+<ul>
+  <li>
+    <p>反转某个提交</p>
+
+    <pre><code>$ git revert &lt;commit&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>取消已暂存但尚未提交的变更的暂存标识</p>
+
+    <pre><code>$ git reset HEAD &lt;some file&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>删除工作目录树中的变更</p>
+
+    <pre><code>$ git checkout &lt;some file&gt;
+</code></pre>
+
+    <p><strong># 警告！此操作本身不可撤销！</strong></p>
+  </li>
+  <li>
+    <p>在版本库中撤销已提交的变更，并在工作目录树中清除</p>
+
+    <pre><code>$ git reset --hard HEAD^
+</code></pre>
+
+    <p><strong># 警告！此操作本身不可撤销！</strong></p>
+  </li>
+</ul>
+
+<h2 id="section-4">历史</h2>
+
+<ul>
+  <li>
+    <p>显示全部历史记录</p>
+
+    <pre><code>$ git log
+</code></pre>
+  </li>
+  <li>
+    <p>显示版本历史，以及版本间的内容差异</p>
+
+    <pre><code>$ git log -p
+</code></pre>
+  </li>
+  <li>
+    <p>只显示最近一个提交</p>
+
+    <pre><code>$ git log -1
+</code></pre>
+  </li>
+  <li>
+    <p>显示最近的20个提交，以及版本间的内容差异</p>
+
+    <pre><code>$ git log -20 -p
+</code></pre>
+  </li>
+  <li>
+    <p>显示最近6小时的提交</p>
+
+    <pre><code>$ git log --since="6 hours"
+</code></pre>
+  </li>
+  <li>
+    <p>显示两天之前的提交</p>
+
+    <pre><code>$ git log --before="2 days"
+</code></pre>
+  </li>
+  <li>
+    <p>显示比HEAD（当前检测出分支的末梢）早3个提交的那个提交</p>
+
+    <pre><code>$ git log -1 HEAD~3
+</code></pre>
+
+    <p>或者</p>
+
+    <pre><code>$ git log -1 HEAD^^^
+</code></pre>
+
+    <p>或者</p>
+
+    <pre><code>$ git log -1 HEAD~1^^
+</code></pre>
+  </li>
+  <li>
+    <p>显示两个版本之间的提交</p>
+
+    <p>*下面命令中的<start point="">和<end point="">可以是一个提交名称、分支名称、标签名称，或者它们的混合。*</end></start></p>
+
+    <pre><code>$ git log &lt;start point&gt;...&lt;end point&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>显示历史，每个提交显示一行，包括提交注释的第一行</p>
+
+    <pre><code>$ git log --pretty=oneline
+</code></pre>
+  </li>
+  <li>
+    <p>显示改动行数统计</p>
+
+    <pre><code>$ git log --stat
+</code></pre>
+  </li>
+  <li>
+    <p>显示改动文件的名称和状态</p>
+
+    <pre><code>$ git log --name-status
+</code></pre>
+  </li>
+  <li>
+    <p>显示当前工作目录树和暂存区间的差别</p>
+
+    <pre><code>$ git diff
+</code></pre>
+  </li>
+  <li>
+    <p>显示暂存区和版本库间的差别</p>
+
+    <pre><code>$ git diff --cached
+</code></pre>
+  </li>
+  <li>
+    <p>显示工作目录树和版本库间的差别</p>
+
+    <pre><code>$ git diff HEAD
+</code></pre>
+  </li>
+  <li>
+    <p>显示工作目录树与版本库中某次提交版本之间的差别</p>
+
+    <pre><code>$ git diff &lt;start point&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>显示版本库中两个版本之间的差别</p>
+
+    <pre><code>$ git diff &lt;start point&gt; &lt;end point&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>显示差别的相关统计</p>
+
+    <pre><code>$ git diff --stat &lt;start point&gt; [&lt;end point&gt;]
+</code></pre>
+  </li>
+  <li>
+    <p>显示文件中各个部分的修改者及相关提交信息</p>
+
+    <pre><code>$ git blame &lt;some file&gt;
+</code></pre>
+
+    <p><em>显示文件中各个部分的修改者及相关提交信息，包括在该文件中复制、粘贴和移动内容等方面的情况。</em></p>
+
+    <pre><code>$ git blame -M &lt;some file&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>显示文件中各部分的修改者及相关提交信息，包括在文件移动内容方面的情况</p>
+
+    <pre><code>$ git blame -C -C &lt;some file&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>显示历史时，显示复制和粘贴信息</p>
+
+    <pre><code>$ git log -C -C -p -1 &lt;some point&gt;
+</code></pre>
+  </li>
+</ul>
+
+<h2 id="section-5">远程版本库</h2>
+
+<ul>
+  <li>
+    <p>克隆远程版本库</p>
+
+    <pre><code>$ git clone &lt;some repository&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>克隆远程版本库，但只下载其中最近200个提交的历史记录</p>
+
+    <pre><code>$ git clone --depth 200 &lt;some repository&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>在本地版本库中设置远程版本库的别名</p>
+
+    <pre><code>$ git remote add &lt;remote repository&gt; &lt;repository url&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>显示远程分支</p>
+
+    <pre><code>$ git branch -r
+</code></pre>
+  </li>
+  <li>
+    <p>基于远程分支创建本地分支</p>
+
+    <pre><code>$ git branch &lt;new branch&gt; &lt;remote branch&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>基于远程标签创建本地分支</p>
+
+    <pre><code>$ git branch &lt;new branch&gt; &lt;remote tag&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>从别名“origin”的远程版本库中取来修改变化，但不合并到本地分支</p>
+
+    <pre><code>$ git fetch
+</code></pre>
+  </li>
+  <li>
+    <p>从任意的远程版本库中取来修改变化，但不合并到本地分支</p>
+
+    <pre><code>$ git fetch &lt;remote repository&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>从任意的远程版本库中取来修改变化，并合并到当前检出的本地分支</p>
+
+    <pre><code>$ git pull &lt;remote repository&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>从别名为“origin”的远程版本库中取来修改变化，并合并到当前检出的本地分支</p>
+
+    <pre><code>$ git pull
+</code></pre>
+  </li>
+  <li>
+    <p>把修改变化从本地分支推入远程版本库</p>
+
+    <pre><code>$ git push &lt;remote repository&gt; &lt;local branch&gt;:&lt;remote branch&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>把修改变化从本地分支推入远程版本库中同名分支</p>
+
+    <pre><code>$ git push &lt;remote repository&gt; &lt;local branch&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>把修改变化从本地新建分支推入远程版本库</p>
+
+    <pre><code>$ git push &lt;remote repository&gt; &lt;local branch&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>把修改变化推入别名为“origin”的远程版本库</p>
+
+    <p>*当远程版本库中已有同名分支时，这个命令会推入本地分支到远程版本库对应的分支中。如果远程版本库中尚无同名分支，则须使用 git push <repository name=""> <local branch="">*</local></repository></p>
+
+    <pre><code>$ git push
+</code></pre>
+  </li>
+  <li>
+    <p>在远程版本库中删除分支</p>
+
+    <pre><code>$ git push &lt;remote repository&gt; :&lt;remote branch&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>在本地版本库中删除所有远程版本库中已不存在的分支</p>
+
+    <pre><code>$ git remote prune &lt;remote repository&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>在本地版本库中删除某个远程版本库的简称，以及该远程版本库相关的分支</p>
+
+    <pre><code>$ git remote rm &lt;remote repository&gt;
+</code></pre>
+  </li>
+</ul>
+
+<h2 id="gitsvn">连接Git和SVN</h2>
+
+<ul>
+  <li>
+    <p>克隆SVN版本库的全部内容</p>
+
+    <pre><code>$ git svn clone &lt;svn repository&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>克隆具有标准结构的SVN版本库</p>
+
+    <p><em>下面命令适用于克隆标准结构的SVN数据库，也就是说，主干命名为trunk，其他分支都存放于branches目录下，标签都存放于tags目录下。</em></p>
+
+    <pre><code>$ git svn clone -s &lt;svn repository&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>克隆非标准结构的SVN版本库</p>
+
+    <pre><code>$ git svn clone -T &lt;trunk path&gt; -b &lt;branch path&gt; -t &lt;tag path&gt; &lt;svn repository&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>克隆具有标准结构的SVN版本库中的某个版本（比如第2321版）</p>
+
+    <pre><code>$ git svn clone -s -r 2321
+</code></pre>
+  </li>
+  <li>
+    <p>克隆具有标准结构的SVN版本库，并对SVN中的分支添加前缀</p>
+
+    <pre><code>$ git svn clone -s --prefix svn/ &lt;svn repository&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>从上游SVN版本库中获得更新的内容，并依此在本地Git版本库中变基本地分支</p>
+
+    <pre><code>$ git svn rebase
+</code></pre>
+  </li>
+  <li>
+    <p>把修改变化推回上游SVN版本库</p>
+
+    <pre><code>$ git svn dcommit -n
+</code></pre>
+  </li>
+  <li>
+    <p>显示SVN历史记录</p>
+
+    <pre><code>$ git svn log
+</code></pre>
+  </li>
+  <li>
+    <p>显示文件中各个部分的SVN的修改者及相关提交信息</p>
+
+    <pre><code>$ git svn blame &lt;some file&gt;
+</code></pre>
+  </li>
+</ul>
+
+<h2 id="section-6">参考资料</h2>
+
+<ul>
+  <li><a href="http://pragprog.com/book/tsgit/pragmatic-version-control-using-git">Pragmatic Version Control Using Git</a>（以上都是来自本书）</li>
+  <li><a href="http://git-scm.com/docs">Git Doc</a></li>
+  <li><a href="https://help.github.com/">Github Help</a></li>
+</ul>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -828,48 +1456,6 @@ sudo emerge -va pyopenssl
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/26/the-scream/">The Scream</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-26T22:37:00+08:00" pubdate data-updated="true">Dec 26<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/12/26/the-scream/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>the little boy inside me lately</p>
-
-<p><a href="http://en.wikipedia.org/wiki/The_Scream">The Scream</a></p>
-
-<p><img src="/images/upload/2012-12-26-the-scream.jpg" alt="The Scream" /></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -887,6 +1473,10 @@ sudo emerge -va pyopenssl
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/06/08/codeforces-round-number-187-div-1/">Codeforces Round #187 (Div. 1)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/27/an-useful-congruence-identitie/">An Useful Congruence Identity</a>
       </li>
     
@@ -900,10 +1490,6 @@ sudo emerge -va pyopenssl
     
       <li class="post">
         <a href="/blog/2013/04/20/codeforces-round-number-180-div-1/">Codeforces Round #180 (Div. 1)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/12/codeforces-round-number-179-div-1/">Codeforces Round #179 (Div. 1)</a>
       </li>
     
   </ul>
