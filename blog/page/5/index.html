@@ -9,7 +9,10 @@
   <meta name="author" content="delta">
 
   
-  <meta name="description" content="开学第一天，稍微回顾下这个可能是我最后的一个暑假。 7月份在参加ACM的集训，和去年不同的是今年认识了更多的人，一块相互鼓励相互探讨，最终能够一块进入8月份集训名单着实非常开心。期间回家了两个礼拜，家人还是一如既往的让我考虑下考研的事情，但不知为什么，我总是提不起兴趣， &hellip;">
+  <meta name="description" content="修改/etc/fstab文件，添加如下内容： 1
+2
+/dev/sda1 /media/sda1 ntfs-3g defaults,locale=zh_CN.UTF8 0 0
+/dev/sda2 /media/sda2 ntfs-3g defaults,locale=zh_CN.UTF8 0 0 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -111,6 +114,64 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/09/06/archlinux-load-ntfs-partion-at-boot/">Archlinux开机加载NTFS分区</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-06T09:47:00+08:00" pubdate data-updated="true">Sep 6<span>th</span>, 2011</time>
+        
+         | <a href="/blog/2011/09/06/archlinux-load-ntfs-partion-at-boot/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>修改/etc/fstab文件，添加如下内容：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">/dev/sda1 /media/sda1 ntfs-3g defaults,locale=zh_CN.UTF8 0 0
+</span><span class="line">/dev/sda2 /media/sda2 ntfs-3g defaults,locale=zh_CN.UTF8 0 0</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>需要注意几点：</p>
+
+<ol>
+  <li>/dev/sdax为电脑上对应的分区，视具体情况而定</li>
+  <li>/media/sdax为/media中的目录需要提前建立好，名字任意</li>
+  <li>ntfs-3g需要提前安装好，其后所接的参数可以通过手册来查询</li>
+</ol>
+
+<p>reference:</p>
+
+<ul>
+  <li><a href="http://en.wikipedia.org/wiki/Fstab">fstab具体参数意义及书写格式</a></li>
+  <li>man fstab</li>
+</ul>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -503,96 +564,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/20/conic-judgement/">二次曲线的判断</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-20T19:31:00+08:00" pubdate data-updated="true">Apr 20<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/20/conic-judgement/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>之所以想起这个问题是因为<a href="http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemCode=3488">ZOJ3488</a>，题目是说给定二次曲线方程ax^2+bxy+c^2+dx+ey+f=0，判断曲线类型，其中保证曲线肯定存在且b=0，我准备更一般的来研究一下这个问题</p>
-
-<ol>
-  <li>若b=0，则：</li>
-</ol>
-
-<p>1.1 a或c中有一个为0，则位抛物线</p>
-
-<p>1.2 方程可以化为：a(x+d/(2a))^2+c(y+e/(2c))^2=d^2/(4a)+e^2/(4c)-f</p>
-
-<p>记D=d^2/(4a)+e^2/(4c)-f</p>
-
-<p>若D=0，则该方程表示点(-d/(2a), -e/(2c))</p>
-
-<p>若ac&gt;0,a=c,acD&gt;0,则表示圆</p>
-
-<p>若ac&gt;0,a!=c,acD&gt;0,则表示椭圆</p>
-
-<p>若ac&lt;0,表示双曲线</p>
-
-<p>其他情况方程不表示任何曲线，方程有误</p>
-
-<ol>
-  <li>若b!=0，则：</li>
-</ol>
-
-<p>ax^2+bxy+cy^2+dx+ey+f=0 ———–（1）</p>
-
-<p>做旋转变换z‘=z<em>e^(i</em>t)</p>
-
-<p>那么x=x<em>cos(t)-y</em>sin(t), y=x<em>sin(t)+y</em>cos(t)</p>
-
-<p>带入（1）则xy项的系数为：</p>
-
-<p>-2a<em>cos(t)sin(t)+b(cos(t)</em>cos(t)-sin(t)<em>sin(t))+2c</em>sin(t)cos(t)</p>
-
-<p>=-a<em>sin(2t)+b</em>cos(2t)+c*sin(2t)</p>
-
-<p>=(c-a)sin(2t)+b*cos(2t)</p>
-
-<p>令它为0，则tan(2t)=b/(a-c)，当a=c时 tan(2t)=infinity，2t=pi/2</p>
-
-<p>因为tan(2t)=b/(a-c)</p>
-
-<p>那么cos(2t)=(a-c)/sqrt(b^2+(a-c)^2)，sin(2t)=b/sqrt(b^2+(a-c)^2)</p>
-
-<p>(a<em>cos^2(t)+b</em>sin(t)cos(t)+c<em>sin^2(t))x^2+(a</em>sin^2(t)-b<em>sin(t)cos(t)+c</em>cos^2(t))y^2+(d<em>cos(t)+c</em>sin(t))x+(-d<em>sin(t)+c</em>cos(t))y+e=0</p>
-
-<p>(a<em>(1+cos(2t)/2)+b</em>sin(2t)/2+c<em>(1-cos(2t))/2)x^2+(a</em>(1-cos(2t)/2)-b<em>sin(2t)/2+c</em>(1+cos(2t))/2)y^2+(c<em>sin(t))x+(-d</em>sin(t)+c*cos(t))y+e=0</p>
-
-<p>(a+c+sqrt(b^2+(a-c)^2))/2<em>x^2+(a+c-sqrt(b^2+(a-c)^2))/2</em>y^2+c<em>sin(t))x+(-d</em>sin(t)+c*cos(t))y+e=0</p>
-
-<p>转化为情况1</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -610,6 +581,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/06/29/codeforces-round-number-190-div-1/">Codeforces Round #190 (Div. 1)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/06/08/codeforces-round-number-187-div-1/">Codeforces Round #187 (Div. 1)</a>
       </li>
     
@@ -623,10 +598,6 @@
     
       <li class="post">
         <a href="/blog/2013/05/06/codeforces-round-number-182-div-1/">Codeforces Round #182 (Div. 1)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/20/codeforces-round-number-180-div-1/">Codeforces Round #180 (Div. 1)</a>
       </li>
     
   </ul>

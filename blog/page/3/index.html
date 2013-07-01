@@ -9,7 +9,8 @@
   <meta name="author" content="delta">
 
   
-  <meta name="description" content="the little boy inside me lately The Scream ">
+  <meta name="description" content="Why Gentoo
+久仰Gentoo大名，过去一年断断续续在虚拟机上装过好几次Gentoo了，一直想在实体机上试试，于是趁放假的时候折腾折腾。 Start Gentoo是编译安装的，于是可以进行相关编译选项优化。同时Gentoo是可以滚动升级的，这样方便不少。开始装机的时候还是想着自己编译内核的 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -111,6 +112,116 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/27/gentoo-notes-01/">Gentoo Notes 01 - Start</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-27T19:26:00+08:00" pubdate data-updated="true">Jan 27<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/01/27/gentoo-notes-01/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 id="why-gentoo">Why Gentoo</h2>
+<p>久仰Gentoo大名，过去一年断断续续在虚拟机上装过好几次Gentoo了，一直想在实体机上试试，于是趁放假的时候折腾折腾。</p>
+
+<h2 id="start">Start</h2>
+
+<p>Gentoo是编译安装的，于是可以进行相关编译选项优化。同时Gentoo是可以滚动升级的，这样方便不少。开始装机的时候还是想着自己编译内核的，结果开机后不断panic，把我也搞的panic了，于是老老实实用genkernel，以后有机会在好好编译内核吧，先把系统起来在说。很多用户觉得Gentoo编译太费时间了，所以不选择Gentoo，但装机大多都是可以一劳永逸的，配置好后并不会频繁的装软件了。装好基本系统其实还是比较快的，使用genkernel也只用了一个小时左右，装好X然后装DE便会比较慢了，键盘控，喜欢轻量级的话装个WM是便会很快了。</p>
+
+<h2 id="errors">Errors</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">!!The filesystem mounted at /dev/sdb3 does not appear to be a valid /. Try again 
+</span><span class="line">!!Could not find the root block device in. 
+</span><span class="line">Please specify another value or: press Enter for the same , type "shell" ......</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>可能是grub.conf写错了，需要注意一下两个变量：</p>
+
+<ul>
+  <li><code>root (hd0,0)</code>指/boot在/dev/sda1。(hd0,0-3)表示四个主分区，(hd0,&gt;3)表示逻辑分区，其中grub从0开始，而linux从1开始表示分区。</li>
+  <li><code>real_root=/dev/sdax</code>指/在/dev/sdax</li>
+</ul>
+
+<p>startx的时候出现no screens found
+   可能是显卡驱动装的不对，可以执行<code>emerge -av $(qlist -IC x11-drivers)</code>，我的是nvidia，在make.conf中设置好<code>VIDEO_CARDS="nvidia"</code>，然后装好n卡驱动，在执行<code>nvidia-xconfig</code>后就可以了。</p>
+
+<p>emerge complains  <a href="http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=2&amp;chap=1">click me!</a></p>
+
+<h2 id="why-gentoo-again">Why Gentoo Again</h2>
+<ol>
+  <li>漂亮的字符界面。第一次虚拟机装Gentoo时的最深的印象。</li>
+  <li>强大的portage和emerge。portage告诉emerge在哪里下载源代码，编译选项是什么。</li>
+  <li>overlay？就目前的感觉想archlinux的aur。里面应该有不少好玩的东西。</li>
+  <li>详尽的文档。</li>
+  <li>……</li>
+</ol>
+
+<p>实体机用了才不到两天，还有好多好多东西需要学习和探索。Happy Hunting。</p>
+
+<h2 id="de-vs-wm">DE vs WM</h2>
+<p>一开始想装wm的，因为在<a href="https://bbs.archlinux.org/viewforum.php?id=47">archlinux forum</a>里看到很多wm非常漂亮，还有很多<a href="https://bbs.archlinux.org/viewtopic.php?id=138281">轻量级软件</a>提供选择。也确实一开始试的是openbox和monsterwm的，还是不习惯。最后换成了KDE，其实KDE以前没怎么用过（其实连linux都没怎么用过，总是不知不觉切会win后就不再进入linux了），就目前来看KDE表现还是不错的，但还是有些问题没有解决。。一开始挺好的，但是感觉有些不稳定，无法启动kde程序，gtk倒是没问题，后来删除了~/.kde4恢复默认设置倒是好了。另外qtconfig配置无法保存，这个直接导致了有些qt程序字体比较难看等。</p>
+
+<h2 id="octopress-in-gentoo">Octopress in Gentoo</h2>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">...custom_require.rb:36:in 'require': cannot load such file auto_gem (LoadError)
+</span><span class="line">...custom_require.rb:36:in 'require'</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p><code>unset RUBYOPT</code> fix it.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">Building site: source -&gt; public
+</span><span class="line">File "&lt;string&gt;", line 1
+</span><span class="line">import sys; print sys.executable
+</span><span class="line">^
+</span><span class="line">SyntaxError: invalid syntax</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Follow <a href="http://blog.gonzih.org/blog/2011/09/21/fix-octopress-pygments-error-on-arch-linux/">this</a>. But I change rubypython from 0.5.3 to 0.6.3 in Gemfile.lock, it fixs everything I ran into..</p>
+
+<h2 id="reference">Reference</h2>
+<ol>
+  <li><a href="http://www.google.com">Google</a></li>
+  <li><a href="http://www.gentoo.org/doc/en/handbook/">Gentoo Handbook</a></li>
+  <li><a href="http://www.gentoo.org/doc/en/xorg-config.xml">Gentoo Xorg</a></li>
+</ol>
+
+<h2 id="whats-going-on">What’s Going On</h2>
+<p>Keep Using, Keep Hunting。有没有gentoo notes 02我也不知道。。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -732,64 +843,6 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/25/pacman-not-enough-random-bytes-available/">[Pacman] Not Enough Random Bytes Available</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-25T15:21:00+08:00" pubdate data-updated="true">May 25<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/05/25/pacman-not-enough-random-bytes-available/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>pacman更新到4.x中出现了认证系统，需要先执行pacman-key –init来生成key，但是这时可能出现not enough random bytes available，后来查了下发现Linux系统生成随机数是根据系统熵来获得的，这是因为系统熵不够的缘故。系统熵值可以通过</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="sh"><span class="line">cat /proc/sys/kernel/random/entropy_avail
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>来查看。所谓熵就是系统的混乱程度。</p>
-
-<p>如果你在图形界面的话，那么只要鼠标动几下就可以获得很高的熵值。</p>
-
-<p>如果在字符界面的话，那么可以用手随便敲一些命令，无效的也可以，反正我是对着键盘乱敲的= =，这时可能会使得熵值达到3000多一点，这样执行pacman-key可能还是会报熵值不足，不要着急按Ctrl+C，这时你可以通过Ctrl+Alt+F2切换到tty2，然后继续对着键盘一阵乱敲，然后切换到tty1，就会发现命令已经执行完了。其实只要做一些大量IO的事情就可以了，比如cp一个大体积文件，或者使用dd等等，不一一说明了。</p>
-
-<p>pacman更新好后，pacman.conf可能需要改一下，查看/etc目录会发现有两个pacman配置文件，一个是旧的pacman.conf，一个是4.x的pacman.conf.pacnew，只需要将后者覆盖前者就可以了，记着要对前者备份哦。新的配置文件中有SigLevel选项，默认应该是关闭的，你可以根据需求进行选择：</p>
-
-<ul>
-  <li>Required: 强制检查签名</li>
-  <li>Optional: 如果签名存在就检查，但会接受未签名软件包和数据库</li>
-  <li>Never:不会进行任何签名检查。</li>
-</ul>
-
-<p>如果开启签名的话，后面安装软件的过程中可能还会遇到一些其他问题，这里就不一一说明了。。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -807,6 +860,10 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/06/29/codeforces-round-number-190-div-1/">Codeforces Round #190 (Div. 1)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/06/08/codeforces-round-number-187-div-1/">Codeforces Round #187 (Div. 1)</a>
       </li>
     
@@ -820,10 +877,6 @@ x[1]+x[2]+…+x[y]=x……(1)<br />
     
       <li class="post">
         <a href="/blog/2013/05/06/codeforces-round-number-182-div-1/">Codeforces Round #182 (Div. 1)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/20/codeforces-round-number-180-div-1/">Codeforces Round #180 (Div. 1)</a>
       </li>
     
   </ul>

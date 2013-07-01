@@ -9,7 +9,7 @@
   <meta name="author" content="delta">
 
   
-  <meta name="description" content="A. Sereja and Contest source code 有一列数{an}，定义，现在要求去掉一些ai使得去掉后得到的子列对应的d每一项都不小于给定的k。 直接模拟就可以了，遇到di&lt;k时，去掉此时的ai，注意去掉i后对于i之前的没有影响，计算这个ai对于之后dj的影响， &hellip;">
+  <meta name="description" content="A. Ciel and Robot source code 有一个bot位于xoy平面原点，给定一个移动序列s包含’UDLR’，分别表示向上，下，左和右各移动一个单位，该指令序列s可以重复执行任意此，现在给定坐标(a,b)问是否可以经过有限次指令后到达。 设置行到s(i)后bot坐标为(xi,yi &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -111,6 +111,117 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/29/codeforces-round-number-190-div-1/">Codeforces Round #190 (Div. 1)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-29T22:02:00+08:00" pubdate data-updated="true">Jun 29<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/06/29/codeforces-round-number-190-div-1/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2 id="a-ciel-and-robothttpcodeforcescomcontest321problema"><a href="http://codeforces.com/contest/321/problem/A">A. Ciel and Robot</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/190/1/A.cpp">source code</a></p>
+
+<p>有一个bot位于xoy平面原点，给定一个移动序列s包含’UDLR’，分别表示向上，下，左和右各移动一个单位，该指令序列s可以重复执行任意此，现在给定坐标(a,b)问是否可以经过有限次指令后到达。</p>
+
+<p>设置行到s(i)后bot坐标为(xi,yi)，执行完s后的坐标为(sx,sy)，则若能够到达(a,b)则存在非负整数k和i使得a=xi+ksx,b=yi+ksy。枚举i就可以了，算法看起来虽然比较简单，但实际写起来还是有很多需要注意的地方。</p>
+
+<h2 id="b-ciel-and-duelhttpcodeforcescomcontest321problemb"><a href="http://codeforces.com/contest/321/problem/B">B. Ciel and Duel</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/190/1/B.cpp">source code</a></p>
+
+<p>Ciel和Jiro玩这样一个牌类游戏，Jiro有n张牌，每张有两个属性：position(Attack或Defense)，strength，Ciel有m张牌，现在轮到Ciel进攻，他可以重复置行以下操作：</p>
+
+<pre><code>1. 选择自己的一张牌X，这张牌之前没有用过
+2. 如果Jiro没有手牌，那么他被伤害X
+3. 否则由Ciel选择Jiro的一张手牌Y：
+   * Y的position为Attack，那么必须有(X's strength) &gt;= (Y's strength)，Jiro获得伤害(X's strength)-(Y's strength)，手牌Y不可以再用
+   * Y的position为Defense，那么必须有(X's strength) &gt; (Y's strength)，Jiro没有伤害，手牌Y不可以再用
+</code></pre>
+
+<p>现在求Jiro能够受到的最大伤害是多少</p>
+
+<p>如果Ciel没有将Jiro的手牌拿完，那么可以看到选择Def牌是不会增加伤害的，于是只需要考虑Atk，于是采用贪心，枚举Ciel可以将自己最大的多少张牌打完。</p>
+
+<p>如果Ciel将Jiro的手牌取完，要使结果最大，那么用刚好大于Def的牌去对付Def就可以了，然后看是否可以取完Atk牌。更多的解法，可以官方<a href="http://codeforces.com/blog/entry/8192">editorial</a></p>
+
+<h2 id="c-ciel-the-commanderhttpcodeforcescomcontest321problemc"><a href="http://codeforces.com/contest/321/problem/C">C. Ciel the Commander</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/190/1/C.cpp">source code</a></p>
+
+<p>有一棵树，给每个点赋一个等级(A-Z)，若两个点等级相同，那么连接这两个点的路径里至少有一个点的等级大于两个端点。问是否存在这样的赋值方案。</p>
+
+<p>假若最大规模，有一个10^5的链，那么可以看到先对中点x赋值A，那么左右分为两棵子树，如果这两个树中有相同的等级，那么必须通过x，于是只需让两棵子树的最大等级为B就可以了，然后依次找子树的中点，递归的做下去，可知log2(10^5)&lt;26，于是方案是存在的。</p>
+
+<p>现在需要拓展线段的中点到树的中点（重心），重心即使得他的最大子树的大小最小，具体可以看<a href="http://acm.sgu.ru/problem.php?contest=0&amp;problem=134">sgu134</a>和Google。</p>
+
+<h2 id="d-ciel-and-flipboardhttpcodeforcescomcontest321problemd"><a href="http://codeforces.com/contest/321/problem/D">D. Ciel and Flipboard</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/190/1/D.cpp">source code</a></p>
+
+<p>有一个nxn的方阵，n为不大于33的奇数，有这样一个操作，取m=(n+1)/2，在nxn的方阵中取一个mxm的子方阵，其中的数全部取其相反数，现在问通过这种操作方阵中所有数的和的最大值是多少？</p>
+
+<p>共有mxm个子方阵，即共有m^2种操作，由于重复同一种操作是没有效果的，于是每种操作只会做0次或1次，共有2^(m^2)种结果，不同的操作序列产生不同的结果。</p>
+
+<p>假若一个方格最后改变了符号那么赋值1，否则0，即这个赋值方阵为s，那么操作中蕴含有这样的等式：</p>
+
+<pre><code>s[i][j] ^ s[i][m] ^ s[i][j+m] = 0    1 &lt;= j &lt; m
+s[i][j] ^ s[m][j] ^ s[i+m][j] = 0    1 &lt;= i &lt; m
+</code></pre>
+
+<p>这是因为(i,j)(i,m)(i,j+m)同一操作中要么有0个要么有2个被选中，于是只需要左上角mxm的方阵就可以决定nxn的方阵。并且给出左上角方阵的一个布局那么肯定有一个操作序列与其对应，这是因为左上角mxm的方阵恰好有2^(m^2)种布局，于是刚好和操作序列产生的布局一一对应。</p>
+
+<p>于是现在可以枚举第m列的情况，然后决定第m行的情况，接下来贪心就可以了。</p>
+
+<h2 id="e-ciel-and-gondolashttpcodeforcescomcontest321probleme"><a href="http://codeforces.com/contest/321/problem/E">E. Ciel and Gondolas</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/190/1/E.cpp">source code</a></p>
+
+<p>有n个人，现在要对这n个人分组，每组的人编号都是连续的，每两个之间有一个不熟悉的值，一个组的不熟悉值为组内两两不熟悉值的总和，现在求所有分组中不熟悉值最小是多少，其中n&lt;=4000，最大的分组数k为800。</p>
+
+<p>dp，设f(i,j)表示前i个人分为j组的最小不熟悉值总和，则</p>
+
+<pre><code>f(i, j) = min(f(k, j-1) + unfamilliar(k+1..i))
+unfamilliar(a, b) = u(a, a+1) + u(a, a+2) + ... + u(a, b) + u(a+1, a+2) + ... + u(b-1, b)
+</code></pre>
+
+<p>给定u则unfamilliar同样采用dp可以在n^2时间内求得，f转移方程复杂度为n，f状态共有nk，则复杂度共kn^2，需要对dp进行优化。</p>
+
+<p>优化的地方缩小k的范围，设t(i,j)=min{k|f(i,j)=f(k,j-1)+unfamilliar(k+1..i)}，则有t(i,j-1)&lt;=t(i,j)&lt;=t(i+1,j)。</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>A写的比较仔细，1y。然后就一直再搞B，感觉匹配棵搞，网络流也可搞，但就是搞不出来，感觉可以贪心，但又没有一个仔细的贪心策略，感觉脑子轻飘飘的，不会思考一样，最后虽然过了pretest，但挂了finaltest，中间有想过C，其实算法自己想的是对的，但是复杂度估计错了，就没有再搞，这个已经不是第一次了，现在感觉复杂度的估算是一个比较严重的问题了，会影响对于算法的思考，严重不扎实啊。啊啊啊，弱爆了弱爆了。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1322,119 +1433,6 @@ $ layman -S
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/23/codeforces-round-number-176-div-1/">Codeforces Round #176 (Div. 1)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-23T23:12:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2013</time>
-        
-         | <a href="/blog/2013/03/23/codeforces-round-number-176-div-1/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2 id="a-lucky-permutationhttpwwwcodeforcescomcontest286problema"><a href="http://www.codeforces.com/contest/286/problem/A">A. Lucky Permutation</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/A.cpp">source code</a></p>
-
-<p>判定是否存在一个置换使得一个序列经过两次相同的置换达到逆序。</p>
-
-<p>考虑若P(x)=y，则由于P(P(x))=n-x+1，则P(y)=n-x+1，即P(x)=y =&gt; P(y)=n-x+1，连续应用此式可以得到</p>
-
-<pre><code>P(x) = y
-P(y) = n - x + 1
-P(n - x + 1) = n - y + 1
-P(n - y + 1) = x
-</code></pre>
-
-<p>即4个构成一组，于是当n%4=0或1时存在解，否则不存在。</p>
-
-<p>不知道为什么，感觉有点像密码学里的<a href="http://en.wikipedia.org/wiki/Meet-in-the-middle_attack">Meet-In-The-Middle</a></p>
-
-<h2 id="b-shiftinghttpwwwcodeforcescomcontest286problemb"><a href="http://www.codeforces.com/contest/286/problem/B">B. Shifting</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/B.cpp">source code</a></p>
-
-<p>对于一个序列{pi}，定义操作f(p,k)为将序列按k个分为一组，最后一组若不够分，则含有n%k个元素，然后对于每一个小组循环左移。问f(f(…f(p=[1,2,…,n],2)…,n-1),n)是多少。</p>
-
-<p>对于每一个k，共进行n/k次循环左移，共有n(1/2+1/3+…+1/n)=nln(n)次循环左移，只需要将每次循环左移复杂度降到O(1)就可以了。比如f([1..9], 3)：</p>
-
-<pre><code>1 2 3 4 5 6 7 8 9 =&gt;
-2 3 1 5 6 3 8 9 7
-将被移动的字符看作*，于是：
-* 2 3 * 5 6 * 8 9
-  2 3 * 5 6 * 8 9 *
-这样就可以将左移变为O(1)了
-</code></pre>
-
-<h2 id="c-main-sequencehttpwwwcodeforcescomcontest286problemc"><a href="http://www.codeforces.com/contest/286/problem/C">C. Main Sequence</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/C.cpp">source code</a></p>
-
-<p>定义一个正确的括号序列为：</p>
-
-<pre><code>1. 空序列为括号序列
-2. 若{a1, a2, ..., al}和{b1, b2, ..., bk}是括号序列，则{a1, a2, ..., al, b1, b2, ..., bk}也是括号序列
-3. 若{a1, a2, ..., al}是括号序列，则{v, a1, a2, ..., al, -v}是括号序列，v是一个正整数
-</code></pre>
-
-<p>现在有一个括号序列{xi}，已知{pi=|xi|}，和{i|xi&lt;0}的一个子集，问是否可以还原{xi}，若存在多解，任意输出一个，否则输出NO。</p>
-
-<p>和正常的括号匹配差不多，因为要求了某些必须取负数，即相当于有括号，所以从右向左压栈，然后正常的匹配就可以了。</p>
-
-<h2 id="d-touristshttpwwwcodeforcescomcontest286problemd"><a href="http://www.codeforces.com/contest/286/problem/D">D. Tourists</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/D.cpp">source code</a></p>
-
-<p>在(-1,0)和(1,0)处有两个人同时沿Oy正方向运动，每秒运动一个单位，现在在某个时刻t会出现(0,a)-(0,b)这样一堵墙，若此时两个人正好位于Oy的[a,b]之间那么这两个人就互相看不见对方，现在给出所有这样的(a,b,t)三元组，还有从q1，q2…时刻出发的人，查询每对人有多长时间是看不到对方的。(a,b,t,qi&gt;=0)</p>
-
-<p>以时间t为自变量，纵坐标为应变量，用x表示，那么对于从时间t出发的人对应的关系为x=t-q（更精确的应该为x=max(0,t-q)，然而因为墙壁不会出现在负轴，所以写成这样对结果没有影响），对于每个墙壁(a,b,t)，关系为x=a,t=t与x=b,t=t之间的带状区域，可以看到被挡到的时间为x=t-q被带状区域所截取的线段的横截距，因为斜率为1，所以也等于纵截距。为了便于判断相交和计算做坐标变换(t,x)=&gt;(t-x,x)，那么人的方程变为t=q，是一条垂直于横轴的直线,带状区域变为左顶角为PI/4的梯形，此时所求即为直线和这个梯形交集的纵截距，也等于q-t（t为梯形最左点的横坐标）可以将梯形看作两个PI/4的角的交，只是在计算的时候下面的角是被减掉的，如果处理出所有这样的角的话，就很容易计算了。比如q和ti(0&lt;=i&lt;k)相交，那么最后所求为sigma(q-ti)=k*q-sigma(ti)，这样只需要处理出ti前缀和，最后二分就可以了。处理角的过程是将所有带状区域的上下边界统一排序，并且维护当前所有线对应的出现时间的最小值，用堆就可以了，当处理到某个区域的下界的时候，这个区域对应的时间t要出堆，依次处理就可以了。</p>
-
-<h2 id="e-ladies-shophttpwwwcodeforcescomcontest286probleme"><a href="http://www.codeforces.com/contest/286/problem/E">E. Ladies’ Shop</a></h2>
-
-<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/176/1/E.cpp">source code</a></p>
-
-<p>有一些背包，只能够装重量为ai的物品，不能多也不能少，现在有一些物品，但是重量还没有确定，现在让你确定重量1&lt;=p1&lt;p2&lt;…&lt;pk满足下列条件（每个重量的物品有无穷多个）</p>
-
-<pre><code>1. 每个包都会被用到。即对于每一个i都存在一些物品它们的总重量为ai
-2. 对于任何不超过m的重量的物品，必须有一个包可以放置它
-3. 对于满足1和2的重量分配，使k最小化
-</code></pre>
-
-<p>题目意思就是说对于物品{pi}它们的任意不大于m的组合都能在{ai}中找到，比较直接的做法就是无限背包作出所有不大于m的重量，然后去和{ai}比较，但是n,m=10^6，这样会超时，首先，所有重量肯定是{ai}的一个子集，否则就会不满足条件2，其次，加入{pi}是一个满足条件的重量分配，对于每一个i，pi,2pi,3pi…tpi&lt;=m都应该有包对应，即总存在某个j使得aj=x*pi，于是要找出所有组合只需要将{ai}中的任意两个相加就可以判断出{pi}的所有组合了，将{ai}看作一个数，它的平方即为任意两个的和，于是可以用<a href="http://en.wikipedia.org/wiki/Fast_Fourier_transform">FFT</a>做了，采用<a href="http://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm">[Cooley–Tukey FFT algorithm]</a>（这个算法于1965年提出，实际上只是重新发现了<a href="http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Gauss</a>在1805年提出的算法，orz）。假若平方封闭，那么便是可以分配，否则不存在方案，要最小化k，只需要选那些最小的元，即所有其他的重量里没有它的因子。</p>
-
-<h2 id="summary">Summary</h2>
-
-<p>弱爆了啊。42min才搞出A，然后一直再搞B，其实应该多看下C的，最后15min看了C，就感觉很可搞，可惜时间不多了，情急之下居然把statck写成queue了，赛后稍微调了一下就过了。这次还是出现了会做的题目在比赛中没有做出来的情况&gt;_&lt;。B还是该早些放弃的，D和E压根就没有读题，以后至少要将每道题目都读一遍，至于会不会做就是另外一回事了。啊啊啊，弱爆了弱爆了。 </p>
-
-<p>终于fix了D和E，D首先要用数学的语言去描述题目场景，那个坐标变换太神了。E首先要从题目条件判断出重量是{ai}的子集，然后就要看能不能联想到FFT了。啊啊啊，弱爆了弱爆了。</p>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -1450,6 +1448,10 @@ P(n - y + 1) = x
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/06/29/codeforces-round-number-190-div-1/">Codeforces Round #190 (Div. 1)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/06/08/codeforces-round-number-187-div-1/">Codeforces Round #187 (Div. 1)</a>
       </li>
     
@@ -1463,10 +1465,6 @@ P(n - y + 1) = x
     
       <li class="post">
         <a href="/blog/2013/05/06/codeforces-round-number-182-div-1/">Codeforces Round #182 (Div. 1)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/20/codeforces-round-number-180-div-1/">Codeforces Round #180 (Div. 1)</a>
       </li>
     
   </ul>

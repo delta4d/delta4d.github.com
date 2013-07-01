@@ -4,7 +4,7 @@
   <title><![CDATA[Try To Think]]></title>
   <link href="http://delta4d.github.io/atom.xml" rel="self"/>
   <link href="http://delta4d.github.io/"/>
-  <updated>2013-06-10T00:31:15+08:00</updated>
+  <updated>2013-07-01T14:12:48+08:00</updated>
   <id>http://delta4d.github.io/</id>
   <author>
     <name><![CDATA[delta]]></name>
@@ -12,6 +12,88 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Codeforces Round #190 (Div. 1)]]></title>
+    <link href="http://delta4d.github.io/blog/2013/06/29/codeforces-round-number-190-div-1/"/>
+    <updated>2013-06-29T22:02:00+08:00</updated>
+    <id>http://delta4d.github.io/blog/2013/06/29/codeforces-round-number-190-div-1</id>
+    <content type="html"><![CDATA[<h2 id="a-ciel-and-robothttpcodeforcescomcontest321problema"><a href="http://codeforces.com/contest/321/problem/A">A. Ciel and Robot</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/190/1/A.cpp">source code</a></p>
+
+<p>有一个bot位于xoy平面原点，给定一个移动序列s包含’UDLR’，分别表示向上，下，左和右各移动一个单位，该指令序列s可以重复执行任意此，现在给定坐标(a,b)问是否可以经过有限次指令后到达。</p>
+
+<p>设置行到s(i)后bot坐标为(xi,yi)，执行完s后的坐标为(sx,sy)，则若能够到达(a,b)则存在非负整数k和i使得a=xi+ksx,b=yi+ksy。枚举i就可以了，算法看起来虽然比较简单，但实际写起来还是有很多需要注意的地方。</p>
+
+<h2 id="b-ciel-and-duelhttpcodeforcescomcontest321problemb"><a href="http://codeforces.com/contest/321/problem/B">B. Ciel and Duel</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/190/1/B.cpp">source code</a></p>
+
+<p>Ciel和Jiro玩这样一个牌类游戏，Jiro有n张牌，每张有两个属性：position(Attack或Defense)，strength，Ciel有m张牌，现在轮到Ciel进攻，他可以重复置行以下操作：</p>
+
+<pre><code>1. 选择自己的一张牌X，这张牌之前没有用过
+2. 如果Jiro没有手牌，那么他被伤害X
+3. 否则由Ciel选择Jiro的一张手牌Y：
+   * Y的position为Attack，那么必须有(X's strength) &gt;= (Y's strength)，Jiro获得伤害(X's strength)-(Y's strength)，手牌Y不可以再用
+   * Y的position为Defense，那么必须有(X's strength) &gt; (Y's strength)，Jiro没有伤害，手牌Y不可以再用
+</code></pre>
+
+<p>现在求Jiro能够受到的最大伤害是多少</p>
+
+<p>如果Ciel没有将Jiro的手牌拿完，那么可以看到选择Def牌是不会增加伤害的，于是只需要考虑Atk，于是采用贪心，枚举Ciel可以将自己最大的多少张牌打完。</p>
+
+<p>如果Ciel将Jiro的手牌取完，要使结果最大，那么用刚好大于Def的牌去对付Def就可以了，然后看是否可以取完Atk牌。更多的解法，可以官方<a href="http://codeforces.com/blog/entry/8192">editorial</a></p>
+
+<h2 id="c-ciel-the-commanderhttpcodeforcescomcontest321problemc"><a href="http://codeforces.com/contest/321/problem/C">C. Ciel the Commander</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/190/1/C.cpp">source code</a></p>
+
+<p>有一棵树，给每个点赋一个等级(A-Z)，若两个点等级相同，那么连接这两个点的路径里至少有一个点的等级大于两个端点。问是否存在这样的赋值方案。</p>
+
+<p>假若最大规模，有一个10^5的链，那么可以看到先对中点x赋值A，那么左右分为两棵子树，如果这两个树中有相同的等级，那么必须通过x，于是只需让两棵子树的最大等级为B就可以了，然后依次找子树的中点，递归的做下去，可知log2(10^5)&lt;26，于是方案是存在的。</p>
+
+<p>现在需要拓展线段的中点到树的中点（重心），重心即使得他的最大子树的大小最小，具体可以看<a href="http://acm.sgu.ru/problem.php?contest=0&amp;problem=134">sgu134</a>和Google。</p>
+
+<h2 id="d-ciel-and-flipboardhttpcodeforcescomcontest321problemd"><a href="http://codeforces.com/contest/321/problem/D">D. Ciel and Flipboard</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/190/1/D.cpp">source code</a></p>
+
+<p>有一个nxn的方阵，n为不大于33的奇数，有这样一个操作，取m=(n+1)/2，在nxn的方阵中取一个mxm的子方阵，其中的数全部取其相反数，现在问通过这种操作方阵中所有数的和的最大值是多少？</p>
+
+<p>共有mxm个子方阵，即共有m^2种操作，由于重复同一种操作是没有效果的，于是每种操作只会做0次或1次，共有2^(m^2)种结果，不同的操作序列产生不同的结果。</p>
+
+<p>假若一个方格最后改变了符号那么赋值1，否则0，即这个赋值方阵为s，那么操作中蕴含有这样的等式：</p>
+
+<pre><code>s[i][j] ^ s[i][m] ^ s[i][j+m] = 0    1 &lt;= j &lt; m
+s[i][j] ^ s[m][j] ^ s[i+m][j] = 0    1 &lt;= i &lt; m
+</code></pre>
+
+<p>这是因为(i,j)(i,m)(i,j+m)同一操作中要么有0个要么有2个被选中，于是只需要左上角mxm的方阵就可以决定nxn的方阵。并且给出左上角方阵的一个布局那么肯定有一个操作序列与其对应，这是因为左上角mxm的方阵恰好有2^(m^2)种布局，于是刚好和操作序列产生的布局一一对应。</p>
+
+<p>于是现在可以枚举第m列的情况，然后决定第m行的情况，接下来贪心就可以了。</p>
+
+<h2 id="e-ciel-and-gondolashttpcodeforcescomcontest321probleme"><a href="http://codeforces.com/contest/321/problem/E">E. Ciel and Gondolas</a></h2>
+
+<p><a href="https://github.com/delta4d/AlgoSolution/blob/master/codeforces/190/1/E.cpp">source code</a></p>
+
+<p>有n个人，现在要对这n个人分组，每组的人编号都是连续的，每两个之间有一个不熟悉的值，一个组的不熟悉值为组内两两不熟悉值的总和，现在求所有分组中不熟悉值最小是多少，其中n&lt;=4000，最大的分组数k为800。</p>
+
+<p>dp，设f(i,j)表示前i个人分为j组的最小不熟悉值总和，则</p>
+
+<pre><code>f(i, j) = min(f(k, j-1) + unfamilliar(k+1..i))
+unfamilliar(a, b) = u(a, a+1) + u(a, a+2) + ... + u(a, b) + u(a+1, a+2) + ... + u(b-1, b)
+</code></pre>
+
+<p>给定u则unfamilliar同样采用dp可以在n^2时间内求得，f转移方程复杂度为n，f状态共有nk，则复杂度共kn^2，需要对dp进行优化。</p>
+
+<p>优化的地方缩小k的范围，设t(i,j)=min{k|f(i,j)=f(k,j-1)+unfamilliar(k+1..i)}，则有t(i,j-1)&lt;=t(i,j)&lt;=t(i+1,j)。</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>A写的比较仔细，1y。然后就一直再搞B，感觉匹配棵搞，网络流也可搞，但就是搞不出来，感觉可以贪心，但又没有一个仔细的贪心策略，感觉脑子轻飘飘的，不会思考一样，最后虽然过了pretest，但挂了finaltest，中间有想过C，其实算法自己想的是对的，但是复杂度估计错了，就没有再搞，这个已经不是第一次了，现在感觉复杂度的估算是一个比较严重的问题了，会影响对于算法的思考，严重不扎实啊。啊啊啊，弱爆了弱爆了。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Codeforces Round #187 (Div. 1)]]></title>
@@ -2015,87 +2097,6 @@ sudo emerge -va pyopenssl
 
 <h2 id="reference">Reference</h2>
 <p><a href="http://en.gentoo-wiki.com/wiki/Run_a_command_on_boot">Gentoo run a command on boot</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[gentoo notes 01 - start]]></title>
-    <link href="http://delta4d.github.io/blog/2013/01/27/gentoo-notes-01/"/>
-    <updated>2013-01-27T19:26:00+08:00</updated>
-    <id>http://delta4d.github.io/blog/2013/01/27/gentoo-notes-01</id>
-    <content type="html"><![CDATA[<h2 id="why-gentoo">Why Gentoo</h2>
-<p>久仰Gentoo大名，过去一年断断续续在虚拟机上装过好几次Gentoo了，一直想在实体机上试试，于是趁放假的时候折腾折腾。</p>
-
-<h2 id="start">Start</h2>
-
-<p>Gentoo是编译安装的，于是可以进行相关编译选项优化。同时Gentoo是可以滚动升级的，这样方便不少。开始装机的时候还是想着自己编译内核的，结果开机后不断panic，把我也搞的panic了，于是老老实实用genkernel，以后有机会在好好编译内核吧，先把系统起来在说。很多用户觉得Gentoo编译太费时间了，所以不选择Gentoo，但装机大多都是可以一劳永逸的，配置好后并不会频繁的装软件了。装好基本系统其实还是比较快的，使用genkernel也只用了一个小时左右，装好X然后装DE便会比较慢了，键盘控，喜欢轻量级的话装个WM是便会很快了。</p>
-
-<h2 id="errors">Errors</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">!!The filesystem mounted at /dev/sdb3 does not appear to be a valid /. Try again 
-</span><span class="line">!!Could not find the root block device in. 
-</span><span class="line">Please specify another value or: press Enter for the same , type "shell" ......</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>可能是grub.conf写错了，需要注意一下两个变量：</p>
-
-<ul>
-  <li><code>root (hd0,0)</code>指/boot在/dev/sda1。(hd0,0-3)表示四个主分区，(hd0,&gt;3)表示逻辑分区，其中grub从0开始，而linux从1开始表示分区。</li>
-  <li><code>real_root=/dev/sdax</code>指/在/dev/sdax</li>
-</ul>
-
-<p>startx的时候出现no screens found
-   可能是显卡驱动装的不对，可以执行<code>emerge -av $(qlist -IC x11-drivers)</code>，我的是nvidia，在make.conf中设置好<code>VIDEO_CARDS="nvidia"</code>，然后装好n卡驱动，在执行<code>nvidia-xconfig</code>后就可以了。</p>
-
-<p>emerge complains  <a href="http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=2&amp;chap=1">click me!</a></p>
-
-<h2 id="why-gentoo-again">Why Gentoo Again</h2>
-<ol>
-  <li>漂亮的字符界面。第一次虚拟机装Gentoo时的最深的印象。</li>
-  <li>强大的portage和emerge。portage告诉emerge在哪里下载源代码，编译选项是什么。</li>
-  <li>overlay？就目前的感觉想archlinux的aur。里面应该有不少好玩的东西。</li>
-  <li>详尽的文档。</li>
-  <li>……</li>
-</ol>
-
-<p>实体机用了才不到两天，还有好多好多东西需要学习和探索。Happy Hunting。</p>
-
-<h2 id="de-vs-wm">DE vs WM</h2>
-<p>一开始想装wm的，因为在<a href="https://bbs.archlinux.org/viewforum.php?id=47">archlinux forum</a>里看到很多wm非常漂亮，还有很多<a href="https://bbs.archlinux.org/viewtopic.php?id=138281">轻量级软件</a>提供选择。也确实一开始试的是openbox和monsterwm的，还是不习惯。最后换成了KDE，其实KDE以前没怎么用过（其实连linux都没怎么用过，总是不知不觉切会win后就不再进入linux了），就目前来看KDE表现还是不错的，但还是有些问题没有解决。。一开始挺好的，但是感觉有些不稳定，无法启动kde程序，gtk倒是没问题，后来删除了~/.kde4恢复默认设置倒是好了。另外qtconfig配置无法保存，这个直接导致了有些qt程序字体比较难看等。</p>
-
-<h2 id="octopress-in-gentoo">Octopress in Gentoo</h2>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">...custom_require.rb:36:in 'require': cannot load such file auto_gem (LoadError)
-</span><span class="line">...custom_require.rb:36:in 'require'</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p><code>unset RUBYOPT</code> fix it.</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">Building site: source -&gt; public
-</span><span class="line">File "&lt;string&gt;", line 1
-</span><span class="line">import sys; print sys.executable
-</span><span class="line">^
-</span><span class="line">SyntaxError: invalid syntax</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Follow <a href="http://blog.gonzih.org/blog/2011/09/21/fix-octopress-pygments-error-on-arch-linux/">this</a>. But I change rubypython from 0.5.3 to 0.6.3 in Gemfile.lock, it fixs everything I ran into..</p>
-
-<h2 id="reference">Reference</h2>
-<ol>
-  <li><a href="http://www.google.com">Google</a></li>
-  <li><a href="http://www.gentoo.org/doc/en/handbook/">Gentoo Handbook</a></li>
-  <li><a href="http://www.gentoo.org/doc/en/xorg-config.xml">Gentoo Xorg</a></li>
-</ol>
-
-<h2 id="whats-going-on">What’s Going On</h2>
-<p>Keep Using, Keep Hunting。有没有gentoo notes 02我也不知道。。</p>
 ]]></content>
   </entry>
   
