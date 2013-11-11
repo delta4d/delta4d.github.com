@@ -7,6 +7,8 @@ sharing: true
 footer: true
 ---
 
-[former blog](http://hi.baidu.com/delta_4d): 没什么人味的一个博客，当时感觉有好多学长都在百度开博，于是跟风偶尔写些东西，权当备忘。
+该sb目前很不正常
+
+[about.me](http://about.me/delta4d)
 
 *Best View in Chrome*
